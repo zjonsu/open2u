@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="layer_popup" data-role-popup="sampleAlert01">
+            <div class="dim"></div>
+            <div class="layer_popup_area alert">
+                <div class="alert_body">
+                    <div class="alert_cont no_desc">
+                        <div class="info_wrap">
+                            <p class="msg">수정세금계산서를 발행 하시겠습니까?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert_footer">
+                    <div class="btn_group">
+                        <button type="button" class="btn pop lbtn ty02" onclick="layerClose($(this))">취소</button>
+                        <button type="button" class="btn pop" onclick="layerClose($(this))">확인</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 수정세금계산서 발행여부 체크 -->
+
+        <div class="layer_popup" data-role-popup="sampleAlert02">
+            <div class="dim"></div>
+            <div class="layer_popup_area alert">
+                <div class="alert_body">
+                    <div class="alert_cont no_desc">
+                        <div class="info_wrap">
+                            <p class="msg">전표를 삭제하시겠습니까?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert_footer">
+                    <div class="btn_group">
+                        <button type="button" class="btn pop lbtn ty02" onclick="layerClose($(this))">취소</button>
+                        <button type="button" class="btn pop" onclick="layerClose($(this))">확인</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 전표삭제여부 체크 -->
+        <!-- layer_popup -->
+
+
+
+        <div class="pop_wrap">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">검사조서</h1>
+                    </div>
+                    <div class="right">
+                        <ul class="progress_step_list">
+                            <li>
+                                <a href="javascript:;">구매요청</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매접수</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약진행</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약완료</a>
+                            </li>
+                            <li class="in_progress">
+                                <a href="javascript:;">검사조서</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매전표</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">대금지급</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_info_area on">
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">검사조서번호</span>
+                            <span class="info_text">52603442962</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사요청일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">공급업체명</span>
+                            <span class="info_text">주식회사 뮤플러스</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약번호</span>
+                            <span class="info_text">4160086491</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">계약담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">인수동의일
+                                <span class="count">D<span class="num_sign">+</span><em class="count_num">00</em></span>
+                            </span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사완료일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">검사조서건명</span>
+                            <span class="info_text">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">검사담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="toggle_btn"><span class="txt">Close</span><i class="ico_toggle_arr"></i></button> 
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_aside">
+                    <ul class="aside_progress_list">
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript::" class="point">1. 인수동의</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">2. 요청정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">3. 예산정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">4. 확인정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">5. 결재정보</a>
+                            </h2>
+                        </li>
+                        <li class="in_progress">
+                            <span class="status">작성중</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">검사조서</a>
+                            </h2>
+                        </li>
+                    </ul>
+                    <ul class="link_area">
+                        <li>
+                            <button type="button" class="link_btn">검사합격통지서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="link_btn">목적물수령증명서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="link_btn">FAQ</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <div class="cont_inner">
+                            <div class="btn_group ty02">
+                                <button type="button" class="btn" onclick="layerPopup('sampleAlert01')">수정세금계산서 발행여부 체크</button>
+                                <button type="button" class="btn" onclick="layerPopup('sampleAlert02')">전표삭제여부 체크</button>
+                            </div>
+                        </div>
+
+                        <div class="btm_btn_area">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn md" onclick="layerPopup('sampleAlert02')">반송</button>
+                                    <span class="divid"></span> 
+                                    <button type="button" class="btn pop lg" onclick="layerPopup('sampleAlert01')">검사조서취소</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

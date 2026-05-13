@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">공급사 평가 관리</h2>
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+                <div class="pop_sub_area">
+                    <div class="left"></div>
+                    <div class="right">
+                        <button type="button" class="btn pop c_type06">불러오기</button>
+                        <button type="button" class="btn pop c_type06">평가발송</button>
+                        <button type="button" class="btn pop c_type06">평가완료</button>
+                        <button type="button" class="btn pop pop_save c_type07">저장</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popcontents p_top170">
+                <table class="tableStyle">
+                	<colgroup>
+                		<col style="width:145px">
+                		<col> 
+                		<col style="width:145px">
+                		<col>
+                	</colgroup>
+                    <tbody>
+                        <tr>
+                            <th>평가년도 <span class="staricon"></span></th>
+                            <td></td>
+                            <th>평가명 <span class="staricon"></span></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>평가담당자</th>
+                            <td></td>
+                            <th>현 작성자</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>평가시작일 <span class="staricon"></span></th>
+                            <td></td>
+                            <th>평가종료일 <span class="staricon"></span></th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>평가진행현황 <span class="staricon"></span></th>
+                            <td></td>
+                            <th>평가완료자/평가자 <span class="staricon"></span></th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="poptitle">
+                    <h3>공급사 관리</h3>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08">공급사 조회</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <div class="grid_area">
+                    <table id="jqGrid" class="jqgrid"></table>
+                </div>
+
+                <div class="poptitle">
+                    <h3>설문 관리</h3>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08">설문조회</button>
+                    </div>
+                </div>
+                <table class="tableStyle">
+                	<colgroup>
+                		<col style="width:145px">
+                		<col> 
+                		<col style="width:145px">
+                		<col>
+                	</colgroup>
+                    <tbody>
+                        <tr>
+                            <th>설문번호</th>
+                            <td>SEQ0001</td>
+                            <th>설문건명</th>
+                            <td>23년 공급사 평가</td>
+                        </tr>
+                        <tr>
+                            <th>참고파일</th>
+                            <td colspan="3"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn_top"><i class="icons i_btn_top"></i></a>
+        <script>
+            var mydata = [
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+            ];
+
+            $(document).ready(function () {
+                $(".jqgrid").jqGrid({
+                    datatype: "local",
+                    // data: mydata,
+                    autowidth: true,
+                    cellEdit:true,
+                    shrinkToFit:false,
+                    forceFit:true,
+                    pager: '#jqGridPager',
+                    colModel: [
+                        { label: 'data1', name: 'data1', width:100, editable:true },
+                        { label: 'data2', name: 'data2', width:100, editable:true },
+                        { label: 'data3', name: 'data3', width:100, editable:true },
+                        { label: 'data4', name: 'data4', width:100, editable:true },
+                        { label: 'data5', name: 'data5', width:100, editable:true },
+                        { label: 'data6', name: 'data6', width:100, editable:true },
+                        { label: 'data7', name: 'data7', width:100, editable:true },
+                        { label: 'data8', name: 'data8', width:100, editable:true },
+                        { label: 'data9', name: 'data9', width:100, editable:true },
+                        { label: 'data10', name: 'data10', width:100, editable:true },
+                    ],
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+
+            });
+
+            $(window).bind('resize', function() {
+                $(".jqgrid").setGridWidth($('.grid_area').width());
+            }).trigger('resize');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <div class="pop_header_area">
+            <div class="pop_top_area">
+                <div class="left">
+                    <h2 class="pop_title">회원 아이디/비밀번호 찾기</h2>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="popcontents">
+            <!-- <ul id="tabList01" class="tableStyle03">
+                <li rel="tabList01-01" class="on"><a href="javascript:;">아이디 찾기</a></li>
+                <li rel="tabList01-02"><a href="javascript:;">비밀번호 찾기</a></li>
+            </ul> -->
+            <ul id="tabList01" class="tableStyle02">
+                <li rel="tabList01-01" class="on"><a href="javascript:;">아이디 찾기</a></li>
+                <li rel="tabList01-02"><a href="javascript:;">비밀번호 찾기</a></li>
+                <li rel="tabList01-03"><a href="javascript:;">비밀번호 초기화</a></li>
+            </ul>
+            <div id="tabCont01" class="idpw_sch_cont">
+                <div id="tabList01-01" class="active">
+                    <div class="idpw_sch_box">
+                        <p class="idpw_sch_msg">
+                            <span>개인/법인 사업자 안내</span>
+                            회원가입 시 등록한 사용자 이름과 이메일로 찾으셔야 합니다.
+                        </p>
+                        <ul class="idpw_sch_inpt">
+                            <li><input type="text" placeholder="사용자 이름"></li>
+                            <li>
+                                <div class="idpw_sch_email">
+                                    <select>
+                                        <option>이메일</option>
+                                    </select>
+                                    <input type="text">
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="idpw_sch_security">
+                            <div class="idpw_sch_img"><img src="../../resource/images/new_common/img_ldpw_code.png" alt=""></div>
+                            <input type="text" placeholder="좌측 문구를 입력해주세요">
+                        </div>
+    
+                        <div class="lay_pop_btn">
+                            <button type="button" class="btn pop pop_save c_type10">취소</button>
+                            <button type="button" class="btn pop pop_save c_type07">찾기</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabList01-02">
+                    <div class="idpw_sch_box">
+                        <p class="idpw_sch_msg">
+                            <span>개인/법인 사업자 안내</span>
+                            회원가입 시 등록한 사용자 이름과 이메일로 찾으셔야 합니다.
+                        </p>
+                        <ul class="idpw_sch_inpt">
+                            <li><input type="text" placeholder="아이디"></li>
+                            <li><input type="text" placeholder="사용자 이름"></li>
+                            <li>
+                                <div class="idpw_sch_email">
+                                    <select>
+                                        <option>이메일</option>
+                                    </select>
+                                    <input type="text">
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="idpw_sch_security">
+                            <div class="idpw_sch_img"><img src="../../resource/images/new_common/img_ldpw_code.png" alt=""></div>
+                            <input type="text" placeholder="좌측 문구를 입력해주세요">
+                        </div>
+    
+                        <div class="lay_pop_btn">
+                            <button type="button" class="btn pop pop_save c_type10">취소</button>
+                            <button type="button" class="btn pop pop_save c_type07">찾기</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="tabList01-03">
+                    <div class="user_apply_box">
+                        <dl class="user_applu_inpt">
+                            <dt>비밀번호 초기화</dt>
+                            <dd></dd>
+                        </dl>
+                        <p>사용하시는 비밀번호를 초기화시키시려면 하단의 신청버튼을 눌러주세요.</p>
+                    </div>
+        
+                    <div class="lay_pop_btn">
+                        <button type="button" class="btn c_type07">신청</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            tabMenu('#tabList01','#tabCont01');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,1888 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <!-- wrap : S -->
+        <div class="wrap">
+            <!-- header_wrap : S -->
+            <header class="header_wrap">
+                <!-- 메인화면에서는 class="main" 추가  -->
+                <div class="header_top">
+                    <div class="inner">
+                        <ul class="header_top_user">
+                            <li>
+                                <span class="user"><i class="icons i_header_user"></i>홍길동님</span>
+                            </li>
+                            <li>
+                                <a href="javascript:;"><i class="icons i_header_logout"></i></a>
+                            </li>
+                        </ul>
+                        <ul class="header_top_menu">
+                            <li>
+                                <button type="button">업체검색시스템 <i class="icons i_header_search"></i></button>
+                            </li>
+                            <li>
+                                <button type="button">회의실예약 <i class="icons i_header_reserve"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="header_gnb">
+                    <div class="header_gnb_inner">
+                        <div class="align_lt">
+                            <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            <ul class="gnb_menu">
+                                <li>
+                                    <a href="#none">구매요청</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매요청</a></li>
+                                        <li><a href="javascript:;">계약변경요청</a></li>
+                                        <li><a href="javascript:;">납품지시</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">구매진행</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매접수</a></li>
+                                        <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">계약변경진행</a></li>
+                                        <li><a href="javascript:;">기술평가</a></li>
+                                        <li><a href="javascript:;">BMT평가</a></li>
+                                        <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                        <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약정산</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">검사조서</a></li>
+                                        <li><a href="javascript:;">보증관리</a></li>
+                                        <li><a href="javascript:;">자산관리</a></li>
+                                        <li><a href="javascript:;">지체면제</a></li>
+                                        <li><a href="javascript:;">구매전표</a></li>
+                                        <li><a href="javascript:;">유보금처리</a></li>
+                                        <li><a href="javascript:;">대금지급</a></li>
+                                        <li><a href="javascript:;">SCM 검사조서</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">계약대장</a></li>
+                                        <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                        <li><a href="javascript:;">[외자]계약대장</a></li>
+                                        <li><a href="javascript:;">납품지시내역</a></li>
+                                        <li><a href="javascript:;">실적증명발급</a></li>
+                                        <li><a href="javascript:;">하도급관리</a></li>
+                                        <li><a href="javascript:;">가격입찰</a></li>
+                                        <li><a href="javascript:;">제안평가</a></li>
+                                        <li><a href="javascript:;">기술평가개별조회</a></li>
+                                        <li><a href="javascript:;">기술평가완료현황</a></li>
+                                        <li><a href="javascript:;">RFx이력</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">결산/통계</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">미정산계약</a></li>
+                                        <li><a href="javascript:;">예산별구매현황</a></li>
+                                        <li><a href="javascript:;">소액구매현황</a></li>
+                                        <li><a href="javascript:;">Price Tracking</a></li>
+                                        <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                        <li><a href="javascript:;">구매체감도</a></li>
+                                        <li><a href="javascript:;">검사조서마감관리</a></li>
+                                        <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">공급사</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">공급사현황</a></li>
+                                        <li><a href="javascript:;">공급사 등록요청</a></li>
+                                        <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                        <li><a href="javascript:;">업체검색시스템</a></li>
+                                        <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                        <li><a href="javascript:;">연락처대장</a></li>
+                                        <li><a href="javascript:;">사전설문관리</a></li>
+                                        <li><a href="javascript:;">사전설문관리2</a></li>
+                                        <li><a href="javascript:;">방문신청관리</a></li>
+                                        <li><a href="javascript:;">비밀번호초기화</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">기준정보관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                        <li><a href="javascript:;">ITEM 현황</a></li>
+                                        <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                        <li><a href="javascript:;">품목 MASTER</a></li>
+                                        <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                        <li><a href="javascript:;">SG 관리</a></li>
+                                        <li><a href="javascript:;">업체평가기준</a></li>
+                                        <li><a href="javascript:;">구매소요계획</a></li>
+                                        <li><a href="javascript:;">상품입고예정정보</a></li>
+                                        <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                        <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                        <li><a href="javascript:;">상품재고 현황</a></li>
+                                        <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                        <li><a href="javascript:;">위젯관리</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">업무지원</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">마감관리</a></li>
+                                        <li><a href="javascript:;">조직/사용자관리</a></li>
+                                        <li><a href="javascript:;">권한관리</a></li>
+                                        <li><a href="javascript:;">팝업관리</a></li>
+                                        <li><a href="javascript:;">환경설정관리</a></li>
+                                        <li><a href="javascript:;">ERP연동 관리</a></li>
+                                        <li><a href="javascript:;">게시판</a></li>
+                                        <li><a href="javascript:;">운영배포 게시판</a></li>
+                                        <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                        <li><a href="javascript:;">오프라인체결</a></li>
+                                        <li><a href="javascript:;">총괄코드관리</a></li>
+                                        <li><a href="javascript:;">사용자 검색</a></li>
+                                        <li><a href="javascript:;">관리자계약재처리</a></li>
+                                        <li><a href="javascript:;">업무처리독려</a></li>
+                                        <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site_map">
+                            <button type="button" class="sitemapBtn sitemap_event"><i class="icons i_header_sitemap"></i></button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="siteMapArea">
+                    <nav class="header_gnb">
+                        <div class="header_gnb_inner">
+                            <div class="align_lt">
+                                <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            </div>
+                            <a href="javascript:;" class="siteMapClosebtn"></a>
+                        </div>
+                    </nav>
+                    <div class="siteMap_inner">
+                        <ul class="menuArea">
+                            <li><h3>구매요청</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매요청</a></li>
+                                    <li><a href="javascript:;">계약변경요청</a></li>
+                                    <li><a href="javascript:;">납품지시</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>구매진행</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매접수</a></li>
+                                    <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">계약변경진행</a></li>
+                                    <li><a href="javascript:;">기술평가</a></li>
+                                    <li><a href="javascript:;">BMT평가</a></li>
+                                    <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                    <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약정산</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">검사조서</a></li>
+                                    <li><a href="javascript:;">보증관리</a></li>
+                                    <li><a href="javascript:;">자산관리</a></li>
+                                    <li><a href="javascript:;">지체면제</a></li>
+                                    <li><a href="javascript:;">구매전표</a></li>
+                                    <li><a href="javascript:;">유보금처리</a></li>
+                                    <li><a href="javascript:;">대금지급</a></li>
+                                    <li><a href="javascript:;">SCM 검사조서</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">계약대장</a></li>
+                                    <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                    <li><a href="javascript:;">[외자]계약대장</a></li>
+                                    <li><a href="javascript:;">납품지시내역</a></li>
+                                    <li><a href="javascript:;">실적증명발급</a></li>
+                                    <li><a href="javascript:;">하도급관리</a></li>
+                                    <li><a href="javascript:;">가격입찰</a></li>
+                                    <li><a href="javascript:;">제안평가</a></li>
+                                    <li><a href="javascript:;">기술평가개별조회</a></li>
+                                    <li><a href="javascript:;">기술평가완료현황</a></li>
+                                    <li><a href="javascript:;">RFx이력</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>결산/통계</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">미정산계약</a></li>
+                                    <li><a href="javascript:;">예산별구매현황</a></li>
+                                    <li><a href="javascript:;">소액구매현황</a></li>
+                                    <li><a href="javascript:;">Price Tracking</a></li>
+                                    <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                    <li><a href="javascript:;">구매체감도</a></li>
+                                    <li><a href="javascript:;">검사조서마감관리</a></li>
+                                    <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>공급사</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">공급사현황</a></li>
+                                    <li><a href="javascript:;">공급사 등록요청</a></li>
+                                    <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                    <li><a href="javascript:;">업체검색시스템</a></li>
+                                    <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                    <li><a href="javascript:;">연락처대장</a></li>
+                                    <li><a href="javascript:;">사전설문관리</a></li>
+                                    <li><a href="javascript:;">사전설문관리2</a></li>
+                                    <li><a href="javascript:;">방문신청관리</a></li>
+                                    <li><a href="javascript:;">비밀번호초기화</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>기준정보관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                    <li><a href="javascript:;">ITEM 현황</a></li>
+                                    <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                    <li><a href="javascript:;">품목 MASTER</a></li>
+                                    <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                    <li><a href="javascript:;">SG 관리</a></li>
+                                    <li><a href="javascript:;">업체평가기준</a></li>
+                                    <li><a href="javascript:;">구매소요계획</a></li>
+                                    <li><a href="javascript:;">상품입고예정정보</a></li>
+                                    <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                    <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                    <li><a href="javascript:;">상품재고 현황</a></li>
+                                    <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                    <li><a href="javascript:;">위젯관리</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>업무지원</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">마감관리</a></li>
+                                    <li><a href="javascript:;">조직/사용자관리</a></li>
+                                    <li><a href="javascript:;">권한관리</a></li>
+                                    <li><a href="javascript:;">팝업관리</a></li>
+                                    <li><a href="javascript:;">환경설정관리</a></li>
+                                    <li><a href="javascript:;">ERP연동 관리</a></li>
+                                    <li><a href="javascript:;">게시판</a></li>
+                                    <li><a href="javascript:;">운영배포 게시판</a></li>
+                                    <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                    <li><a href="javascript:;">오프라인체결</a></li>
+                                    <li><a href="javascript:;">총괄코드관리</a></li>
+                                    <li><a href="javascript:;">사용자 검색</a></li>
+                                    <li><a href="javascript:;">관리자계약재처리</a></li>
+                                    <li><a href="javascript:;">업무처리독려</a></li>
+                                    <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <!-- //header_wrap : E -->
+
+            <!-- container : S -->
+            <div class="container">
+                <div class="content">
+                    <div class="title_area">
+                        <div class="left">
+                            <h2 class="title">계약대장</h2>
+                            <ul class="location_area">
+                                <li>
+                                    <a href="javascript:;" class="home"><i class="icons i_location_home"></i></a>
+                                </li>
+                                <li><a href="javascript:;">계약관리</a></li>
+                                <li><strong>계약대장</strong></li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            <div class="tbl_search_btn">
+                                <button type="button" class="btn sch c_type02">검색</button>
+                            </div>
+                            <div class="tbl_btn_area">
+                                <button type="button" class="btn c_type04">임시계약대장</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="searchBox">
+                        <table class="tableStyle">
+                            <colgroup>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                                <col style="width:138px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>계약건명</th>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <th>계약번호</th>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                    <th>공급업체명</th>
+                                    <td>
+                                        <input type="text">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>상태</th>
+                                    <td>
+                                        <select>
+                                            <option>전체</option>
+                                        </select>
+                                    </td>
+                                    <th>
+                                        <select class="select_dt">
+                                            <option>계약체결일</option>
+                                        </select>
+                                    </th>
+                                    <td>
+                                        <div class="daterange_area">
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk01" />
+                                                <label for="chk01">최초</label>
+                                            </span>
+                                            <a href="javascript:;" class="btn smal">전체</a>
+                                            <a href="javascript:;" class="btn smal">올해1월~</a>
+                                            <a href="javascript:;" class="btn smal">작년1월~</a>
+                                        </div>
+                                    </td>
+                                    <th>
+                                        <select class="select_dt">
+                                            <option>구매요청자</option>
+                                        </select>
+                                    </th>
+                                    <td>
+                                        <input type="text" class="w80 readonly" readonly="readonly" />
+                                        <input type="text" class="w90" />
+                                        <a href="javascript:;" class="btnS search"></a>
+                                        <a href="javascript:;" class="btnS closes"></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>계약관리자</th>
+                                    <td>
+                                        <input type="text" class="w80 readonly" readonly="readonly" />
+                                        <input type="text" class="w90" />
+                                        <a href="javascript:;" class="btnS search"></a>
+                                        <a href="javascript:;" class="btnS closes"></a>
+                                    </td>
+                                    <th>계약관리부서</th>
+                                    <td>
+                                        <select>
+                                            <option>전체</option>
+                                        </select>
+                                    </td>
+                                    <th>구매담당자</th>
+                                    <td>
+                                        <input type="text" class="w80 readonly" readonly="readonly" />
+                                        <input type="text" class="w90" />
+                                        <a href="javascript:;" class="btnS search"></a>
+                                        <a href="javascript:;" class="btnS closes"></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        <select class="select_dt">
+                                            <option>구매요청부서</option>
+                                        </select>
+                                    </th>
+                                    <td>
+                                        <input type="text" class="w80 readonly" readonly="readonly" />
+                                        <input type="text" class="w90" />
+                                        <a href="javascript:;" class="btnS search"></a>
+                                        <a href="javascript:;" class="btnS closes"></a>
+                                    </td>
+                                    <th>품목</th>
+                                    <td colspan="3">
+                                        <input type="text" class="w80 readonly" readonly="readonly" />
+                                        <input type="text" class="w90" />
+                                        <a href="javascript:;" class="btnS search"></a>
+                                        <a href="javascript:;" class="btnS closes"></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="sch_area">
+                            <div class="titleArea type1">
+                                <h3>상세검색</h3>
+                            </div>
+                            <table class="tableStyle">
+                                <colgroup>
+                                    <col style="width:138px">
+                                    <col>
+                                    <col style="width:138px">
+                                    <col>
+                                    <col style="width:138px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>계약종류</th>
+                                        <td>
+                                            <select>
+                                                <option>전체</option>
+                                            </select>
+                                        </td>
+                                        <th>경쟁/수의</th>
+                                        <td><input type="text"></td>
+                                        <th>수의유형</th>
+                                        <td>
+                                            <select>
+                                                <option>전체</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>구매요청번호</th>
+                                        <td>
+                                            <input type="text">
+                                        </td>
+                                        <th>사업자번호</th>
+                                        <td>
+                                            <input type="text">
+                                        </td>
+                                        <th>법인번호</th>
+                                        <td>
+                                            <input type="text">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>계약방법</th>
+                                        <td colspan="3">
+                                            <ul class="form_group_chk">
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk10" />
+                                                        <label for="chk10">견적요청</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk11" />
+                                                        <label for="chk11">가격입찰</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk12" />
+                                                        <label for="chk12">기술평가</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk13" />
+                                                        <label for="chk13">종합평가입찰</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk14" />
+                                                        <label for="chk14">2-Step입찰</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk15" />
+                                                        <label for="chk15">2-Step종합평가입찰</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <th>수주계약</th>
+                                        <td>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk02" />
+                                                <label for="chk02"></label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>예산구분</th>
+                                        <td colspan="5">
+                                            <ul class="form_group_chk">
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk16" />
+                                                        <label for="chk16">A:(투자:본계정/건설가계정)</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk17" />
+                                                        <label for="chk17">K:(운영:코스트센터)</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk18" />
+                                                        <label for="chk18">P:(투자:공사)</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk19" />
+                                                        <label for="chk19">Q:(투자:기계장치)</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk20" />
+                                                        <label for="chk20">UA:단가계약-투자</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk21" />
+                                                        <label for="chk21">UKL단가계약-운영</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>계약시작일</th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                        <th>계약종료일</th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                        <th>계약변경일</th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>품목</th>
+                                        <td colspan="3">
+                                            <ul class="form_group_select">
+                                                <li>
+                                                    <span class="label">대분류</span>
+                                                    <select class="w90">
+                                                        <option>전체</option>
+                                                        <option>물품</option>
+                                                        <option>장비</option>
+                                                        <option>용역</option>
+                                                        <option>공사</option>
+                                                    </select>
+                                                </li>
+                                                <li>
+                                                    <span class="label">중분류</span>
+                                                    <select class="w90">
+                                                        <option value="">전체</option>
+                                                    </select>
+                                                </li>
+                                                <li>
+                                                    <span class="label">소싱그룹</span>
+                                                    <select class="w90">
+                                                        <option value="">전체</option>
+                                                    </select>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                        <th>관계사</th>
+                                        <td>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk03" />
+                                                <label for="chk03"></label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>계약승인일</th>
+                                        <td colspan="3">
+                                            <div class="daterange_area">
+                                                <div class="datepicker_area">
+                                                    <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                    <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                </div>
+                                                <span class="chk">
+                                                    <input type="checkbox" id="chk04" />
+                                                    <label for="chk04">최초</label>
+                                                </span>
+                                                <a href="javascript:;" class="btn smal">최근 1주일</a>
+                                                <a href="javascript:;" class="btn smal">최근 1개월</a>
+                                                <a href="javascript:;" class="btn smal">최근 3개월</a>
+                                            </div>
+                                        </td>
+                                        <th>내자/외자</th>
+                                        <td>
+                                            <ul class="form_group_chk">
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk05" />
+                                                        <label for="chk05">내자</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk06" />
+                                                        <label for="chk06">외자</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>실적SG</th>
+                                        <td colspan="5">
+                                            <ul class="form_group_chk">
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk22" />
+                                                        <label for="chk22">기지국/교환기</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk23" />
+                                                        <label for="chk23">중계기</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk24" />
+                                                        <label for="chk24">전송장비</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk25" />
+                                                        <label for="chk25">NW IT장비</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk26" />
+                                                        <label for="chk26">부대물자</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk27" />
+                                                        <label for="chk27">Access망 공사</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk28" />
+                                                        <label for="chk28">전송망 공사</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk29" />
+                                                        <label for="chk29">Core망 공사</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk30" />
+                                                        <label for="chk30">OS용역</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk31" />
+                                                        <label for="chk31">제휴사업</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk32" />
+                                                        <label for="chk32">성장 Biz</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk33" />
+                                                        <label for="chk33">일반용역</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk34" />
+                                                        <label for="chk34">일반공사</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk35" />
+                                                        <label for="chk35">일반물품</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk36" />
+                                                        <label for="chk36">개발용역</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk37" />
+                                                        <label for="chk37">유지보수</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk38" />
+                                                        <label for="chk38">IT장비</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>실적년월</th>
+                                        <td colspan="5">
+                                            <div class="form_ym_select">
+                                                <select class="w80">
+                                                    <option>2023</option>
+                                                </select>
+                                                <!-- <span class="label">년</span> -->
+                                                <select class="w70">
+                                                    <option>12</option>
+                                                </select>
+                                                <!-- <span class="label">월</span> -->
+                                            </div>
+                                            <div class="form_ym_select">
+                                                <select class="w80">
+                                                    <option>선택</option>
+                                                </select>
+                                                <!-- <span class="label">년</span> -->
+                                                <select class="w70">
+                                                    <option>선택</option>
+                                                </select>
+                                                <!-- <span class="label">월</span> -->
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>개인정보 취급여부</th>
+                                        <td>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk07" />
+                                                <label for="chk07"></label>
+                                            </span>
+                                        </td>
+                                        <th>개인정보 위탁여부</th>
+                                        <td>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk08" />
+                                                <label for="chk08"></label>
+                                            </span>
+                                        </td>
+                                        <th>구매원전결</th>
+                                        <td>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk09" />
+                                                <label for="chk09"></label>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>Funnel ID</th>
+                                        <td><input type="text" class="wp100" /></td>
+                                        <th>납품대금 연동제</th>
+                                        <td colspan="3">
+                                            <select>
+                                                <option>전체</option>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <button type="button" class="search_toggle"><i class="icons i_form_toggle"></i> <span>펼치기</span></button>
+                    </div>
+
+                    <!-- <div class="search_cont_wrap">
+                        <ul class="search_cont_list">
+                            <li>
+                                <dl>
+                                    <dt>계약건명</dt>
+                                    <dd><input type="text" class="wp100" id="S_CNTRT_NAME" name="S_CNTRT_NAME" data-bind="value:S_CNTRT_NAME" /></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>계약번호</dt>
+                                    <dd>
+                                        <input type="text" class="wp100" id="S_CNTRT_NAME" name="S_CNTRT_NAME" data-bind="value:S_CNTRT_NAME" />
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>공급업체명</dt>
+                                    <dd><input type="text" class="wp100" id="S_CNTRT_NAME" name="S_CNTRT_NAME" data-bind="value:S_CNTRT_NAME" /></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>상태</dt>
+                                    <dd>
+                                        <select class="wp100">
+                                            <option>전체</option>
+                                        </select>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>계약관리자</dt>
+                                    <dd>
+                                        <input type="text" class="w80 readonly" readonly="readonly" />
+                                        <input type="text" class="w90" />
+                                        <a href="javascript:;" class="btnS search USER_USR"></a>
+                                        <a href="javascript:;" class="btnS closes"></a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>계약관리부서</dt>
+                                    <dd>
+                                        <select class="wp100">
+                                            <option>ICT Infra 구매팀</option>
+                                        </select>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="col colspan_3">
+                                <dl>
+                                    <dt>
+                                        <select class="select_dt">
+                                            <option>계약체결일</option>
+                                        </select>
+                                    </dt>
+                                    <dd>
+                                        <div class="daterange_area">
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk01" />
+                                                <label for="chk01">최초</label>
+                                            </span>
+                                            <a href="javascript:;" class="btn smal">전체</a>
+                                            <a href="javascript:;" class="btn smal">올해1월~</a>
+                                            <a href="javascript:;" class="btn smal">작년1월~</a>
+                                        </div>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li class="col colspan_3">
+                                <dl>
+                                    <dt>구매담당자</dt>
+                                    <dd>
+                                        <input type="text" class="w80 readonly" readonly="readonly" />
+                                        <input type="text" class="w90" />
+                                        <a href="javascript:;" class="btnS search USER_USR"></a>
+                                        <a href="javascript:;" class="btnS closes"></a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <select class="select_dt">
+                                            <option>구매요청부서</option>
+                                        </select>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" class="w80 readonly" readonly="readonly" />
+                                        <input type="text" class="w90" />
+                                        <a href="javascript:;" class="btnS search USER_USR"></a>
+                                        <a href="javascript:;" class="btnS closes"></a>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>
+                                        <select class="select_dt">
+                                            <option>구매요청자</option>
+                                        </select>
+                                    </dt>
+                                    <dd>
+                                        <select class="wp100">
+                                            <option>ICT Infra 구매팀</option>
+                                        </select>
+                                    </dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dt>품목</dt>
+                                    <dd>
+                                        <input type="text" class="w80 readonly" readonly="readonly" />
+                                        <input type="text" class="w90" />
+                                        <a href="javascript:;" class="btnS search USER_USR"></a>
+                                        <a href="javascript:;" class="btnS closes"></a>
+                                    </dd>
+                                </dl>
+                            </li>
+                        </ul>
+                        <div class="search_cont_inner">
+                            <div class="search_cont_title">
+                                <h3>상세검색</h3>
+                            </div>
+                            <ul class="search_cont_list">
+                                <li>
+                                    <dl>
+                                        <dt>계약종류</dt>
+                                        <dd>
+                                            <select class="wp100">
+                                                <option>전체</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>경쟁/수의</dt>
+                                        <dd>
+                                            <input type="text" class="wp100" />
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>수의유형</dt>
+                                        <dd>
+                                            <input type="text" class="wp100" />
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>구매요청번호</dt>
+                                        <dd>
+                                            <select class="wp100">
+                                                <option>전체</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>사업자번호</dt>
+                                        <dd>
+                                            <input type="text" class="w80 readonly" readonly="readonly" />
+                                            <input type="text" class="w90" />
+                                            <a href="javascript:;" class="btnS search"></a>
+                                            <a href="javascript:;" class="btnS closes"></a>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>법인번호</dt>
+                                        <dd>
+                                            <select class="wp100">
+                                                <option>ICT Infra 구매팀</option>
+                                            </select>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>수주계약</dt>
+                                        <dd>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk02" />
+                                                <label for="chk02"></label>
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>계약시작일</dt>
+                                        <dd>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>계약종료일</dt>
+                                        <dd>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>계약변경일</dt>
+                                        <dd>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li class="col colspan_3">
+                                    <dl>
+                                        <dt>품목</dt>
+                                        <dd>
+                                            <ul class="form_group_select">
+                                                <li>
+                                                    <span class="label">대분류</span>
+                                                    <select class="w140">
+                                                        <option>전체</option>
+                                                        <option>물품</option>
+                                                        <option>장비</option>
+                                                        <option>용역</option>
+                                                        <option>공사</option>
+                                                    </select>
+                                                </li>
+                                                <li>
+                                                    <span class="label">중분류</span>
+                                                    <select class="w140">
+                                                        <option value="">전체</option>
+                                                    </select>
+                                                </li>
+                                                <li>
+                                                    <span class="label">소싱그룹</span>
+                                                    <select class="w140">
+                                                        <option value="">전체</option>
+                                                    </select>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>관계사</dt>
+                                        <dd>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk03" />
+                                                <label for="chk03"></label>
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li class="col colspan_3">
+                                    <dl>
+                                        <dt>계약승인일</dt>
+                                        <dd>
+                                            <div class="daterange_area">
+                                                <div class="datepicker_area">
+                                                    <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                    <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                </div>
+                                                <span class="chk">
+                                                    <input type="checkbox" id="chk04" />
+                                                    <label for="chk04">최초</label>
+                                                </span>
+                                                <a href="javascript:;" class="btn smal">최근 1주일</a>
+                                                <a href="javascript:;" class="btn smal">최근 1개월</a>
+                                                <a href="javascript:;" class="btn smal">최근 3개월</a>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>내자/외자</dt>
+                                        <dd>
+                                            <ul class="form_group_chk">
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk05" />
+                                                        <label for="chk05">내자</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk06" />
+                                                        <label for="chk06">외자</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li class="col colspan_3">
+                                    <dl>
+                                        <dt>실적년월</dt>
+                                        <dd>
+                                            <div class="form_ym_select">
+                                                <select>
+                                                    <option>선택</option>
+                                                </select>
+                                                <span class="label">년</span>
+                                                <select>
+                                                    <option>선택</option>
+                                                </select>
+                                                <span class="label">월</span>
+                                            </div>
+                                            <div class="form_ym_select">
+                                                <select>
+                                                    <option>선택</option>
+                                                </select>
+                                                <span class="label">년</span>
+                                                <select>
+                                                    <option>선택</option>
+                                                </select>
+                                                <span class="label">월</span>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>개인정보 취급여부</dt>
+                                        <dd>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk07" />
+                                                <label for="chk07"></label>
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>개인정보 위탁여부</dt>
+                                        <dd>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk08" />
+                                                <label for="chk08"></label>
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>구매원전결</dt>
+                                        <dd>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk09" />
+                                                <label for="chk09"></label>
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl>
+                                        <dt>Funnel ID</dt>
+                                        <dd><input type="text" class="wp100" /></dd>
+                                    </dl>
+                                </li>
+                                <li class="col colspan_5">
+                                    <dl>
+                                        <dt>계약방법</dt>
+                                        <dd>
+                                            <ul class="form_group_chk">
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk10" />
+                                                        <label for="chk10">견적요청</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk11" />
+                                                        <label for="chk11">가격입찰</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk12" />
+                                                        <label for="chk12">기술평가</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk13" />
+                                                        <label for="chk13">종합평가입찰</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk14" />
+                                                        <label for="chk14">2-Step입찰</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk15" />
+                                                        <label for="chk15">2-Step종합평가입찰</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li class="col colspan_wp100">
+                                    <dl>
+                                        <dt>예산구분</dt>
+                                        <dd>
+                                            <ul class="form_group_chk">
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk16" />
+                                                        <label for="chk16">A:(투자:본계정/건설가계정)</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk17" />
+                                                        <label for="chk17">K:(운영:코스트센터)</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk18" />
+                                                        <label for="chk18">P:(투자:공사)</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk19" />
+                                                        <label for="chk19">Q:(투자:기계장치)</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk20" />
+                                                        <label for="chk20">UA:단가계약-투자</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk21" />
+                                                        <label for="chk21">UKL단가계약-운영</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li class="col colspan_wp100">
+                                    <dl>
+                                        <dt>실적SG</dt>
+                                        <dd>
+                                            <ul class="form_group_chk">
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk22" />
+                                                        <label for="chk22">기지국/교환기</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk23" />
+                                                        <label for="chk23">중계기</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk24" />
+                                                        <label for="chk24">전송장비</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk25" />
+                                                        <label for="chk25">NW IT장비</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk26" />
+                                                        <label for="chk26">부대물자</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk27" />
+                                                        <label for="chk27">Access망 공사</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk28" />
+                                                        <label for="chk28">전송망 공사</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk29" />
+                                                        <label for="chk29">Core망 공사</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk30" />
+                                                        <label for="chk30">OS용역</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk31" />
+                                                        <label for="chk31">제휴사업</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk32" />
+                                                        <label for="chk32">성장 Biz</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk33" />
+                                                        <label for="chk33">일반용역</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk34" />
+                                                        <label for="chk34">일반공사</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk35" />
+                                                        <label for="chk35">일반물품</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk36" />
+                                                        <label for="chk36">개발용역</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk37" />
+                                                        <label for="chk37">유지보수</label>
+                                                    </span>
+                                                </li>
+                                                <li>
+                                                    <span class="chk">
+                                                        <input type="checkbox" id="chk38" />
+                                                        <label for="chk38">IT장비</label>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li class="col colspan_wp100">
+                                    <dl>
+                                        <dt>진행상태 <span class="tooltipIcon"></span></dt>
+                                        <dd>
+                                            <select class="w80">
+                                                <option>전체</option>
+                                            </select>
+                                            <span class="chk">
+                                                <input type="checkbox" id="chk39" />
+                                                <label for="chk39">체결/구매진행/반송 제외</label>
+                                            </span>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                        <button type="button" class="search_toggle"><i class="icons i_form_toggle"></i> <span>펼치기</span></button>
+                    </div> -->
+                    <div class="tbl_top">
+                        <div class="left"></div>
+                        <div class="right">
+                            <button type="button" class="btn c_type01">열람신청</button>
+                                <button type="button" class="btn c_type01">열람신청현황</button>
+                                <button type="button" class="btn excel c_type05"><i class="icons i_btn_excel"></i> 엑셀다운(기본)</button>
+                                <button type="button" class="btn excel c_type05"><i class="icons i_btn_excel"></i> 엑셀다운(옵션)</button>
+                                <button type="button" class="btn excel c_type05"><i class="icons i_btn_excel"></i> 자정활동 다운</button>
+                        </div>
+                    </div>
+
+                    <div class="grid_area">
+                        <table id="jqGrid"></table>
+                    </div>
+                    <div class="paging_area">
+                        <div class="total_area">
+                            <span class="total">Total : <em>999</em></span>
+                        </div>
+                        <a href="javascript:;" class="first">first</a>
+                        <a href="javascript:;" class="pre">prev</a>
+                        <a href="javascript:;">1</a>
+                        <a href="javascript:;" class="selected">2</a>
+                        <a href="javascript:;">3</a>
+                        <a href="javascript:;">4</a>
+                        <a href="javascript:;">5</a>
+                        <a href="javascript:;">6</a>
+                        <a href="javascript:;">7</a>
+                        <a href="javascript:;">8</a>
+                        <a href="javascript:;">9</a>
+                        <a href="javascript:;">10</a>
+                        <a href="javascript:;" class="next">next</a>
+                        <a href="javascript:;" class="last">last</a>
+                        <div class="amount_area">
+                            <select class="amount">
+                                <option>10</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //container : E -->
+
+            <!-- footer_wrap : S -->
+            <footer class="footer_wrap">
+                <div class="inner">
+                    <div class="footer_top">
+                        <ul class="footer_info">
+                            <li><span>우편번호 : 04539</span></li>
+                            <li><span>서울특별시 중구 을지로65(을지로2가) SK T-타워 SK텔레콤(주)</span></li>
+                            <li><span>대표이사 사장 : 유영상</span></li>
+                        </ul>
+                        <ul class="footer_info">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이메일주소무단수집거부</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_copy">
+                        <p>COPYRIGHT © SK TELECOM. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- //footer_wrap : E -->
+        </div>
+        <!-- // wrap : S -->
+        <script>
+            var mydata = [
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+            ];
+
+            $(document).ready(function () {
+                $("#jqGrid").jqGrid({
+                    datatype: "local",
+                    data: mydata,
+                    autowidth: true,
+                    cellEdit: true,
+                    shrinkToFit: false,
+                    forceFit: true,
+                    pager: "#jqGridPager",
+                    colModel: [
+                        { label: "data1", name: "data1", width: 100, editable: true },
+                        { label: "data2", name: "data2", width: 100, editable: true },
+                        { label: "data3", name: "data3", width: 100, editable: true },
+                        { label: "data4", name: "data4", width: 100, editable: true },
+                        { label: "data5", name: "data5", width: 100, editable: true },
+                        { label: "data6", name: "data6", width: 100, editable: true },
+                        { label: "data7", name: "data7", width: 100, editable: true },
+                        { label: "data8", name: "data8", width: 100, editable: true },
+                        { label: "data9", name: "data9", width: 100, editable: true },
+                        { label: "data10", name: "data10", width: 100, editable: true },
+                        { label: "data11", name: "data11", width: 100, editable: true },
+                        { label: "data12", name: "data12", width: 100, editable: true },
+                        { label: "data13", name: "data13", width: 100, editable: true },
+                        { label: "data14", name: "data14", width: 100, editable: true },
+                        { label: "data15", name: "data15", width: 100, editable: true },
+                        { label: "data16", name: "data16", width: 100, editable: true },
+                        { label: "data17", name: "data17", width: 100, editable: true },
+                        { label: "data18", name: "data18", width: 100, editable: true },
+                        { label: "data19", name: "data19", width: 100, editable: true },
+                        { label: "data20", name: "data20", width: 100, editable: true },
+                        { label: "data21", name: "data21", width: 100, editable: true },
+                        { label: "data22", name: "data22", width: 100, editable: true },
+                        { label: "data23", name: "data23", width: 100, editable: true },
+                        { label: "data24", name: "data24", width: 100, editable: true },
+                        { label: "data25", name: "data25", width: 100, editable: true },
+                        { label: "data26", name: "data26", width: 100, editable: true },
+                        { label: "data27", name: "data27", width: 100, editable: true },
+                        { label: "data28", name: "data28", width: 100, editable: true },
+                        { label: "data29", name: "data29", width: 100, editable: true },
+                        { label: "data30", name: "data30", width: 100, editable: true },
+                    ],
+                });
+            });
+
+            $(window)
+                .bind("resize", function () {
+                    $("#jqGrid").setGridWidth($(".grid_area").width());
+                })
+                .trigger("resize");
+        </script>
+    </body>
+</html>

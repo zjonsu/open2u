@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css">
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css">
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css">
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css">
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <style>
+            xmp {
+                display: block;
+                border: 1px dashed #ddd;
+                background: #f7f8fa;
+                padding: 0 20px 0;
+                font-size: 12px;
+                font-family: "dotum";
+                letter-spacing: 0;
+                color: #666;
+                line-height: 20px;
+                margin: 10px 0 30px;
+                overflow: auto;
+                max-height:500px;
+            }
+            .sub_title_area{ margin: 30px 0 15px 0; }
+            .list li+li{ margin-top: 10px; }
+            .list li{ display: flex; flex-wrap: wrap; align-items: center; }
+            .list li p{ margin-left: 10px; font-size: 16px; }
+            .list .btn+.btn{ margin: 2px; }
+        </style>
+        <!-- <xmp></xmp> -->
+    </head>
+
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">popup_button</h2>
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+            </div>
+            <!-- 주석
+                 20230818 p_top170 pop_sub_area 없을시 삭제
+            -->
+            <div class="popcontents">
+
+                <div class="sub_title_area">
+                    <div class="left">
+                        <h3 class="sub_title">Basic Button</h3>
+                    </div>
+                    <div class="right"></div>
+                </div>
+
+                <ul class="list">
+                    <li>
+                        <button type="button" class="btn pop c_type06">구매의뢰양식 발송</button>
+                        <button type="button" class="btn pop c_type06">불러오기</button>
+                        <button type="button" class="btn pop c_type06">결재전송</button>
+                        <button type="button" class="btn pop c_type06">납품지시 작성</button>
+                    </li>
+                    <li><button type="button" class="btn pop pop_save c_type07">저장</button></li>
+                </ul>
+                <div class="poptitle">
+                    <ul class="list">
+                        <li>
+                            <button type="button" class="btn c_type04">부분저장</button>
+                            <button type="button" class="btn c_type04">계약서보기</button>
+                            <button type="button" class="btn c_type04">비고 저장</button>
+                            <button type="button" class="btn c_type04">최종송장전송</button>
+                            <button type="button" class="btn c_type04">저장</button>
+                            <button type="button" class="btn c_type04">결재전송</button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 버튼</button>
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_selecdown"></i> 선택 다운로드</button>
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_completed"></i> 최종송장전송</button>
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_result"></i> 평가결과 보기</button>
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_save"></i> 저장</button>
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 검사요청 증빙파일 가져오기</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="sub_title_area">
+                    <div class="left">
+                        <h3 class="sub_title">table 내부 Button</h3>
+                    </div>
+                    <div class="right"></div>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>버튼 grad3</th>
+                            <td>
+                                <ul class="list">
+                                    <li>
+                                        <button class="btn grad3">Funnel ID저장</button>
+                                        <button class="btn grad3">ssone 바로가기</button>
+                                        <button class="btn grad3">설정</button>
+                                        <button class="btn grad3">기본</button>
+                                        <button class="btn grad3">옵션</button>
+                                        <button class="btn grad3">현재일시</button>
+                                        <button class="btn grad3">회의실 예약</button>
+                                        <button class="btn grad3">기술평가기준등록</button>
+                                        <button class="btn grad3">상세</button>
+                                        <button class="btn grad3">업체평가</button>
+                                        <button class="btn grad3">업체History</button>
+                                        <button class="btn grad3">보기</button>
+                                        <button class="btn grad3">지출품의서 조회</button>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>버튼 c_type03</th>
+                            <td>
+                                <button class="btn c_type03">파일찾기</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>버튼 Icon</th>
+                            <td>
+                                <button type="button" class="btn t_down c_type09"><i class="icons i_tr_download"></i></button>
+                                <a href="#none" class="btnS search"></a>
+                                <a href="#none" class="btnS closes"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script>
+            var mydata = [
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+            ];
+
+            $(document).ready(function () {
+                $(".jqgrid").jqGrid({
+                    datatype: "local",
+                    // data: mydata,
+                    autowidth: true,
+                    cellEdit:true,
+                    shrinkToFit:false,
+                    forceFit:true,
+                    pager: '#jqGridPager',
+                    colModel: [
+                        { label: 'data1', name: 'data1', width:100, editable:true },
+                        { label: 'data2', name: 'data2', width:100, editable:true },
+                        { label: 'data3', name: 'data3', width:100, editable:true },
+                        { label: 'data4', name: 'data4', width:100, editable:true },
+                        { label: 'data5', name: 'data5', width:100, editable:true },
+                        { label: 'data6', name: 'data6', width:100, editable:true },
+                        { label: 'data7', name: 'data7', width:100, editable:true },
+                        { label: 'data8', name: 'data8', width:100, editable:true },
+                        { label: 'data9', name: 'data9', width:100, editable:true },
+                        { label: 'data10', name: 'data10', width:100, editable:true },
+                    ],
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+
+            });
+
+            $(window).bind('resize', function() {
+                $(".jqgrid").setGridWidth($('.grid_area').width());
+            }).trigger('resize');
+        </script>
+    </body>
+</html>

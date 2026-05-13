@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <div class="selec_drop_area">
+                            <div class="selec_drop_box">
+                                <button type="button">내부게시판</button>
+                                <ul>
+                                    <li><a href="javascript:;">내부게시판1</a></li>
+                                    <li><a href="javascript:;">내부게시판2</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="pop_tab_area">
+                            <li><a href="javascript:;">공지사항</a></li>
+                            <li><a href="javascript:;">업무자료실</a></li>
+                            <li><a href="javascript:;">구매규정</a></li>
+                            <li class="on"><a href="javascript:;">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+
+                    </div>
+                </div>
+            </div>
+            <div class="popcontents">
+                <div class="pop_faq_sch">
+                    <div class="pop_faq_inpt">
+                        <input type="text" placeholder="무엇이 궁금하신가요?">
+                    </div>
+                    <button type="button" class="btn c_type02">검색</button>
+                </div>
+                <ul id="tabList01" class="pop_link_list">
+                    <li rel="tabList01-01" class="on"><a href="javascript:;">#TOP 12</a></li>
+                    <li rel="tabList01-02"><a href="javascript:;">#회원가입</a></li>
+                    <li rel="tabList01-03"><a href="javascript:;">#로그인</a></li>
+                    <li rel="tabList01-04"><a href="javascript:;">#공인인증서</a></li>
+                    <li rel="tabList01-05"><a href="javascript:;">#ID/정보관리</a></li>
+                    <li rel="tabList01-06"><a href="javascript:;">#협력업체등록</a></li>
+                    <li rel="tabList01-07"><a href="javascript:;">#견적제출</a></li>
+                    <li rel="tabList01-08"><a href="javascript:;">#계약체결</a></li>
+                    <li rel="tabList01-09"><a href="javascript:;">#납품지시</a></li>
+                    <li rel="tabList01-10"><a href="javascript:;">#보증보험</a></li>
+                    <li rel="tabList01-11"><a href="javascript:;">#검사요청</a></li>
+                    <li rel="tabList01-12"><a href="javascript:;">#세금계산서</a></li>
+                    <li rel="tabList01-13"><a href="javascript:;">#대금정산</a></li>
+                    <li rel="tabList01-14"><a href="javascript:;">#기타사항</a></li>
+                </ul>
+                <div id="tabCont01" class="pop_faq_area">
+                    <div id="tabList01-01" class="pop_faq_cont active">
+                        <dl class="pop_faq_box">
+                            <dt>
+                                <span class="faq_type">회원가입</span>
+                                <span class="faq_f">Withsk.com에서 인증서 등록했던 업체도 Open2u에서 따로 인증서 발급 받아야 하나요?</span>
+                            </dt>
+                            <dd>
+                                <p class="faq_q">
+                                    혹시 비밀번호찾기 안내 메일이 스팸 메일로 걸려졌을 수도 있습니다.
+                                    스팸 메일함을 한번 확인해주시길 바랍니다.
+                                    혹시 비밀번호찾기 안내 메일이 스팸 메일로 걸려졌을 수도 있습니다.
+                                    스팸 메일함을 한번 확인해주시길 바랍니다.
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl class="pop_faq_box">
+                            <dt>
+                                <span class="faq_type">로그인</span>
+                                <span class="faq_f">비밀번호 찾기를 하였는데, 메일이 오지 않습니다.</span>
+                            </dt>
+                            <dd>
+                                <p class="faq_q">
+                                    혹시 비밀번호찾기 안내 메일이 스팸 메일로 걸려졌을 수도 있습니다.
+                                    스팸 메일함을 한번 확인해주시길 바랍니다.
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl class="pop_faq_box">
+                            <dt>
+                                <span class="faq_type">BM개발 및 사업화관련</span>
+                                <span class="faq_f">Withsk.com에서 인증서 등록했던 업체도 Open2u에서 따로 인증서 발급 받아야 하나요?</span>
+                            </dt>
+                            <dd>
+                                <p class="faq_q">
+                                    혹시 비밀번호찾기 안내 메일이 스팸 메일로 걸려졌을 수도 있습니다.
+                                    스팸 메일함을 한번 확인해주시길 바랍니다.
+                                </p>
+                            </dd>
+                        </dl>
+                        <dl class="pop_faq_box">
+                            <dt>
+                                <span class="faq_type">심사관련</span>
+                                <span class="faq_f">Withsk.com에서 인증서 등록했던 업체도 Open2u에서 따로 인증서 발급 받아야 하나요?</span>
+                            </dt>
+                            <dd>
+                                <p class="faq_q">
+                                    혹시 비밀번호찾기 안내 메일이 스팸 메일로 걸려졌을 수도 있습니다.
+                                    스팸 메일함을 한번 확인해주시길 바랍니다.
+                                </p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div id="tabList01-02" class="pop_faq_cont">2</div>
+                    <div id="tabList01-03" class="pop_faq_cont">3</div>
+                    <div id="tabList01-04" class="pop_faq_cont">4</div>
+                    <div id="tabList01-05" class="pop_faq_cont">5</div>
+                    <div id="tabList01-06" class="pop_faq_cont">6</div>
+                    <div id="tabList01-07" class="pop_faq_cont">7</div>
+                    <div id="tabList01-08" class="pop_faq_cont">8</div>
+                    <div id="tabList01-09" class="pop_faq_cont">9</div>
+                    <div id="tabList01-10" class="pop_faq_cont">10</div>
+                    <div id="tabList01-11" class="pop_faq_cont">11</div>
+                    <div id="tabList01-12" class="pop_faq_cont">12</div>
+                    <div id="tabList01-13" class="pop_faq_cont">13</div>
+                    <div id="tabList01-14" class="pop_faq_cont">14</div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <script>
+        $(function(){
+
+            $('.pop_faq_box:eq(0) dt, .pop_faq_box:eq(0) dd').addClass('active');
+            $('.pop_faq_box:eq(0) dd').show();
+
+            $('.pop_faq_box > dt').on('click', function () {
+
+                $(this).toggleClass('active');
+                $('.pop_faq_box > dt').not(this).removeClass('active');
+                $('.pop_faq_box > dd').not(this).removeClass('active');
+
+                var target = $(this).next('dd');
+                target.toggleClass('active');
+                target.stop().slideToggle(300)
+
+                var other = $('.pop_faq_box > dt').not(this).next('dd');
+                other.stop().slideUp(300);
+
+                return false;
+            });
+
+        });
+
+        tabMenu('#tabList01','#tabCont01');
+    </script>
+</html>

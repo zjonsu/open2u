@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css">
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css">
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css">
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css">
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <style>
+            xmp {
+                display: block;
+                border: 1px dashed #ddd;
+                background: #f7f8fa;
+                padding: 0 20px 0;
+                font-size: 12px;
+                font-family: "dotum";
+                letter-spacing: 0;
+                color: #666;
+                line-height: 20px;
+                margin: 10px 0 30px;
+                overflow: auto;
+                max-height:500px;
+            }
+            .sub_title_area{ margin: 30px 0 15px 0; }
+            .list li+li{ margin-top: 10px; }
+            .list li{ display: flex; align-items: center; }
+            .list li p{ margin-left: 10px; font-size: 16px; }
+            .list .btn+.btn{ margin: 2px; }
+        </style>
+        <!-- <xmp></xmp> -->
+    </head>
+
+    <body>
+        <!-- wrap : S -->
+        <div class="wrap">
+            <!-- header_wrap : S -->
+            <header class="header_wrap"> <!-- 메인화면에서는 class="main" 추가  -->
+                <div class="header_top">
+                    <div class="inner">
+                        <ul class="header_top_user">
+                            <li><span class="user"><i class="icons i_header_user"></i>홍길동님</span></li>
+                            <li><a href="javascript:;"><i class="icons i_header_logout"></i></a></li>
+                        </ul>
+                        <ul class="header_top_menu">
+                            <li><button type="button">업체검색시스템 <i class="icons i_header_search"></i></button></li>
+                            <li><button type="button">회의실예약 <i class="icons i_header_reserve"></i></button></li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="header_gnb">
+                    <div class="header_gnb_inner">
+                        <div class="align_lt">
+                            <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            <ul class="gnb_menu">
+                                <li>
+                                    <a href="#none">구매요청</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매요청</a></li>
+                                        <li><a href="javascript:;">계약변경요청</a></li>
+                                        <li><a href="javascript:;">납품지시</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">구매진행</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매접수</a></li>
+                                        <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">계약변경진행</a></li>
+                                        <li><a href="javascript:;">기술평가</a></li>
+                                        <li><a href="javascript:;">BMT평가</a></li>
+                                        <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                        <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약정산</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">검사조서</a></li>
+                                        <li><a href="javascript:;">보증관리</a></li>
+                                        <li><a href="javascript:;">자산관리</a></li>
+                                        <li><a href="javascript:;">지체면제</a></li>
+                                        <li><a href="javascript:;">구매전표</a></li>
+                                        <li><a href="javascript:;">유보금처리</a></li>
+                                        <li><a href="javascript:;">대금지급</a></li>
+                                        <li><a href="javascript:;">SCM 검사조서</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">계약대장</a></li>
+                                        <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                        <li><a href="javascript:;">[외자]계약대장</a></li>
+                                        <li><a href="javascript:;">납품지시내역</a></li>
+                                        <li><a href="javascript:;">실적증명발급</a></li>
+                                        <li><a href="javascript:;">하도급관리</a></li>
+                                        <li><a href="javascript:;">가격입찰</a></li>
+                                        <li><a href="javascript:;">제안평가</a></li>
+                                        <li><a href="javascript:;">기술평가개별조회</a></li>
+                                        <li><a href="javascript:;">기술평가완료현황</a></li>
+                                        <li><a href="javascript:;">RFx이력</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">결산/통계</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">미정산계약</a></li>
+                                        <li><a href="javascript:;">예산별구매현황</a></li>
+                                        <li><a href="javascript:;">소액구매현황</a></li>
+                                        <li><a href="javascript:;">Price Tracking</a></li>
+                                        <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                        <li><a href="javascript:;">구매체감도</a></li>
+                                        <li><a href="javascript:;">검사조서마감관리</a></li>
+                                        <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">공급사</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">공급사현황</a></li>
+                                        <li><a href="javascript:;">공급사 등록요청</a></li>
+                                        <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                        <li><a href="javascript:;">업체검색시스템</a></li>
+                                        <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                        <li><a href="javascript:;">연락처대장</a></li>
+                                        <li><a href="javascript:;">사전설문관리</a></li>
+                                        <li><a href="javascript:;">사전설문관리2</a></li>
+                                        <li><a href="javascript:;">방문신청관리</a></li>
+                                        <li><a href="javascript:;">비밀번호초기화</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">기준정보관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                        <li><a href="javascript:;">ITEM 현황</a></li>
+                                        <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                        <li><a href="javascript:;">품목 MASTER</a></li>
+                                        <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                        <li><a href="javascript:;">SG 관리</a></li>
+                                        <li><a href="javascript:;">업체평가기준</a></li>
+                                        <li><a href="javascript:;">구매소요계획</a></li>
+                                        <li><a href="javascript:;">상품입고예정정보</a></li>
+                                        <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                        <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                        <li><a href="javascript:;">상품재고 현황</a></li>
+                                        <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                        <li><a href="javascript:;">위젯관리</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">업무지원</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">마감관리</a></li>
+                                        <li><a href="javascript:;">조직/사용자관리</a></li>
+                                        <li><a href="javascript:;">권한관리</a></li>
+                                        <li><a href="javascript:;">팝업관리</a></li>
+                                        <li><a href="javascript:;">환경설정관리</a></li>
+                                        <li><a href="javascript:;">ERP연동 관리</a></li>
+                                        <li><a href="javascript:;">게시판</a></li>
+                                        <li><a href="javascript:;">운영배포 게시판</a></li>
+                                        <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                        <li><a href="javascript:;">오프라인체결</a></li>
+                                        <li><a href="javascript:;">총괄코드관리</a></li>
+                                        <li><a href="javascript:;">사용자 검색</a></li>
+                                        <li><a href="javascript:;">관리자계약재처리</a></li>
+                                        <li><a href="javascript:;">업무처리독려</a></li>
+                                        <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site_map">
+                            <button type="button" class="sitemapBtn sitemap_event"><i class="icons i_header_sitemap"></i></button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="siteMapArea">
+                    <nav class="header_gnb">
+                        <div class="header_gnb_inner">
+                            <div class="align_lt">
+                                <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            </div>
+                            <a href="javascript:;" class="siteMapClosebtn"></a>
+                        </div>
+                    </nav>
+                    <div class="siteMap_inner">
+                        <ul class="menuArea">
+                            <li><h3>구매요청</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매요청</a></li>
+                                    <li><a href="javascript:;">계약변경요청</a></li>
+                                    <li><a href="javascript:;">납품지시</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>구매진행</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매접수</a></li>
+                                    <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">계약변경진행</a></li>
+                                    <li><a href="javascript:;">기술평가</a></li>
+                                    <li><a href="javascript:;">BMT평가</a></li>
+                                    <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                    <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약정산</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">검사조서</a></li>
+                                    <li><a href="javascript:;">보증관리</a></li>
+                                    <li><a href="javascript:;">자산관리</a></li>
+                                    <li><a href="javascript:;">지체면제</a></li>
+                                    <li><a href="javascript:;">구매전표</a></li>
+                                    <li><a href="javascript:;">유보금처리</a></li>
+                                    <li><a href="javascript:;">대금지급</a></li>
+                                    <li><a href="javascript:;">SCM 검사조서</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">계약대장</a></li>
+                                    <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                    <li><a href="javascript:;">[외자]계약대장</a></li>
+                                    <li><a href="javascript:;">납품지시내역</a></li>
+                                    <li><a href="javascript:;">실적증명발급</a></li>
+                                    <li><a href="javascript:;">하도급관리</a></li>
+                                    <li><a href="javascript:;">가격입찰</a></li>
+                                    <li><a href="javascript:;">제안평가</a></li>
+                                    <li><a href="javascript:;">기술평가개별조회</a></li>
+                                    <li><a href="javascript:;">기술평가완료현황</a></li>
+                                    <li><a href="javascript:;">RFx이력</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>결산/통계</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">미정산계약</a></li>
+                                    <li><a href="javascript:;">예산별구매현황</a></li>
+                                    <li><a href="javascript:;">소액구매현황</a></li>
+                                    <li><a href="javascript:;">Price Tracking</a></li>
+                                    <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                    <li><a href="javascript:;">구매체감도</a></li>
+                                    <li><a href="javascript:;">검사조서마감관리</a></li>
+                                    <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>공급사</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">공급사현황</a></li>
+                                    <li><a href="javascript:;">공급사 등록요청</a></li>
+                                    <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                    <li><a href="javascript:;">업체검색시스템</a></li>
+                                    <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                    <li><a href="javascript:;">연락처대장</a></li>
+                                    <li><a href="javascript:;">사전설문관리</a></li>
+                                    <li><a href="javascript:;">사전설문관리2</a></li>
+                                    <li><a href="javascript:;">방문신청관리</a></li>
+                                    <li><a href="javascript:;">비밀번호초기화</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>기준정보관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                    <li><a href="javascript:;">ITEM 현황</a></li>
+                                    <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                    <li><a href="javascript:;">품목 MASTER</a></li>
+                                    <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                    <li><a href="javascript:;">SG 관리</a></li>
+                                    <li><a href="javascript:;">업체평가기준</a></li>
+                                    <li><a href="javascript:;">구매소요계획</a></li>
+                                    <li><a href="javascript:;">상품입고예정정보</a></li>
+                                    <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                    <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                    <li><a href="javascript:;">상품재고 현황</a></li>
+                                    <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                    <li><a href="javascript:;">위젯관리</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>업무지원</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">마감관리</a></li>
+                                    <li><a href="javascript:;">조직/사용자관리</a></li>
+                                    <li><a href="javascript:;">권한관리</a></li>
+                                    <li><a href="javascript:;">팝업관리</a></li>
+                                    <li><a href="javascript:;">환경설정관리</a></li>
+                                    <li><a href="javascript:;">ERP연동 관리</a></li>
+                                    <li><a href="javascript:;">게시판</a></li>
+                                    <li><a href="javascript:;">운영배포 게시판</a></li>
+                                    <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                    <li><a href="javascript:;">오프라인체결</a></li>
+                                    <li><a href="javascript:;">총괄코드관리</a></li>
+                                    <li><a href="javascript:;">사용자 검색</a></li>
+                                    <li><a href="javascript:;">관리자계약재처리</a></li>
+                                    <li><a href="javascript:;">업무처리독려</a></li>
+                                    <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <!-- //header_wrap : E -->
+
+            <!-- container : S -->
+            <div class="container">
+                <div class="content">
+                    
+                    <div class="sub_title_area">
+                        <div class="left">
+                            <h3 class="sub_title">Basic Button ※모든 페이지에 공통으로 사용되는 버튼</h3>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <ul class="list">
+                        <li>
+                            <button type="button" class="btn c_type04">임시계약대장</button>
+                            <button type="button" class="btn c_type04">지체면제요청현황</button>
+                            <button type="button" class="btn c_type04">테스트</button>
+                            <button type="button" class="btn c_type04">계약변경작성</button>
+                            <button type="button" class="btn c_type04">검사조서작성</button>
+                            <button type="button" class="btn c_type04">자산취득대장</button>
+                            <button type="button" class="btn c_type04">반송목록</button>
+                            <button type="button" class="btn c_type04">마감연장요청</button>
+                            <button type="button" class="btn c_type04">작성</button>
+                            <button type="button" class="btn c_type04">납품지시대상</button>
+                            <button type="button" class="btn c_type04">일괄품의(계약변경)</button>
+                            <button type="button" class="btn c_type04">구매계획작성</button>
+                            <button type="button" class="btn c_type04">일괄품의</button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn c_type01">열람신청</button>
+                            <button type="button" class="btn c_type01">열람신청현황</button>
+                            <button type="button" class="btn c_type01">작성독려</button>
+                            <button type="button" class="btn c_type01">검사요청접수독려</button>
+                            <button type="button" class="btn c_type01">검사조서결재독려</button>
+                            <button type="button" class="btn c_type01">세금계산서수취독려</button>
+                            <button type="button" class="btn c_type01">세금계산서 재발행</button> 
+                        </li>
+                        <li>
+                            <button type="button" class="btn c_type02">저장</button>
+                        </li>
+                    </ul>
+                    <xmp>
+                        <button type="button" class="btn c_type04">임시계약대장</button>
+                        <button type="button" class="btn c_type04">지체면제요청현황</button>
+                        <button type="button" class="btn c_type04">테스트</button>
+                        <button type="button" class="btn c_type04">계약변경작성</button>
+                        <button type="button" class="btn c_type04">검사조서작성</button>
+                        <button type="button" class="btn c_type04">자산취득대장</button>
+                        <button type="button" class="btn c_type04">반송목록</button>
+                        <button type="button" class="btn c_type04">마감연장요청</button>
+                        <button type="button" class="btn c_type04">작성</button>
+                        <button type="button" class="btn c_type04">납품지시대상</button>
+                        <button type="button" class="btn c_type04">일괄품의(계약변경)</button>
+                        <button type="button" class="btn c_type04">구매계획작성</button>
+                        <button type="button" class="btn c_type04">일괄품의</button>
+
+                        <button type="button" class="btn c_type02">저장</button>
+
+                        <button type="button" class="btn c_type01">열람신청</button>
+                         
+                    </xmp>
+
+                    <div class="sub_title_area">
+                        <div class="left">
+                            <h3 class="sub_title">Icon + text button ※ Grid 상단에 사용되는 버튼</h3>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <ul class="list">
+                        <li><button type="button" class="btn sch c_type02">검색</button>
+                        <li>
+                            <button type="button" class="btn excel c_type05">
+                                <i class="icons i_btn_excel"></i> 엑셀다운(기본)
+                            </button>
+                            <button type="button" class="btn excel c_type05">
+                                <i class="icons i_btn_excel"></i> 엑셀다운(옵션)
+                            </button>
+                            <button type="button" class="btn excel c_type05">
+                                <i class="icons i_btn_excel"></i> 자정활동다운
+                            </button>
+                            <button type="button" class="btn excel c_type05">
+                                <i class="icons i_btn_excel"></i> 엑셀다운상세
+                            </button>
+                            <button type="button" class="btn excel c_type05">
+                                <i class="icons i_btn_excel"></i> 엑셀다운
+                            </button>
+                        </li>
+                    </ul>
+                    <xmp>
+                        <button type="button" class="btn sch c_type02">검색</button>
+                        <button type="button" class="btn excel c_type05">
+                            <i class="icons i_btn_excel"></i> 엑셀다운(기본)
+                        </button>
+                    </xmp>
+
+                    <div class="sub_title_area">
+                        <div class="left">
+                            <h3 class="sub_title">Icon Button ※검색영역에 사용되는 버튼</h3>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <ul class="list">
+                        <li><a href="javascript:;" class="btnS search"></a> <p>검색</p></li>
+                        <li><a href="javascript:;" class="btnS closes"></a> <p>삭제</p></li>
+                    </ul>
+                    <xmp>
+                        <a href="javascript:;" class="btnS search"></a>
+                        <a href="javascript:;" class="btnS closes"></a>
+                    </xmp>
+
+                </div>
+            </div>
+            <!-- //container : E -->
+
+            <!-- footer_wrap : S -->
+            <footer class="footer_wrap">
+                <div class="inner">
+                    <div class="footer_top">
+                        <ul class="footer_info">
+                            <li><span>우편번호 : 04539</span></li>
+                            <li><span>서울특별시 중구 을지로65(을지로2가) SK T-타워 SK텔레콤(주)</span></li>
+                            <li><span>대표이사 사장 : 유영상</span></li>
+                        </ul>
+                        <ul class="footer_info">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이메일주소무단수집거부</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_copy">
+                        <p>COPYRIGHT © SK TELECOM. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- //footer_wrap : E -->
+        </div>
+        <!-- //wrap : E -->
+        <script>
+            var mydata = [
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data", data11: "data", data12: "data", data13: "data", data14: "data", data15: "data", data16: "data", data17: "data", data18: "data", data19: "data", data20: "data", data21: "data", data22: "data", data23: "data", data24: "data", data25: "data", data26: "data", data27: "data", data28: "data", data29: "data", data30: "data", },
+                { data1: "data", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data", data11: "data", data12: "data", data13: "data", data14: "data", data15: "data", data16: "data", data17: "data", data18: "data", data19: "data", data20: "data", data21: "data", data22: "data", data23: "data", data24: "data", data25: "data", data26: "data", data27: "data", data28: "data", data29: "data", data30: "data", },
+                { data1: "data", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data", data11: "data", data12: "data", data13: "data", data14: "data", data15: "data", data16: "data", data17: "data", data18: "data", data19: "data", data20: "data", data21: "data", data22: "data", data23: "data", data24: "data", data25: "data", data26: "data", data27: "data", data28: "data", data29: "data", data30: "data", },
+                { data1: "data", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data", data11: "data", data12: "data", data13: "data", data14: "data", data15: "data", data16: "data", data17: "data", data18: "data", data19: "data", data20: "data", data21: "data", data22: "data", data23: "data", data24: "data", data25: "data", data26: "data", data27: "data", data28: "data", data29: "data", data30: "data", },
+                { data1: "data", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data", data11: "data", data12: "data", data13: "data", data14: "data", data15: "data", data16: "data", data17: "data", data18: "data", data19: "data", data20: "data", data21: "data", data22: "data", data23: "data", data24: "data", data25: "data", data26: "data", data27: "data", data28: "data", data29: "data", data30: "data", }
+            ];
+
+            $(document).ready(function () {
+                $("#jqGrid").jqGrid({
+                    datatype: "local",
+                    data: mydata,
+                    autowidth: true,
+                    cellEdit:true,
+                    shrinkToFit:false,
+                    forceFit:true,
+                    pager: '#jqGridPager',
+                    colModel: [
+                        { label: 'data1', name: 'data1', width:100, editable:true },
+                        { label: 'data2', name: 'data2', width:100, editable:true },
+                        { label: 'data3', name: 'data3', width:100, editable:true },
+                        { label: 'data4', name: 'data4', width:100, editable:true },
+                        { label: 'data5', name: 'data5', width:100, editable:true },
+                        { label: 'data6', name: 'data6', width:100, editable:true },
+                        { label: 'data7', name: 'data7', width:100, editable:true },
+                        { label: 'data8', name: 'data8', width:100, editable:true },
+                        { label: 'data9', name: 'data9', width:100, editable:true },
+                        { label: 'data10', name: 'data10', width:100, editable:true },
+                        { label: 'data11', name: 'data11', width:100, editable:true },
+                        { label: 'data12', name: 'data12', width:100, editable:true },
+                        { label: 'data13', name: 'data13', width:100, editable:true },
+                        { label: 'data14', name: 'data14', width:100, editable:true },
+                        { label: 'data15', name: 'data15', width:100, editable:true },
+                        { label: 'data16', name: 'data16', width:100, editable:true },
+                        { label: 'data17', name: 'data17', width:100, editable:true },
+                        { label: 'data18', name: 'data18', width:100, editable:true },
+                        { label: 'data19', name: 'data19', width:100, editable:true },
+                        { label: 'data20', name: 'data20', width:100, editable:true },
+                        { label: 'data21', name: 'data21', width:100, editable:true },
+                        { label: 'data22', name: 'data22', width:100, editable:true },
+                        { label: 'data23', name: 'data23', width:100, editable:true },
+                        { label: 'data24', name: 'data24', width:100, editable:true },
+                        { label: 'data25', name: 'data25', width:100, editable:true },
+                        { label: 'data26', name: 'data26', width:100, editable:true },
+                        { label: 'data27', name: 'data27', width:100, editable:true },
+                        { label: 'data28', name: 'data28', width:100, editable:true },
+                        { label: 'data29', name: 'data29', width:100, editable:true },
+                        { label: 'data30', name: 'data30', width:100, editable:true }
+                    ]
+                });
+
+            });
+
+            $(window).bind('resize', function() {
+                $("#jqGrid").setGridWidth($('.grid_area').width());
+            }).trigger('resize');
+        </script>
+
+        <script>
+            $(document).ready(function(){
+
+            $('#alopex-grid').alopexGrid({
+                width: null,
+                height: function(gridHTMLElement){
+                        return $(gridHTMLElement).parent().height();
+                        },
+                pager: true,
+                paging: {
+                    perPage: 50,
+                    pagerCount: 50,
+                    pagerTotal: true,
+                    pagerSelect: true
+                },
+                height: 500,
+                autoColumnIndex: true,
+                filteringHeader: true,
+                defaultColumnMapping : {
+                    resizing: true,
+                    headerDragDrop: true,
+                },
+                contextMenu : [
+                    {
+                        title: "편집가능" ,
+                        processor: function(data, $cell, grid) {
+                            $(grid.root).alopexGrid('updateOption', {cellInlineEdit:true});
+                        },
+                        use: function(data, $cell, grid) {
+                            return ($(grid.root).alopexGrid('readOption').cellInlineEdit !== true);
+                        }
+                    }, {
+                        title: "편집불가" ,
+                        processor: function(data, $cell, grid) {
+                            $(grid.root).alopexGrid('updateOption', {cellInlineEdit:false});
+                        },
+                        use: function(data, $cell, grid) {
+                            return ($(grid.root).alopexGrid('readOption').cellInlineEdit !== false);
+                        }
+                    }, 	{
+                        title: "셀 선택가능",
+                        processor: function(data, $cell, grid) {
+                            $(grid.root).alopexGrid('updateOption', {cellSelectable:true});
+                        },
+                        use: function(data, $cell, grid) {
+                            return ($(grid.root).alopexGrid('readOption').cellSelectable !== true);
+                        }
+                    }, {
+                        title: "셀 선택불가",
+                        processor: function(data, $cell, grid) {
+                            $(grid.root).alopexGrid('updateOption', {cellSelectable:false});
+                        },
+                        use: function(data, $cell, grid) {
+                            return ($(grid.root).alopexGrid('readOption').cellSelectable !== false);
+                        }
+                    }
+                ],
+                columnMapping : [
+                    {
+                        selectorColumn : true,
+                        width : '30px'
+                    }, {
+                        key : 'name',
+                        title : 'name',
+                        width : '100px'
+                    }, {
+                        key : 'phone',
+                        title : 'phone',
+                        width : '100px'
+                    }, {
+                        key : 'email',
+                        title : 'email',
+                        width : '250px'
+                    }, {
+                        align : 'center',
+                        key : 'birthday',
+                        title : 'birthday',
+                        width : '100px'
+                    }, {
+                        align : 'center',
+                        key : 'zip',
+                        title : 'zip',
+                        width : '100px'
+                    }, {
+                        align : 'right',
+                        key : 'salary',
+                        title : 'salary',
+                        width : '100px'
+                    }, {
+                        key : 'country',
+                        title : 'country',
+                        width : '200px'
+                    }, {
+                        key : 'city',
+                        title : 'city',
+                        width : '150px'
+                    }, {
+                        key : 'company',
+                        title : 'company',
+                        width : '200px'
+                    }, {
+                        key : 'type',
+                        align: 'center',
+                        title : 'type',
+                        width : '50px'
+                    }
+                ],
+                data: data
+            });
+
+            $('#gr').alopexGrid('updateOption',
+                {enableContextMenu:true, enableDefaultContextMenu:true}
+            );
+
+            });
+        </script>
+    </body>
+</html>

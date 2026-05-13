@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <!-- wrap : S -->
+        <div class="wrap">
+            <!-- header_wrap : S -->
+            <header class="header_wrap">
+                <!-- 메인화면에서는 class="main" 추가  -->
+                <div class="header_top">
+                    <div class="inner">
+                        <ul class="header_top_user">
+                            <li>
+                                <span class="user"><i class="icons i_header_user"></i>홍길동님</span>
+                            </li>
+                            <li>
+                                <a href="javascript:;"><i class="icons i_header_logout"></i></a>
+                            </li>
+                        </ul>
+                        <ul class="header_top_menu">
+                            <li>
+                                <button type="button">동반성장센터 사용신청 <i class="icons i_header_apply"></i></button>
+                            </li>
+                            <li>
+                                <button type="button">인증서등록 <i class="icons i_header_registry"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="header_gnb">
+                    <div class="header_gnb_inner">
+                        <div class="align_lt">
+                            <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            <ul class="gnb_menu">
+                                <li>
+                                    <a href="#none">정보관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">기본정보</a></li>
+                                        <li><a href="javascript:;">거래정보</a></li>
+                                        <li><a href="javascript:;">거래약관</a></li>
+                                        <li><a href="javascript:;">지인관계</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약진행</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">입찰공고</a></li>
+                                        <li><a href="javascript:;">견적서제출</a></li>
+                                        <li><a href="javascript:;">계약변경</a></li>
+                                        <li><a href="javascript:;">납품지시</a></li>
+                                        <li><a href="javascript:;">정보요청서 회신제출</a></li>
+                                        <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">전자서명/계약대장</a></li>
+                                        <li><a href="javascript:;">임시계약대장</a></li>
+                                        <li><a href="javascript:;">납품지시관리</a></li>
+                                        <li><a href="javascript:;">검사요청관리</a></li>
+                                        <li><a href="javascript:;">보증보험관리</a></li>
+                                        <li><a href="javascript:;">실적증명발급</a></li>
+                                        <li><a href="javascript:;">하도급관리</a></li>
+                                        <li><a href="javascript:;">입고예정관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">대금정산</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">대금지급현황</a></li>
+                                        <li><a href="javascript:;">유보금현황</a></li>
+                                        <li><a href="javascript:;">바코드입고정보현황</a></li>
+                                        <li><a href="javascript:;">IT자산입고</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">기타</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">방문신청 및 시설예약</a></li>
+                                        <li><a href="javascript:;">검색시스템 표시정보</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site_map">
+                            <button type="button" class="sitemapBtn sitemap_event"><i class="icons i_header_sitemap"></i></button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="siteMapArea">
+                    <nav class="header_gnb">
+                        <div class="header_gnb_inner">
+                            <div class="align_lt">
+                                <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            </div>
+                            <a href="javascript:;" class="siteMapClosebtn"></a>
+                        </div>
+                    </nav>
+                    <div class="siteMap_inner">
+                        <ul class="menuArea">
+                            <li><h3>정보관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">기본정보</a></li>
+                                    <li><a href="javascript:;">거래정보</a></li>
+                                    <li><a href="javascript:;">거래약관</a></li>
+                                    <li><a href="javascript:;">지인관계</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약진행</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">입찰공고</a></li>
+                                    <li><a href="javascript:;">견적서제출</a></li>
+                                    <li><a href="javascript:;">계약변경</a></li>
+                                    <li><a href="javascript:;">납품지시</a></li>
+                                    <li><a href="javascript:;">정보요청서 회신제출</a></li>
+                                    <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">전자서명/계약대장</a></li>
+                                    <li><a href="javascript:;">임시계약대장</a></li>
+                                    <li><a href="javascript:;">납품지시관리</a></li>
+                                    <li><a href="javascript:;">검사요청관리</a></li>
+                                    <li><a href="javascript:;">보증보험관리</a></li>
+                                    <li><a href="javascript:;">실적증명발급</a></li>
+                                    <li><a href="javascript:;">하도급관리</a></li>
+                                    <li><a href="javascript:;">입고예정관리</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>대금정산</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">대금지급현황</a></li>
+                                    <li><a href="javascript:;">유보금현황</a></li>
+                                    <li><a href="javascript:;">바코드입고정보현황</a></li>
+                                    <li><a href="javascript:;">IT자산입고</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>기타</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">방문신청 및 시설예약</a></li>
+                                    <li><a href="javascript:;">검색시스템 표시정보</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <!-- //header_wrap : E -->
+
+            <!-- container : S -->
+            <div class="container">
+                <div class="contents">
+                    <div class="title_area">
+                        <div class="left">
+                            <h2 class="title">협력사 ESG 행동규범 준수 서약</h2>
+                            <ul class="location_area">
+                                <li>
+                                    <a href="javascript:;" class="home"><i class="icons i_location_home"></i></a>
+                                </li>
+                                <li><a href="javascript:;">정보관리</a></li>
+                                <li><strong>거래약관</strong></li>
+                            </ul>
+                        </div>
+                        <div class="right">
+                            
+                        </div>
+                    </div>
+                    <div class="esg_agree_area">
+                        <p class="esg_agree_msg">
+                            <strong>[당사/본인]</strong>은 SK텔레콤㈜와 거래를 함에 있어 SK텔레콤㈜의 ESG 행동규범 실천에 적극 협조하고, 공정하고 투명한 거래문화를 정착시키기 위하여 아래의 사항에 동의하고 이에 기명 날인한다.
+                        </p>
+                        <div class="esg_agree_inner">
+                            <h3 class="esg_agree_title">1. 환경경영</h3>
+                            <p class="esg_agree_desc">
+                                SK텔레콤㈜와 거래와 관련하여 환경보호에 대한 책임을 인식하고 친환경 기술의 개발과 확산을 촉진해야 하며 기후변화에 따른 생물다양성 보호와 산림훼손 방지를 위해 노력해야 한다. 또한, 기업운영으로 발생되는 환경오염과 관련하여, 폐기물, 재활용, 산업용수 관리와 재사용, 온실가스 및 대기배출 물질 관리 등 환경관련 법률 및 규정을 준수해야 한다.
+                            </p>
+                            <ol class="esg_agree_list">
+                                <li>
+                                    <span class="esg_agree_numb">1-1</span>
+                                    <h4 class="esg_agree_stitle">[환경경영 목표수립]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        환경경영의 핵심영역인 폐기물 관리, 토양·소음·악취, 친환경 제품, 유해물질 관리, 원부자재, 온실가스 배출, 에너지 소비, 물관리, 대기오염 물질에 대한 내부 관리목표를 수립하고, 환경경영 추진을 위한 담당 조직 체계를 보유하고 있어야 하며, 필요할 경우 전 사업장에 요구되는 환경 관련 인증 및 인허가를 취득하여야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">1-2</span>
+                                    <h4 class="esg_agree_stitle">[친환경 제품/서비스]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        친환경 기술의 개발과 확산을 통하여 친환경 제품 및 서비스를 확대해 나가고, 친환경 제품 및 서비스 인증을 취득하기 위해 노력하여야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">1-3</span>
+                                    <h4 class="esg_agree_stitle">[기후변화 대응]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        전사 및 사업장 단위로 에너지 소비 유형별로 사용량을 측정하고, 온실가스 배출량도 유형별로 측정하고 파악해야 한다. 또한, 에너지 사용 효율화 시스템을 도입하고, 온실가스 배출을 저감할 수 있는 체계를 도입하여야 한다. 또한, 신재생 에너지법에 따른 재생에너지 사용량을 측정하여야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">1-4</span>
+                                    <h4 class="esg_agree_stitle">[오염 방지 및 폐기물]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        공정상 배출되는 폐기물 배출량을 체계적으로 측정, 절감 및 폐기/재활용하고, 폐기물 배출량 절감을 위한 시스템을 도입하고 이후 재활용을 증진하기 위한 활동을 실시해야 한다. 또한, 유해물질의 전 과정에 대한 안전성 관리기준을 수립하고, 취급 단계별로 자체 및 제3자 점검을 실시해야 한다. 또한, 제품에 함유된 유해물질에 대한 모니터링을 실시하고, 공정상 배출되는 유해물질을 측정하여야 한다. 또한, 대기오염물질 배출량을 측정하고 필요시 전체 사업장에 대해 대기오염물질 배출량을 저감하기 위한 설비를 도입해야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">1-5</span>
+                                    <h4 class="esg_agree_stitle">[자연자본]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        소음/토양오염/악취/생물다양성 등 사업장 인근 지역 생태계의 부정적인 영향을 파악 및 모니터링 관리하고, 원자재 사용량 절감을 위한 시스템을 도입하고, 재활용 원자재 사용량을 측정하여야 한다. 또한, 물관리를 위해 용수 사용량 절감, 폐수 방출/폐기시 수질오염물질 처리를 위한 시스템을 도입하여야 한다. 그리고, 필요시 용수 단계별 취수량, 재활용량, 방류량을 측정해야 한다.
+                                    </p>
+                                </li>
+                            </ol>
+    
+                            <h3 class="esg_agree_title">2. 보건/안전경영</h3>
+                            <p class="esg_agree_desc">
+                                SK텔레콤㈜와 거래와 관련하여 업무상 이루어지는 모든 활동에서 근로자(중대재해처벌법에 따른 ‘종사자’를 의미하며, 이하 [보건/안전경영] 규정에서 동일하게 적용함)의 안전보건을 보장하는 활동이 필수적이라는 점을 인식해야 한다. 또한, 중대재해처벌법 등 관련 법률 및 규정에 따라 안전하고 건강한 사업장을 구축하고 유지하기 위해 노력해야 한다.
+                            </p>
+                            <ol class="esg_agree_list">
+                                <li>
+                                    <span class="esg_agree_numb">2-1</span>
+                                    <h4 class="esg_agree_stitle">[산업안전]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        근로자가 잠재적 안전 위험요인(예: 감전, 화재, 차량, 추락위험 등)에 노출되는 것을 통제하기 위해 적절한 행정적 통제, 예방적 차원의 유지관리와 동시에 지속적인 안전교육을 실시해야 한다. 상기 명시된 수단으로 위험요인을 충분히 통제할 수 없는 경우에는 근로자에게 적절한 개인 보호장비를 제공해야 한다. 근로자는 안전문제 관련 우려사항을 경영진에게 자유롭게 제기할 수 있어야 한다. 또한, 잠재적으로 발생 가능한 비상상태와 사고를 사전에 파악하고 평가해야 한다. 비상사태 발생 시 보고, 근로자 공지 및 대피절차 등을 마련하고, 비상사태 예방을 위한 근로자 대상 비상대피훈련, 탈출시설, 화재감지 및 소화장비 확보 등을 통하여 비상사태로 인한 피해를 최소화해야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">2-2</span>
+                                    <h4 class="esg_agree_stitle">[산업재해 및 질병]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        근로자가 오랜 시간 반복적으로 수작업을 해야 하거나, 무거운 것을 들거나 서있는 작업, 그리고 체력소모가 많은 조립업무를 포함하여 근로자가 육체적으로 힘든 작업에 노출되는 것을 파악하고, 평가하며, 통제해야 한다. 또한, 근로자를 대상으로 적절한 안전보건 교육을 실시해야 하며, 교육은 근로자가 주로 사용하는 언어로 이루어져야 한다. 사업장 내 안전보건 관련 정보는 눈에 잘 띄는 곳에 게시되어야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">2-3</span>
+                                    <h4 class="esg_agree_stitle">[위생, 식품 및 주거]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        위생시설(화장실, 식수, 위생적인 식품 조리 및 보관 시설, 식당 시설 등)에 대한 위생을 주기적으로 관리하고, 기숙사 운영 시 청결 및 비상 출구, 난방/환기 장치, 개인공간 확보 등 안전관리체계를 구축해야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">2-4</span>
+                                    <h4 class="esg_agree_stitle">[보건/안전 커뮤니케이션]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        사업장에 근무하는 모든 근로자들을 대상으로 보건/안전 관련 산업안전교육을 주기적으로 실시함으로써 근로자의 안전보건의식을 고취시켜야 한다.
+                                    </p>
+                                </li>
+                            </ol>
+    
+                            <h3 class="esg_agree_title">3. 노동/인권경영</h3>
+                            <p class="esg_agree_desc">
+                                기업운영 과정에서 국제사회에서 통용되는 수준으로 내부 구성원의 인권을 보호하고 이들의 존엄성을 보장해야 한다. 내부 구성원은 임시근로자, 이주근로자, 실습생, 파견근로자 등 모든 형태의 근로자를 포함한다.
+                            </p>
+                            <ol class="esg_agree_list">
+                                <li>
+                                    <span class="esg_agree_numb">3-1</span>
+                                    <h4 class="esg_agree_stitle">[강제노동 금지]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        강제근로자, 인신구속 계약(채무변제를 위한 속박 포함)에 따른 근로자, 비자발적 죄수근로자, 인신매매 근로자를 고용해서는 안된다. 여기에는 노동력 착취를 목적으로 협박, 강요, 강제, 납치, 사기 등으로 사회적 약자를 이동, 채용, 전근시키는 등의 모든 행위가 포함된다. 근로자에게 고용조건으로 정부가 발행한 신분증, 여권 또는 근로허가증의 양도를 요구해서는 안된다. 협력회사 또는 인력 파견회사는 근로자에게 수수료(예: 취업알선 등) 또는 보증금을 요구해서는 안된다. 또한, 반드시 근로자가 이해할 수 있는 언어로 근로조건을 문서화하고 전달해야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">3-2</span>
+                                    <h4 class="esg_agree_stitle">[아동노동 금지]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        아동노동은 엄격하게 금지된다. "아동"은 15세, 의무교육이 끝나는 연령, 관련 법령에 따른 법정 고용 최저연령 중 가장 높은 연령 미만의 사람을 의미한다. 아동 근로자가 발견된 경우, 즉각적인 대응조치를 취해야 한다. 즉시 아동 근로자 고용을 중지하고 고용과정에서 근로자들의 연령 검증 프로세스를 개선해야 한다. 실습생 프로그램 등을 운용할 경우 관련 법률 및 규정을 준수해야 한다. 법정 고용 최저연령보다 높은 청소년 근로자를 고용할 수 있으나, 18세 미만의 근로자들은 안전보건 측면에서 위험한 업무 (잔업, 야간근무 포함)을 수행해서는 안된다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">3-3</span>
+                                    <h4 class="esg_agree_stitle">[근로시간 준수]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        주당 근로시간은 법으로 규정한 최대 근무시간을 초과해서는 안된다. 나아가, 비상사태 또는 특수상황을 제외하고 주당 근로시간은 연장 근로시간을 포함하여 근로기준법에서 제시하는 근로시간을 넘어서는 안된다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">3-4</span>
+                                    <h4 class="esg_agree_stitle">[임금/복리후생]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        근로자에게 지급되는 임금은 최저임금, 초과근로수당, 법으로 정해진 4대보험 및 복리후생 항목 등을 포함해야 하며 관련 법률 및 규정을 모두 준수해야 한다. 모든 초과근로는 근로자의 동의 하에 자발적으로 이루어져야 하며, 관련 법률 및 규정에 따라 정규 근로시간에 적용되는 시간당 급여보다 높은 초과근로 수당을 지급해야 한다. 징계조치의 수단으로 임금 삭감은 허용되지 않으며, 근로자의 임금 지급기준 및 항목은 급여명세서 또는 급여지급 내역이 기록된 서면, 사내 인트라넷 등을 통해 근로자가 이해할 수 있는 언어로 제공되어야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">3-5</span>
+                                    <h4 class="esg_agree_stitle">[인도적 대우]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        근로자에 대한 성희롱, 성적학대, 체벌, 정신적 또는 신체적 강압, 욕설을 포함한 거칠고 비인도적인 대우가 있어서는 안되며, 또한 그러한 대우를 하겠다는 위협이 있어서도 안된다. 또한, 근로자에 대한 인도적 대우를 보장하는 방침과 절차를 규정하고 근로자에게 이를 충분히 설명해야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">3-6</span>
+                                    <h4 class="esg_agree_stitle">[차별/괴롭힘 금지]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        근로자가 괴롭힘이나 불법적인 차별을 받지 않도록 조치해야 한다. 채용과정과 임금, 승진, 보상, 교육기회 등의 고용 관행에 있어 인종, 피부색, 나이, 성별, 성적 성향, 민족성, 장애, 임신, 종교, 정치 성향, 조합원 신분, 결혼 여부 등에 근거해 차별을 두어서는 안된다. 관련 법률 또는 사업장 안전을 위해 요구되는 예외의 경우를 제외하고, 근로자 또는 채용 후보자에게 차별의 근거로 사용될 수 있는 의료검사를 요구할 수 없다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">3-7</span>
+                                    <h4 class="esg_agree_stitle">[결사의 자유]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        관련 법규에 따라, 근로자가 사원협의회 또는 노동조합을 조직 가입하고, 단체협약과 평화적 집회를 위해 다른 근로자와 자유롭게 결사할 권리를 존중해야 하며, 근로자가 이와 같은 활동에 참여하지 않을 권리도 존중해야 한다. 또한 근로자 및 근로자 대표가 차별대우, 보복조치, 위협행위, 괴롭힘 등에 대한 걱정 없이 근로조건과 경영방침에 대한 의견 및 애로사항을 회사와 자유롭게 소통하고 의견을 나눌 수 있어야 한다.
+                                    </p>
+                                </li>
+                            </ol>
+    
+                            <h3 class="esg_agree_title">4. 윤리경영</h3>
+                            <p class="esg_agree_desc">
+                                SK텔레콤㈜와 거래와 관련하여 가장 높은 수준의 윤리기준을 유지하며, 관련 법률 및 규정을 준수해야 한다.
+                            </p>
+                            <ol class="esg_agree_list">
+                                <li>
+                                    <span class="esg_agree_numb">4-1</span>
+                                    <h4 class="esg_agree_stitle">[사업 청렴성]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        SK텔레콤㈜와의 거래와 관련하여 거래의 성립, 유리한 거래 조건의 설정 등 거래에 영향을 미칠 목적으로 SK텔레콤㈜ 임직원에게 어떠한 금품 접대 편의도 직접 또는 제3자를 통하여 제공하지 않는다. 또한, SK텔레콤㈜의 임직원이 거래와 관련하여 금품, 접대, 편의 등의 제공을 요청하는 경우에는 지체없이 SK텔레콤㈜의 윤리상담센터(https://ethics.sk.co.kr, Fax: 02-2121-1959)에 신고한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">4-2</span>
+                                    <h4 class="esg_agree_stitle">[공정거래]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        SK텔레콤㈜와의 거래에서 다른 사업자와 담합행위 등 불공정 거래행위를 하지 않는다. 또한, 과장광고, 거짓광고, 담합 등 공정거래 법규 위반 금지 관련 내부 규정을 보유 시행한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">4-3</span>
+                                    <h4 class="esg_agree_stitle">[개인정보 보호]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        SK텔레콤㈜와의 거래관계에서 알게 된 SK텔레콤㈜의 가입자 정보 등을 포함한 경영정보를 사전승인 없이 다른 사업자와의 거래에 이용하거나 제3자에게 유출하지 않는다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">4-4</span>
+                                    <h4 class="esg_agree_stitle">[정보공개]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        회사의 회계/재무 현황 및 ESG 성과, 사업활동, 환경 관리 실태 등에 대한 정보는 해당 법규 및 일반적인 산업계 관행에 따라 공개되어야 한다. 공급망 내 관련 분야 실태 및 관행에 대한 기록위조나 부실 표기는 용인되지 아니한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">4-5</span>
+                                    <h4 class="esg_agree_stitle">[지적재산 보호]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        지적재산권은 존중되어야 한다. 기술 및 노하우의 이전은 지적재산권을 보호하는 방식으로 이루어져야 한다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">4-6</span>
+                                    <h4 class="esg_agree_stitle">[내부고발자 보호]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        구성원이 비윤리 행위를 신고할 수 있는 채널을 보유하고, 내부 고발자 보호 및 보복을 금지하는 규정을 보유 시행해야 한다. SK텔레콤㈜는 관련 사안 발생시 내부고발 사실을 비밀로 유지하며, 내부고발에 대한 보복행위가 적발될 경우 엄정한 조치를 취할 것이며, 또한 제기된 문제사항에 대해 공정하게 규명하고, 해결방안을 강구할 것입니다.
+                                    </p>
+                                </li>
+                                <li>
+                                    <span class="esg_agree_numb">4-7</span>
+                                    <h4 class="esg_agree_stitle">[책임 있는 광물 조달]</h4>
+                                    <p class="esg_agree_sdesc">
+                                        인류와 지구의 지속가능한 미래를 위해 분쟁광물 및 책임광물에 대한 내부 관리기준을 수립하고, 기업의 책임을 다하기 위하여 노력해야 한다.
+                                    </p>
+                                </li>
+                            </ol>
+    
+                            <h3 class="esg_agree_title">5. ESG 진단 및 개선</h3>
+                            <p class="esg_agree_desc">
+                                서약자의 ESG 행동규범 준수 수준 확인을 위하여 SK텔레콤㈜는 ESG 정기 진단을 실시하며, 행동규범 준수 인증을 위하여 현장방문 검증을 진행할 수 있다. 검증 과정에서 서약자는 SK텔레콤이 요청하는 관련 자료의 제출 등 모든 협조 의무를 준수해야 한다. 또한, 현장방문 검증을 통해 서약자의 ESG 개선 필요사항이 발견될 경우에 소정의 기간 내에 시정조치 및 개선계획 제출하고 시정조치 개선을 위하여 최선을 다하여야 한다.
+                            </p>
+
+                            <div class="esg_agree_box">
+                                <p class="esg_agree_msg">
+                                    <strong>[당사/본인]</strong>은 본 ESG 행동규범 준수 서약을 위반한 경우 SK텔레콤㈜이 그 위반 정도 및 내부기준에 따라 취하는 <br>
+                                    거래 물량 제한, 계약해지 등의 책임을 부담하는 것에 동의한다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="esg_agree_tbl">
+                        <table class="appraisal_sign_table">
+                            <colgroup>
+                                <col style="width:30px">
+                                <col style="width:100px">
+                                <col style="width:350px">
+                                <col style="width:100px">
+                                <col>
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th></th>
+                                    <th>법인명</th>
+                                    <td>주식회사 뮤플러스</td>
+                                    <th>대표이사</th>
+                                    <td>조은영      ( 인 )</td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th>사업자등록번호</th>
+                                    <td colspan="3">1048652672</td>
+                                </tr>
+                                <tr>
+                                    <th></th>
+                                    <th>주소</th>
+                                    <td colspan="3">서울 중구 퇴계로27길 49 (저동2가, 센트럴에쓰) 3층</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <span>SK 텔레콤㈜ 귀하</span>
+                    </div>
+
+                    <ul class="esg_agree_check">
+                        <li>
+                            <span>동의여부 :</span>
+                            <strong>동의</strong>
+                        </li>
+                        <li>
+                            <span>동의 일자 :</span>
+                            <strong>2023.01.01</strong>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <!-- //container : E -->
+
+            <!-- footer_wrap : S -->
+            <footer class="footer_wrap">
+                <div class="inner">
+                    <div class="footer_top">
+                        <ul class="footer_info">
+                            <li><span>우편번호 : 04539</span></li>
+                            <li><span>서울특별시 중구 을지로65(을지로2가) SK T-타워 SK텔레콤(주)</span></li>
+                            <li><span>대표이사 사장 : 유영상</span></li>
+                        </ul>
+                        <ul class="footer_info">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이메일주소무단수집거부</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_copy">
+                        <p>COPYRIGHT © SK TELECOM. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- //footer_wrap : E -->
+        </div>
+        <!-- //wrap : E -->
+        
+    </body>
+</html>

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+
+        <style>
+            @import url("../../resource/font/Pretendard/font.css");
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0 none;
+                color: inherit;
+                line-height: inherit;
+                list-style-type: none;
+            }
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body,
+            div,
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            ul,
+            ol,
+            li,
+            dl,
+            dt,
+            dd,
+            table,
+            th,
+            td,
+            form,
+            fieldset,
+            legend,
+            input,
+            textarea,
+            a,
+            button,
+            select {
+                margin: 0;
+                padding: 0;
+                font-style: normal;
+            }
+            article,
+            aside,
+            canvas,
+            details,
+            figcaption,
+            figure,
+            footer,
+            header,
+            hgroup,
+            menu,
+            nav,
+            section,
+            summary {
+                display: block;
+            }
+            audio,
+            canvas,
+            video {
+                display: inline-block;
+            }
+            hr {
+                visibility: hidden;
+                position: absolute;
+                overflow: hidden;
+                width: 0;
+                height: 0;
+                font-size: 0;
+                line-height: 0;
+            }
+            label {
+                text-shadow: none !important;
+            }
+            caption,
+            legend,
+            .blind {
+                visibility: hidden;
+                position: absolute;
+                top: 0;
+                left: -999em;
+                overflow: hidden;
+                width: 0;
+                height: 0;
+                font-size: 0;
+                text-align: left;
+                line-height: 0;
+            }
+            caption {
+                position: static;
+                color: #6a6c6b;
+                font-size: 0px;
+                line-height: 0;
+            }
+            table {
+                border-spacing: 0;
+                border-collapse: collapse;
+                line-height: 1.5em;
+            }
+            em,
+            address {
+                font-style: normal;
+            }
+            ul,
+            ol,
+            li {
+                list-style-type: none;
+            }
+            input,
+            select,
+            textarea,
+            button {
+                font-size: 12px;
+                font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", "돋움", dotum, sans-serif;
+                outline: none;
+                vertical-align: middle;
+            }
+            input[type="text"]:focus,
+            select:focus,
+            textarea:focus,
+            button:focus{
+                outline: none; box-shadow: none;
+            }
+            button {
+                cursor: pointer;
+            }
+            body { -webkit-text-size-adjust: none;font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", "돋움", dotum, sans-serif; word-break: keep-all;word-wrap: break-word; overflow-y: scroll; }
+            body * { box-sizing: border-box; }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            a {
+                color: #333;
+                text-decoration: none;
+            }
+            a:active,
+            a:hover {
+                text-decoration: none;
+            }
+            input[type="text"]:disabled {
+                font-weight: bold;
+                background-color: #f5f5f5;
+            }
+            select:disabled {
+                background-color: #ddd;
+            }
+
+
+            .t_left { text-align: left !important; }
+            .t_center { text-align: center !important; }
+            .t_right { text-align: right !important; }
+
+            .wrap { padding: 20px; }
+
+
+            .cer_tit_area { display: inline-flex; justify-content: center; align-items: center; position: relative; width: 100%; text-align: center; }
+            .cer_tit_area .tit { display: inline-block; color: #222; font-size: 28px; font-weight: 700; line-height: 33px; }
+            .cer_tit_area .desc { position: absolute; top: 50%; margin-left: 8px; transform: translateY(-50%); display: inline-block; color: #666; font-size: 16px; font-weight: 400; line-height: 19px; }
+
+            .guid_area { padding: 18px 22px; background-color: #F4F3F7; border-radius: 10px; }
+            .guid_area .txt { position: relative; padding-left: 12px; color: #222; font-size: 18px; font-weight: 400; line-height: 22px; }
+            .guid_area .txt::before { content: ''; position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 6px; height: 6px; background-color: #FF404E; border-radius: 2px; }
+            .guid_area .txt strong { color: #FF404E; font-weight: 600; text-decoration: underline; }
+            .guid_area .txt span { font-weight: 600; }
+            .guid_area + .cer_tit_area { margin-top: 40px; }
+
+
+            .result_passed { color: #1FB338; font-weight: 700; }
+            .result_failed { color: #EF647D; font-weight: 700; }
+
+
+            .tbl_list { table-layout: fixed; border-left-style: hidden; width: 100%; border-top: 2px solid #201267; }
+            .tbl_list.fz13 thead tr th,
+            .tbl_list.fz13 tbody tr td { font-size: 13px; }
+            .tbl_list thead tr th { height: 38px; padding: 5px; background-color: #e8e8e8; color: #444; font-size: 13px; font-weight: 400; border-bottom: 1px solid #D8D8D8; border-left: 1px solid #D8D8D8; text-align: center; }
+            .tbl_list thead tr:nth-child(2) th { background-color: #F6F6F6; border-bottom: none; }
+            .tbl_list thead:has(+ tbody tr:nth-child(2) td.ty02) tr:nth-child(2) th { border-color: #eaeaea; border-bottom: 1px solid #eaeaea; }
+            .tbl_list tbody tr th { padding: 5px 8px; color: #444; font-size: 13px; font-weight: 400; background-color: #F6F6F6; border-left: 1px solid #DEDEDE; border-bottom: 1px solid #DEDEDE; text-align: left; line-height: 15px; }
+            .tbl_list tbody tr td { height: 42px; text-align: center; padding: 5px 8px;  font-size: 14px; border-left: 1px solid #DEDEDE; color: #222; font-weight: 400; line-height: 15px; border-bottom: 1px solid #DEDEDE; } 
+            .tbl_list tbody tr td.ty02 { padding: 5px 13px; background-color: #f6f6f6; }
+            .tbl_list tbody tr td strong { font-size: 18px; font-weight: 700; }
+            .tbl_list tbody tr td .desc { display: inline-block; margin-left: 2px; color: #666; font-weight: 400; }
+            .tbl_list tbody tr th.bd_btm,
+            .tbl_list tbody tr td.bd_btm { border-bottom-color: #7D75A3; }
+            .tbl_list tfoot tr th,
+            .tbl_list tfoot tr td { background-color: #F5F3FC; color: #212B5D; font-weight: 600; border-bottom: 1px solid #7D75A3; }
+            .tbl_list tfoot tr th,
+            .tbl_list tfoot tr td { height: 42px; text-align: center; padding: 5px 8px;  font-size: 14px; border-left: 1px solid #EAEAEA; }
+
+            .tbl_list:not(.ty03) tbody td:has(textarea.form_control) { padding: 12px 8px; }
+            .table:has(+ .tbl_fade_wrap) tbody tr:last-child td,
+            .tbl_list tbody tr:last-child th,
+            .tbl_list tbody tr:last-child td { border-bottom-color: #7D75A3; }
+            .tbl_fade_wrap table:has(+ table) tbody tr:last-child td,
+            .tbl_list:has(tfoot) tbody tr:last-child td { border-bottom-color: #DEDEDE; }
+
+            .tbl_list.ty02 thead tr th,
+            .tbl_list.ty02 tbody tr td { height: 42px; }
+            .tbl_list.ty02 thead tr th { border-bottom: 1px solid #d8d8d8; }
+
+            .tbl_caption { color: #888; font-size: 14px; font-weight: 400; }
+
+
+            /* 2025-09-19 수정 */
+            /* supply_tbl */
+            .supply_tbl_wrap { display: flex; align-items: flex-start; gap: 10px; margin-top: 14px; }
+            .supply_tbl { table-layout: fixed; width: 100%; border-top: 2px solid #201267; border-bottom: 1px solid #7D75A3; }
+            .supply_tbl tbody tr th.category { background-color: #E8E8E8; writing-mode: vertical-rl; border-right-color: #D8D8D8; }
+            .supply_tbl tbody tr th { background-color: #F6F6F6; color: #444; font-size: 13px; font-weight: 400; }
+            .supply_tbl tbody tr th,
+            .supply_tbl tbody tr td { height: 36px; padding: 5px 8px; border-bottom: 1px solid #DEDEDE; border-right: 1px solid #DEDEDE; line-height: 16px; }
+            .supply_tbl tbody tr td { color: #222; font-size: 13px; font-weight: 400; }
+            .supply_tbl tbody tr th.category,
+            .supply_tbl tbody tr:last-child th,
+            .supply_tbl tbody tr:last-child td { border-bottom-color: #7D75A3; }
+            .supply_tbl tbody tr.check td { height: 46px; }
+            .supply_tbl tbody tr.sign td { height: 56px; }
+
+            .supply_tbl tbody tr.sign td { color: #666; font-size: 17px; font-weight: 400; }
+            .supply_tbl tbody tr.sign td strong { color: #222; font-weight: 600; }
+
+            .supply_tbl tbody tr.address th,
+            .supply_tbl tbody tr.address td { height: 88px; }
+            /* // 2025-09-19 수정 */
+
+
+            .sub_tit_area { display: flex; justify-content: space-between; align-items: center; margin: 40px 0 12px; }
+            .sub_tit_area .tit { position: relative; padding-left: 14px; color: #222; font-size: 19px; font-weight: 700; line-height: 23px; }
+            .sub_tit_area .tit::before { content: ''; position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 6px; height: 20px; background-color: #3617CE; }
+            .sub_tit_area:has(h3.tit) { margin: 24px 0 12px; }
+            .sub_tit_area .left { display: flex; align-items: center; gap: 4px; position: relative; }
+
+
+            .btn { min-width: 80px; display: inline-flex; align-items: center; gap: 4px; height: 42px; padding: 0 14px; background-color: rgba(86, 93, 161, 0.07); border: 1px solid #565DA1; border-radius: 8px; color: #565DA1; font-size: 16px; font-weight: 500; transition: all .1s; }
+            .btn:hover { background-color: #DDDFEC; }
+            .ico { display: inline-block; width: 22px; height: 22px; }
+            .ico.print { background: url(../../resource/images/renewal/ico_print.svg) no-repeat center; }
+            .cer_tit_area .btn { position: absolute; right: 0; }
+
+            
+            .contract_info_area { margin-top: 40px; padding: 14px 10px; border-top: 1px solid #A7A7A7; border-bottom: 1px solid #A7A7A7; }
+            .contract_info_area .info_list li { display: flex; align-items: center; }
+            .contract_info_area .info_list li + li { margin-top: 6px; }
+            .contract_info_area .info_list li .tit { width: 57px; display: inline-block; color: #444; font-size: 14px; font-weight: 400; line-height: 17px; }
+            .contract_info_area .info_list li .text { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; position: relative; width: calc(100% - 57px); padding-left: 8px; color: #222; font-size: 14px; font-weight: 600; line-height: 17px; }
+            .contract_info_area .info_list li .text::before { content: ''; position: absolute; top: 2.5px; bottom: 2.5px; left: 0; width: 1px; background-color: #D4D4D4; }
+
+
+            .contract_confirm_area { margin-top: 24px; padding: 27px; background-color: #F6F6F6; border-radius: 10px; text-align: center; }
+            .contract_confirm_area p,
+            .contract_confirm_area span { color: #222; font-size: 18px; font-weight: 500; line-height: 24px; }
+            .contract_confirm_area span { display: inline-block; margin-top: 30px; }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="cer_tit_area">
+                <h2 class="tit">최종인수 확인서</h2>
+                <button type="button" class="btn"><i class="ico print"></i>인쇄</button>
+            </div>
+
+            <div class="contract_info_area">
+                <ul class="info_list">
+                    <li>
+                        <span class="tit">계약번호</span>
+                        <span class="text">4160080118</span>
+                    </li>
+                    <li>
+                        <span class="tit">계약일자</span>
+                        <span class="text">2025-07-21</span>
+                    </li>
+                    <li>
+                        <span class="tit">계약건명</span>
+                        <span class="text">23년_RNRCOR_[ADD QRNG] 레퍼런스 셋업용 광학부품(Pigtailed LD 등)_라이트 솔루션</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="sub_tit_area">
+                <div class="left">
+                    <h3 class="tit">아이템내역</h3>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <table class="tbl_list ty02">
+                <colgroup>
+                    <col style="width: 45px;">
+                    <col style="width: 160px;">
+                    <col>
+                    <col>
+                    <col>
+                    <col>
+                    <col style="width: 160px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th rowspan="2">NO</th>
+                        <th rowspan="2">아이템코드</th>
+                        <th colspan="4">청구금액</th>
+                        <th rowspan="2">공정율</th>
+                    </tr>
+                    <tr>
+                        <th>수량</th>
+                        <th>단위</th>
+                        <th>단가</th>
+                        <th>금액</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2" class="bd_btm">1</td>
+                        <td rowspan="2" class="bd_btm">30000028416</td>
+                        <td colspan="4">특수품목</td>
+                        <td rowspan="2" class="bd_btm"></td>
+                    </tr>
+                    <tr>
+                        <td>EA</td>
+                        <td>10</td>
+                        <td  class="t_right">999,999,999원</td>
+                        <td  class="t_right">999,999,999원</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="contract_confirm_area">
+                <p>SK텔레콤주식회사와 공급자가 체결한 상기 계약건과 관련하여 SK텔레콤주식회사는<br>상기 아이템이 최종인수 되었음을 확인합니다.</p>
+                <span class="date">2025년 07월 21일</span>
+            </div>
+
+            <div class="supply_tbl_wrap">
+                <div class="left">
+                    <table class="supply_tbl">
+                        <colgroup>
+                            <col style="width: 33px;">
+                            <col style="width: 106px;">
+                            <col>
+                            <col style="width: 106px;">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th rowspan="6" class="category">공급자</th>
+                                <th>상호</th>
+                                <td colspan="3">라이트솔루션 / 214-86-18758</td>
+                            </tr>
+                            <tr class="address">
+                                <th>주소</th>
+                                <td colspan="3">대전 유성구 온천로 59 (봉명동, 동아벤처타워) 18층 1821호</td>
+                            </tr>
+                            <tr>
+                                <th>대표자</th>
+                                <td colspan="3">임승억</td>
+                            </tr>
+                            <tr>
+                                <th>사업장소재지</th>
+                                <td colspan="3">임승억</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="right">
+                    <table class="supply_tbl"> <!-- 2025-09-19 수정 -->
+                        <colgroup>
+                            <col style="width: 33px;">
+                            <col style="width: 106px;">
+                            <col style="width: 100px;">
+                            <col style="width: 106px;">
+                            <col style="width: 100px;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th rowspan="6"  class="category">구매자 | 확인 | 수령자</th>
+                                <th>상호</th>
+                                <td colspan="3">SK텔레콤주식회사 / 214-86-18758</td>
+                            </tr>
+                            <tr class="address">
+                                <th>주소</th>
+                                <td colspan="3">서울특별시 중구 을지로65(을지로2가) SK T-타워</td>
+                            </tr>
+                            <tr>
+                                <th>대표자</th>
+                                <td colspan="3">유영상</td>
+                            </tr>
+                            <tr>
+                                <th>담당</th>
+                                <td colspan="3">Quantum Tech팀 박준범</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

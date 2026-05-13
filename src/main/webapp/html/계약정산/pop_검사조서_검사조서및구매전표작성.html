@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui_theme.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_ui.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">검사조서 및 구매전표작성(검사요청접수)</h2>
+                    </div>
+                    <div class="right">
+                        <ul class="pop_progress">
+                            <li class="off"><a href="javascript:;">구매요청</a></li>
+                            <li class="off"><a href="javascript:;">계약진행</a></li>
+                            <li class="off"><a href="javascript:;">계약완료</a></li>
+                            <li class="off"><a href="javascript:;">계약변경</a></li>
+                            <li class="off"><a href="javascript:;">납품지시</a></li>
+                            <li class="on"><a href="javascript:;">검사조서</a></li>
+                            <li><a href="javascript:;">구매전표</a></li>
+                            <li><a href="javascript:;">대금지급</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_sub_area">
+                    <div class="left">
+    
+                    </div>
+                    <div class="right">
+
+                        <button type="button" class="btn pop c_type06">목적물수령서</button>
+                        <button type="button" class="btn pop c_type06">업체반송</button>
+                        <button type="button" class="btn pop c_type06">결재전송</button>
+                        <button type="button" class="btn pop c_type06">운영예산확인</button>
+                        <button type="button" class="btn pop c_type06">예산현황조회</button>
+                        <button type="button" class="btn pop pop_save c_type07">저장</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popcontents p_top170">
+                <div class="poptitle">
+                    <h3>기본정보</h3>
+                    <p class="titlecoment cp_o" >[검사요청일 : 공급업체가 입력한 검사요청 일자임.]</p>
+                    <div class="btnArea f_right">
+                        
+                    </div>
+                </div>
+
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>검사요청번호</th>
+                            <td>
+                                <input type="text" class=" b_none" readonly="readonly" value='5060079479'/>
+                            </td>
+                            <th>검사요청일자</th>
+                            <td>
+                                <input type="text"  readonly="readonly" class="w110 b_none" value='2023-08-22' />
+                            </td>
+                            <th>검사요청차수</th>
+                            <td>
+                                <input type="text" class="w110 b_none" readonly="readonly" value="1"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검사요청건명</th>
+                            <td colspan="5">
+                                <input type="text" class="wp100 b_none" readonly="readonly" value="납품지시_테스트_20230718_HG"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공급업체</th>
+                            <td>
+                                <input type="text" class=" b_none" readonly="readonly" value="행복나래 주식회사"/>
+                            </td>
+                            <th>검사요청담당자</th>
+                            <td colspan="3">
+                                <input type="text" class="w110 b_none" readonly="readonly" value='테스트아이디'/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>전화번호/E-Mail</th>
+                            <td>
+                                <input type="text" class=" b_none" readonly="readonly" value="010-1111-1111 / test@test.cc.cok"/>
+                            </td>
+                            <th>지체일수/금액</th>
+                            <td colspan="3">
+                                <input type="text" class="wp100 b_none" readonly="readonly" value=""/>
+                            </td>
+                        </tr>
+                        <tr >
+                            <th>증빙서류</th>
+                            <td colspan="5">
+                                <input type="radio" checked="checked" disabled="disabled"> 세금계산서
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>검사요청내역<span class="tooltipIcon type1"></span></h3>
+                </div>
+                <div class="grid_area">
+                    <table id="jqGrid" class="jqgrid"></table>
+                </div>
+
+                <table class="tableStyle m_t10">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>검사요청금액(금회합계)</th>
+                            <td>
+                                <input type="text" class="w200 b_none t_right" readonly="readonly" value="10,000"/>
+                            </td>
+                            <th>검사요청금액(누적합계)</th>
+                            <td>
+                                <input type="text" class="w200 b_none t_right" readonly="readonly" value="0"/>
+                            </td>
+                            <th>누적검수율</th>
+                            <td class="t_right">
+                                <input type="text" class="w30 b_none t_right" readonly="readonly" value="0"/> %
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>업체 특이사항</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>업체 특이사항</th>
+                            <td>
+                                <input type="text" data-type="textinput" class="wp100 b_none" readonly="readonly" id="REMARK" name="REMARK" data-bind="value:REMARK" value="" />
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>안전보건</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:15%"/>
+                        <col style="width:7%"/>
+                        <col style="width:10%"/>
+                        <col style="width:7%"/>
+                        <col style="width:10%"/>
+                        <col style="width:10%"/>
+                        <col style="width:10%"/>
+                        <col style="width:9%"/>
+                        <col style="width:auto;"/>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>산업안전보건관리비</th>
+                            <th>
+                                계상총액
+                            </th>
+                            <td class="t_right">
+                                250,000 원
+                            </td>
+                            <th>
+                                사용금액
+                            </th>
+                            <td class="t_right">
+                                50,000 원
+                            </td>
+                            <th>
+                                누적사용금액
+                            </th>
+                            <td class="t_right">
+                                50,000 원
+                            </td>
+                            <th>
+                                사용내역서
+                            </th>
+                            <td>
+                                <a href="#none" class="cp_b">test1.txt</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>검사요청 증빙파일</h3>
+                </div>
+                <div class="comment commnet-default">
+                    <div class="commnet-body">
+                        <ul>
+                            <li>
+                                <strong>필수사항</strong> : <span>각 품목에 맞는 필수 증빙 파일을 반드시 첨부해 주십시오. <br>
+                                <em>[물품/장비] : 인수증 혹은 납품내역서 [용역] : 수행내역서 [공사] : 정산내역서</em></span>
+                            </li>
+                            <li>
+                                <strong>선택사항</strong> : 각 품목별 추가 증빙 자료의 첨부도 가능합니다.
+                            </li>
+                            <li>
+                                <strong>기타 특이사항</strong> : 검사요청금액과 동일한 금액이 명기된 증빙파일을 반드시 첨부해 주시기 바랍니다.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="poptitle">
+                    <div class="btnArea f_right">
+                        <button class="btn c_type08">검사요청 증빙 안내 보기</button>
+                    </div>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col width="5px" />
+                        <col width="120px" />
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <th><input type='checkbox' id='attFrm6att_file_chk_all' name='att_file_chk_all' value='0' disabled="disabled"/></th>
+                        <th>구분</th>
+                        <th>파일</th>
+                    </thead>
+                    <tbody name="test" id="att_file_tbl_body">
+                        <tr>
+                            <td class="t_center">1</td>
+                            <td class="t_center">필수 증빙</td>
+                            <td class="t_left">
+                                <span class="fileItem">
+                                    <a href="javascript:;" class="cp_b">test2.txt</a>
+                                </span>
+                                [물품/장비] : 인수증 혹은 납품내역서
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="fileupload comment commnet-default">
+                    <div class="commnet-body">
+                        <ul>
+                            <li>
+                                upload 가능파일 : txt, xls, xlsx, doc, docx, ppt, pptx, hwp, zip, pdf, jpg, jpeg, gif, png, bmp, apk, dwg, html, htm, mht
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="poptitle type1">
+                    <h3>검사조서정보</h3>
+                </div>
+
+                <div class="poptitle" >
+                    <h3>검사의견 [계약번호 : 3160078748 ]</h3>
+                </div>
+                <div class="sizetoggle_box">
+                    <div class="sizetoggle_txt">
+                        <textarea rows="6" class="wp100">○ 관련사업개요 :
+ㅇ검사기준 및 방법 :
+ㅇ검사결과 :
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="poptitle">
+                    <h3>기본정보</h3>
+                    <p class="titlecoment cp_o" >[검사요청일로부터 10일 이내에 검사완료하고 그 일자를 입력해야 합니다. 단, 검사요청한 월을 넘겨 입력할 수 없습니다.]</p>
+                    <div class="btnArea f_right">
+                        <button data-type="button" id="" type="button" style="display: none;"></button>
+                    </div>
+                </div>
+                <table class="tableStyle popTable m_t10">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>검사조서번호</th>
+                            <td>
+                                <input type="text" readonly="readonly" class="w110 b_none">
+                            </td>
+                            <th>계약번호</th>
+                            <td>
+                                <input type="text" class="point b_none w110" readonly="readonly" value="3160078748"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검사조서건명<span class="staricon"></span></th>
+                            <td colspan="3">
+                                <input type="text" class="point wp100" value="납품지시_테스트_20230718_HG"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검사승인일</th>
+                            <td><input class="w110" class="point" value="">
+                            </td>
+                            <th>검사완료일<span class="staricon"></span></th>
+                            <td>
+                                <div class="datepicker_area">
+                                    <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                </div>
+                                <a href="#none" class="btnS closes"></a>
+                                <span class="bottomComent" >[검사완료일은 (세금)계산서 날짜입니다.]</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검사담당자<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="point w110" value="1111189">
+                                <input type="text" class="point w110" value="임종수">
+                                <a href="#none" class="btnS search"></a>
+                                <a href="#none" class="btnS closes"></a>
+                                <button type="button" id="inspPicUpdate" data-type="button" class="btn grad3">이관</button>
+                            </td>
+                            <th>검사부서<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="point w110" value="00001261">
+                                <input type="text" class="point w110" value="ICT Infra구매팀">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>예산집행부서<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="point w110" value="44100">
+                                <input type="text" class="point w110" value="ICT INFRA구매팀_공통">
+                                <a href="#none" class="btnS search"></a>
+                                <a href="#none" class="btnS closes"></a>
+                            </td>
+                            <th>납품지시번호</th>
+                            <td>
+                                4260154541
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검사책임자<span class="staricon"></span></th>
+                            <td colspan="3">
+                                <input type="text" class="point w110" value="1102731">
+                                <input type="text" class="point w110" value="조용철">
+                                <a href="#none" class="btnS search"></a>
+                                <a href="#none" class="btnS closes"></a>
+                                <span class="bottomComent">
+                                    [검사책임자는 검사담당자의 소속 팀장입니다.]
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>최종인수부서<span class="staricon"></span></th>
+                                <td>
+                                <input type="text" class="point w110" value="00001261">
+                                <input type="text" class="point w110 DEPT" value="ICT Infra구매팀">
+                                <a href="#none" class="btnS search DEPT"></a>
+                                <a href="#none" class="btnS closes"></a>
+                            </td>
+                            <th>품질검사면제여부</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">증빙구분<span class="staricon"></span></th>
+                            <td>
+                                <input type="radio" value="1" checked/> 세금계산서
+                                <span class="bottomComent" id="spanTaxNo"></span>
+                            </td>
+                            <th>(세금)계산서증빙일<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="point b_none w110" readonly="readonly" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="checkbox" class="m10">
+                                공급받는자를 SK 아카데미로 변경
+                            </td>
+                            <th>(세금)계산서유형</th>
+                            <td>역발행</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3 id="fileTitle">검사조서 증빙파일</h3>
+                    <p class="titlecoment">&nbsp;※ 검사요청금액과 동일한 금액이 명기된 증빙 파일을 꼭 첨부해 주시기 바랍니다.</p>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 검사요청 증빙파일 가져오기</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                    </div>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col width="*" />
+                    </colgroup>
+                    <thead>
+                        <th>파일</th>
+                    </thead>
+                    <tbody name="test">
+                        <tr>
+                            <td>
+                                <div class="f_left">
+                                    <span>
+                                        <a href="javascript:;" class="fileDel"></a>
+                                        <a href="javascript:;" class="cp_b">
+                                            test2.txt
+                                        </a>
+                                    </span>
+                                </div>
+                                <div class="f_left">
+                                    <span>
+                                        <a href="javascript:;" class="fileDel"></a>
+                                        <a href="javascript:;" class="cp_b">
+                                            test2.txt
+                                        </a>
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="fileupload comment commnet-default">
+                    <div class="commnet-body">
+                        <ul>
+                            <li>
+                                upload 가능파일 : txt, xls, xlsx, doc, docx, ppt, pptx, hwp, zip, pdf, jpg, jpeg, gif, png, bmp, apk, dwg, html, htm, mht
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="poptitle">
+                    <h3>추가정보</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>하자보수 책임의 부당전가 발생 여부</th>
+                            <td colspan="3">
+                                <input type="radio" id="ETC_WRNTY_YN" name="ETC_WRNTY_YN" data-bind="checked:ETC_WRNTY_YN" value="Y"  /> 발생
+                                <input type="radio" id="ETC_WRNTY_YN" name="ETC_WRNTY_YN" data-bind="checked:ETC_WRNTY_YN" value="N" checked /> 미발생
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>기술유용행위 발생 여부</th>
+                            <td colspan="3">
+                                <input type="radio" id="TECH_ACT_YN" name="TECH_ACT_YN" data-bind="checked:TECH_ACT_YN" value="Y" /> 발생
+                                <input type="radio" id="TECH_ACT_YN" name="TECH_ACT_YN" data-bind="checked:TECH_ACT_YN" value="N" checked/> 미발생
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle type1">
+                    <h3>계약정보</h3>
+                </div>
+                <div class="poptitle">
+                    <h3>계약/검사 정보</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>계약번호</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th>계약건명</th>
+                            <td colspan="3">
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>계약금액(VAT별도)</th>
+                            <td>
+                                <input type="text" class="wp100 b_none t_right" readonly="readonly">
+                            </td>
+
+                            <th>계약시작일</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th>계약종료일</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>구매담당자</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th>계약관리자</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+
+                            <th>전표발행부서</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공급업체</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td colspan="5">
+                            <th>검사담당부서</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th>검사담당자</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검사요청일</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th >누적검수율</th>
+                            <td colspan="3">
+                                <input type="text" class="w110 b_none t_right" readonly="readonly">%
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>검사금액(금회합계)</th>
+                            <td>
+                                <input type="text" class="wp100 b_none t_right" readonly="readonly">
+                            </td>
+                            <th >검사금액(누적합계)</th>
+                            <td colspan="3">
+                                <input type="text" class="wp100 b_none t_right" readonly="readonly">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle" >
+                    <h3>대금지급조건</h3>
+                    <p class="w200 titlecoment">(통화:<input type="text" class="w110 b_none" value="KRW" readonly="readonly">)</p>
+                    <div class="sizetoggle_area">
+                        <a href="javascript:;" class="sizetoggle"><i class="icons i_size_toggle"></i></a>
+                    </div>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col style="width:10%">
+                        <col style="width:7%">
+                        <col style="width:9%">
+                        <col style="width:7%">
+                        <col style="width:9%">
+                        <col style="width:7%">
+                        <col style="width:9%">
+                        <col style="width:7%">
+                        <col style="width:9%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr id="CHARGE_ITEM_TR">
+                            <th rowspan="2">장비/물품</th>
+                            <th class="type1">지급조건</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <td colspan="8">
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr id="CHARGE_ITEM_TR">
+                            <th class="type1">선금</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">납품시</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">개통시</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">최종인수시</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">유보금</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+
+                        <tr id="CHARGE_CNST_TR">
+                            <th rowspan="2">공사</th>
+                            <th class="type1">지급조건</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <td colspan="8">
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr id="CHARGE_CNST_TR">
+                            <th class="type1">선금</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">중도금확정</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">중도금기성</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">잔금</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">유보금</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+
+                        <tr id="CHARGE_SRVC_TR">
+                            <th rowspan="3">용역</th>
+                            <th class="type1">지급조건</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <td colspan="8">
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr id="CHARGE_SRVC_TR">
+                            <th class="type1">선금</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">중도금확정</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">중도금기성</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">잔금</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th class="type1">유보금</th>
+                            <td>
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr id="CHARGE_SRVC_TR">
+                            <th class="type1">월정액</th>
+                            <td colspan="9">
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>부가세(10%)</th>
+                            <td colspan="4">
+                                <input type="text" class="wp100 b_none" readonly="readonly">
+                            </td>
+                            <th>지체상금율</th>
+                            <td colspan="5">
+                                <input type="text" class="w40 b_none t_center" readonly="readonly"> %
+                            </td>
+                        </tr>
+                        <tr id="CNTRT_SEC_TR">
+                            <th rowspan="3">보증방법</th>
+                            <th class="type1">계약이행보증</th>
+                            <td colspan="2">
+                                <input type="text" class="w160 b_none" readonly="readonly">
+                            </td>
+                            <td colspan="7">
+                                <span>
+                                <input type="text" class="w160 b_none t_right" readonly="readonly">(%)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr id="CNTRT_SEC_P_TR">
+                            <th class="type1">선급금보증</th>
+                            <td colspan="2">
+                                <input type="text" class="w160 b_none" readonly="readonly">
+                            </td>
+                            <td colspan="7">
+                                <span>
+                                <input type="text" class="w160 b_none t_right" readonly="readonly">(%)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr id="CNTRT_SEC_F_TR">
+                            <th class="type1">하자이행보증</th>
+                            <td colspan="2">
+                                <input type="text" class="w160 b_none" readonly="readonly">
+                            </td>
+                            <td colspan="2">
+                                <input type="text" class="w160 b_none" readonly="readonly">
+                            </td>
+                            <td colspan="5">
+                                <input type="text" class="w40 b_none t_center" readonly="readonly">개월
+                                <span>
+                                <input type="text" class="w40 b_none t_right" readonly="readonly">&nbsp;(%)
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>특기사항</th>
+                            <td colspan="10">
+                                <textarea class="wp100" readonly="readonly"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle type1">
+                    <h3>전표정보</h3>
+                </div>
+
+                <div class="poptitle">
+                    <h3>기본정보</h3>
+                    <p class="titlecoment cp_o">[세금코드는 자동으로 입력되며, 수정 가능합니다. (투자예산 : I1/ 운영예산 : I0)]</p>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>회계전표번호</th>
+                            <td>
+                                <div>
+                                    <input type="text" class="wp100 b_none" readonly="readonly" data-type="textinput">
+                                </div>
+                            </td>
+                            <th>구매전표건명</th><!-- 구매전표건명 선급금전표건명 -->
+                            <td>
+                                <input type="text" class="point wp100">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>증빙일</th>
+                            <td>
+                                <input type="text" class="w110" value="2023-08-22">
+                            </td>
+                            <th>전기일<span class="staricon"></span></th>
+                            <td>
+                                <div class="datepicker_area">
+                                    <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>사업장/섹션코드</th>
+                            <td>
+                                <input type="text" class="w110">
+                                /
+                                <input type="text" class="w110">
+                            </td>
+                            <th>금액(세액포함)</th>
+                            <td>
+                                <input type="text" class="w110 b_none t_right" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                세금코드<span class="staricon"></span>
+                                <!-- 문의처 버튼 추가 -->
+                                <a href="#none" class="tooltipIcon type1" id="btnQuestion"></a>
+                            </th>
+                            <td>
+                                <input type="text" class="w110 point">
+                                <input type="text" class="w110">
+                                <a href="#none" class="btnS search " id="IO_OPERATION_BUGET_BT"></a>
+                                <a href="#none" class="btnS closes"></a>
+                            </td>
+                            <th>사업영역<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="w110 point">
+                                <input type="text" class="w110">
+                                <a href="#none" class="btnS search "></a>
+                                <a href="#none" class="btnS closes"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>세액/세금계산</th>
+                            <td>
+                                <input type="text" class="w110 b_none t_right" readonly="readonly">
+                                /
+                                <input type="checkbox" disabled="disabled" class="t_center">
+                            </td>
+                            <th>증빙구분</th>
+                            <td>
+                                <div id="EVIDENCE_TYPE_DIV">
+                                    <input type="text" class="wp100 b_none" readonly="readonly">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>참조</th>
+                            <td colspan="3">
+                                <input type="text" class="wp100" maxlength="100">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>지급정보</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>기산일자<span class="staricon"></span></th>
+                            <td>
+                                <div class="datepicker_area">
+                                    <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                </div>
+                            </td>
+                            <th>만기일자<span class="staricon"></span></th>
+                            <td>
+                                <div class="datepicker_area">
+                                    <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>유보금(세액포함)</th>
+                            <td>
+                                <input type="text" class="wp100 b_none t_right" readonly="readonly">
+                            </td>
+                            <th>지급코드(지급조건)<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="w110 point">
+                                <input type="text" class="w110">
+                                <a href="#none" class="btnS search " id="TERMOFPAY_BT"></a>
+                                <a href="#none" class="btnS closes"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>지급방법</th>
+                            <td colspan="3">
+                                <select>
+                                    <option value="">선택</option>
+                                    <option value="Q">타계정대체</option>
+                                    <option value="J">국책 사업인 경우</option>
+                                    <option value="G">해외거래처인 경우 (지로)</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>세부사항</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>통화</th>
+                            <td>
+                                <input type="text" class="w50 b_none" readonly="readonly">
+                            </td>
+                            <th>환율<span class="staricon"></span></th>
+                            <td class="norline">
+                                <input type="text" class="w110 b_none" readonly="readonly">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>참고사항</th>
+                            <td colspan="3">
+                                <input type="text" class="wp100">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>지정</th>
+                            <td colspan="3">
+                                <input type="text" class="wp100" maxlength="100">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>지급처정보</h3>
+                </div>
+                <div class="grid_area">
+                    <table id="jqGrid" class="jqgrid"></table>
+                </div>
+
+                <div class="poptitle">
+                    <h3>검사내역</h3>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08">회계처리정보 일괄적용</button>
+                    </div>
+                </div>
+                <div class="grid_area">
+                    <table id="jqGrid" class="jqgrid"></table>
+                </div>
+
+                <div class="poptitle">
+                    <h3>회계처리구분</h3>
+                </div>
+                <div class="grid_area">
+                    <table id="jqGrid" class="jqgrid"></table>
+                </div>
+
+                <div class="poptitle">
+                    <h3>지체상금/잡손실 산정(G/L계정)</h3>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <div class="grid_area">
+                    <table id="jqGrid" class="jqgrid"></table>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn_top"><i class="icons i_btn_top"></i></a>
+        <script>
+            var mydata = [
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+            ];
+
+            $(document).ready(function () {
+                $(".jqgrid").jqGrid({
+                    datatype: "local",
+                    // data: mydata,
+                    autowidth: true,
+                    cellEdit:true,
+                    shrinkToFit:false,
+                    forceFit:true,
+                    pager: '#jqGridPager',
+                    colModel: [
+                        { label: 'data1', name: 'data1', width:100, editable:true },
+                        { label: 'data2', name: 'data2', width:100, editable:true },
+                        { label: 'data3', name: 'data3', width:100, editable:true },
+                        { label: 'data4', name: 'data4', width:100, editable:true },
+                        { label: 'data5', name: 'data5', width:100, editable:true },
+                        { label: 'data6', name: 'data6', width:100, editable:true },
+                        { label: 'data7', name: 'data7', width:100, editable:true },
+                        { label: 'data8', name: 'data8', width:100, editable:true },
+                        { label: 'data9', name: 'data9', width:100, editable:true },
+                        { label: 'data10', name: 'data10', width:100, editable:true },
+                    ],
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+
+            });
+
+            $(window).bind('resize', function() {
+                $(".jqgrid").setGridWidth($('.grid_area').width());
+            }).trigger('resize');
+        </script>
+        <script>
+            $a.setup('tabs', {
+
+            });
+        </script>
+    </body>
+</html>

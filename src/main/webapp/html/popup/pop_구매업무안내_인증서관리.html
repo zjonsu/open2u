@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">구매업무 안내</h2>
+                        <ul class="pop_tab_area">
+                            <li><a href="javascript:;">구매절차</a></li>
+                            <li><a href="javascript:;">거래품목 안내</a></li>
+                            <li><a href="javascript:;">대금 지급</a></li>
+                            <li class="on"><a href="javascript:;">인증서 관리</a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+
+                    </div>
+                </div>
+            </div>
+            <div class="popcontents">
+                <div class="certifi_top">
+                    <div class="left">
+                        <h2>인증서 사용 안내</h2>
+                        <p>※ 인증서 사용을 위해 공인인증서 발급 후 인증서 등록을 반드시 완료해야 합니다.</p>
+                    </div>
+                    <div class="right">
+                        <button type="button" class="btn pop pop_save c_type07">인증서 등록</button>
+                    </div>
+                </div>
+                <ul class="transaction_item_list sty02">
+                    <li>
+                        <div class="transaction_item_tit">
+                            <h3 class="tit">
+                                공인인증서 <br>
+                                발급 안내
+                            </h3>
+                        </div>
+                        <div class="transaction_item_detail">
+                            <p class="transaction_desc">
+                                전자서명법과 전자상거래 관련 법규에 근거하여, 거래당사자의 권익보호와 인터넷기반 전자상거래 질서를
+                                유지하기 위하여 Open2U 사이트는 공인인증서를 통하여 거래당사자에 대한 전자인증과 거래 사실에 대하여 전자서명합니다.
+                            </p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="transaction_item_tit">
+                            <h3 class="tit">
+                                공인인증서 <br>
+                                종류 안내
+                            </h3>
+                        </div>
+                        <div class="transaction_item_detail">
+                            <ul class="transaction_apply">
+                                <li>
+                                    <dl class="transaction_apply_info info03">
+                                        <dt>범용 공인인증서</dt>
+                                        <dd>
+                                            당사 사이트 뿐 아니라 타사 전자인증 사이트에서 <br>
+                                            사용이 가능하며, 신청하신 회사에서 년단위로 <br>
+                                            일정 비용이 소요 됩니다.
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="transaction_apply_info info04">
+                                        <dt>용도제한용 공인인증서</dt>
+                                        <dd>
+                                            당사 사이트에서만 사용이 가능하며, <br>
+                                            SK텔레콤에서 비용을 부담하고 있습니다.
+                                        </dd>
+                                    </dl>
+                                    <a href="javascript:;" class="btn radius c_type08">SKT 용도제한용 인증서 발급 <i class="icons i_btn_link"></i></a>
+                                </li>
+                            </ul>
+                            <div class="comment commnet-default">
+                                <div class="commnet-body">
+                                    <ul>
+                                        <li>사용자 여러분의 여건을 감안하여 필요한 것을 선택하여 발급 받으시기 바랍니다.</li>
+                                        <li>
+                                            기존 당사와 거래가 있어 이미 발급받은 인증서는 그대로 사용하실 수 있습니다.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="transaction_item_tit">
+                            <h3 class="tit">
+                                인증서 발급 <br>
+                                신청전 확인사항
+                            </h3>
+                        </div>
+                        <div class="transaction_item_detail">
+                            <p class="transaction_desc">
+                                이미 국내 공인인증기관에서 범용 인증서를 구입하여 사용하고 있는 회사에서는
+                                따로 구입하거나 신청하실 필요 없습니다.
+                            </p>
+                            <ul class="detail_list sty02">
+                                <li>
+                                    <dl class="detail_list_item">
+                                        <dt class="detail_category">공인인증기관<br>안내</dt>
+                                        <dd class="detail_txt">
+                                            <p class="txt desc_point">※아래 공인인증 기관은 무순입니다.</p>
+                                            <div class="transaction_link">
+                                                <a href="javascript:;" class="btn radius c_type08">
+                                                    한국정보인증 <i class="icons i_btn_link"></i>
+                                                </a>
+                                                <a href="javascript:;" class="btn radius c_type08">
+                                                    한국무역정보통신 <i class="icons i_btn_link"></i>
+                                                </a>
+                                                <a href="javascript:;" class="btn radius c_type08">
+                                                    한국전자인증 <i class="icons i_btn_link"></i>
+                                                </a>
+                                                <a href="javascript:;" class="btn radius c_type08">
+                                                    코스콤 <i class="icons i_btn_link"></i>
+                                                </a>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="detail_list_item">
+                                        <dt class="detail_category">신청절차</dt>
+                                        <dd class="detail_txt">
+                                            <p class="txt"><strong>인증서 종류</strong> : 사업자용 범용 영문 인증서</p>
+                                            <p class="txt"><strong>발급비용</strong> : 인증기관에 문의 (위 인증기관명 클릭하여 확인하시기 바랍니다.)</p>
+                                            <div class="m_t20 ">
+                                                <img src="../../resource/images/new_common/img_transaction04.svg" alt="">
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </li>
+                                <li>
+                                    <dl class="detail_list_item">
+                                        <dt class="detail_category">제출서류</dt>
+                                        <dd class="detail_txt">
+                                            <p class="txt">- 공인인증서 신청서 1부</p>
+                                            <p class="txt">- 법인 또는 개인인감증명서 원본 1부</p>
+                                            <p class="txt">- 사업자등록증 사본 1부</p>
+                                            <p class="txt">- 대표자 또는 대리인 신분증 앞/뒤 사본 1부</p>
+                                        </dd>
+                                    </dl>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+                <div class="pop_bot_btn border">
+                    <div class="left"></div>
+                    <div class="right">
+                        <button type="button" class="btn pop pop_save c_type07">인증서 등록</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        tabMenu('#tabList01','#tabCont01')
+    </script>
+</html>

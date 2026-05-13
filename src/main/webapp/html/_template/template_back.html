@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로젝트명</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid_custom.css">
+    <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui.css">
+    <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui_theme.css">
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.css">
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css">
+    <link rel="stylesheet" href="../../resource/css/reset.css">
+    <!-- <link rel="stylesheet" href="../../resource/css/common.css"> -->
+    <link rel="stylesheet" href="../../resource/css/design.css">
+    <link rel="stylesheet" href="../../resource/css/ui.common.css">
+    <!-- javascript -->
+    <script src="../../resource/lib/jQuery/jquery-1.12.3.js"></script>
+    <script src="../../resource/js/ui.common.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="header_wrap">
+            <div class="header_top">
+                <div class="inner">
+                    <ul class="header_top_user">
+                        <li><span class="user"><i class="icons i_header_user"></i>홍길동님</span></li>
+                        <li><a href="javascript:;"><i class="icons i_header_logout"></i></a></li>
+                    </ul>
+                    <ul class="header_top_menu">
+                        <li><button type="button">업체검색시스템 <i class="icons i_header_search"></i></button></li>
+                        <li><button type="button">회의실예약 <i class="icons i_header_reserve"></i></button></li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="header_gnb">
+                <div class="header_gnb_inner">
+                    <div class="align_lt">
+                        <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                        <ul class="gnb_menu">
+                            <li>
+                                <a href="#none">구매요청</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">구매요청</a></li>
+                                    <li><a href="javascript:;">계약변경요청</a></li>
+                                    <li><a href="javascript:;">납품지시</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">구매진행</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">구매접수</a></li>
+                                    <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">계약변경진행</a></li>
+                                    <li><a href="javascript:;">기술평가</a></li>
+                                    <li><a href="javascript:;">BMT평가</a></li>
+                                    <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                    <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">계약정산</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">검사조서</a></li>
+                                    <li><a href="javascript:;">보증관리</a></li>
+                                    <li><a href="javascript:;">자산관리</a></li>
+                                    <li><a href="javascript:;">지체면제</a></li>
+                                    <li><a href="javascript:;">구매전표</a></li>
+                                    <li><a href="javascript:;">유보금처리</a></li>
+                                    <li><a href="javascript:;">대금지급</a></li>
+                                    <li><a href="javascript:;">SCM 검사조서</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">계약관리</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">계약대장</a></li>
+                                    <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                    <li><a href="javascript:;">[외자]계약대장</a></li>
+                                    <li><a href="javascript:;">납품지시내역</a></li>
+                                    <li><a href="javascript:;">실적증명발급</a></li>
+                                    <li><a href="javascript:;">하도급관리</a></li>
+                                    <li><a href="javascript:;">가격입찰</a></li>
+                                    <li><a href="javascript:;">제안평가</a></li>
+                                    <li><a href="javascript:;">기술평가개별조회</a></li>
+                                    <li><a href="javascript:;">기술평가완료현황</a></li>
+                                    <li><a href="javascript:;">RFx이력</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">결산/통계</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">미정산계약</a></li>
+                                    <li><a href="javascript:;">예산별구매현황</a></li>
+                                    <li><a href="javascript:;">소액구매현황</a></li>
+                                    <li><a href="javascript:;">Price Tracking</a></li>
+                                    <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                    <li><a href="javascript:;">구매체감도</a></li>
+                                    <li><a href="javascript:;">검사조서마감관리</a></li>
+                                    <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">공급사</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">공급사현황</a></li>
+                                    <li><a href="javascript:;">공급사 등록요청</a></li>
+                                    <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                    <li><a href="javascript:;">업체검색시스템</a></li>
+                                    <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                    <li><a href="javascript:;">연락처대장</a></li>
+                                    <li><a href="javascript:;">사전설문관리</a></li>
+                                    <li><a href="javascript:;">사전설문관리2</a></li>
+                                    <li><a href="javascript:;">방문신청관리</a></li>
+                                    <li><a href="javascript:;">비밀번호초기화</a></li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="#none">기준정보관리</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                    <li><a href="javascript:;">ITEM 현황</a></li>
+                                    <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                    <li><a href="javascript:;">품목 MASTER</a></li>
+                                    <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                    <li><a href="javascript:;">SG 관리</a></li>
+                                    <li><a href="javascript:;">업체평가기준</a></li>
+                                    <li><a href="javascript:;">구매소요계획</a></li>
+                                    <li><a href="javascript:;">상품입고예정정보</a></li>
+                                    <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                    <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                    <li><a href="javascript:;">상품재고 현황</a></li>
+                                    <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                    <li><a href="javascript:;">위젯관리</a></li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="#none">업무지원</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">마감관리</a></li>
+                                    <li><a href="javascript:;">조직/사용자관리</a></li>
+                                    <li><a href="javascript:;">권한관리</a></li>
+                                    <li><a href="javascript:;">팝업관리</a></li>
+                                    <li><a href="javascript:;">환경설정관리</a></li>
+                                    <li><a href="javascript:;">ERP연동 관리</a></li>
+                                    <li><a href="javascript:;">게시판</a></li>
+                                    <li><a href="javascript:;">운영배포 게시판</a></li>
+                                    <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                    <li><a href="javascript:;">오프라인체결</a></li>
+                                    <li><a href="javascript:;">총괄코드관리</a></li>
+                                    <li><a href="javascript:;">사용자 검색</a></li>
+                                    <li><a href="javascript:;">관리자계약재처리</a></li>
+                                    <li><a href="javascript:;">업무처리독려</a></li>
+                                    <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="site_map">
+                        <button type="button" class="sitemapBtn sitemap_event"><i class="icons i_header_sitemap"></i></button>
+                    </div>
+                </div>
+            </nav>
+            <div class="siteMapArea">
+                <nav class="header_gnb">
+                    <div class="header_gnb_inner">
+                        <div class="align_lt">
+                            <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                        </div>
+                        <a href="javascript:;" class="siteMapClosebtn"></a>
+                    </div>
+                </nav>
+                <div class="siteMap_inner">
+                    <ul class="menuArea">
+                        <li><h3>구매요청</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">구매요청</a></li>
+                                <li><a href="javascript:;">계약변경요청</a></li>
+                                <li><a href="javascript:;">납품지시</a></li>
+                                <li><a href="javascript:;">카탈로그구매</a></li>
+                            </ul>
+                        </li>
+                        <li><h3>구매진행</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">구매접수</a></li>
+                                <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                <li><a href="javascript:;">구매진행</a></li>
+                                <li><a href="javascript:;">계약변경진행</a></li>
+                                <li><a href="javascript:;">기술평가</a></li>
+                                <li><a href="javascript:;">BMT평가</a></li>
+                                <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                <li><a href="javascript:;">적격수급업체 평가</a></li>
+                            </ul>
+                        </li>
+                        <li><h3>계약정산</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">검사조서</a></li>
+                                <li><a href="javascript:;">보증관리</a></li>
+                                <li><a href="javascript:;">자산관리</a></li>
+                                <li><a href="javascript:;">지체면제</a></li>
+                                <li><a href="javascript:;">구매전표</a></li>
+                                <li><a href="javascript:;">유보금처리</a></li>
+                                <li><a href="javascript:;">대금지급</a></li>
+                                <li><a href="javascript:;">SCM 검사조서</a></li>
+                            </ul>
+                        </li>
+                        <li><h3>계약관리</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">계약대장</a></li>
+                                <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                <li><a href="javascript:;">[외자]계약대장</a></li>
+                                <li><a href="javascript:;">납품지시내역</a></li>
+                                <li><a href="javascript:;">실적증명발급</a></li>
+                                <li><a href="javascript:;">하도급관리</a></li>
+                                <li><a href="javascript:;">가격입찰</a></li>
+                                <li><a href="javascript:;">제안평가</a></li>
+                                <li><a href="javascript:;">기술평가개별조회</a></li>
+                                <li><a href="javascript:;">기술평가완료현황</a></li>
+                                <li><a href="javascript:;">RFx이력</a></li>
+                            </ul>
+                        </li>
+                        <li><h3>결산/통계</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">미정산계약</a></li>
+                                <li><a href="javascript:;">예산별구매현황</a></li>
+                                <li><a href="javascript:;">소액구매현황</a></li>
+                                <li><a href="javascript:;">Price Tracking</a></li>
+                                <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                <li><a href="javascript:;">구매결산</a></li>
+                                <li><a href="javascript:;">PVI 종합</a></li>
+                                <li><a href="javascript:;">구매체감도</a></li>
+                                <li><a href="javascript:;">Risk Mgmt, 요소</a></li>
+                                <li><a href="javascript:;">검사조서마감관리</a></li>
+                                <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                            </ul>
+                        </li>
+                        <li><h3>공급사</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">공급사현황</a></li>
+                                <li><a href="javascript:;">공급사 등록요청</a></li>
+                                <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                <li><a href="javascript:;">업체검색시스템</a></li>
+                                <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                <li><a href="javascript:;">연락처대장</a></li>
+                                <li><a href="javascript:;">사전설문관리</a></li>
+                                <li><a href="javascript:;">사전설문관리2</a></li>
+                                <li><a href="javascript:;">방문신청관리</a></li>
+                                <li><a href="javascript:;">비밀번호초기화</a></li>
+                            </ul>
+                        </li>
+                        <li><h3>기준정보관리</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                <li><a href="javascript:;">ITEM 현황</a></li>
+                                <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                <li><a href="javascript:;">품목 MASTER</a></li>
+                                <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                <li><a href="javascript:;">SG 관리</a></li>
+                                <li><a href="javascript:;">업체평가기준</a></li>
+                                <li><a href="javascript:;">구매소요계획</a></li>
+                                <li><a href="javascript:;">상품입고예정정보</a></li>
+                                <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                <li><a href="javascript:;">상품재고 현황</a></li>
+                                <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                <li><a href="javascript:;">위젯관리</a></li>
+                            </ul>
+                        </li>
+                        <li><h3>업무지원</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">마감관리</a></li>
+                                <li><a href="javascript:;">조직/사용자관리</a></li>
+                                <li><a href="javascript:;">권한관리</a></li>
+                                <li><a href="javascript:;">팝업관리</a></li>
+                                <li><a href="javascript:;">환경설정관리</a></li>
+                                <li><a href="javascript:;">ERP연동 관리</a></li>
+                                <li><a href="javascript:;">게시판</a></li>
+                                <li><a href="javascript:;">운영배포 게시판</a></li>
+                                <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                <li><a href="javascript:;">오프라인체결</a></li>
+                                <li><a href="javascript:;">총괄코드관리</a></li>
+                                <li><a href="javascript:;">사용자 검색</a></li>
+                                <li><a href="javascript:;">관리자계약재처리</a></li>
+                                <li><a href="javascript:;">업무처리독려</a></li>
+                                <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <div class="content">
+                <div class="title_area">
+                    <div class="left">
+                        <h2 class="title">계약대장</h2>
+                    </div>
+                    <div class="right">
+                        <ul class="location_area">
+                            <li><a href="javascript:;"  class="home"><i class="icons i_location_home"></i></a></li>
+                            <li><a href="javascript:;">구매정보</a></li>
+                            <li><strong>계약대장</strong></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="search_cont_wrap">
+                    <ul class="search_cont_list">
+                        <li>
+                            <dl>
+                                <dt>계약건명</dt>
+                                <dd><input type="text" class="wp100" id="S_CNTRT_NAME" name="S_CNTRT_NAME"data-bind="value:S_CNTRT_NAME"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>계약건명</dt>
+                                <dd><input type="text" class="wp100" id="S_CNTRT_NAME" name="S_CNTRT_NAME"data-bind="value:S_CNTRT_NAME"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>계약건명</dt>
+                                <dd><input type="text" class="wp100" id="S_CNTRT_NAME" name="S_CNTRT_NAME"data-bind="value:S_CNTRT_NAME"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>계약건명</dt>
+                                <dd><input type="text" class="wp100" id="S_CNTRT_NAME" name="S_CNTRT_NAME"data-bind="value:S_CNTRT_NAME"></dd>
+                            </dl>
+                        </li>
+                        <li>
+                            <dl>
+                                <dt>계약건명</dt>
+                                <dd><input type="text" class="wp100" id="S_CNTRT_NAME" name="S_CNTRT_NAME"data-bind="value:S_CNTRT_NAME"></dd>
+                            </dl>
+                        </li>
+                    </ul>
+                    <div>
+    
+                    </div>
+                </div>
+    
+                <div class="searchBox">
+                    <table class="tableStyle">
+                        <colgroup>
+                            <col style="width:12%" />
+                            <col style="width:21%" />
+                            <col style="width:12%" />
+                            <col style="width:21%" />
+                            <col style="width:12%" />
+                            <col style="width:*" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>계약건명</th>
+                                <td><input type="text" class="wp100" id="S_CNTRT_NAME" name="S_CNTRT_NAME"
+                                        data-bind="value:S_CNTRT_NAME"></td>
+                                <th>계약번호</th>
+                                <td><input type="text" class="w80" id="S_CNTRT_NO" name="S_CNTRT_NO" data-type="textinput"
+                                        data-bind="value:S_CNTRT_NO" maxlength="10"></td>
+                                <th>공급업체명</th>
+                                <td><input type="text" class="wp100" id="S_VENDOR_NAME" name="S_VENDOR_NAME" data-type="textinput"
+                                        data-bind="value:S_VENDOR_NAME"></td>
+                            </tr>
+                            <tr>
+                                <th>상태</th>
+                                <td>
+                                    <select data-type="select" id="S_CNTRT_STATUS" name="S_CNTRT_STATUS"
+                                        data-bind="selectedOptions:S_CNTRT_STATUS" class="w100">
+                                        <option value="">전체</option>
+                                        <option value="A">결재승인</option>
+                                        <option value="C">체결</option>
+                                    </select>
+                                </td>
+                                <th style="padding-left: 11px;">
+                                    <select data-type="select" id="S_CNTRT_DATE_TYPE" name="S_CNTRT_DATE_TYPE"
+                                        data-bind="selectedOptions:S_CNTRT_DATE_TYPE" class="w120"
+                                        style="background: #edece8; font-weight: bold; font-size: 14px; border: no>
+                                        <option value="W" selected="selected">계약체결일</option>
+                                        <option value="P">결재승인일</option>
+                                    </select>
+                                </th>
+                                <td colspan="3">
+                                    <div data-type="daterange">
+                                        <input data-role="startdate" id="S_FROM_CNTRT_DATE" name="S_FROM_CNTRT_DATE"
+                                            data-bind="value:S_FROM_CNTRT_DATE" data-format="yyyy-MM-dd" data-selectyear="true"
+                                            data-selectmonth="true" value="2023-01-01" /><a class="btnS calendar"
+                                            id="S_FROM_CNTRT_DATE_BTN"></a>
+                                        <span class="p_l0 p_r0">~</span>
+                                        <input data-role="enddate" id="S_TO_CNTRT_DATE" name="S_TO_CNTRT_DATE"
+                                            data-bind="value:S_TO_CNTRT_DATE" data-format="yyyy-MM-dd" data-selectyear="true"
+                                            data-selectmonth="true" value="2023-08-07" /><a class="btnS calendar"
+                                            id="S_TO_CNTRT_DATE_BTN"></a>
+                                    </div>
+                                    <input type="checkbox" class="m_r10" data-type="checkbox" id="S_FIRST_SIGN_DAY_YN"
+                                        name="S_FIRST_SIGN_DAY_YN" value="Y" data-bind="checked:S_FIRST_SIGN_DAY_YN" checked />최초
+                                    <a href="javascript:setDate('thisYearJan');" class="btn smal">올해1월~</a>
+                                    <a href="javascript:setDate('lastYearJan');" class="btn smal">작년1월~</a>
+                                    <a href="javascript:setDate('all');" class="btn smal">전체</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>계약관리자</th>
+                                <td>
+            
+            
+                                    <input type="text" data-type="textinput" class="w60" id="S_CNTRT_MANAGER_ID"
+                                        name="S_CNTRT_MANAGER_ID" data-bind="value:S_CNTRT_MANAGER_ID" readonly="readonly" />
+                                    <input type="text" data-type="textinput" class="w80 USER_USR" id="S_CNTRT_MANAGER_NM"
+                                        name="S_CNTRT_MANAGER_NM" data-bind="value:S_CNTRT_MANAGER_NM" />
+                                    <a href="javascript:;" class="btnS search USER_USR"></a>
+                                    <a href="javascript:;" class="btnS closes"></a>
+            
+                                </td>
+                                <th>계약관리부서</th>
+                                <td>
+                                    <select data-type="select" id="S_PUR_DEPT_CD" name="S_PUR_DEPT_CD"
+                                        data-bind="selectedOptions:S_PUR_DEPT_CD" class="w160">
+                                        <option value="">전체</option>
+            
+                                        <option value="00003455">SCM혁신팀</option>
+            
+                                        <option value="00001075">서비스구매팀</option>
+            
+                                        <option value="00001261">ICT Infra구매팀</option>
+            
+                                        <option value="00004634">성장Tech구매팀</option>
+            
+                                        <option value="00004325">성장SCM담당</option>
+            
+                                        <option value="00004635">구매지원팀</option>
+            
+                                        <option value="00004221">동반성장팀</option>
+            
+                                    </select>
+                                </td>
+                                <th>구매담당자</th>
+                                <td>
+            
+                                    <input type="text" data-type="textinput" class="w60" readonly="readonly" id="S_PUR_USER_ID"
+                                        name="S_PUR_USER_ID" data-bind="value:S_PUR_USER_ID" />
+                                    <input type="text" data-type="textinput" class="w80 USER_USR" id="S_PUR_USER_NM"
+                                        name="S_PUR_USER_NM" data-bind="value:S_PUR_USER_NM" />
+                                    <a href="javascript:;" class="btnS search USER_USR"></a>
+                                    <a href="javascript:;" class="btnS closes"></a>
+            
+                                </td>
+                            </tr>
+                            <tr>
+                                <!-- <th>구매요청부서</th> -->
+                                <th style="padding-left: 11px;">
+                                    <select data-type="select" id="S_DEPT_TYPE" name="S_DEPT_TYPE"
+                                        data-bind="selectedOptions:S_DEPT_TYPE" class="w130"
+                                        style="background: #edece8; font-weight: bold; font-size: 14px; border: no>
+                                        <option value="RFX_D" selected="selected">구매요청부서</option>
+                                        <option value="RFX_W">구매요청본부</option>
+                                        <option value="RFX_B">구매요청부문</option>
+                                        <option value="MNG_D">구매요청관리부서</option>
+                                        <option value="MNG_W">구매요청관리본부</option>
+                                        <option value="MNG_B">구매요청관리부문</option>
+                                    </select>
+                                </th>
+                                <td>
+                                    <input type="text" data-type="textinput" class="w60" id="S_BUSI_DEPT_CD" name="S_BUSI_DEPT_CD"
+                                        data-bind="value:S_BUSI_DEPT_CD" data-disabled="true" />
+                                    <input type="text" data-type="textinput" class="w110" id="S_BUSI_DEPT_NAME"
+                                        name="S_BUSI_DEPT_NAME" data-bind="value:S_BUSI_DEPT_NAME" />
+                                    <a href="#" onclick="doDeptPopup()" class="btnS search"></a>
+                                    <a href="javascript:;" class="btnS closes"></a>
+                                </td>
+                                <!-- <th>구매요청자</th> -->
+                                <th style="padding-left: 11px;">
+                                    <select data-type="select" id="S_RFX_TYPE" name="S_RFX_TYPE"
+                                        data-bind="selectedOptions:S_RFX_TYPE" class="w120"
+                                        style="background: #edece8; font-weight: bold; font-size: 14px; border: no>
+                                        <option value="R" selected="selected">구매요청자</option>
+                                        <option value="M">구매요청관리자</option>
+                                    </select>
+                                </th>
+                                <td>
+                                    <input type="text" data-type="textinput" class="w60" id="S_RFX_REG_ID" name="S_RFX_REG_ID"
+                                        data-bind="value:S_RFX_REG_ID" data-disabled="true" />
+                                    <input type="text" data-type="textinput" class="w80 USER_USR" id="S_RFX_REG_NAME"
+                                        name="S_RFX_REG_NAME" data-bind="value:S_RFX_REG_NAME" />
+                                    <a href="javascript:;" class="btnS search USER_USR"></a>
+                                    <a href="javascript:;" class="btnS closes"></a>
+                                </td>
+                                <th>품목</th>
+                                <td>
+                                    <input type="text" data-type="textinput" class="w60" id="S_SRC_GRP_CD" name="S_SRC_GRP_CD"
+                                        data-bind="value:S_SRC_GRP_CD" data-disabled="true" />
+                                    <input type="text" data-type="textinput" class="w110" id="S_SRC_GRP_NAME" name="S_SRC_GRP_NAME"
+                                        data-bind="value:S_SRC_GRP_NAME" />
+                                    <a href="#" onclick="doSrcGrpCdPopup()" class="btnS search"></a>
+                                    <a href="javascript:;" class="btnS closes"></a>
+                                </td>
+                            </tr>
+            
+                        </tbody>
+                    </table>
+            
+                    <div class="sch_area" style="display:block">
+                        <div class="titleArea type1">
+                            <h3>상세검색</h3>
+                        </div>
+                        <table class="tableStyle">
+                            <colgroup>
+                                <col style="width:12%" />
+                                <col style="width:21%" />
+                                <col style="width:12%" />
+                                <col style="width:21%" />
+                                <col style="width:12%" />
+                                <col style="width:*" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>계약종류</th>
+                                    <td>
+                                        <select data-type="select" id="S_CNTRT_TYPE" name="S_CNTRT_TYPE"
+                                            data-bind="selectedOptions:S_CNTRT_TYPE" class="w100">
+                                            <option value="">전체</option>
+            
+                                            <option value="NV">수시계약</option>
+            
+                                            <option value="RV">단가계약</option>
+            
+                                        </select>
+                                    </td>
+                                    <th>경쟁/수의</th>
+                                    <td>
+                                        <select data-type="select" id="S_RFX_TYPE_SUB" name="S_RFX_TYPE_SUB"
+                                            data-bind="selectedOptions:S_RFX_TYPE_SUB" class="w80">
+                                            <option value="">전체</option>
+            
+                                            <option value="M">경쟁</option>
+            
+                                            <option value="O">수의</option>
+            
+                                        </select>
+                                    </td>
+                                    <th>수의유형</th>
+                                    <td>
+                                        <select data-type="select" id="S_RFX_TYPE_SUB_O" name="S_RFX_TYPE_SUB_O"
+                                            data-bind="selectedOptions:S_RFX_TYPE_SUB_O" class="w80">
+                                            <option value="">전체</option>
+            
+                                            <option value="O">일반</option>
+            
+                                            <option value="M">경쟁후</option>
+            
+                                        </select>
+                                    </td>
+            
+                                </tr>
+                                <tr>
+                                    <th>구매요청번호</th>
+                                    <td><input type="text" class="w70" id="S_PUR_REQ_SEQ" name="S_PUR_REQ_SEQ"
+                                            data-bind="value:S_PUR_REQ_SEQ"></td>
+                                    <th>사업자번호</th>
+                                    <td><input type="text" class="w100" id="S_VENDOR_REGNO" name="S_VENDOR_REGNO"
+                                            data-bind="value:S_VENDOR_REGNO"></td>
+                                    <th>법인번호</th>
+                                    <td><input type="text" class="w100" id="S_CORP_NO" name="S_CORP_NO" data-type="textinput"
+                                            data-bind="value:S_CORP_NO"></td>
+                                </tr>
+                                <tr>
+                                    <th>계약방법</th>
+                                    <td colspan="3">
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_CNTRT_METHOD_1"
+                                                name="S_CNTRT_METHOD" value="RFQ" data-bind="checked:S_CNTRT_METHOD" />
+                                            견적요청
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_CNTRT_METHOD_2"
+                                                name="S_CNTRT_METHOD" value="RFB" data-bind="checked:S_CNTRT_METHOD" />
+                                            가격입찰
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_CNTRT_METHOD_3"
+                                                name="S_CNTRT_METHOD" value="RFT" data-bind="checked:S_CNTRT_METHOD" />
+                                            기술평가
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_CNTRT_METHOD_4"
+                                                name="S_CNTRT_METHOD" value="RFP" data-bind="checked:S_CNTRT_METHOD" />
+                                            종합평가입찰
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_CNTRT_METHOD_5"
+                                                name="S_CNTRT_METHOD" value="RF2" data-bind="checked:S_CNTRT_METHOD" />
+                                            2-Step입찰
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_CNTRT_METHOD_6"
+                                                name="S_CNTRT_METHOD" value="RFC" data-bind="checked:S_CNTRT_METHOD" />
+                                            2-Step종합평가입찰
+                                        </label>
+            
+                                    </td>
+            
+                                    <th>수주계약</th>
+                                    <td>
+                                        <input type="checkbox" class="m_r10" data-type="checkbox" id="S_SUB_CNTRT"
+                                            name="S_SUB_CNTRT" value="Y" data-bind="checked:S_SUB_CNTRT" />
+                                    </td>
+            
+                                </tr>
+                                <tr>
+                                    <th>예산구분</th>
+                                    <td colspan="5">
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_FI_CD_1" name="S_FI_CD"
+                                                value="A" data-bind="checked:S_FI_CD" />
+                                            A:(투자:본계정/건설가계정)
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_FI_CD_2" name="S_FI_CD"
+                                                value="K" data-bind="checked:S_FI_CD" />
+                                            K:(운영:코스트센터)
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_FI_CD_3" name="S_FI_CD"
+                                                value="P" data-bind="checked:S_FI_CD" />
+                                            P:(투자:공사)
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_FI_CD_4" name="S_FI_CD"
+                                                value="Q" data-bind="checked:S_FI_CD" />
+                                            Q:(투자:기계장치)
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_FI_CD_5" name="S_FI_CD"
+                                                value="UA" data-bind="checked:S_FI_CD" />
+                                            UA:단가계약-투자
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_FI_CD_6" name="S_FI_CD"
+                                                value="UK" data-bind="checked:S_FI_CD" />
+                                            UK:단가계약-운영
+                                        </label>
+            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>계약시작일</th>
+                                    <td>
+                                        <div data-type="daterange">
+                                            <input data-role="startdate" id="S_FROM_CNTRT_START_DATE" name="S_FROM_CNTRT_START_DATE"
+                                                data-bind="value:S_FROM_CNTRT_START_DATE" data-format="yyyy-MM-dd"
+                                                data-selectyear="true" data-selectmonth="true" />
+                                            <a href="javascript:;" class="btnS calendar" id="S_FROM_CNTRT_START_DATE_BTN"></a>
+                                            <span class="p_l0 p_r0">~</span>
+                                            <input data-role="enddate" id="S_TO_CNTRT_START_DATE" name="S_TO_CNTRT_START_DATE"
+                                                data-bind="value:S_TO_CNTRT_START_DATE" data-format="yyyy-MM-dd"
+                                                data-selectyear="true" data-selectmonth="true" />
+                                            <a href="javascript:;" class="btnS calendar" id="S_TO_CNTRT_START_DATE_BTN"></a>
+                                        </div>
+                                    </td>
+                                    <th>계약종료일</th>
+                                    <td>
+                                        <div data-type="daterange">
+                                            <input data-role="startdate" id="S_FROM_CNTRT_END_DATE" name="S_FROM_CNTRT_END_DATE"
+                                                data-bind="value:S_FROM_CNTRT_END_DATE" data-format="yyyy-MM-dd"
+                                                data-selectyear="true" data-selectmonth="true" />
+                                            <a href="javascript:;" class="btnS calendar" id="S_FROM_CNTRT_END_DATE_BTN"></a>
+                                            <span class="p_l0 p_r0">~</span>
+                                            <input data-role="enddate" id="S_TO_CNTRT_END_DATE" name="S_TO_CNTRT_END_DATE"
+                                                data-bind="value:S_TO_CNTRT_END_DATE" data-format="yyyy-MM-dd"
+                                                data-selectyear="true" data-selectmonth="true" />
+                                            <a href="javascript:;" class="btnS calendar" id="S_TO_CNTRT_END_DATE_BTN"></a>
+                                        </div>
+                                    </td>
+                                    <th>계약변경일</th>
+                                    <td>
+                                        <div data-type="daterange">
+                                            <input data-role="startdate" id="S_FROM_CHG_WRITE_DATE" name="S_FROM_CHG_WRITE_DATE"
+                                                data-bind="value:S_FROM_CHG_WRITE_DATE" data-format="yyyy-MM-dd"
+                                                data-selectyear="true" data-selectmonth="true" />
+                                            <a href="javascript:;" class="btnS calendar" id="S_FROM_CHG_WRITE_DATE_BTN"></a>
+                                            <span class="p_l0 p_r0">~</span>
+                                            <input data-role="enddate" id="S_TO_CHG_WRITE_DATE" name="S_TO_CHG_WRITE_DATE"
+                                                data-bind="value:S_TO_CHG_WRITE_DATE" data-format="yyyy-MM-dd"
+                                                data-selectyear="true" data-selectmonth="true" />
+                                            <a href="javascript:;" class="btnS calendar" id="S_TO_CHG_WRITE_DATE_BTN"></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>품목</th>
+                                    <td colspan="3">
+                                        대분류:
+                                        <select data-type="select" id="S_BIG_CLS_CD" name="S_BIG_CLS_CD"
+                                            data-bind="selectedOptions:S_BIG_CLS_CD" class="w80">
+                                            <option value="">전체</option>
+            
+                                            <option value="10">물품</option>
+            
+                                            <option value="20">장비</option>
+            
+                                            <option value="30">용역</option>
+            
+                                            <option value="40">공사</option>
+            
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;중분류:
+                                        <select data-type="select" id="S_MID_CLS_CD" name="S_MID_CLS_CD"
+                                            data-bind="selectedOptions:S_MID_CLS_CD" class="w120">
+                                            <option value="">전체</option>
+                                        </select>
+                                        &nbsp;&nbsp;&nbsp;소싱그룹:
+                                        <select data-type="select" id="S_SRC_GRP_CD_DETAIL" name="S_SRC_GRP_CD_DETAIL"
+                                            data-bind="selectedOptions:S_SRC_GRP_CD_DETAIL" class="w148">
+                                            <option value="">전체</option>
+                                        </select>
+                                    </td>
+                                    <th>관계사</th>
+                                    <td>
+                                        <input type="checkbox" class="m_r10" data-type="checkbox" id="S_COMPANY_YES"
+                                            name="S_COMPANY_YES" value="Y" data-bind="checked:S_COMPANY_YES" />
+                                    </td>
+            
+                                </tr>
+                                <tr>
+                                    <!-- <th>기술지원계약</th>
+                                                        <td>
+                                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_TECH_SUPPORT" name="S_TECH_SUPPORT" value = "Y" data-bind="checked:S_TECH_SUPPORT" />										
+                                                        </td>
+                                                        <th>납품단가조정</th>
+                                                        <td>
+                                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_PO_PRICE_ADJUST" name="S_PO_PRICE_ADJUST" value = "Y" data-bind="checked:S_PO_PRICE_ADJUST" />										
+                                                        </td> 
+                                                        -->
+                                    <th>계약승인일</th>
+                                    <td colspan="3">
+                                        <div data-type="daterange">
+                                            <input data-role="startdate" id="S_FROM_PKG_SIGN_DATE" name="S_FROM_PKG_SIGN_DATE"
+                                                data-bind="value:S_FROM_PKG_SIGN_DATE" data-format="yyyy-MM-dd"
+                                                data-selectyear="true" data-selectmonth="true" value="" /><a class="btnS calendar"
+                                                id="S_FROM_PKG_SIGN_DATE_BTN"></a>
+                                            <span class="p_l0 p_r0">~</span>
+                                            <input data-role="enddate" id="S_TO_PKG_SIGN_DATE" name="S_TO_PKG_SIGN_DATE"
+                                                data-bind="value:S_TO_PKG_SIGN_DATE" data-format="yyyy-MM-dd" data-selectyear="true"
+                                                data-selectmonth="true" value="" /><a class="btnS calendar"
+                                                id="S_TO_PKG_SIGN_DATE_BTN"></a>
+                                        </div>
+                                        <input type="checkbox" class="m_r10" data-type="checkbox" id="S_FIRST_PKG_SIGN_DAY_YN"
+                                            name="S_FIRST_PKG_SIGN_DAY_YN" value="Y"
+                                            data-bind="checked:S_FIRST_PKG_SIGN_DAY_YN" />최초
+                                        <a href="#" onclick="setDatePkgSignDate('newly1week');" class="btn smal">최근 1주일</a>
+                                        <a href="#" onclick="setDatePkgSignDate('newly1month')" class="btn smal">최근 1개월</a>
+                                        <a href="#" onclick="setDatePkgSignDate('newly3month')" class="btn smal">최근 3개월</a>
+                                    </td>
+                                    <th>내자/외자</th>
+                                    <td>
+                                        <input type="checkbox" class="m_r10" data-type="checkbox" id="S_SYS_TYPE_0"
+                                            name="S_SYS_TYPE" value="0" data-bind="checked:S_SYS_TYPE" checked />내자
+                                        <input type="checkbox" class="m_r10" data-type="checkbox" id="S_SYS_TYPE_1"
+                                            name="S_SYS_TYPE" value="1" data-bind="checked:S_SYS_TYPE" checked />외자
+                                    </td>
+                                </tr>
+            
+                                <tr>
+                                    <th>실적SG</th>
+                                    <td colspan="5">
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_1"
+                                                name="S_RESULT_SG" value="03" data-bind="checked:S_RESULT_SG" />
+                                            기지국/교환기
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_2"
+                                                name="S_RESULT_SG" value="04" data-bind="checked:S_RESULT_SG" />
+                                            중계기
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_3"
+                                                name="S_RESULT_SG" value="05" data-bind="checked:S_RESULT_SG" />
+                                            전송장비
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_4"
+                                                name="S_RESULT_SG" value="24" data-bind="checked:S_RESULT_SG" />
+                                            NW IT장비
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_5"
+                                                name="S_RESULT_SG" value="06" data-bind="checked:S_RESULT_SG" />
+                                            부대물자
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_6"
+                                                name="S_RESULT_SG" value="18" data-bind="checked:S_RESULT_SG" />
+                                            Access망 공사
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_7"
+                                                name="S_RESULT_SG" value="17" data-bind="checked:S_RESULT_SG" />
+                                            전송망 공사
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_8"
+                                                name="S_RESULT_SG" value="16" data-bind="checked:S_RESULT_SG" />
+                                            Core망 공사
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_9"
+                                                name="S_RESULT_SG" value="07" data-bind="checked:S_RESULT_SG" />
+                                            OS용역
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_10"
+                                                name="S_RESULT_SG" value="09" data-bind="checked:S_RESULT_SG" />
+                                            제휴사업
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_11"
+                                                name="S_RESULT_SG" value="25" data-bind="checked:S_RESULT_SG" />
+                                            성장 Biz
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_12"
+                                                name="S_RESULT_SG" value="08" data-bind="checked:S_RESULT_SG" />
+                                            일반용역
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_13"
+                                                name="S_RESULT_SG" value="15" data-bind="checked:S_RESULT_SG" />
+                                            일반공사
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_14"
+                                                name="S_RESULT_SG" value="01" data-bind="checked:S_RESULT_SG" />
+                                            일반물품
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_15"
+                                                name="S_RESULT_SG" value="11" data-bind="checked:S_RESULT_SG" />
+                                            개발용역
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_16"
+                                                name="S_RESULT_SG" value="13" data-bind="checked:S_RESULT_SG" />
+                                            유지보수
+                                        </label>
+            
+                                        <label>
+                                            <input type="checkbox" class="m_r10" data-type="checkbox" id="S_RESULT_SG_17"
+                                                name="S_RESULT_SG" value="02" data-bind="checked:S_RESULT_SG" />
+                                            IT장비
+                                        </label>
+            
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>실적년월</th>
+                                    <td colspan="5">
+            
+                                        <select id="S_FROM_YEAR" class="w70" name="S_FROM_YEAR" data-type="select"
+                                            data-bind="selectedOptions:S_FROM_YEAR">
+                                            <option value="" selected="selected"></option>
+            
+                                            <option value="2014">2014</option>
+            
+                                            <option value="2015">2015</option>
+            
+                                            <option value="2016">2016</option>
+            
+                                            <option value="2017">2017</option>
+            
+                                            <option value="2018">2018</option>
+            
+                                            <option value="2019">2019</option>
+            
+                                            <option value="2020">2020</option>
+            
+                                            <option value="2021">2021</option>
+            
+                                            <option value="2022">2022</option>
+            
+                                            <option value="2023">2023</option>
+            
+                                            <option value="2024">2024</option>
+            
+                                        </select>
+                                        년&nbsp;
+                                        <select id="S_FROM_MONTH" name="S_FROM_MONTH" data-type="select"
+                                            data-bind="selectedOptions:S_FROM_MONTH">
+            
+                                            <option value="" selected="selected"></option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="01">01</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="02">02</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="03">03</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="04">04</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="05">05</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="06">06</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="07">07</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="08">08</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="09">09</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="10">10</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="11">11</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="12">12</option>
+            
+                                        </select>월
+                                        &nbsp;&nbsp;~&nbsp;&nbsp;
+                                        <select id="S_TO_YEAR" class="w70" name="S_TO_YEAR" data-type="select"
+                                            data-bind="selectedOptions:S_TO_YEAR">
+                                            <option value="" selected="selected"></option>
+            
+                                            <option value="2014">2014</option>
+            
+                                            <option value="2015">2015</option>
+            
+                                            <option value="2016">2016</option>
+            
+                                            <option value="2017">2017</option>
+            
+                                            <option value="2018">2018</option>
+            
+                                            <option value="2019">2019</option>
+            
+                                            <option value="2020">2020</option>
+            
+                                            <option value="2021">2021</option>
+            
+                                            <option value="2022">2022</option>
+            
+                                            <option value="2023">2023</option>
+            
+                                            <option value="2024">2024</option>
+            
+                                        </select>
+                                        년&nbsp;
+                                        <select id="S_TO_MONTH" name="S_TO_MONTH" data-type="select"
+                                            data-bind="selectedOptions:S_TO_MONTH">
+            
+                                            <option value="" selected="selected"></option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="01">01</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="02">02</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="03">03</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="04">04</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="05">05</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="06">06</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="07">07</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="08">08</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="09">09</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="10">10</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="11">11</option>
+            
+            
+            
+            
+            
+            
+            
+                                            <option value="12">12</option>
+            
+                                        </select>월
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>개인정보취급여부 </th>
+                                    <td>
+                                        <input type="checkbox" class="m_r10" data-type="checkbox" id="S_PRIV_INFO_MGR_YN"
+                                            name="S_PRIV_INFO_MGR_YN" value="Y" data-bind="checked:S_PRIV_INFO_MGR_YN" />
+                                    </td>
+                                    <th>개인정보위탁여부</th>
+                                    <td>
+                                        <input type="checkbox" class="m_r10" data-type="checkbox" id="S_PRIV_INFO_TRUST_YN"
+                                            name="S_PRIV_INFO_TRUST_YN" value="Y" data-bind="checked:S_PRIV_INFO_TRUST_YN" />
+                                    </td>
+                                    <th>구매원전결</th>
+                                    <td>
+                                        <input type="checkbox" class="m_r10" data-type="checkbox" id="S_SELF_APPROVE_YN"
+                                            name="S_SELF_APPROVE_YN" value="Y" data-bind="checked:S_SELF_APPROVE_YN" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>Funnel ID</th>
+                                    <td><input type="text" class="w120" id="S_FUNNEL_ID" name="S_FUNNEL_ID"
+                                            data-bind="value:S_FUNNEL_ID"></td>
+                                    <th></th>
+                                    <td></td>
+                                    <th></th>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            
+                </div>
+                <div class="btnArea t_right m_t20">
+                    <button data-type="button" id="btnCntrtViewReq" type="button" class="af-button af-default">열람신청</button> 
+                    <button data-type="button" id="btnCntrtViewList" type="button" class="af-button af-default">열람신청현황</button> 
+                    <button data-type="button" id="btnExcel" type="button" class="af-button af-default af-icon-left"><span data-type="icon" data-addclass="download-alt" data-position="left" class="af-icon af-default download-alt"></span>엑셀다운(기본)</button>
+                    <!-- <button data-type="button" id="btnExcelAll" type="button"><span data-type="icon" data-addclass="download-alt" data-position="left"></span>엑셀다운(전체)</button> -->
+                    <button data-type="button" id="btnExcelOption" type="button" class="af-button af-default"><span data-type="icon" data-addclass="download-alt" data-position="left"></span>엑셀다운(옵션)</button>
+                    <!-- [2020.07.04] 저장활동 엑살다운로드 개발자:정종수 검토자:임진호 -->
+                    <button data-type="button" id="btnExcelSelfAct" type="button" class="af-button af-default"><span data-type="icon" data-addclass="download-alt" data-position="left"></span>자정활동</button>
+                </div>
+    
+            </div>
+        </div>
+
+        <footer class="footer_wrap">
+            <div class="inner">
+                <div class="footer_top">
+                    <ul class="footer_info">
+                        <li><span>우편번호 : 04539</span></li>
+                        <li><span>서울특별시 중구 을지로65(을지로2가) SK T-타워 SK텔레콤(주)</span></li>
+                        <li><span>대표이사 사장 : 유영상</span></li>
+                    </ul>
+                    <ul class="footer_info">
+                        <li><a href="javascript:;">개인정보처리방침</a></li>
+                        <li><a href="javascript:;">이메일주소무단수집거부</a></li>
+                    </ul>
+                </div>
+                <div class="footer_copy">
+                    <p>COPYRIGHT © SK TELECOM. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

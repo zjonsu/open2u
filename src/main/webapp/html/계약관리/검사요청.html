@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui_theme.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_ui.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <!-- wrap : S -->
+        <div class="wrap">
+            <!-- header_wrap : S -->
+            <header class="header_wrap">
+                <!-- 메인화면에서는 class="main" 추가  -->
+                <div class="header_top">
+                    <div class="inner">
+                        <ul class="header_top_user">
+                            <li>
+                                <span class="user"><i class="icons i_header_user"></i>홍길동님</span>
+                            </li>
+                            <li>
+                                <a href="javascript:;"><i class="icons i_header_logout"></i></a>
+                            </li>
+                        </ul>
+                        <ul class="header_top_menu">
+                            <li>
+                                <button type="button">업체검색시스템 <i class="icons i_header_search"></i></button>
+                            </li>
+                            <li>
+                                <button type="button">회의실예약 <i class="icons i_header_reserve"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="header_gnb">
+                    <div class="header_gnb_inner">
+                        <div class="align_lt">
+                            <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            <span class="desc">외자</span>
+                            <ul class="gnb_menu">
+                                <li>
+                                    <a href="#none">구매요청</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매요청</a></li>
+                                        <li><a href="javascript:;">계약변경요청</a></li>
+                                        <li><a href="javascript:;">납품지시</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">구매진행</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매접수</a></li>
+                                        <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">계약변경진행</a></li>
+                                        <li><a href="javascript:;">기술평가</a></li>
+                                        <li><a href="javascript:;">BMT평가</a></li>
+                                        <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                        <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약정산</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">검사조서</a></li>
+                                        <li><a href="javascript:;">보증관리</a></li>
+                                        <li><a href="javascript:;">자산관리</a></li>
+                                        <li><a href="javascript:;">지체면제</a></li>
+                                        <li><a href="javascript:;">구매전표</a></li>
+                                        <li><a href="javascript:;">유보금처리</a></li>
+                                        <li><a href="javascript:;">대금지급</a></li>
+                                        <li><a href="javascript:;">SCM 검사조서</a></li>
+                                    </ul>
+                                </li>
+                                <li class="selected">
+                                    <a href="#none">계약관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">계약대장</a></li>
+                                        <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                        <li><a href="javascript:;">[외자]계약대장</a></li>
+                                        <li><a href="javascript:;">납품지시내역</a></li>
+                                        <li><a href="javascript:;">실적증명발급</a></li>
+                                        <li><a href="javascript:;">하도급관리</a></li>
+                                        <li><a href="javascript:;">가격입찰</a></li>
+                                        <li><a href="javascript:;">제안평가</a></li>
+                                        <li><a href="javascript:;">기술평가개별조회</a></li>
+                                        <li><a href="javascript:;">기술평가완료현황</a></li>
+                                        <li><a href="javascript:;">RFx이력</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">결산/통계</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">미정산계약</a></li>
+                                        <li><a href="javascript:;">예산별구매현황</a></li>
+                                        <li><a href="javascript:;">소액구매현황</a></li>
+                                        <li><a href="javascript:;">Price Tracking</a></li>
+                                        <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                        <li><a href="javascript:;">구매체감도</a></li>
+                                        <li><a href="javascript:;">검사조서마감관리</a></li>
+                                        <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">공급사</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">공급사현황</a></li>
+                                        <li><a href="javascript:;">공급사 등록요청</a></li>
+                                        <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                        <li><a href="javascript:;">업체검색시스템</a></li>
+                                        <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                        <li><a href="javascript:;">연락처대장</a></li>
+                                        <li><a href="javascript:;">사전설문관리</a></li>
+                                        <li><a href="javascript:;">사전설문관리2</a></li>
+                                        <li><a href="javascript:;">방문신청관리</a></li>
+                                        <li><a href="javascript:;">비밀번호초기화</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">기준정보관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                        <li><a href="javascript:;">ITEM 현황</a></li>
+                                        <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                        <li><a href="javascript:;">품목 MASTER</a></li>
+                                        <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                        <li><a href="javascript:;">SG 관리</a></li>
+                                        <li><a href="javascript:;">업체평가기준</a></li>
+                                        <li><a href="javascript:;">구매소요계획</a></li>
+                                        <li><a href="javascript:;">상품입고예정정보</a></li>
+                                        <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                        <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                        <li><a href="javascript:;">상품재고 현황</a></li>
+                                        <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                        <li><a href="javascript:;">위젯관리</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">업무지원</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">마감관리</a></li>
+                                        <li><a href="javascript:;">조직/사용자관리</a></li>
+                                        <li><a href="javascript:;">권한관리</a></li>
+                                        <li><a href="javascript:;">팝업관리</a></li>
+                                        <li><a href="javascript:;">환경설정관리</a></li>
+                                        <li><a href="javascript:;">ERP연동 관리</a></li>
+                                        <li><a href="javascript:;">게시판</a></li>
+                                        <li><a href="javascript:;">운영배포 게시판</a></li>
+                                        <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                        <li><a href="javascript:;">오프라인체결</a></li>
+                                        <li><a href="javascript:;">총괄코드관리</a></li>
+                                        <li><a href="javascript:;">사용자 검색</a></li>
+                                        <li><a href="javascript:;">관리자계약재처리</a></li>
+                                        <li><a href="javascript:;">업무처리독려</a></li>
+                                        <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site_map">
+                            <button type="button" class="sitemapBtn sitemap_event"><i class="icons i_header_sitemap"></i></button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="siteMapArea">
+                    <nav class="header_gnb">
+                        <div class="header_gnb_inner">
+                            <div class="align_lt">
+                                <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            </div>
+                            <a href="javascript:;" class="siteMapClosebtn"></a>
+                        </div>
+                    </nav>
+                    <div class="siteMap_inner">
+                        <ul class="menuArea">
+                            <li><h3>구매요청</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매요청</a></li>
+                                    <li><a href="javascript:;">계약변경요청</a></li>
+                                    <li><a href="javascript:;">납품지시</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>구매진행</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매접수</a></li>
+                                    <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">계약변경진행</a></li>
+                                    <li><a href="javascript:;">기술평가</a></li>
+                                    <li><a href="javascript:;">BMT평가</a></li>
+                                    <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                    <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약정산</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">검사조서</a></li>
+                                    <li><a href="javascript:;">보증관리</a></li>
+                                    <li><a href="javascript:;">자산관리</a></li>
+                                    <li><a href="javascript:;">지체면제</a></li>
+                                    <li><a href="javascript:;">구매전표</a></li>
+                                    <li><a href="javascript:;">유보금처리</a></li>
+                                    <li><a href="javascript:;">대금지급</a></li>
+                                    <li><a href="javascript:;">SCM 검사조서</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">계약대장</a></li>
+                                    <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                    <li><a href="javascript:;">[외자]계약대장</a></li>
+                                    <li><a href="javascript:;">납품지시내역</a></li>
+                                    <li><a href="javascript:;">실적증명발급</a></li>
+                                    <li><a href="javascript:;">하도급관리</a></li>
+                                    <li><a href="javascript:;">가격입찰</a></li>
+                                    <li><a href="javascript:;">제안평가</a></li>
+                                    <li><a href="javascript:;">기술평가개별조회</a></li>
+                                    <li><a href="javascript:;">기술평가완료현황</a></li>
+                                    <li><a href="javascript:;">RFx이력</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>결산/통계</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">미정산계약</a></li>
+                                    <li><a href="javascript:;">예산별구매현황</a></li>
+                                    <li><a href="javascript:;">소액구매현황</a></li>
+                                    <li><a href="javascript:;">Price Tracking</a></li>
+                                    <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                    <li><a href="javascript:;">구매체감도</a></li>
+                                    <li><a href="javascript:;">검사조서마감관리</a></li>
+                                    <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>공급사</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">공급사현황</a></li>
+                                    <li><a href="javascript:;">공급사 등록요청</a></li>
+                                    <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                    <li><a href="javascript:;">업체검색시스템</a></li>
+                                    <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                    <li><a href="javascript:;">연락처대장</a></li>
+                                    <li><a href="javascript:;">사전설문관리</a></li>
+                                    <li><a href="javascript:;">사전설문관리2</a></li>
+                                    <li><a href="javascript:;">방문신청관리</a></li>
+                                    <li><a href="javascript:;">비밀번호초기화</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>기준정보관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                    <li><a href="javascript:;">ITEM 현황</a></li>
+                                    <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                    <li><a href="javascript:;">품목 MASTER</a></li>
+                                    <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                    <li><a href="javascript:;">SG 관리</a></li>
+                                    <li><a href="javascript:;">업체평가기준</a></li>
+                                    <li><a href="javascript:;">구매소요계획</a></li>
+                                    <li><a href="javascript:;">상품입고예정정보</a></li>
+                                    <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                    <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                    <li><a href="javascript:;">상품재고 현황</a></li>
+                                    <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                    <li><a href="javascript:;">위젯관리</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>업무지원</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">마감관리</a></li>
+                                    <li><a href="javascript:;">조직/사용자관리</a></li>
+                                    <li><a href="javascript:;">권한관리</a></li>
+                                    <li><a href="javascript:;">팝업관리</a></li>
+                                    <li><a href="javascript:;">환경설정관리</a></li>
+                                    <li><a href="javascript:;">ERP연동 관리</a></li>
+                                    <li><a href="javascript:;">게시판</a></li>
+                                    <li><a href="javascript:;">운영배포 게시판</a></li>
+                                    <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                    <li><a href="javascript:;">오프라인체결</a></li>
+                                    <li><a href="javascript:;">총괄코드관리</a></li>
+                                    <li><a href="javascript:;">사용자 검색</a></li>
+                                    <li><a href="javascript:;">관리자계약재처리</a></li>
+                                    <li><a href="javascript:;">업무처리독려</a></li>
+                                    <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <!-- //header_wrap : E -->
+
+            <!-- container : S -->
+            <div class="container">
+                <div class="content">
+                    <div id="tabPage" data-type="tabs">
+                        <!-- Tab Buttons -->
+                        <ul class="tabs popup">
+                            <li id="tab1" class="tabs_on" data-content="#subTab1">검사요청관리</li>
+                            <li id="tab2" data-content="#subTab2">검사요청</li>
+                        </ul>
+                    </div>
+
+                    <div id="subTab1">
+                        <div class="title_area">
+                            <div class="left">
+                                <h2 class="title">검사요청관리</h2>
+                                <ul class="location_area">
+                                    <li>
+                                        <a href="javascript:;" class="home"><i class="icons i_location_home"></i></a>
+                                    </li>
+                                    <li><a href="javascript:;">계약관리</a></li>
+                                    <li><strong>검사요청관리</strong></li>
+                                </ul>
+                            </div>
+                            <div class="right">
+                                <div class="tbl_search_btn">
+                                    <button type="button" class="btn sch c_type02">검색</button>
+                                </div>
+                                <div class="tbl_btn_area">
+                                    <button type="button" class="btn c_type04">버튼04</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="searchBox">
+                            <table class="tableStyle ty02"> <!-- ty02 클래스 추가 -->
+                                <colgroup>
+                                    <col style="width:152px">
+                                    <col>
+                                    <col style="width:152px">
+                                    <col>
+                                    <col style="width:152px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>진행상태</th>
+                                        <td>
+                                            <select>
+                                                <option>전체</option>
+                                            </select>
+                                        </td>
+                                        <th>계약종류</th>
+                                        <td>
+                                            <select>
+                                                <option>전체</option>
+                                            </select>
+                                        </td>
+                                        <th>검사요청/조서번호</th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <div class="ipt_group">
+                                                <input type="text">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search USER_USR"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>검사요청건명</th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <div class="ipt_group">
+                                                <input type="text">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search USER_USR"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>검사부서</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <input type="text" class="w80 readonly" readonly="readonly">
+                                            <div class="ipt_group">
+                                                <input type="text" class="w137">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                        <th>검사담당자</th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <input type="text" class="w80 readonly" readonly="readonly">
+                                            <div class="ipt_group">
+                                                <input type="text" class="w137">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>검사요청일(생성일)</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>계약부서</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <input type="text" class="w80 readonly" readonly="readonly">
+                                            <div class="ipt_group">
+                                                <input type="text" class="w137">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>계약담당자</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <input type="text" class="w80 readonly" readonly="readonly">
+                                            <div class="ipt_group">
+                                                <input type="text" class="w137">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>목적물수령일</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>세금계산서발행일</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>계약체결일</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>계약번호/납품지시번호</th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <div class="ipt_group">
+                                                <input type="text">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search USER_USR"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                        <th>전표번호</th>
+                                        <td colspan="3">
+                                            <!-- 2025-11-17 수정 -->
+                                            <div class="ipt_group">
+                                                <input type="text">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search USER_USR"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="sch_area">
+                                <div class="titleArea type1">
+                                    <h3>상세검색</h3>
+                                </div>
+                                <table class="tableStyle ty02"> <!-- ty02 클래스 추가 -->
+                                    <colgroup>
+                                        <col style="width:152px">
+                                        <col>
+                                        <col style="width:152px">
+                                        <col>
+                                        <col style="width:152px">
+                                        <col>
+                                    </colgroup>
+                                    <tbody>
+                                        <tr>
+                                            <th>계약일자</th>
+                                            <td>
+                                                <div class="daterange_area">
+                                                    <div class="datepicker_area">
+                                                        <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                                        <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <th>구매요청부서</th>
+                                            <td>
+                                                <!-- 2025-11-17 수정 -->
+                                                <input type="text" class="w80 readonly" readonly="readonly">
+                                                <div class="ipt_group">
+                                                    <input type="text" class="w137">
+                                                    <a href="javascript:;" class="btnS closes"></a>
+                                                </div>
+                                                <a href="javascript:;" class="btnS search"></a>
+                                                <!-- // 2025-11-17 수정 -->
+                                            </td>
+                                            <th>구매요청자</th>
+                                            <td>
+                                                <!-- 2025-11-17 수정 -->
+                                                <input type="text" class="w80 readonly" readonly="readonly">
+                                                <div class="ipt_group">
+                                                    <input type="text" class="w137">
+                                                    <a href="javascript:;" class="btnS closes"></a>
+                                                </div>
+                                                <a href="javascript:;" class="btnS search"></a>
+                                                <!-- // 2025-11-17 수정 -->
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>검사요청건명</th>
+                                            <td>
+                                                <input type="text" class="wp100">
+                                            </td>
+                                            <th>수주계약</th>
+                                            <td>
+                                                <span class="chk">
+                                                    <input type="checkbox" id="chk04" />
+                                                    <label for="chk04"></label>
+                                                </span>
+                                            </td>
+                                            <th>구매 Risk 관리</th>
+                                            <td>
+                                                <ul class="form_group_chk">
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk05" />
+                                                            <label for="chk05">미처리 검사조서</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk06" />
+                                                            <label for="chk06">대금지급 기한 초과</label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>경과일수</th>
+                                            <td>
+                                                <input type="text">
+                                            </td>
+                                            <th>메일발송여부</th>
+                                            <td colspan="3">
+                                                <span class="chk">
+                                                    <input type="checkbox" id="chk07" />
+                                                    <label for="chk07"></label>
+                                                </span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th>진행상태</th>
+                                            <td colspan="5">
+                                                <ul class="form_group_chk">
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk02" />
+                                                            <label for="chk02">동의전</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk03" />
+                                                            <label for="chk03">접수전</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk04" />
+                                                            <label for="chk04">작성중</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk05" />
+                                                            <label for="chk05">미결재</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk06" />
+                                                            <label for="chk06">결재중</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk07" />
+                                                            <label for="chk07">결재완료</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk08" />
+                                                            <label for="chk08">취소</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk09" />
+                                                            <label for="chk09">자체검사</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk10" />
+                                                            <label for="chk10">전표작성</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk11" />
+                                                            <label for="chk11">세금계산서발행요청중</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk12" />
+                                                            <label for="chk12">세금계산서발행</label>
+                                                        </span>
+                                                    </li>
+                                                    <li>
+                                                        <span class="chk">
+                                                            <input type="checkbox" id="chk13" />
+                                                            <label for="chk13">전표결재완료</label>
+                                                        </span>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <button type="button" class="search_toggle"><i class="icons i_form_toggle"></i> <span>펼치기</span></button>
+                        </div>
+
+                        <div class="tbl_top">
+                            <div class="left"></div>
+                            <div class="right">
+                                <button type="button" class="btn c_type01">열람신청</button>
+                                <button type="button" class="btn c_type01">열람신청현황</button>
+                                <button type="button" class="btn c_type01">자정활동</button>
+                                <button type="button" class="btn excel c_type05"><i class="icons i_btn_excel"></i> 엑셀다운(기본)</button> 
+                                <button type="button" class="btn excel c_type05"><i class="icons i_btn_excel"></i> 엑셀다운(옵션)</button>
+                            </div>
+                        </div>
+
+                        <div class="grid_area">
+                            <table id="jqGrid"></table>
+                        </div>
+                        <div class="paging_area">
+                            <div class="total_area">
+                                <span class="total">Total : <em>999</em></span>
+                            </div>
+                            <a href="javascript:;" class="first">first</a>
+                            <a href="javascript:;" class="pre">prev</a>
+                            <a href="javascript:;">1</a>
+                            <a href="javascript:;" class="selected">2</a>
+                            <a href="javascript:;">3</a>
+                            <a href="javascript:;">4</a>
+                            <a href="javascript:;">5</a>
+                            <a href="javascript:;">6</a>
+                            <a href="javascript:;">7</a>
+                            <a href="javascript:;">8</a>
+                            <a href="javascript:;">9</a>
+                            <a href="javascript:;">10</a>
+                            <a href="javascript:;" class="next">next</a>
+                            <a href="javascript:;" class="last">last</a>
+                            <div class="amount_area">
+                                <select class="amount">
+                                    <option>10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div id="subTab2">
+                        <div class="title_area">
+                            <div class="left">
+                                <h2 class="title">검사요청</h2>
+                                <ul class="location_area">
+                                    <li>
+                                        <a href="javascript:;" class="home"><i class="icons i_location_home"></i></a>
+                                    </li>
+                                    <li><a href="javascript:;">계약관리</a></li>
+                                    <li><strong>검사요청</strong></li>
+                                </ul>
+                            </div>
+                            <div class="right">
+                                <div class="tbl_search_btn">
+                                    <button type="button" class="btn sch c_type02">검색</button>
+                                </div>
+                                <div class="tbl_btn_area">
+                                    <button type="button" class="btn c_type04">버튼04</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="searchBox">
+                            <table class="tableStyle ty02"> <!-- ty02 클래스 추가 -->
+                                <colgroup>
+                                    <col style="width:152px">
+                                    <col>
+                                    <col style="width:152px">
+                                    <col>
+                                    <col style="width:152px">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>진행상태</th>
+                                        <td>
+                                            <select>
+                                                <option>전체</option>
+                                            </select>
+                                        </td>
+                                        <th>계약종류</th>
+                                        <td>
+                                            <select>
+                                                <option>전체</option>
+                                            </select>
+                                        </td>
+                                        <th>검사요청/조서번호</th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <div class="ipt_group">
+                                                <input type="text">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search USER_USR"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>검사요청건명</th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <div class="ipt_group">
+                                                <input type="text">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search USER_USR"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>검사부서</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <input type="text" class="w80 readonly" readonly="readonly">
+                                            <div class="ipt_group">
+                                                <input type="text" class="w137">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                        <th>검사담당자</th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <input type="text" class="w80 readonly" readonly="readonly">
+                                            <div class="ipt_group">
+                                                <input type="text" class="w137">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>검사요청일(생성일)</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>계약부서</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <input type="text" class="w80 readonly" readonly="readonly">
+                                            <div class="ipt_group">
+                                                <input type="text" class="w137">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>계약담당자</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <input type="text" class="w80 readonly" readonly="readonly">
+                                            <div class="ipt_group">
+                                                <input type="text" class="w137">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>목적물수령일</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>세금계산서발행일</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                        <th>
+                                            <select class="select_dt">
+                                                <option>계약체결일</option>
+                                            </select>
+                                        </th>
+                                        <td>
+                                            <div class="datepicker_area">
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                                <div class="datepicker_box"><input class="datepicker" type="text" /></div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>계약번호/납품지시번호</th>
+                                        <td>
+                                            <!-- 2025-11-17 수정 -->
+                                            <div class="ipt_group">
+                                                <input type="text">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search USER_USR"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                        <th>전표번호</th>
+                                        <td colspan="3">
+                                            <!-- 2025-11-17 수정 -->
+                                            <div class="ipt_group">
+                                                <input type="text">
+                                                <a href="javascript:;" class="btnS closes"></a>
+                                            </div>
+                                            <a href="javascript:;" class="btnS search USER_USR"></a>
+                                            <!-- // 2025-11-17 수정 -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="tbl_top">
+                            <div class="left"></div>
+                            <div class="right">
+                                <button type="button" class="btn c_type01">열람신청</button>
+                                <button type="button" class="btn c_type01">열람신청현황</button>
+                                <button type="button" class="btn c_type01">자정활동</button>
+                                <button type="button" class="btn excel c_type05"><i class="icons i_btn_excel"></i> 엑셀다운(기본)</button> 
+                                <button type="button" class="btn excel c_type05"><i class="icons i_btn_excel"></i> 엑셀다운(옵션)</button>
+                            </div>
+                        </div>
+
+                        <div class="grid_area">
+                            <table id="jqGrid2"></table>
+                        </div>
+                        <div class="paging_area">
+                            <div class="total_area">
+                                <span class="total">Total : <em>999</em></span>
+                            </div>
+                            <a href="javascript:;" class="first">first</a>
+                            <a href="javascript:;" class="pre">prev</a>
+                            <a href="javascript:;">1</a>
+                            <a href="javascript:;" class="selected">2</a>
+                            <a href="javascript:;">3</a>
+                            <a href="javascript:;">4</a>
+                            <a href="javascript:;">5</a>
+                            <a href="javascript:;">6</a>
+                            <a href="javascript:;">7</a>
+                            <a href="javascript:;">8</a>
+                            <a href="javascript:;">9</a>
+                            <a href="javascript:;">10</a>
+                            <a href="javascript:;" class="next">next</a>
+                            <a href="javascript:;" class="last">last</a>
+                            <div class="amount_area">
+                                <select class="amount">
+                                    <option>10</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //container : E -->
+
+            <!-- footer_wrap : S -->
+            <footer class="footer_wrap">
+                <div class="inner">
+                    <div class="footer_top">
+                        <ul class="footer_info">
+                            <li><span>우편번호 : 04539</span></li>
+                            <li><span>서울특별시 중구 을지로65(을지로2가) SK T-타워 SK텔레콤(주)</span></li>
+                            <li><span>대표이사 사장 : 유영상</span></li>
+                        </ul>
+                        <ul class="footer_info">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이메일주소무단수집거부</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_copy">
+                        <p>COPYRIGHT © SK TELECOM. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- //footer_wrap : E -->
+        </div>
+        <!-- //wrap : E -->
+        <script>
+            var mydata = [
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+                {
+                    data1: "",
+                    data2: "",
+                    data3: "",
+                    data4: "",
+                    data5: "",
+                    data6: "",
+                    data7: "",
+                    data8: "",
+                    data9: "",
+                    data10: "",
+                    data11: "",
+                    data12: "",
+                    data13: "",
+                    data14: "",
+                    data15: "",
+                    data16: "",
+                    data17: "",
+                    data18: "",
+                    data19: "",
+                    data20: "",
+                    data21: "",
+                    data22: "",
+                    data23: "",
+                    data24: "",
+                    data25: "",
+                    data26: "",
+                    data27: "",
+                    data28: "",
+                    data29: "",
+                    data30: "",
+                },
+            ];
+
+            $(document).ready(function () {
+                $("#jqGrid").jqGrid({
+                    datatype: "local",
+                    data: mydata,
+                    autowidth: true,
+                    cellEdit: true,
+                    shrinkToFit: false,
+                    forceFit: true,
+                    pager: "#jqGridPager",
+                    colModel: [
+                        { label: "data1", name: "data1", width: 100, editable: true },
+                        { label: "data2", name: "data2", width: 100, editable: true },
+                        { label: "data3", name: "data3", width: 100, editable: true },
+                        { label: "data4", name: "data4", width: 100, editable: true },
+                        { label: "data5", name: "data5", width: 100, editable: true },
+                        { label: "data6", name: "data6", width: 100, editable: true },
+                        { label: "data7", name: "data7", width: 100, editable: true },
+                        { label: "data8", name: "data8", width: 100, editable: true },
+                        { label: "data9", name: "data9", width: 100, editable: true },
+                        { label: "data10", name: "data10", width: 100, editable: true },
+                        { label: "data11", name: "data11", width: 100, editable: true },
+                        { label: "data12", name: "data12", width: 100, editable: true },
+                        { label: "data13", name: "data13", width: 100, editable: true },
+                        { label: "data14", name: "data14", width: 100, editable: true },
+                        { label: "data15", name: "data15", width: 100, editable: true },
+                        { label: "data16", name: "data16", width: 100, editable: true },
+                        { label: "data17", name: "data17", width: 100, editable: true },
+                        { label: "data18", name: "data18", width: 100, editable: true },
+                        { label: "data19", name: "data19", width: 100, editable: true },
+                        { label: "data20", name: "data20", width: 100, editable: true },
+                        { label: "data21", name: "data21", width: 100, editable: true },
+                        { label: "data22", name: "data22", width: 100, editable: true },
+                        { label: "data23", name: "data23", width: 100, editable: true },
+                        { label: "data24", name: "data24", width: 100, editable: true },
+                        { label: "data25", name: "data25", width: 100, editable: true },
+                        { label: "data26", name: "data26", width: 100, editable: true },
+                        { label: "data27", name: "data27", width: 100, editable: true },
+                        { label: "data28", name: "data28", width: 100, editable: true },
+                        { label: "data29", name: "data29", width: 100, editable: true },
+                        { label: "data30", name: "data30", width: 100, editable: true },
+                    ],
+                });
+
+                $("#jqGrid2").jqGrid({
+                    datatype: "local",
+                    data: mydata,
+                    autowidth: true,
+                    cellEdit: true,
+                    shrinkToFit: false,
+                    forceFit: true,
+                    pager: "#jqGridPager",
+                    colModel: [
+                        { label: "data1", name: "data1", width: 100, editable: true },
+                        { label: "data2", name: "data2", width: 100, editable: true },
+                        { label: "data3", name: "data3", width: 100, editable: true },
+                        { label: "data4", name: "data4", width: 100, editable: true },
+                        { label: "data5", name: "data5", width: 100, editable: true },
+                        { label: "data6", name: "data6", width: 100, editable: true },
+                        { label: "data7", name: "data7", width: 100, editable: true },
+                        { label: "data8", name: "data8", width: 100, editable: true },
+                        { label: "data9", name: "data9", width: 100, editable: true },
+                        { label: "data10", name: "data10", width: 100, editable: true },
+                        { label: "data11", name: "data11", width: 100, editable: true },
+                        { label: "data12", name: "data12", width: 100, editable: true },
+                        { label: "data13", name: "data13", width: 100, editable: true },
+                        { label: "data14", name: "data14", width: 100, editable: true },
+                        { label: "data15", name: "data15", width: 100, editable: true },
+                        { label: "data16", name: "data16", width: 100, editable: true },
+                        { label: "data17", name: "data17", width: 100, editable: true },
+                        { label: "data18", name: "data18", width: 100, editable: true },
+                        { label: "data19", name: "data19", width: 100, editable: true },
+                        { label: "data20", name: "data20", width: 100, editable: true },
+                        { label: "data21", name: "data21", width: 100, editable: true },
+                        { label: "data22", name: "data22", width: 100, editable: true },
+                        { label: "data23", name: "data23", width: 100, editable: true },
+                        { label: "data24", name: "data24", width: 100, editable: true },
+                        { label: "data25", name: "data25", width: 100, editable: true },
+                        { label: "data26", name: "data26", width: 100, editable: true },
+                        { label: "data27", name: "data27", width: 100, editable: true },
+                        { label: "data28", name: "data28", width: 100, editable: true },
+                        { label: "data29", name: "data29", width: 100, editable: true },
+                        { label: "data30", name: "data30", width: 100, editable: true },
+                    ],
+                });
+            });
+
+            $(window)
+                .bind("resize", function () {
+                    $("#jqGrid").setGridWidth($(".grid_area").width());
+                })
+                .trigger("resize");
+        </script>
+    </body>
+</html>

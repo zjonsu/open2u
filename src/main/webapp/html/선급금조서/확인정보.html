@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="layer_popup" data-role-popup="samplePop01"> <!-- 2025-07-24 추가 -->
+            <div class="dim"></div>
+            <div class="layer_popup_area sm">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">검사완료일 수정</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="datepicker_area inline">
+                                    <div id="datepicker" class="datepicker"></div>
+                                </div>
+                            </div>
+
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">취소</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // datepicker -->
+        <!-- // layer_popup -->
+
+
+
+        <div class="pop_wrap">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">선급금조서 작성</h1>
+                    </div>
+                    <div class="right">
+                        <ul class="progress_step_list">
+                            <li>
+                                <a href="javascript:;">구매요청</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매접수</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약진행</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약완료</a>
+                            </li>
+                            <li class="in_progress">
+                                <a href="javascript:;">검사조서</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매전표</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">대금지급</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_info_area on">
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">검사조서번호</span>
+                            <span class="info_text">52603442962</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사요청일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">공급업체명</span>
+                            <span class="info_text">주식회사 뮤플러스</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약번호</span>
+                            <span class="info_text">4160086491</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">계약담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">인수동의일
+                                <span class="count">D<span class="num_sign">+</span><em class="count_num">00</em></span>
+                            </span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사완료일<button type="button" class="info_list_btn" onclick="layerPopup('samplePop01')">수정</button></span> <!-- 2025-07-24 수정 -->
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">검사조서건명</span>
+                            <span class="info_text">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">검사담당자<button type="button" class="info_list_btn ty02">이관</button></span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="toggle_btn"><span class="txt">Close</span><i class="ico_toggle_arr"></i></button> 
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_aside">
+                    <ul class="aside_progress_list">
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">1. 요청정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">2. 예산정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li class="in_progress">
+                            <span class="status">작성중</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">3. 확인정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">4. 결재정보</a>
+                            </h2>
+                        </li>
+                    </ul>
+                    <ul class="link_area">
+                        <li>
+                            <button type="button" class="link_btn">목적물수령증명서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="link_btn">FAQ</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <div class="cont_inner">
+                            <div class="sub_tit_area m_t0">
+                                <div class="left">
+                                    <h2 class="tit">선급금요청의견</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                            
+                            <div class="form_area">
+                                <div class="grid_container">
+                                    <div class="row gx_18 gy_20">
+                                        <div class="col_12">
+                                            <div class="info_item">
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control fz16" placeholder="내용 입력" value="검사요청의견" readonly> <!-- 2025-06-10 수정 -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">지급처정보</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="form_area">
+                                <div class="grid_container">
+                                    <div class="row gx_12 gy_10">
+                                        <div class="col_12">
+                                            <div class="cnt">
+                                                <div class="file_select_wrap readonly">
+                                                    <div class="file_select_btn" tabindex="0"> <!-- focus 적용 가능하도록 tabindex추가 -->
+                                                        <ul class="element_list">
+                                                            <li>
+                                                                <span>거래처유형</span><strong>DELT</strong>
+                                                            </li>
+                                                            <li>
+                                                                <span>금융기관명</span><strong>국민은행</strong>
+                                                            </li>
+                                                            <li>
+                                                                <span>계죄번호</span><strong>12345678909876</strong>
+                                                            </li>
+                                                            <li>
+                                                                <span>예금주명</span><strong>주식회사 뮤플러스</strong>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <ul class="select_list">
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <ul class="element_list">
+                                                                    <li>
+                                                                        <span>거래처유형</span><strong>DELT</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>금융기관명</span><strong>국민은행</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>계죄번호</span><strong>12345678909876</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>예금주명</span><strong>주식회사 뮤플러스</strong>
+                                                                    </li>
+                                                                </ul>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <ul class="element_list">
+                                                                    <li>
+                                                                        <span>거래처유형</span><strong>DELT</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>금융기관명</span><strong>국민은행</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>계죄번호</span><strong>12345678909876</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>예금주명</span><strong>주식회사 뮤플러스</strong>
+                                                                    </li>
+                                                                </ul>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">
+                                                                <ul class="element_list">
+                                                                    <li>
+                                                                        <span>거래처유형</span><strong>DELT</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>금융기관명</span><strong>국민은행</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>계죄번호</span><strong>12345678909876</strong>
+                                                                    </li>
+                                                                    <li>
+                                                                        <span>예금주명</span><strong>주식회사 뮤플러스</strong>
+                                                                    </li>
+                                                                </ul>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">보증정보</h2>
+                                    <p class="info_msg sm">※ 보증보험 기준 금액이 부가세포함 계약금액인지 확인 하세요.</p>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="form_area">
+                                <div class="grid_container">
+                                    <div class="row gx_12 gy_20">
+                                        <div class="col_12">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">선급금보증증빙</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="file_wrap">
+                                                        <select class="form_control readonly">
+                                                            <option>하자이행 수행 확약서</option>
+                                                        </select>
+                                                        <div class="file_list_wrap">
+                                                            <div class="file_list">
+                                                                <p class="file_name">
+                                                                    <a href="javascript:;">하자보증증빙파일_하자보증증빙파일_하자보증증빙파일_하자보증증빙파일_하자보증증빙파일_하자보증증빙파일.pdf</a>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">최종인수</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="form_area">
+                                <div class="grid_container">
+                                    <div class="row gx_12 gy_20">
+                                        <div class="col_6">
+                                            <div class="info_item">
+                                                <div class="cnt flex align_center">
+                                                    <button type="button" class="btn lg request active">최종인수 요청하기 <i class="ico"></i></button>
+                                                    <a href="javascript:;" class="file_link">최종인수확인서</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">지체상금</h2>
+                                    <p class="info_msg sm">※ 검사요청일이 납품기한을 초과하여 지체상금이 발생 했습니다. 계약담당자와 상의하세요.</p>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="form_area">
+                                <div class="grid_container">
+                                    <div class="row gx_12 gy_20">
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">지체발생일</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="날짜 입력" value="149일" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">지체상금율</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="내용 입력" value="0.15%" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">지체상금</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="208,972,500원" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_12">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">지체발생원인주체</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control readonly">
+                                                        <option>선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_12">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">지체발생사유</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <textarea class="form_control" placeholder="내용 입력" rows="2" readonly></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">면제요청일</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="날짜 입력" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">면제요청금액</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="999,999원" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">부과지체상금</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="208,972,500원" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_12">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">요청사유</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <textarea class="form_control" placeholder="내용 입력" rows="2" readonly></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">유의사항</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="all_chk_area">
+                                <div class="form_check">
+                                    <label for="chk00"  class="info_msg xl">모든 사항을 확인하셔야 다음으로 진행 가능 합니다.</label>
+                                    <input type="checkbox" id="chk00" class="form_control" />
+                                </div>
+                            </div>
+
+                            <div class="note_chk_area">
+                                <ul class="note_list">
+                                    <li>
+                                        <span class="form_check">
+                                            <label for="chk01">요청자 연락처가 정확히 입력되었는지 확인해 주세요.</label>
+                                            <input type="checkbox" id="chk01">
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form_check">
+                                            <label for="chk02">SKT 검사담당자가 정확히 입력되었는지 확인해 주세요.</label>
+                                            <input type="checkbox" id="chk02">
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form_check">
+                                            <label for="chk03">추가 증빙의 세부내용은 (금액, 날짜) 표준 증빙과 일치해야 합니다.</label>
+                                            <input type="checkbox" id="chk03">
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form_check">
+                                            <label for="chk04">검사요청 금액은 VAT를 제외한 금액을 입력해야 합니다.</label>
+                                            <input type="checkbox" id="chk04">
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span class="form_check">
+                                            <label for="chk05">납품사진, 품질검사내역 등의 추가 증빙이 필요 할 수 있습니다. 검사담당자와 사전에 협의 하시기 바랍니다.</label>
+                                            <input type="checkbox" id="chk05">
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="btm_btn_area">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn md">반송</button>
+                                    <button type="button" class="btn pop lbtn md">저장</button>
+                                    <span class="divid"></span> 
+                                    <button type="button" class="btn pop lbtn ty02 md">이전</button>
+                                    <button type="button" class="btn pop lg">결재요청</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var mydata = [
+                {
+                    NO: "1",
+                    사업영역: "용역",
+                    예산집행부서: '1',
+                    회계계정: '9000001928',
+                    펀드실행과제: "일반용역",
+                    기능영역: "GUN",
+                    BM오더: "1",
+                },
+                {
+                    NO: "2",
+                    사업영역: "용역",
+                    예산집행부서: '1',
+                    회계계정: '9000001928',
+                    펀드실행과제: "일반용역",
+                    기능영역: "GUN",
+                    BM오더: "1",
+                },
+                {
+                    NO: "3",
+                    사업영역: "용역",
+                    예산집행부서: '1',
+                    회계계정: '9000001928',
+                    펀드실행과제: "일반용역",
+                    기능영역: "GUN",
+                    BM오더: "1",
+                },
+                {
+                    NO: "4",
+                    사업영역: "용역",
+                    예산집행부서: '1',
+                    회계계정: '9000001928',
+                    펀드실행과제: "일반용역",
+                    기능영역: "GUN",
+                    BM오더: "1",
+                },
+            ];
+
+            $(document).ready(function () {
+                $("#jqGrid").jqGrid({
+                    datatype: "local",
+                    data: mydata,
+                    autowidth: true,
+                    cellEdit: true,
+                    shrinkToFit: false,
+                    forceFit: true,
+                    pager: "#jqGridPager",
+                    colModel: [
+                        { label: "NO", name: "NO", width: 41, editable: true },
+                        { label: "사업영역", name: "사업영역", width: 143, editable: true, },
+                        { label: "예산집행부서(CC)", name: "예산집행부서", width: 143, editable: true },
+                        { label: "회계계정(G/L)", name: "회계계정", width: 143, editable: true },
+                        { label: "펀드실행과제", name: "펀드실행과제", width: 143, editable: true },
+                        { label: "기능영역", name: "기능영역", width: 143, editable: true },
+                        { label: "BM오더", name: "BM오더", width: 143, editable: true },
+                    ],
+
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+            });
+
+            $(window).bind("resize", function () {
+                $("#jqGrid").setGridWidth($(".grid_area").width());
+            }).trigger("resize");
+        </script>
+    </body>
+</html>

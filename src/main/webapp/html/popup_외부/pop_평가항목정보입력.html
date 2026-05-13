@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <div class="pop_header_area">
+            <div class="pop_top_area">
+                <div class="left">
+                    <h2 class="pop_title">평가항목 정보 입력(공급업체 제출)</h2>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="popcontents">
+            <div class="appraisal_title">
+                <div class="left"><h3 class="title">행복나래 주식회사</h3></div>
+                <div class="right">
+                    <ul class="sub_info">
+                        <li>
+                            <span class="label">평가제출일</span>
+                        </li>
+                        <li>
+                            <strong class="info">2023.09.21</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="appraisal_tbl_top">
+                <table class="appraisal_tbl">
+                    <colgroup>
+                        <col style="width:22%">
+                        <col>
+                        <col style="width:10%">
+                        <col style="width:10%">
+                        <col style="width:10%">
+                        <col style="width:10%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th rowspan="2">세부 평가 기준</th>
+                            <th rowspan="2">배점</th>
+                            <th rowspan="2">제출파일명</th>
+                            <th rowspan="2">해당 내용<br>페이지</th>
+                            <th rowspan="2">참고사항<br>(SKT제출용)</th>
+                        </tr>
+                        <tr>
+                            <th>평가항목</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="7" class="appraisal_step_td"><span class="appraisal_step">A. 안전보건관리체제</span></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">1. 일반원칙</h4>
+                                <p class="appraisal_p">
+                                    도급 수급인의 안전보건방침
+                                    적정 여부
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">안전보건목표 및 경영방침 (5점/3점/0점)</h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 목표, 경영방침 중 1개만 있을 경우 3점</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td>새 텍스트 파일.txt</td>
+                            <td>2쪽 1번 문단</td>
+                            <td>3개 다 존재</td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">2. 계획수립</h4>
+                                <p class="appraisal_p">
+                                    산업재해예방 활동에 대한 수급인의 이행계획 적정 여부
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">안전보건관리계획서 (15~0점)</h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 중대재해처벌법 시행령 제4조 1~9항에서 규정한 9가지 항목 포함</li>
+                                    <li><span>-</span> 1개 미포함시 2점씩 감점</li>
+                                    <li><span>-</span> 중대재해처벌법 해설서 42p 참고하여 작성하되, 각 회사별 인력/사업 상황에 맞게 작성</li>
+                                    <li><span>-</span> 제4조9항의 경우 하도급/재하도급 하지 않을 경우 참고사항 (SKT제출용)에 명기하면 2점 인정</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">15</strong></td>
+                            <td>불러오기</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="td_b_none">
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">3. 역할 및 책임</h4>
+                                <p class="appraisal_p">
+                                    이행계획 추진을 위한
+                                    구성원의 역할 분담(본사, 현장)
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    안전보건관리계획서 내 안건보건조직 구성, 역할, 책임 및 권한 명시 여부 확인 (3점/0점)
+                                </h5>
+                                <h5 class="appraisal_h5">
+                                    안전 업무 관련 인력 세부 현황 (2점/0점)
+                                </h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 중대재해처벌법 및 산업안전보건법에 따라 각 회사에 맞는 조직구성 및 인력 배치 여부 확인</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" class="appraisal_step_td"><span class="appraisal_step">B. 안전보건실행능력</span></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">4. 위험성평가</h4>
+                                <p class="appraisal_p">
+                                    도급작업에 대한 이해수준 및 자체 유해 위험요인 평가수준
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    해당 도급작업 공정에 대한 위험성평가 계획서 및 증빙(10점/5점/0점)
+                                </h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 위험성평가 계획서만 제출 시 5점, 아래 증빙까지 모두 제출 시 10점</li>
+                                    <li><span>-</span> 최근 6개월 이내 시행한 위험성평가 시행 현황 표로 계획서 내 포함</li>
+                                    <li><span>-</span> 해당 증빙은 별도 PDF로 제출 (도급 계약의 경우 도급사별 대표유형 1개씩 (10개 이내) (SKT계약에 대한 위험평가서 없을 시 타 회사 진행 내역 제출 가능)</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">5. 안전점검</h4>
+                                <p class="appraisal_p">
+                                    안전점검 및 모니터링(보호구 착용 확인 포함)
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    안전보호구 지급 계획서 및 모니터링 계획서 (각 5점/3점/0점)
+                                </h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 과거 6개월 이내 실제 지급/모니터링 내역 PDF스캔 제출, 없을 경우 2점 감점</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">6. 교육 및 기록</h4>
+                                <p class="appraisal_p">
+                                    안전보건교육 계획 및 기록관리
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    안전보건교육 계획서 및 시행이력 (3점/2점/0점)
+                                </h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 과거 6개월 이내 안전보건 교육 실행 이력 및 참석자 명단 PDF 스캔 제출, 미포함시 1점 감점</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="td_b_none">
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">7. 안전작업허가</h4>
+                                <p class="appraisal_p">
+                                    유해 위험작업에 대한 안전작업허가 이행수준
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    안전작업허가 계획서 (10점/5점/0점)
+                                </h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 과거 6개월 이내 안전작업허가서 PDF스캔 제출, 미포함시 5점 감점</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" class="appraisal_step_td"><span class="appraisal_step">C. 안전보건운영관리</span></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">8. 신호 및 연락체계</h4>
+                                <p class="appraisal_p">
+                                    도급,수급업체 신호 및 연락체계
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    신호체계(Lock-out, Tag-out) 및 비상연락체계 (5점/3점/0점)
+                                </h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 두가지 항목 중 1개만 있을 경우 3점</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">9. 위험물질 및 설비</h4>
+                                <p class="appraisal_p">
+                                    유해,위험 물질 및 취급 기계,기구,설비의 안전성 확인
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    유해,위험물질 및 취급 기계설비에 대한 점검, 정비 등에 대한 점검계획 및 내역 (10점/5점/0점)
+                                </h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 해당이 없는 경우 참고사항(SKT제출용)에 별도 기재 필요하며, 10점 인정</li>
+                                    <li><span>-</span> 위험기계/기구 유형에 따라 안전인증, 자율안전확인신고, 안전검사 내용 미포함 시 0점</li>
+                                    <li><span>-</span> 허위 작성(ex. 해당없음, 미보유 등) 시 전체 안전보건수준평가 탈락 처리</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="td_b_none">
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">10. 비상대책</h4>
+                                <p class="appraisal_p">
+                                    비상시 대피 및 피해 최소화 대책
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    안전사고 발생유형별 비상대응계획 (5점/3점/0점)
+                                </h5>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 비상연락체계, 책임과 권한, 대응절차 및 사후조치 각 항목별 미포함시 1점 감점</li>
+                                </ul>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" class="appraisal_step_td"><span class="appraisal_step">D. 재해발생 수준</span></td>
+                        </tr>
+                        <tr class="td_b_none">
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">11. 산업재해 현황</h4>
+                                <p class="appraisal_p">
+                                    최근 3년간 산업재해 발생 현황
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    우수(20점) : 2년간 무재해사업장 유지 또는 3년 연속 동종업종 평균재해율 미만
+                                </h5>
+                                <h5 class="appraisal_h5">
+                                    보통(10점) : 2년 연속 동종업종 평균재해율 미만
+                                </h5>
+                                <h5 class="appraisal_h5">
+                                    미흡(0점) : 최근 2년 동안 사망재해가 있거나, 2년 동안 동종업종 평균재해율 이상
+                                </h5>
+                                <span class="desc_point">※ 사업장 가동기간이 2년 미만인 경우 해당 기간만으로 산정</span>
+                            </td>
+                            <td><strong class="appraisal_point">20</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="7" class="appraisal_step_td"><span class="appraisal_step">E. 외부 안전 인증 (가점항목)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">12. 안전보건관련인증</h4>
+                                <p class="appraisal_p">
+                                    안전보건 경영시스템 인증 현황
+                                </p>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    ISO45001, KOSHA-MS 인증 보유 시 (10점, 유효기간 내 한정)
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </body>
+</html>

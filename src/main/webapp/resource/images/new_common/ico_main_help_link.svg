@@ -1,0 +1,22 @@
+<svg width="28" height="12" viewBox="0 0 28 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="28" height="12" fill="#EBEBEB"/>
+<g id="Open2u_main_A_&#236;&#153;&#184;&#235;&#182;&#128;&#235;&#167;&#157;_&#235;&#161;&#156;&#234;&#183;&#184;&#236;&#157;&#184;&#236;&#160;&#132;" clip-path="url(#clip0_1_1053)">
+<rect width="1600" height="900" transform="translate(-1002 -666)" fill="url(#paint0_linear_1_1053)"/>
+<g id="Rectangle 2772">
+<rect x="-442" y="-32" width="500" height="160" rx="15" fill="white"/>
+<rect x="-441" y="-31" width="498" height="158" rx="14" stroke="#201267" stroke-opacity="0.3" stroke-width="2"/>
+</g>
+<g id="Frame 2608">
+<path id="Vector 40" d="M2 7H26L21.4118 3" stroke="#3617CE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_1_1053" x1="800" y1="0" x2="800" y2="900" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F8F8FB"/>
+<stop offset="1" stop-color="#F9F9FF"/>
+</linearGradient>
+<clipPath id="clip0_1_1053">
+<rect width="1600" height="900" fill="white" transform="translate(-1002 -666)"/>
+</clipPath>
+</defs>
+</svg>

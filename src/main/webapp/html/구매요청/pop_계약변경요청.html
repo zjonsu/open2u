@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui_theme.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_ui.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">계약변경요청</h2>
+                    </div>
+                    <div class="right">
+                        <!-- <ul class="pop_progress">
+                            <li class="off"><a href="javascript:;">구매요청</a></li>
+                            <li class="off"><a href="javascript:;">구매접수</a></li>
+                            <li class="off"><a href="javascript:;">계약진행</a></li>
+                            <li class="off"><a href="javascript:;">계약완료</a></li>
+                            <li class="on"><a href="javascript:;">납품지시</a></li>
+                            <li class="off"><a href="javascript:;">자산취득</a></li>
+                            <li><a href="javascript:;">검사조서</a></li>
+                            <li><a href="javascript:;">구매전표</a></li>
+                            <li><a href="javascript:;">대금지급</a></li>
+                        </ul> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="popcontents">
+                <div class="poptitle">
+                    <h3 >종합의견 [계약번호 : 4160063593]</h3>
+                    <div class="btnArea f_right">
+                        <span class="line_span"><input type="checkbox" style="padding-top: 7px;" />&nbsp;&nbsp;구매지원센터</span>
+                        <a href="#none" class="btn c_type08">저장</a>
+                        <a href="#none" class="btn c_type08">결재전송</a>
+                    </div>
+                </div>
+                <div class="sizetoggle_box">
+                    <div class="sizetoggle_txt">
+                        <textarea rows="5" class="wp100" >
+1. 개요
+- ICT 기술센터 판교사옥 이전(409명)에 따른 어린이집 확대운영 구축사업
+- 투자금에 대한 정부지원금 수령을 위한 "정부조달시스템,나라장터"를 통하여 선 입찰(공개경쟁입찰)로 선정된 업체를 공급사로 선정
+2. 공급업체
+- 보육사(나라장터 공개경쟁입찰로 선정, 경영지원팀 수행)
+3. 가격
+- 149,468천원(과세품 1.35억원, 면세 13,785천원)
+- 면세품목: 도서
+4. 대금지급조건
+- 납품완료시 100%
+5. 보증조건
+- 납기가 1개월 미만으로 계약보증은 면제처리하며, 하자보증조건에 대해서는 5% (24개월) 조건
+* 기타
+- 공급하는 품목중 과세품과 비과세 품목을 구분하여 검수해야 하며,
+- 송장처리시 주의해야 함
+
+
+2020.04.17지출내역 현황(현금기준),
+- 62000004452_타계정대체(반제전표 3100024377, 149,251,300)
+- 62000004468_타계정대체(반제전표 3100024438,   13,785,000)
+- 참고전표(예수금전환) : 3100024146
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="poptitle">
+                    <h3>계약변경이력</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th class="leftLine">상세보기</th>
+                            <th>차수</th>
+                            <th>체결일자</th>
+                            <th>계약금액</th>
+                            <th>계약기간</th>
+                            <th>공급업체명</th>
+                            <th>구매담당자</th>
+                            <th>계약관리자</th>
+                            <th>요청담당자</th>
+                            <th>요청부서</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="t_center leftLine"></td>
+                            <td class="t_center">1차</td>
+                            <td class="t_center">2020-02-14</td>
+                            <td class="t_right">149,468,000</td>
+                            <td class="t_center">2020-02-14 ~ 2020-02-21</td>
+                            <td class="t_center">(주)보육사</td>
+                            <td class="t_center">박정희</td>
+                            <td class="t_center">박정희</td>
+                            <td class="t_center">박민수</td>
+                            <td class="t_center">AIX혁신추진팀</td>
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine" style="cursor: pointer;">
+                                <a href="#none"><img class="dummy" src="../../resource/images/search_icon_t.png"></a>
+                            </td>
+                            <td class="t_center">2차</td>
+                            <td class="t_center">2020-02-27</td>
+                            <td class="t_right">149,468,000</td>
+                            <td class="t_center">2020-02-14 ~ 2020-03-31</td>
+                            <td class="t_center">(주)보육사</td>
+                            <td class="t_center">박정희</td>
+                            <td class="t_center">박정희</td>
+                            <td class="t_center">박민수</td>
+                            <td class="t_center">AIX혁신추진팀</td>
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine" style="cursor: pointer;">
+                                <a href="#none"><img class="dummy" src="../../resource/images/search_icon_t.png"></a>
+                            </td>
+                            <td class="t_center">3차</td>
+                            <td class="t_center">2020-03-16</td>
+                            <td class="t_right">149,468,000</td>
+                            <td class="t_center">2020-02-14 ~ 2020-03-31</td>
+                            <td class="t_center">(주)보육사</td>
+                            <td class="t_center">박정희</td>
+                            <td class="t_center">박정희</td>
+                            <td class="t_center">박민수</td>
+                            <td class="t_center">AIX혁신추진팀</td>
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine" style="cursor: pointer;">
+                                <a href="#none"><img class="dummy" src="../../resource/images/search_icon_t.png"></a>
+                            </td>
+                            <td class="t_center">4차</td>
+                            <td class="t_center">2020-03-24</td>
+                            <td class="t_right">149,468,000</td>
+                            <td class="t_center">2020-02-14 ~ 2020-04-17</td>
+                            <td class="t_center">(주)보육사</td>
+                            <td class="t_center">박정희</td>
+                            <td class="t_center">박정희</td>
+                            <td class="t_center">박민수</td>
+                            <td class="t_center">AIX혁신추진팀</td>
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine" style="cursor: pointer;">
+                                <a href="#none"><img class="dummy" src="../../resource/images/search_icon_t.png"></a>
+                            </td>
+                            <td class="t_center">5차</td>
+                            <td class="t_center">2020-04-13</td>
+                            <td class="t_right">149,468,000</td>
+                            <td class="t_center">2020-02-14 ~ 2020-04-17</td>
+                            <td class="t_center">(주)보육사</td>
+                            <td class="t_center">박정희</td>
+                            <td class="t_center">김일훈</td>
+                            <td class="t_center">박민수</td>
+                            <td class="t_center">AIX혁신추진팀</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>기본정보 (차)</h3>
+                </div>
+                <table class="tableStyle ">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>계약건명</th>
+                            <td colspan="3">
+                                <input type="text" class="point wp100" value="20년 판교사옥 어린이집 물품구매 계약_보육사" />
+                            </td>
+                            <th>계약일자</th>
+                            <td>
+                                2020-04-13 14:32:23
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>계약기간</th>
+                            <td>
+                                2020-02-14
+                                ~
+                                2020-04-17
+                            </td>
+                            <th>계약금액</th>
+                            <td>
+                                149,468,000
+                                (VAT별도)
+                            </td>
+                            <th>계약유형</th>
+                            <td>
+                                신규 /
+                                수의 /
+                                내자 /
+                                수시
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>전표발행부서</th>
+                            <td>
+                                <input type="radio"> 사업부서
+                                <input type="radio" checked="checked"> 구매부서
+                            </td>
+                            <th>계약관리자</th>
+                            <td>김일훈 / 1107297 / New Biz구매팀 </td>
+                            <th>구매요청자</th>
+                            <td>박민수 / 1105987 / AIX혁신추진팀 </td>
+                        </tr>
+                        <tr>
+                            <th>변경요청자</th>
+                            <td>박준기 / 1107580 / New Biz지원팀 </td>
+                            <th>수주(대기업제외)</th>
+                            <td colspan="3">
+                                <input type="radio"> Yes
+                                <input type="radio" checked="checked"> No
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>계약업체</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>공급업체명</th>
+                            <td>
+                                (주)보육사
+                            </td>
+                            <th>사업자등록번호</th>
+                            <td>
+                                204-86-03675
+                            </td>
+                            <th>담당자 및 직함<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="point w110" value="김재혁" />
+                                <a href="#none" class="btnS search"></a>
+                                <a href="#none" class="btnS closes"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>담당자 E-mail<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="point" value="test@test.com" />
+                            </td>
+                            <th>담당자전화번호<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="point" value="010-0000-0000" />
+                            </td>
+                            <th>송장발행처<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="point w110" value="(주)보육사" />
+                                <input type="hidden" value="2048603675" />
+                                <a href="#none" class="btnS search VENDOR_INFO" ></a>
+                                <a href="#none" class="btnS closes"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle" >
+                    <h3>변경계약 검토의견 (차)</h3>
+                </div>
+                <table class="tableStyle" >
+                    <colgroup>
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td class="leftLine">
+                                <textarea rows="5" class="wp100" maxlength="2000"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>변경요청 개요 및 특이사항</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td class="leftLine">
+                                <textarea rows="10" class="wp100" maxlength="2000"></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>변경사항</h3>
+                    <p class="titlecoment cp_o">계약금액 변경은 '계약금액 및 아이템내역' 선택 후 [변경 후 아이템내역]의 단가를 더블클릭 한 후 수정</p>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>변경항목선택</th>
+                            <td>
+                                <input type="checkbox">
+                                <label for="MOD_ITEM">계약금액 및 아이템내역</label>
+                                <input type="checkbox">
+                                <label>계약기간</label>
+                                <input type="checkbox">
+                                <label>지급조건</label>
+                                <input type="checkbox">
+                                <label>보증조건</label>
+                                <input type="checkbox">
+                                <label>특기사항</label>
+                                <input type="checkbox">
+                                <label>일반조건</label>
+                                <span >
+                                    <input type="checkbox">
+                                    <label>특수조건</label>
+                                    <input type="checkbox">
+                                    <label>파일첨부</label>
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+					<h3>변경사유</h3>
+					<p class="titlecoment cp_o">(업체전송용) - 내부사항 유출주의</p>
+				</div>
+				<table class="tableStyle filepoint" >
+					<colgroup>
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<td class="leftLine">
+								<textarea rows="3" class="wp100" maxlength="2000"></textarea>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+                <div class="poptitle">
+                    <h3>계약금액</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:50%"/>
+                        <col style="width:50%"/>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>변경전</th>
+                            <th>변경후</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="t_right leftLine">
+                                <span class="cp_r">149,468,000  KRW</span>
+                            </td>
+                            <td class="t_right">
+                                <input type="text" class="cp_r t_right" value="149,468,000" readonly="readonly"/>
+                                <span class="cp_r">KRW</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>안전보건</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th colspan="4">변경전</th>
+                            <th colspan="4">변경후</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="t_left leftLine">
+                                계상여부
+                            </th>
+                            <td colspan="3">
+                                <select class="w110">
+                                    <option value="">선택</option>
+                                    <option value="Y" >
+                                        대상
+                                    </option>
+                                    <option value="N" >
+                                        비대상
+                                    </option>
+                                </select>
+                            </td>
+                            <th class="t_left leftLine">
+                                계상여부
+                            </th>
+                            <td colspan="3">
+                                <select class="w110">
+                                    <option value="">선택</option>
+                                    <option value="Y" >
+                                        대상
+                                    </option>
+                                    <option value="N" >
+                                        비대상
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="t_left leftLine"> <!-- 변경전 -->
+                                계상방식
+                            </th>
+                            <td>
+                                <select class="w110">
+                                    <option value="">선택</option>
+                                    <option value="01" >
+                                        공사원가계산서
+                                    </option>
+                                    <option value="02" >
+                                        대상액 X 70%
+                                    </option>
+                                </select>
+                            </td>
+                            <th class="t_left leftLine"> <!-- 변경전 -->
+                                공사분류
+                            </th>
+                            <td>
+                                <select class="w110">
+                                    <option value="">선택</option>
+                                    <option value="01" >
+                                        일반건설공사(갑)
+                                    </option>
+                                    <option value="02" >
+                                        일반건설공사(을)
+                                    </option>
+                                    <option value="03" >
+                                        특수 및 기타 건설공사
+                                    </option>
+                                </select>
+                            </td>
+                            <th class="t_left leftLine"> <!--변경후 -->
+                                계상방식
+                            </th>
+                            <td>
+                                <select class="w110">
+                                    <option value="">선택</option>
+                                    <option value="01" >
+                                        공사원가계산서
+                                    </option>
+                                    <option value="02" >
+                                        대상액 X 70%
+                                    </option>
+                                </select>
+                            </td>
+                            <th class="t_left leftLine"> <!--변경후 -->
+                                공사분류
+                            </th>
+                            <td>
+                                <select class="w110">
+                                    <option value="">선택</option>
+                                    <option value="01" >
+                                        일반건설공사(갑)
+                                    </option>
+                                    <option value="02" >
+                                        일반건설공사(을)
+                                    </option>
+                                    <option value="03" >
+                                        특수 및 기타 건설공사
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>적용요율</th> <!-- 변경전 -->
+                            <td>
+                                <select class="w110 inactive">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>산업안전보건<br>관리비 금액</th> <!-- 변경전 -->
+                            <td>
+                                <input type="text" class="w110 t_right inactive" disabled="disabled"> 원
+                            </td>
+                            <th>적용요율</th> <!-- 변경 후 -->
+                            <td>
+                                <select class="w110 inactive">
+                                    <option value="">선택</option>
+                                </select>
+                            </td>
+                            <th>산업안전보건<br>관리비 금액</th> <!-- 변경 후 -->
+                            <td>
+                                <input type="text" class="w110 t_right inactive" disabled="disabled"> 원
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>적격수급평가</th>
+                            <td colspan="3">
+                                <input type="text">
+                            </td>
+                            <th>적격수급평가</th> <!--변경후 -->
+                            <td colspan="3">
+                                <input type="text">
+                                <a href="javascript:;" class="btnS closes"></a>
+                                <a href="javascript:;" class="btnS search"></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+					<h3>예산정보 </h3>
+				</div>
+                <table class="tableStyle">
+					<colgroup>
+						<col style="width:145px">
+						<col>
+						<col style="width:145px">
+						<col>
+						<col style="width:145px">
+						<col>
+					</colgroup>
+
+					<tbody>
+						<tr>
+							<th>기존예산</th>
+							<td>
+								<input type="text" class="w110 t_right" disabled="disabled" value="163,037,000"> (KRW)
+							</td>
+							<th>증감예산</th>
+							<td>
+								<input type="radio"> 증액
+								<input type="radio"> 감액
+								<input type="text" class="w120 t_right"> (KRW)
+							</td>
+							<th>최종변경예산</th>
+							<td>
+								<input type="text" class="w110 t_right" readonly="readonly" value="163,037,000"> (KRW)
+							</td>
+						</tr>
+						<tr>
+							<th>지출품의서번호</th>
+							<td colspan="3">
+								<input type="text" class="w110"readonly="readonly">
+								<input type="text" class="w110"readonly="readonly">
+								<input type="hidden" class="w110">
+								<a href="javascript:;" class="btn grad3">지출품의서 조회</a>
+							</td>
+							<th>최초구매요청금액</th>
+							<td>
+								<input type="text" class="inactive w110 t_right" value="163,037,000"> (KRW)
+							</td>
+						</tr>
+					</tbody>
+				</table>
+                <table class="tableStyle noLine" >
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>지출품의서첨부</th>
+                            <td colspan="5">
+                                <div class='inputFileArea m_t5 '>
+                                    <div class='filesBox f_left' style='width:225px;'>
+                                        <div class='file_input_div'>
+                                            <input type='text' class='file_input_textbox' style="width: 220px" readonly />
+                                        </div>
+                                    </div>
+                                    <input type="file" id="file01" class="upload_hidden">
+                                    <label for="file01" class="btn c_type03">파일찾기</label>
+                                    <a href="#none" class="btnS closes"></a>
+                                    <button type="button" class="btn t_down c_type09"><i class="icons i_tr_download"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+					<h3>특기사항 <span class="tooltipIcon type1"></span></h3>
+				</div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:50%">
+                        <col style="width:50%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>변경전</th>
+                            <th>변경후</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="leftLine"><textarea rows="4" class="wp100" readonly="readonly"></textarea></td>
+                            <td><textarea rows="4" class="wp100">123123</textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+					<h3>구매실적</h3>
+				</div>
+                <table class="tableStyle">
+					<colgroup>
+						<col style="width:145px">
+						<col>
+						<col style="width:145px">
+						<col>
+					</colgroup>
+					<thead>
+						<tr>
+							<th colspan="2">변경전</th>
+							<th colspan="2">변경후</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="leftLine">
+						    <th class="type1">절감액/절감율</th>
+							<td class="leftLine t_right">
+								13,569, 000(KRW) / 8.32 %
+							</td>
+							<th class="type1">절감액/절감율</th>
+							<td class="leftLine t_right">
+								<input type="text" class="w110 t_right" readonly="readonly" value="13,569,000" /> (KRW)
+								&nbsp;/&nbsp;
+								<input type="text" class="w110 t_right" value="8.32"  readonly="readonly"/> %
+							</td>
+						</tr>
+                        <tr>
+                            <th class="type1">지출품의서첨부</th>
+                            <td colspan="3">
+                                <div class='inputFileArea m_t5 '>
+                                    <div class='filesBox f_left' style='width:225px;'>
+                                        <div class='file_input_div'>
+                                            <input type='text' class='file_input_textbox' style="width: 220px" readonly />
+                                        </div>
+                                    </div>
+                                    <input type="file" id="file01" class="upload_hidden">
+                                    <label for="file01" class="btn c_type03">파일찾기</label>
+                                    <a href="#none" class="btnS closes"></a>
+                                    <button type="button" class="btn t_down c_type09"><i class="icons i_tr_download"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="leftLine">
+						    <th class="type1">CA 대상</th>
+							<td class="leftLine t_left">
+								<input type="checkbox" class="m_r10" disabled="disabled">
+							</td>
+							<th class="type1">CA 대상</th>
+							<td class="leftLine t_left">
+								<input type="checkbox" class="m_r10" disabled="disabled">
+							</td>
+						</tr>
+						<tr class="leftLine">
+						    <th class="type1">CA 유형</th>
+							<td class="leftLine t_left">
+								<select disabled="disabled">
+									<option selected></option>
+                                    <option>전년 계약금액 대비 절감</option>
+                                    <option>최초 견적가 대비 절감</option>
+                                    <option>입찰 목표가 대비 절감</option>
+                                    <option>무상 제공 절감</option>
+                                    <option>절감액 재사용</option>
+                                    <option>기타 절감</option>
+								</select>
+							</td>
+							<th class="type1">CA 유형</th>
+							<td class="leftLine t_left">
+								<select>
+									<option value="">선택</option>
+                                    <option>전년 계약금액 대비 절감</option>
+                                    <option>최초 견적가 대비 절감</option>
+                                    <option>입찰 목표가 대비 절감</option>
+                                    <option>무상 제공 절감</option>
+                                    <option>절감액 재사용</option>
+                                    <option>기타 절감</option>
+								</select>
+							</td>
+						</tr>
+						<tr class="leftLine">
+						    <th class="type1">CA Base 금액</th>
+							<td class="leftLine t_right">
+								<input type="text" class="t_right" readonly="readonly"> (KRW)
+							</td>
+							<th class="type1">CA Base 금액</th>
+							<td class="leftLine t_right">
+								<input type="text" class="t_right" readonly="readonly"> (KRW)
+							</td>
+						</tr>
+						<tr class="leftLine">
+						    <th class="type1">CA 절감액</th>
+							<td class="leftLine t_right">
+								<input type="text" class="t_right" readonly="readonly"> (KRW)
+							</td>
+							<th class="type1">CA 절감액</th>
+							<td class="leftLine t_right">
+								<input type="text" class="t_right" readonly="readonly"> (KRW)
+							</td>
+						</tr>
+						<tr class="leftLine">
+						    <th class="type1">CA 절감율</th>
+							<td class="leftLine t_right">
+								<input type="text" class="inactive w110 t_right" readonly="readonly" readonly="readonly"> %
+							</td>
+							<th class="type1">CA 절감율</th>
+							<td class="leftLine t_right">
+								<input type="text" class="inactive w110 t_right" readonly="readonly"> %
+							</td>
+						</tr>
+						<tr class="leftLine">
+                            <th class="type1">CA 상세내역</th>
+                            <td class="leftLine t_right">
+                                <input type="text" class="point wp100" readonly="readonly" readonly="readonly">
+                            </td>
+                            <th class="type1">CA 상세내역</th>
+                            <td class="leftLine t_right"">
+                                <input type="text" class="point wp100">
+                            </td>
+                        </tr>
+					</tbody>
+				</table>
+
+                <div class="poptitle">
+                    <h3>CA 증빙 첨부파일</h3>
+                    <p class="titlecoment cp_o">&nbsp;(CA 증빙 첨부파일을 첨부하시기 바랍니다)</p>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <div style="display: table;width: 100%;">
+                    <div style="display: table-cell;width: 40%;padding-right: 1px;">
+                        <table class="fileupload-list tableStyle fileupload before">
+                            <thead>
+                                <tr class="template-header">
+                                    <th>변경 전</th>
+                                </tr>
+                            </thead>
+                            <tbody class="files">
+                                <tr class="template-empty">
+                                    <td colspan="3">
+                                        <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                        <div class="nodata-content">첨부 된<span>파일이</span> 없습니다.</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <span class="fileupload-footer" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div style="display: table-cell;">
+                        <table class="fileupload-list tableStyle fileupload">
+                            <colgroup>
+                                <col width="30px">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr class="template-header">
+                                    <th><input type="checkbox" class="toggle"/></th>
+                                    <th>변경 후</th>
+                                </tr>
+                            </thead>
+                            <tbody class="files">
+                                <tr class="template-empty">
+                                    <td colspan="3">
+                                        <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                        <div class="nodata-content">첨부파일을 마우스로 끌어 넣으세요</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2" style="text-align: right;">
+                                        <div class="fileupload-progress" style="float: left;">
+                                            <div class="progress-extended">&nbsp;</div>
+                                        </div>
+                                        <span class="fileupload-footer after" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="fileupload comment commnet-default">
+                    <div class="commnet-body">
+                        <ul>
+                            <li>첨부제한 : 최대 20건, 건당 30MB, 최대 50MB</li>
+                            <li>
+                                첨부 가능파일 : txt, xls, xlsx, doc, docx, ppt, pptx, hwp, zip, pdf, jpg, jpeg, gif, png, bmp, apk, dwg, html, htm, mht
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="poptitle">
+                    <h3>계약변경요청 첨부파일</h3>
+                    <p class="titlecoment cp_o">&nbsp;(계약변경 요청에 관련된 모든 파일을 첨부하시기 바랍니다)</p>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <div style="display: table;width: 100%;">
+                    <div style="display: table-cell;width: 40%;padding-right: 1px;">
+                        <table class="fileupload-list tableStyle fileupload before">
+                            <thead>
+                                <tr class="template-header">
+                                    <th>변경 전</th>
+                                </tr>
+                            </thead>
+                            <tbody class="files">
+                                <tr class="template-empty">
+                                    <td colspan="3">
+                                        <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                        <div class="nodata-content">첨부 된<span>파일이</span> 없습니다.</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <span class="fileupload-footer" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div style="display: table-cell;">
+                        <table class="fileupload-list tableStyle fileupload">
+                            <colgroup>
+                                <col width="30px">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr class="template-header">
+                                    <th><input type="checkbox" class="toggle"/></th>
+                                    <th>변경 후</th>
+                                </tr>
+                            </thead>
+                            <tbody class="files">
+                                <tr class="template-empty">
+                                    <td colspan="3">
+                                        <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                        <div class="nodata-content">첨부파일을 마우스로 끌어 넣으세요</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2" style="text-align: right;">
+                                        <div class="fileupload-progress" style="float: left;">
+                                            <div class="progress-extended">&nbsp;</div>
+                                        </div>
+                                        <span class="fileupload-footer after" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="fileupload comment commnet-default">
+                    <div class="commnet-body">
+                        <ul>
+                            <li>첨부제한 : 최대 20건, 건당 30MB, 최대 50MB</li>
+                            <li>
+                                첨부 가능파일 : txt, xls, xlsx, doc, docx, ppt, pptx, hwp, zip, pdf, jpg, jpeg, gif, png, bmp, apk, dwg, html, htm, mht
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="poptitle">
+                    <h3>내부보고 및 증빙 첨부파일</h3>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <div style="display: table;width: 100%;">
+                    <div style="display: table-cell;width: 40%;padding-right: 1px;">
+                        <table class="fileupload-list tableStyle fileupload before">
+                            <thead>
+                                <tr class="template-header">
+                                    <th>변경 전</th>
+                                </tr>
+                            </thead>
+                            <tbody class="files">
+                                <tr class="template-empty">
+                                    <td colspan="3">
+                                        <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                        <div class="nodata-content">첨부 된<span>파일이</span> 없습니다.</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td style="text-align: right;">
+                                        <span class="fileupload-footer" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <div style="display: table-cell;">
+                        <table class="fileupload-list tableStyle fileupload">
+                            <colgroup>
+                                <col width="30px">
+                                <col width="*">
+                            </colgroup>
+                            <thead>
+                                <tr class="template-header">
+                                    <th><input type="checkbox" class="toggle"/></th>
+                                    <th>변경 후</th>
+                                </tr>
+                            </thead>
+                            <tbody class="files">
+                                <tr class="template-empty">
+                                    <td colspan="3">
+                                        <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                        <div class="nodata-content">첨부파일을 마우스로 끌어 넣으세요</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="2" style="text-align: right;">
+                                        <div class="fileupload-progress" style="float: left;">
+                                            <div class="progress-extended">&nbsp;</div>
+                                        </div>
+                                        <span class="fileupload-footer after" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="fileupload comment commnet-default">
+                    <div class="commnet-body">
+                        <ul>
+                            <li>첨부제한 : 최대 20건, 건당 30MB, 최대 50MB</li>
+                            <li>
+                                첨부 가능파일 : txt, xls, xlsx, doc, docx, ppt, pptx, hwp, zip, pdf, jpg, jpeg, gif, png, bmp, apk, dwg, html, htm, mht
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn_top"><i class="icons i_btn_top"></i></a>
+        <script>
+            var mydata = [
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+            ];
+
+            $(document).ready(function () {
+                $(".jqgrid").jqGrid({
+                    datatype: "local",
+                    // data: mydata,
+                    autowidth: true,
+                    cellEdit:true,
+                    shrinkToFit:false,
+                    forceFit:true,
+                    pager: '#jqGridPager',
+                    colModel: [
+                        { label: 'data1', name: 'data1', width:100, editable:true },
+                        { label: 'data2', name: 'data2', width:100, editable:true },
+                        { label: 'data3', name: 'data3', width:100, editable:true },
+                        { label: 'data4', name: 'data4', width:100, editable:true },
+                        { label: 'data5', name: 'data5', width:100, editable:true },
+                        { label: 'data6', name: 'data6', width:100, editable:true },
+                        { label: 'data7', name: 'data7', width:100, editable:true },
+                        { label: 'data8', name: 'data8', width:100, editable:true },
+                        { label: 'data9', name: 'data9', width:100, editable:true },
+                        { label: 'data10', name: 'data10', width:100, editable:true },
+                    ],
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+
+            });
+
+            $(window).bind('resize', function() {
+                $(".jqgrid").setGridWidth($('.grid_area').width());
+            }).trigger('resize');
+        </script>
+        <script>
+            $a.setup('tabs', {
+
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKT Open2u 구매시스템</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+    <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+    <link rel="stylesheet" href="../../resource/css/newmain.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+    <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+    <script src="../../resource/js/ui.common.js"></script>
+</head>
+
+<body>
+    <div class="pop_header_area">
+        <div class="pop_top_area">
+            <div class="left">
+                <h2 class="pop_title">회원가입</h2>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+    <div class="popcontents">
+        <ul class="member_join_step">
+            <li class="off">
+                <div class="member_step step01">
+                    <span>약관동의</span>
+                </div>
+            </li>
+            <li class="off">
+                <div class="member_step step02">
+                    <span>회원인증</span>
+                </div>
+            </li>
+            <li class="on">
+                <div class="member_step step03">
+                    <span>기본정보</span>
+                </div>
+            </li>
+            <li>
+                <div class="member_step step04">
+                    <span>거래희망영역</span>
+                </div>
+            </li>
+            <li>
+                <div class="member_step step05">
+                    <span>대금지급바로</span>
+                </div>
+            </li>
+        </ul>
+
+        <div class="conditionsArea">
+            <h3>거래희망영역<span class="cp_r" id="step4Title">(최상위에 선택된 거래영역이 대표거래영역입니다. 정보변경은 항목 선택후 변경 하실 수 있습니다.) </span>
+            </h3>
+
+            <div class="f_right m_t20">
+                <button type="button" id="btnAddItem" data-type="button" class="af-button af-default af-icon-left"
+                    style="padding-left: 37.5px;" data-converted="true"><span data-type="icon" data-addclass="plus"
+                        data-position="left" class="af-icon af-default plus"
+                        style="display: inline-block; position: absolute; left: 10px; top: 50%; margin-top: -7px;"
+                        data-converted="true"></span>거래희망영역추가</button>
+                <button type="button" id="btnDelItem" data-type="button" class="af-button af-default af-icon-left"
+                    style="padding-left: 37.5px;" data-converted="true"><span data-type="icon" data-addclass="minus"
+                        data-position="left" class="af-icon af-default minus"
+                        style="display: inline-block; position: absolute; left: 10px; top: 50%; margin-top: -7px;"
+                        data-converted="true"></span>삭제</button>
+            </div>
+        </div>
+        <table class="tableStyle popTable m_t10">
+
+            <colgroup>
+                <col style="width:25%">
+                <col>
+            </colgroup>
+            <tbody>
+                <tr id="attFile1">
+                    <th>회사소개서</th>
+                    <td>
+                        <form id="appSeq1Frm" name="appSeq1Frm" method="post" enctype="multipart/form-data"
+                            onsubmit="return false;">
+                            <div class="inputFileArea m_t5">
+                                <div class="filesBox f_left" style="width:335px;">
+                                    <!-- 지정하고 싶은 width값으로 수정 -->
+                                    <div class="file_input_div">
+                                        <input type="hidden" id="PRE_ATTACHMENT_SEQ" name="PRE_ATTACHMENT_SEQ" value="">
+                                        <input type="text" id="fileName1" class="file_input_textbox" 
+                                            style="width:290px;" value=""><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                        <input type="button" class="file_input_button"
+                                            style="border-color: rgb(200, 200, 200);" onclick="deleteAttachFile(1)">
+                                        <input type="file" id="APP_SEQ_1_FILE" name="APP_SEQ_1_FILE"
+                                            class="file_input_hidden"
+                                            onchange="javascript: getAttachFileName(this.value, 'fileName1')"
+                                            style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                    </div>
+                                </div>
+                                <div id="attachFile1"></div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr id="attFile2">
+                    <th>사업자등록증</th>
+                    <td>
+                        <form id="appSeq2Frm" name="appSeq2Frm" method="post" enctype="multipart/form-data"
+                            onsubmit="return false;">
+                            <div class="inputFileArea m_t5">
+                                <div class="filesBox f_left" style="width:335px;">
+                                    <!-- 지정하고 싶은 width값으로 수정 -->
+                                    <div class="file_input_div">
+                                        <input type="hidden" id="PRE_ATTACHMENT_SEQ" name="PRE_ATTACHMENT_SEQ" value="">
+                                        <input type="text" id="fileName2" class="file_input_textbox" 
+                                            style="width:290px;" value=""><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                        <input type="button" class="file_input_button"
+                                            style="border-color: rgb(200, 200, 200);">
+                                        <input type="file" id="APP_SEQ_2_FILE" name="APP_SEQ_2_FILE"
+                                            class="file_input_hidden"
+                                            onchange="javascript: getAttachFileName(this.value, 'fileName2')"
+                                            style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                    </div>
+                                </div>
+                                <div id="attachFile2"></div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr id="attFile3">
+                    <th>등기사항 전부증명서</th>
+                    <td>
+                        <form id="appSeq3Frm" name="appSeq3Frm" method="post" enctype="multipart/form-data"
+                            onsubmit="return false;">
+                            <div class="inputFileArea m_t5">
+                                <div class="filesBox f_left" style="width:335px;">
+                                    <!-- 지정하고 싶은 width값으로 수정 -->
+                                    <div class="file_input_div">
+                                        <input type="hidden" id="PRE_ATTACHMENT_SEQ" name="PRE_ATTACHMENT_SEQ" value="">
+                                        <input type="text" id="fileName3" class="file_input_textbox" 
+                                            style="width:290px;" value=""><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                        <input type="button" class="file_input_button"
+                                            style="border-color: rgb(223, 223, 223); color: rgb(223, 223, 223);">
+                                        <input type="file" id="APP_SEQ_3_FILE" name="APP_SEQ_3_FILE"
+                                            class="file_input_hidden"
+                                            onchange="javascript: getAttachFileName(this.value, 'fileName3')"
+                                            style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                    </div>
+                                </div>
+                                <div id="attachFile3"></div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr id="attFile4">
+                    <th>주요제품소개서</th>
+                    <td>
+                        <form id="appSeq4Frm" name="appSeq4Frm" method="post" enctype="multipart/form-data"
+                            onsubmit="return false;">
+                            <div class="inputFileArea m_t5">
+                                <div class="filesBox f_left" style="width:335px;">
+                                    <!-- 지정하고 싶은 width값으로 수정 -->
+                                    <div class="file_input_div">
+                                        <input type="hidden" id="PRE_ATTACHMENT_SEQ" name="PRE_ATTACHMENT_SEQ" value="">
+                                        <input type="text" id="fileName4" class="file_input_textbox" 
+                                            style="width:290px;" value=""><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                        <input type="button" class="file_input_button"
+                                            style="border-color: rgb(200, 200, 200);">
+                                        <input type="file" id="APP_SEQ_4_FILE" name="APP_SEQ_4_FILE"
+                                            class="file_input_hidden"
+                                            onchange="javascript: getAttachFileName(this.value, 'fileName4')"
+                                            style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                    </div>
+                                </div>
+                                <div id="attachFile4"></div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <!-- 201707업체등록 프로세스 시스템 개선요청 -->
+                <tr>
+                    <th>공사면허증</th>
+                    <td>
+                        <form id="appSeq5Frm" name="appSeq5Frm" method="post" enctype="multipart/form-data"
+                            onsubmit="return false;">
+                            <div class="inputFileArea m_t5">
+                                <div class="filesBox f_left" style="width:335px;">
+                                    <!-- 지정하고 싶은 width값으로 수정 -->
+                                    <div class="file_input_div">
+                                        <input type="hidden" id="PRE_ATTACHMENT_SEQ" name="PRE_ATTACHMENT_SEQ" value="">
+                                        <input type="text" id="fileName5" class="file_input_textbox" 
+                                            style="width:290px;" value=""><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                        <input type="button" class="file_input_button"
+                                            style="border-color: rgb(223, 223, 223); color: rgb(223, 223, 223);">
+                                        <input type="file" id="APP_SEQ_5_FILE" name="APP_SEQ_5_FILE"
+                                            class="file_input_hidden"
+                                            onchange="javascript: getAttachFileName(this.value, 'fileName5')"
+                                            style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                    </div>
+                                </div>
+                                <div id="attachFile5"></div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <th>관련 사업 실적증명서</th>
+                    <td>
+                        <form id="appSeq6Frm" name="appSeq6Frm" method="post" enctype="multipart/form-data"
+                            onsubmit="return false;">
+                            <div class="inputFileArea m_t5">
+                                <div class="filesBox f_left" style="width:335px;">
+                                    <!-- 지정하고 싶은 width값으로 수정 -->
+                                    <div class="file_input_div">
+                                        <input type="hidden" id="PRE_ATTACHMENT_SEQ" name="PRE_ATTACHMENT_SEQ" value="">
+                                        <input type="text" id="fileName6" class="file_input_textbox" 
+                                            style="width:290px;" value=""><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                        <input type="button" class="file_input_button"
+                                            style="border-color: rgb(223, 223, 223); color: rgb(223, 223, 223);">
+                                        <input type="file" id="APP_SEQ_6_FILE" name="APP_SEQ_6_FILE"
+                                            class="file_input_hidden"
+                                            onchange="javascript: getAttachFileName(this.value, 'fileName6')"
+                                            style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                    </div>
+                                </div>
+                                <div id="attachFile6"></div>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="fileupload comment">
+            <div class="commnet-body">
+                <ul>
+                    <li>
+                        회사의 경쟁력을 객관적으로 증명할 수 있는 참고자료를 등록합니다.
+                    </li>
+                    <li>
+                        예를 들면 아래 표와 같은 자료이며, 등록한 자료가 차후 허위 또 사실과 다를경우 거래에 제한이 있을 수 있습니다.
+                    </li>
+                    <li>
+                        회사소개서에 아래 내용이 포함되어 있을 경우 회사소개서로 대체가능
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <p style="font-size:15px; color:#484646;font-weight:bold;text-align: center;">
+            [회사 소개자료 예시]
+        </p>
+        <table id="taxCodeList" border="1" class="tableStyle" style="margin-top:10px;">
+            <colgroup>
+                <col style="width:35%">
+                <col>
+            </colgroup>
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <th class="t_center">구분</th>
+                    <th class="t_center">참고자료</th>
+                </tr>
+                <tr>
+                    <td align="center">관련 자격 보유</td>
+                    <td>
+                        <p>
+                            　&nbsp;ㆍ정보통신공사,전기통신공사 등 공사업 면허증 사본<br>
+                            　　　&nbsp;-시공능력평가액, 기술인력 보유 현황 포함<br>
+                            　&nbsp;ㆍ원천 Vendor와의 Partnership 등급 증빙자료
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">인력현황</td>
+                    <td>
+                        <p>
+                            　&nbsp;ㆍ직/간접 인력 현황 및 경력 분포
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">기술 경쟁력</td>
+                    <td>
+                        <p>
+                            　&nbsp;ㆍ기술 관련 수상(포상) 이력<br>
+                            　&nbsp;ㆍ(특허 보유 시) 특허 등록 증명서, 등록 특허 리스트<br>
+                            　　　&nbsp;*미공개 특허는 제외
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">사업 실적</td>
+                    <td>
+                        <p>
+                            　&nbsp;ㆍ최근 3년간 공공기관/일반기업 수주 실적 증명서<br>
+                            　　　&nbsp;-연도별, 발주자별 상세내역 기재
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="fileupload comment">
+            <div class="commnet-body">
+                <ul>
+                    <li>
+                        신용 평가 정보를 보유 하신 경우에는 다음 사항을 이행해 주시기 바랍니다.
+                    </li>
+                    <li>
+                        신용 평가 자기 신고란에 신용 평가 기관,등급,유효 기간 입력 및 신용 평가 보고서 첨부
+                    </li>
+                    <li>
+                        신용 평가 사이트에서 신용 평가 정보를 SK 텔레콤으로 정보 이송(이크레더블,한국평가데이터,나이스 D&amp;B,나이스평가정보)
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <form id="creditInfoFrm" name="creditInfoFrm" method="post" onsubmit="return false;">
+            <table class="tableStyle popTable m_t10">
+                <colgroup>
+                    <col style="width:25%">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>신용평가 자기 신고</th>
+                        <td>
+                            <input type="text" id="CREDIT_INFO" name="CREDIT_INFO" data-bind="value:CREDIT_INFO"
+                                value="" maxlength="100" class="wp100">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+
+</body>
+
+</html>

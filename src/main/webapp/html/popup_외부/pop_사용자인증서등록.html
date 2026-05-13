@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <div class="pop_header_area">
+            <div class="pop_top_area">
+                <div class="left">
+                    <h2 class="pop_title">사용자 인증서 등록</h2>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="popcontents">
+            <div class="user_apply_msg">
+                <h3 class="user_info_h icon01">
+                    공인인증기관으로부터 발급받은 인증서를 <br>
+                    시스템에 등록하십시오.
+                </h3>
+                <p class="user_info_p">
+                    이 작업은 한 번으로 충분하며 만일 인증서를 새로 발급 받았을 경우에는 <br>
+                    이 작업을 다시 해야합니다. 범인(범용)인증서를 발급 받지 않으신 고객님께서는 <br>
+                    공인 인증기관에서 인증서를 발급 받으신 후 다시 시도하십시오.
+                </p>
+            </div>
+            <ul class="user_apply_list">
+                <li>한 개의 ID에 한개의 인증서만 등록이 되며 타 ID에 동일 인증서를 등록할 수 없습니다.</li>
+                <li>인증서버에 사용자 확인 후 인증서가 자동등록 됩니다.</li>
+            </ul>
+
+            <div class="user_apply_box">
+                <dl class="user_applu_inpt">
+                    <dt>사용자 아이디</dt>
+                    <dd><input type="text"></dd>
+                </dl>
+                <p>사용자 아이디는 사업자번호가 아닌 ‘Open2U’ 로그인 아이디를 입력해주세요.</p>
+            </div>
+
+            <div class="lay_pop_btn">
+                <button type="button" class="btn c_type10">취소</button>
+                <button type="button" class="btn c_type07">사용자 확인</button>
+            </div>
+        </div>
+    </body>
+</html>

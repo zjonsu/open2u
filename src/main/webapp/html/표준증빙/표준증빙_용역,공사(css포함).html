@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+
+        <style>
+            @import url("../../resource/font/Pretendard/font.css");
+
+            /* reset */
+            * {
+                margin: 0;
+                padding: 0;
+                border: 0 none;
+                color: inherit;
+                line-height: inherit;
+                list-style-type: none;
+            }
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            body,
+            div,
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            ul,
+            ol,
+            li,
+            dl,
+            dt,
+            dd,
+            table,
+            th,
+            td,
+            form,
+            fieldset,
+            legend,
+            input,
+            textarea,
+            a,
+            button,
+            select {
+                margin: 0;
+                padding: 0;
+                font-style: normal;
+            }
+            article,
+            aside,
+            canvas,
+            details,
+            figcaption,
+            figure,
+            footer,
+            header,
+            hgroup,
+            menu,
+            nav,
+            section,
+            summary {
+                display: block;
+            }
+            audio,
+            canvas,
+            video {
+                display: inline-block;
+            }
+            hr {
+                visibility: hidden;
+                position: absolute;
+                overflow: hidden;
+                width: 0;
+                height: 0;
+                font-size: 0;
+                line-height: 0;
+            }
+            label {
+                text-shadow: none !important;
+            }
+            caption,
+            legend,
+            .blind {
+                visibility: hidden;
+                position: absolute;
+                top: 0;
+                left: -999em;
+                overflow: hidden;
+                width: 0;
+                height: 0;
+                font-size: 0;
+                text-align: left;
+                line-height: 0;
+            }
+            caption {
+                position: static;
+                color: #6a6c6b;
+                font-size: 0px;
+                line-height: 0;
+            }
+            table {
+                border-spacing: 0;
+                border-collapse: collapse;
+                line-height: 1.5em;
+            }
+            em,
+            address {
+                font-style: normal;
+            }
+            /* address { font-style:normal; } */
+            ul,
+            ol,
+            li {
+                list-style-type: none;
+            }
+            input,
+            select,
+            textarea,
+            button {
+                font-size: 12px;
+                font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", "돋움", dotum, sans-serif;
+                outline: none;
+                vertical-align: middle;
+            }
+            input[type="text"]:focus,
+            select:focus,
+            textarea:focus,
+            button:focus{
+                outline: none; box-shadow: none;
+            }
+            button {
+                cursor: pointer;
+            }
+            body { -webkit-text-size-adjust: none;font-family: "Pretendard", "Malgun Gothic", "맑은 고딕", "Apple SD Gothic Neo", "돋움", dotum, sans-serif; letter-spacing: -0.02em; word-break: keep-all;word-wrap: break-word; overflow-y: scroll; }
+            body * { box-sizing: border-box; }
+            table {
+                border-collapse: collapse;
+                border-spacing: 0;
+            }
+            a {
+                color: #333;
+                text-decoration: none;
+            }
+            a:active,
+            a:hover {
+                text-decoration: none;
+            }
+            input[type="text"]:disabled {
+                font-weight: bold;
+                background-color: #f5f5f5;
+            }
+            select:disabled {
+                background-color: #ddd;
+            }
+
+
+            /**********
+                COMMON
+            ***********/
+            .t_left { text-align: left !important; }
+            .t_center { text-align: center !important; }
+            .t_right { text-align: right !important; }
+
+            .m_t0 { margin-top: 0 !important; }
+            .m_t20 { margin-top: 20px !important; }
+            .m_t30 { margin-top: 30px !important; }
+
+            .wrap { padding: 20px; }
+            .wrap .tit_area { text-align: center; }
+            .wrap .tit_area .tit { color: #222; font-size: 30px; font-weight: 700;line-height: 36px; }
+
+
+            /*************
+                TABLE
+            **************/
+            /* tbl_style_02 */
+            .tbl_style_02 { table-layout: fixed; width: 100%; border-top: 2px solid #201267; }
+            .tbl_style_02 tbody tr th,
+            .tbl_style_02 tbody tr td { height: 42px; }
+            .tbl_style_02 tbody tr th { padding: 4px 14px; background-color: #E8E8E8; border-bottom: 1px solid #D8D8D8; border-right: 1px solid #D8D8D8; color: #444; font-size: 13px; font-weight: 400; line-height: 16px; text-align: left; }
+            .tbl_style_02 tbody tr td { padding: 5px 8px; border-bottom: 1px solid #DEDEDE; color: #444; font-size: 14px; font-weight: 600; }
+            .tbl_style_02 tbody tr:last-child th,
+            .tbl_style_02 tbody tr:last-child td { border-bottom: 1px solid #7D75A3; }
+
+
+            /* tbl_list */
+            .tbl_list { table-layout: fixed; border-left-style: hidden; width: 100%; border-top: 2px solid #201267; }
+            .tbl_list.fz13 thead tr th,
+            .tbl_list.fz13 tbody tr td { font-size: 13px; }
+            .tbl_list thead tr th { height: 38px; padding: 5px; background-color: #e8e8e8; color: #444; font-size: 13px; font-weight: 400; border-bottom: 1px solid #D8D8D8; border-left: 1px solid #D8D8D8; text-align: center; }
+            .tbl_list thead tr:nth-child(2) th { background-color: #F6F6F6; border-bottom: none; }
+            .tbl_list thead:has(+ tbody tr:nth-child(2) td.ty02) tr:nth-child(2) th { border-color: #eaeaea; border-bottom: 1px solid #eaeaea; }
+            .tbl_list tbody tr th { padding: 5px 8px; color: #444; font-size: 13px; font-weight: 400; background-color: #F6F6F6; border-left: 1px solid #DEDEDE; border-bottom: 1px solid #DEDEDE; text-align: left; line-height: 15px; }
+            .tbl_list tbody tr td { height: 42px; text-align: center; padding: 5px 8px;  font-size: 14px; border-left: 1px solid #DEDEDE; color: #222; font-weight: 400; line-height: 15px; border-bottom: 1px solid #DEDEDE; } 
+            .tbl_list tbody tr td.ty02 { padding: 5px 13px; background-color: #f6f6f6; }
+            /* .tbl_list tbody tr td.ty03 { background-color: #fff; padding: 14px; color: #626574; font-size: 13px; text-align: left; } */
+            .tbl_list tbody tr td strong { font-size: 18px; font-weight: 700; }
+            .tbl_list tbody tr td .desc { display: inline-block; margin-left: 2px; color: #666; font-weight: 400; }
+            .tbl_list tbody tr th.bd_btm,
+            .tbl_list tbody tr td.bd_btm { border-bottom-color: #7D75A3; }
+            .tbl_list tfoot tr th,
+            .tbl_list tfoot tr td { background-color: #F5F3FC; color: #212B5D; font-weight: 600; border-bottom: 1px solid #7D75A3; }
+            .tbl_list tfoot tr th,
+            .tbl_list tfoot tr td { height: 42px; text-align: center; padding: 5px 8px;  font-size: 14px; border-left: 1px solid #EAEAEA; }
+
+            .tbl_list:not(.ty03) tbody td:has(textarea.form_control) { padding: 12px 8px; }
+            .table:has(+ .tbl_fade_wrap) tbody tr:last-child td,
+            .tbl_list tbody tr:last-child th,
+            .tbl_list tbody tr:last-child td { border-bottom-color: #7D75A3; }
+            .tbl_fade_wrap table:has(+ table) tbody tr:last-child td,
+            .tbl_list:has(tfoot) tbody tr:last-child td { border-bottom-color: #DEDEDE; }
+
+            .tbl_list.ty03 tbody tr td { color: #444; text-align: left; font-weight: 600; }
+
+            .tbl_fade_wrap:has(.sign_tbl_area) { margin-top: 26px; }
+
+            .tbl_caption { color: #888; font-size: 14px; font-weight: 400; }
+
+
+            /**********
+                SUB_TIT_AREA
+            ***********/
+            .sub_tit_area { display: flex; justify-content: space-between; align-items: center; margin: 40px 0 12px; }
+            .sub_tit_area .tit { position: relative; padding-left: 14px; color: #222; font-size: 19px; font-weight: 700; line-height: 23px; }
+            .sub_tit_area .tit::before { content: ''; position: absolute; top: 50%; left: 0; transform: translateY(-50%); width: 6px; height: 20px; background-color: #3617CE; }
+            .sub_tit_area:has(h3.tit) { margin: 23px 0 10px; }
+            .sub_tit_area .left { display: flex; align-items: center; gap: 4px; position: relative; }
+            .sub_tit_area .desc { color: #888; font-size: 16px; font-weight: 400; }
+
+            .slide_box_wrap .sub_tit_area{ margin: 20px 0 12px; }
+
+
+
+            /**********
+                MIDDLE_TIT_AREA
+            ***********/
+            .middle_tit_area { display: flex; justify-content: space-between; align-items: center; margin: 40px 0 12px; }
+            .middle_tit_area .tit { color: #201267; font-size: 22px; font-weight: 700; line-height: 26px; }
+
+
+
+            /*************
+                SLIDE BOX WRAP
+            **************/
+            .slide_box_wrap { background-color: #fff; border: 2px solid rgba(86, 94, 161, 0.3); border-radius: 12px; transition: all .1s; }
+            .tit_area + .slide_box_wrap { margin-top: 30px; }
+            .slide_box_wrap + .slide_box_wrap { margin-top: 24px; }
+            .slide_box_wrap .box_tit_area { display: flex; align-items: center; height: 56px; padding-right: 26px; cursor: pointer; }
+            .slide_box_wrap .box_tit_area .tit_wrap { display: flex; justify-content: space-between; align-items: center; position: relative; padding-left: 16px; }
+            .slide_box_wrap .box_tit_area .tit_wrap .left { display: flex; align-items: center; }
+            .slide_box_wrap .box_tit_area .tit_wrap .tit { color: #7C848C; font-size: 22px; font-weight: 700; line-height: 31px; }
+            .slide_box_wrap .box_tit_area .tit_wrap .desc { margin-left: 6px; color: #888; font-size: 20px; font-weight: 400; line-height: 25px; }
+            .slide_box_wrap .box_tit_area .tit_wrap::before { content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 1px; background-color: #D9D9D9; }
+            .slide_box_wrap .box_tit_area .slide_toggle_btn { display:inline-block; width: 55px; height: 100%; text-indent: -9999999px; }
+            .slide_box_wrap .box_cont_area { padding: 22px 20px; border-top: 1px solid #d9d9d9; }
+
+            .slide_box_wrap.on { border: 2px solid rgba(62, 46, 137, 0.5); }
+            .slide_box_wrap.on .box_tit_area .tit_wrap .tit { color: #222; }
+            .slide_box_wrap.on .box_tit_area .slide_toggle_btn { background: url(../../resource/images/renewal/btn_accordian_toggle_active.svg) no-repeat center right 18px / 18px auto; }
+
+
+            /*************
+                SIGN DESC AREA
+            **************/
+            .sign_desc_area { display: flex; justify-content: center; align-items: center; height: 100px; margin-top: 24px; background-color: #F6F6F6; border-radius: 10px; }
+            .sign_desc_area .desc { color: #222; font-size: 20px; font-weight: 500; line-height: 24px; }
+
+
+            /**********
+                FORM_CONTROL
+            ***********/
+            select.form_control { appearance: none; }
+            input[type="text"].form_control::placeholder,
+            textarea.form_control::placeholder { color: #CCC; }
+            input[type="text"].form_control.fz16 { font-size: 16px; }
+
+            input[type="text"].form_control.ty02,
+            select.form_control.ty02,
+            textarea.form_control.ty02,
+            .datepicker_area.ty03 input { width: 100%; height: 100%; border: 1px solid #A2A5C7; border-radius: 6px; font-size: 16px; font-weight: 400; }
+            input[type="text"].form_control.ty02 { padding: 0 10px; }
+            textarea.form_control.ty02 { padding: 10px; }
+            select.form_control.ty02 { padding: 0 25px 0 10px; background: url(../../resource/images/renewal/ico_select_ty02_arr.svg) no-repeat center right 10px / 8px auto; }
+            .paging_area select.form_control { width: 64px; height: 32px; padding: 0 10px; border-radius: 8px; color: #666; font-size: 13px; font-weight: 400; background: url(../../resource/images/renewal/ico_paging_select_arr.svg) no-repeat center right 10px / 10px auto; }
+
+            textarea.form_control { display: block; width: 100%; height: auto; padding: 14px 18px; resize: none; }
+
+
+            /*************
+                DATE INPUT
+            **************/
+            .datepicker_wrap { display: flex; align-items: center; gap: 2px; width: 100%; height: 100%; }
+            .datepicker_area { position: relative; max-width: none; padding: 0; border: none; }
+            .datepicker_area input { width: 100%; height: 50px; padding: 0 20px; border: 1px solid #A2A5C7; border-radius: 12px; box-sizing: border-box; color: #222; font-size: 22px; font-weight: 400; background-color: #fff; transition: all .1s; }
+            .datepicker_area input::placeholder { color: #CCC; }
+
+            .datepicker_area.ty03 { width: 100%; height: 100%; }
+            .datepicker_area.ty03 input { padding: 0 35px 0 10px; }
+            .datepicker_area.ty03 .ui-datepicker-trigger { width: 16px; height: 16px; right: 10px; background-size: 16px auto; }
+
+
+            /**********
+                FORM_AREA
+            ***********/
+            .suffix { position: relative; height: 100%; }
+            .suffix input[type="text"].form_control { padding-right: 28px; background-color: transparent; z-index: 2; }
+            .suffix::before { content: '%'; position: absolute; top: 50%; right: 13px; color: #ccc; font-size: 16px; font-weight: 400; transform: translateY(-50%); z-index: 1; transition: all .1s; }
+            .suffix:has(input[type="text"].form_control:focus)::before { color: #222; }
+            
+
+            /*************
+                CHECK BOX
+            **************/
+            .form_check { display: flex; align-items: flex-start; margin-left: 6px; }
+            .form_check input { min-width: 24px; height: 24px; appearance: none; background: url(../../resource/images/renewal/ico_check.svg) no-repeat center; border: none; cursor: pointer; }
+            .form_check input:checked { background: url(../../resource/images/renewal/ico_check_on.svg) no-repeat center; }
+            table .form_check { justify-content: center; margin-left: 0; }
+
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <div class="tit_area">
+                <h3 class="tit">용역/공사 계약 표준 증빙</h3>
+            </div>
+
+            <div class="middle_tit_area m_t30">
+                <div class="left">
+                    <h4 class="tit">1. 기본정보</h4>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <table class="tbl_list ty03">
+                <colgroup>
+                    <col style="width: 100px;">
+                    <col>
+                    <col style="width: 100px;">
+                    <col>
+                    <col style="width: 100px;">
+                    <col>
+                    <col style="width: 100px;">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th colspan="4">계약정보</th>
+                        <th colspan="4">검사정보</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>계약번호</th>
+                        <td colspan="3">4160089616</td>
+                        <th>검사조서번호</th>
+                        <td>5260045786</td>
+                        <th>검사차수</th>
+                        <td>2</td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">계약건명</th>
+                        <td colspan="3" rowspan="2">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</td>
+                        <th>검사금액</th>
+                        <td class="t_right" colspan="3">999,999,999원 <span class="desc">(VAT별도)</span></td>
+                    </tr>
+                    <tr>
+                        <th>남품기한</th>
+                        <td>2025-06-14</td>
+                        <th rowspan="2">목적물수령일(인수동의일)</th>
+                        <td rowspan="2">2025-06-14</td>
+                    </tr>
+                    <tr>
+                        <th>계약체결일</th>
+                        <td colspan="3">2025-06-14</td>
+                        <th>납품완료일</th>
+                        <td>2025-06-14</td>
+                    </tr>
+                    <tr>
+                        <th>계약기간</th>
+                        <td colspan="3">2025-06-14 ~ 2025-06-14</td>
+                        <th>검사요청일</th>
+                        <td>2025-06-15</td>
+                        <th>검사완료일</th>
+                        <td>2025-06-15</td>
+                    </tr>
+                    <tr>
+                        <th>계약금액</th>
+                        <td class="t_right" colspan="3">999,999,999원 <span class="desc">(VAT별도)</span></td>
+                        <th>검사요청자</th>
+                        <td colspan="3">이주영 / ac.lee@sk.com / 010-4156-4561</td>
+                    </tr>
+                    <tr>
+                        <th>공급업체명</th>
+                        <td colspan="3">피에스앤마케팅 주식회사</td>
+                        <th>SKT검사담당자</th>
+                        <td colspan="3">이주영 / ac.lee@sk.com / 010-4156-4561</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="middle_tit_area">
+                <div class="left">
+                    <h4 class="tit">2. 정산내역</h4>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="sub_tit_area m_t0">
+                <div class="left">
+                    <h5 class="tit">2-1. 금회 청구액</h5>
+                    <span class="desc">(VAT별도)</span>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <table class="tbl_list">
+                <colgroup>
+                    <col>
+                    <col style="width: 161px;">
+                    <col style="width: 70px;">
+                    <col style="width: 161px;">
+                    <col style="width: 70px;">
+                    <col style="width: 140px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>계약금액</th>
+                        <th colspan="2">청구금액</th>
+                        <th colspan="2">잔여금액</th>
+                        <th>누적기성률</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="t_right">999,999,999원</td>
+                        <td class="t_right">999,999,999원</td>
+                        <td>0%</td>
+                        <td class="t_right">999,999,999원</td>
+                        <td>100%</td>
+                        <td><strong>100%</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="sub_tit_area m_t20">
+                <div class="left">
+                    <h5 class="tit">2-2. 기존 청구액</h5>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <table class="tbl_list">
+                <colgroup>
+                    <col style="width: 100px;">
+                    <col style="width: 60px;">
+                    <col>
+                    <col style="width: 70px;">
+                    <col>
+                    <col style="width: 70px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>청구일</th>
+                        <th>차수</th>
+                        <th colspan="2">청구금액</th>
+                        <th colspan="2">누적청구액</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2025-05-28</td>
+                        <td>N차</td>
+                        <td class="t_right">999,999,999원</td>
+                        <td>0%</td>
+                        <td class="t_right">999,999,999원</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <td>2025-05-28</td>
+                        <td>N차</td>
+                        <td class="t_right">999,999,999원</td>
+                        <td>0%</td>
+                        <td class="t_right">999,999,999원</td>
+                        <td>0%</td>
+                    </tr>
+                    <tr>
+                        <td>2025-05-28</td>
+                        <td>N차</td>
+                        <td class="t_right">999,999,999원</td>
+                        <td>0%</td>
+                        <td class="t_right">999,999,999원</td>
+                        <td>0%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="sub_tit_area m_t20">
+                <div class="left">
+                    <h5 class="tit">2-3. 상세내역</h5>
+                    <span class="desc">(선택입력)</span>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <table class="tbl_list fz13">
+                <colgroup>
+                    <col style="width: 120px;">
+                    <col>
+                    <col style="width: 120px;">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>항목</th>
+                        <th>금액</th>
+                        <th>비율</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ty02"> <!-- 2025-06-23 수정 -->
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                        <td>
+                            <input type="text" class="form_control ty02 text_end" placeholder="금액입력" />
+                        </td>
+                        <td>
+                            <div class="suffix">
+                                <input type="text" class="form_control ty02 text_end" />
+                            </div>
+                        </td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>합계</th>
+                        <td class="t_right">0원</td>
+                        <td>0%</td>
+                        <td>비고</td>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <div class="middle_tit_area">
+                <div class="left">
+                    <h4 class="tit">3. 수행내역</h4>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="sub_tit_area m_t0">
+                <div class="left">
+                    <h5 class="tit">3-1. 주요 수행 업무</h5>
+                    <span class="desc">(필수입력)</span>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <table class="tbl_list">
+                <colgroup>
+                    <col style="width: 40px;">
+                    <col style="width: 40px;">
+                    <col style="width: 300px;">
+                    <col>
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th>차수</th>
+                        <th>수행기간</th>
+                        <th>수행 내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="ty02 p_0">
+                            <span class="form_check">
+                                <input type="checkbox" id="chk01">
+                            </span>
+                        </td>
+                        <td class="ty02">1</td>
+                        <td class="ty02">
+                            <div class="datepicker_wrap">
+                                <div class="datepicker_area ty03">
+                                    <input class="datepicker" type="text" placeholder="0000.00.00" />
+                                </div>
+                                <span>~</span>
+                                <div class="datepicker_area ty03">
+                                    <input class="datepicker" type="text" placeholder="0000.00.00" />
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="sub_tit_area m_t20">
+                <div class="left">
+                    <h5 class="tit">3-2. 인력 투입 현황</h5>
+                    <span class="desc">(선택입력)</span>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <table class="tbl_list">
+                <colgroup>
+                    <col style="width: 40px;">
+                    <col style="width: 40px;">
+                    <col style="width: 104px;">
+                    <col style="width: 104px;">
+                    <col>
+                    <col style="width: 127px;">
+                    <col style="width: 127px;">
+                    <col style="width: 104px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>선택</th>
+                        <th>NO</th>
+                        <th>직위/직급</th>
+                        <th>성명</th>
+                        <th>담당업무</th>
+                        <th>투입기간</th>
+                        <th>투입일(MD)</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="form_check">
+                                <input type="checkbox" id="chk08">
+                            </span>
+                        </td>
+                        <td>1</td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="sub_tit_area m_t20">
+                <div class="left">
+                    <h5 class="tit">3-3. 완료보고</h5>
+                    <span class="desc">(선택입력)</span>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <table class="tbl_style_02">
+                <colgroup>
+                    <col style="width: 120px;">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th>과제개요</th>
+                        <td>
+                            <textarea class="form_control ty02" rows="7" placeholder="내용입력"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>기대효과</th>
+                        <td>
+                            <textarea class="form_control ty02" rows="2" placeholder="내용입력"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="middle_tit_area">
+                <div class="left">
+                    <h4 class="tit">4. 산출물 목록</h4>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <table class="tbl_list">
+                <colgroup>
+                    <col style="width: 52px;">
+                    <col>
+                    <col style="width: 180px;">
+                    <col style="width: 180px;">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>NO</th>
+                        <th>산출물명</th>
+                        <th>제출방식</th>
+                        <th>비고</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                        <td>
+                            <select class="form_control ty02">
+                                <option>추가증빙제출</option>
+                                <option>별도제출</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" class="form_control ty02" placeholder="내용입력" />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="sign_desc_area">
+                <p class="desc">본 증빙 자료의 모든 내용은 사실과 다름 없음을 확인합니다.</p>
+            </div>
+
+            <div class="tbl_fade_wrap">
+                <div class="sign_tbl_area">
+                    <table class="tbl_list">
+                        <colgroup>
+                            <col style="width: 80px;">
+                            <col>
+                            <col style="width: 120px;">
+                            <col style="width: 125px;">
+                            <col style="width: 160px;">
+                            <col style="width: 200px;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>업체명</th>
+                                <th>성명</th>
+                                <th>전화번호</th>
+                                <th>E-Mail</th>
+                                <th>전자서명</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="ty02">인계자</td>
+                                <td>SK텔레콤</td>
+                                <td>홍길동</td>
+                                <td>010-1234-5678</td>
+                                <td>ac.lee@sk.com</td>
+                                <td>2025-05-28 00:00:00</td>
+                            </tr>
+                            <tr>
+                                <td class="ty02">인수자</td>
+                                <td>SK텔레콤</td>
+                                <td>홍길동</td>
+                                <td>010-1234-5678</td>
+                                <td>ac.lee@sk.com</td>
+                                <td>2025-05-28 00:00:00</td>
+                            </tr>
+                            <tr class="hide_tbl_mark">
+                                <td class="ty02">인수자</td>
+                                <td>
+                                    <input type="text" class="form_control ty02" placeholder="내용입력">
+                                </td>
+                                <td>
+                                    <input type="text" class="form_control ty02" placeholder="내용입력">
+                                </td>
+                                <td>
+                                    <input type="text" class="form_control ty02" placeholder="내용입력">
+                                </td>
+                                <td>
+                                    <input type="text" class="form_control ty02" placeholder="내용입력">
+                                </td>
+                                <td>2025-05-28 00:00:00</td>
+                            </tr>
+                            <tr>
+                                <td class="ty02">검토/확인</td>
+                                <td>SK텔레콤</td>
+                                <td>홍길동</td>
+                                <td>-</td>
+                                <td>ac.lee@sk.com</td>
+                                <td>2025-05-28 00:00:00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

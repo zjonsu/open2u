@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <div class="pop_header_area">
+            <div class="pop_top_area">
+                <div class="left">
+                    <h2 class="pop_title">적격수급업체평가 - 안전보건수준 자체평가</h2>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="popcontents">
+            <div class="appraisal_title">
+                <div class="left"><h3 class="title">1120 테스트평가명</h3></div>
+                <div class="right">
+                    <ul class="sub_info">
+                        <li>
+                            <span class="label">대표자명</span>
+                        </li>
+                        <li>
+                            <strong class="info">구영모</strong>
+                        </li>
+                    </ul>
+                    <ul class="sub_info">
+                        <li>
+                            <span class="label">적격여부</span>
+                        </li>
+                        <li>
+                            <em class="status">적합</em>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="appraisal_tbl_top">
+                <table class="appraisal_tbl self">
+                    <colgroup>
+                        <col style="width:35%">
+                        <col style="width:20%">
+                        <col style="width:45%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>항목</th>
+                            <th>확인내용<br>(업체작성)</th>
+                            <th>작성시 참고사항</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">1. 귀사의 상시 근로자수는 현재 기준 몇 명입니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>① 5인 미만</option>
+                                    <option>② 5인이상 50인 미만</option>
+                                    <option>③ 50인 이상 500명 미만</option>
+                                    <option>④ 500명 이상</option>
+                                </select>
+                            </td>
+                            <td>
+                                <p class="appraisal_p">
+                                    상시 근로자는 근로기준법상 근로자를 의미함
+                                </p>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 정규직/파견직/기간제 근로자/일용근로자를 포함함 (중대재해처벌법 해설서 33p 참고)</li>
+                                </ul>
+                                <p class="appraisal_p">
+                                    답변은 아래 4가지 중 하나를 선택하여 작성
+                                </p>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> ① 5인 미만 ② 5인이상 50인 미만 ③ 50인 이상 500명 미만 ④ 500명 이상</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">2. 귀사는 안전보건 전담조직이 있습니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>해당없음</option>
+                                    <option>예</option>
+                                    <option>아니오</option>
+                                </select>
+                            </td>
+                            <td>
+                                <p class="appraisal_p">
+                                    1번 항목에서 "④ 500명 이상" 으로 작성한 경우 예/아니오 중 선택하여 작성
+                                </p>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> ① 5인 미만 ② 5인이상 50인 미만 ③ 50인 이상 500명 미만 인 경우 "해당없음" 작성</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">4. 귀사는 안전보건에 관한 목표가 수립되어 있습니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>해당없음</option>
+                                    <option>예</option>
+                                    <option>아니오</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">5. 귀사는 안전보건에 관한 경영방침이 수립되어 있습니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>해당없음</option>
+                                    <option>예</option>
+                                    <option>아니오</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">6. 귀사는 산업안전보건법에 따른 안전관리자, 보건관리자 등을 배치하고 있습니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>배치</option>
+                                    <option>미배치</option>
+                                    <option>해당없음</option>
+                                    <option>위탁중</option>
+                                </select>
+                            </td>
+                            <td>
+                                <p class="appraisal_p">
+                                    안전관리자, 보건관리자, 안전보건관리담당자 및 산업보건의 배치여부 작성
+                                </p>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 산업안전보건법 제17조~제19조 및 제22조에 따라 배치여부 확인 후 작성(배치/미배치/해당없음)</li>
+                                </ul>
+                                <p class="appraisal_p">
+                                    상시 근로자 수 300명 미만인 경우 위탁가능하며 위탁 중일 경우 “위탁 중” 선택
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">7. 귀사는 안전보건 확보를 위한 예산 편성 및 집행되고 있습니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>예</option>
+                                    <option>아니오</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">8. 귀사는 귀사의 사업/사업장에 대한 안전점검, 위험성 평가 등을 주기적으로 시행하고 있습니까 ?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>예</option>
+                                    <option>아니오</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">9. 귀사는 안전보건 관련 교육을 시행 중이거나 시행 예정입니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>예</option>
+                                    <option>아니오</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">10. 귀사는 안전사고 발생 시 조치 매뉴얼이 마련되어 있습니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>예</option>
+                                    <option>아니오</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">11. 귀사는 제3자에게 도급, 용역, 위탁 시 해당 업체의 안전보건 수준을 평가하는 절차가 수립되어 있습니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>예</option>
+                                    <option>아니오</option>
+                                </select>
+                            </td>
+                            <td>
+                                <p class="appraisal_p">
+                                    예/아니오/해당없음 중 선택하여 작성
+                                </p>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 제3자에게 도급,용역,위탁 하지 않는 경우 "해당없음"작성</li>
+                                    <li><span>-</span> 제3자에게 도급,용역,위탁을 하지만 평가 절차가 없을 경우 "아니오"작성</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">12. 귀사는 안전보건 관련 인증을 받은 것이 있습니까?</h4>
+                            </td>
+                            <td>
+                                <select>
+                                    <option>선택</option>
+                                    <option>ISO45001</option>
+                                    <option>KOSHA-MS</option>
+                                    <option>미보유</option>
+                                </select>
+                            </td>
+                            <td>
+                                <p class="appraisal_p">
+                                    ISO45001, KOSHA-MS 인증 중 보유하고 있을 경우 보유하고 있는 인증명 선택
+                                </p>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> 본 체크리스트 작성/동의 후 인증서 보유 시 유효기간내 인증서(PDF) 첨부로 제출</li>
+                                </ul>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4 class="appraisal_h4">13. 귀사의 최근 2년간 산업재해율 수준은 어느 정도입니까?</h4>
+                            </td>
+                            <td>
+                                <input type="text" class="w70 point"> / <input type="text" class="w70 point">
+                            </td>
+                            <td>
+                                <p class="appraisal_p">
+                                    한국산업안전보건공단에서 발급 후 최근 2년간 산업재해율 수치 작성
+                                </p>
+                                <ul class="appraisal_list">
+                                    <li><span>-</span> "귀사 2년 평균/동종업계 2년 평균" 형식으로 산업재해율 수치 입력</li>
+                                    <li><span>-</span> 산업재해율 확인서는 원본 PDF를 첨부로 제출(필수)</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="appraisal_msg">1. 귀사와 체결할 계약 관련하여, 당사 안전보건 역량 평가 등을 위해 자체적으로 평가 및 확인한 내용을 위와 같이 제출합니다.</p>
+            <p class="appraisal_msg">2. 위 확인 내용 및 제출자료는 사실과 다름이 없으며, 만약 허위사실로 확인될 경우 계약해지 등 귀사의 제재에 대하여 어떠한 이의를 제기하지 아니할 것을 확약합니다.</p>
+            <table class="appraisal_sign_table">
+                <colgroup>
+                    <col style="width:70%">
+                    <col style="width:10%">
+                    <col>
+                </colgroup>
+                <tbody>
+                    <tr>
+                        <th></th>
+                        <th>사업자명</th>
+                        <td>행복나래 주식회사</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>사업자등록번호</th>
+                        <td>123467890</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>주소</th>
+                        <td>경기도 화성시 주소주소주소</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>대표이사</th>
+                        <td>홍길동(인)</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <th>제출일자</th>
+                        <td>000-00-00 00:00:000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="appraisal_msg">작성 시 참고사항 : 안전보건수준 자체평가 시 3/4/5/10번 총 4개 항목 모두 "예"이어야 안전보건 수준 평가 적격업체로 해당되어 계약 진행 가능합니다.</p>
+        </div>
+    </body>
+</html>

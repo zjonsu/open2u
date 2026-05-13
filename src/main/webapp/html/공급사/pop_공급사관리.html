@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">공급사 관리</h2>
+                    </div>
+                    <div class="right">
+                    </div>
+                </div>
+                <div class="pop_sub_area">
+                    <div class="left"></div>
+                    <div class="right">
+                        <button type="button" class="btn pop pop_save c_type07">저장</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popcontents p_top170">
+                
+                <table class="tableStyle">
+                	<colgroup>
+                		<col style="width:145px">
+                		<col>
+                		<col style="width:145px">
+                		<col>
+                	</colgroup>
+                    <tbody>
+                        <tr>
+                            <th>중분류 <span class="staricon"></span></th>
+                            <td>
+                                <select>
+                                    <option>전체</option>
+                                </select>
+                            </td>
+                            <th>SG <span class="staricon"></span></th>
+                            <td>
+                                <select>
+                                    <option>전체</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공급업체명 <span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="w90">
+                                <a href="javascript:;" class="btnS search USER_USR"></a>
+                            </td>
+                            <th>사업자번호</th>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>평가영역 <span class="staricon"></span></th>
+                            <td colspan="3"><input type="text"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="btnArea t_right">
+                    <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 신규등록</button>
+                    <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    <button type="button" class="btn c_type08">수정</button>
+                </div>
+                <div class="grid_area">
+                    <div id="alopex-grid" class="alopexgrid"></div>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn_top"><i class="icons i_btn_top"></i></a>
+        <script>
+            $('#alopex-grid').alopexGrid({
+                width: null,
+                height: function(gridHTMLElement){
+                        return $(gridHTMLElement).parent().height();
+                        },
+                pager: true,
+                paging: {
+                    perPage: 50,
+                    pagerCount: 50,
+                    pagerTotal: true,
+                    pagerSelect: true
+                },
+                height: 500,
+                autoResize: true,
+                autoColumnIndex: true,
+                fitTableWidth: true,
+                // filteringHeader: true,
+                // defaultColumnMapping : {
+                //     resizing: true,
+                //     headerDragDrop: true,
+                // },
+                columnMapping : [
+                    {
+                        selectorColumn : true,
+                        width : '30px'
+                    }, {
+                        key : 'name',
+                        title : 'name',
+                        width : '100px'
+                    }, {
+                        key : 'phone',
+                        title : 'phone',
+                        width : '100px'
+                    }, {
+                        key : 'email',
+                        title : 'email',
+                        width : '250px'
+                    }, {
+                        align : 'center',
+                        key : 'birthday',
+                        title : 'birthday',
+                        width : '100px'
+                    }, {
+                        align : 'center',
+                        key : 'zip',
+                        title : 'zip',
+                        width : '100px'
+                    }, {
+                        align : 'right',
+                        key : 'salary',
+                        title : 'salary',
+                        width : '100px'
+                    }, {
+                        key : 'country',
+                        title : 'country',
+                        width : '200px'
+                    }, {
+                        key : 'city',
+                        title : 'city',
+                        width : '150px'
+                    }, {
+                        key : 'company',
+                        title : 'company',
+                        width : '200px'
+                    }, {
+                        key : 'type',
+                        align: 'center',
+                        title : 'type',
+                        width : '50px'
+                    }
+                ],
+                data: data
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="pop_wrap">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">구매전표</h1>
+                    </div>
+                    <div class="right">
+                        <ul class="progress_step_list">
+                            <li>
+                                <a href="javascript:;">구매요청</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매접수</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약진행</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약완료</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">검사조서</a>
+                            </li>
+                            <li class="in_progress">
+                                <a href="javascript:;">구매전표</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">대금지급</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_info_area on">
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">구매전표번호</span>
+                            <span class="info_text">52603442962</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">전표금액(VAT포함)</span>
+                            <span class="info_text">2,000,000원</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">공급업체명</span>
+                            <span class="info_text">주식회사 뮤플러스</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약번호</span>
+                            <span class="info_text">4160086491</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">계약담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">검사완료일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">전기일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">구매전표건명</span>
+                            <span class="info_text">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">전표발행자/담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="toggle_btn"><span class="txt">Close</span><i class="ico_toggle_arr"></i></button> 
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_aside">
+                    <ul class="aside_progress_list">
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript::">1. 인수동의</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">2. 요청정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">3. 예산정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">4. 확인정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">5. 결재정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">검사조서</a>
+                            </h2>
+                        </li>
+                    </ul>
+                    <ul class="link_area">
+                        <li>
+                            <button type="button" class="link_btn">검사합격통지서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="link_btn">목적물수령증명서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="link_btn">FAQ</button>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <div class="cont_inner">
+                            <div class="sub_tit_area m_t0">
+                                <div class="left">
+                                    <h2 class="tit">회계정보</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_list">
+                                <colgroup>
+                                    <col style="width: 40px;">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>사업영역</th>
+                                        <th>예산집행부서(CC)</th>
+                                        <th>회계계정(G/L)</th>
+                                        <th>펀드실행과제</th>
+                                        <th>기능영역</th>
+                                        <th>BM오더</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>용역</td>
+                                        <td>9000001928</td>
+                                        <td>일반용역</td>
+                                        <td>GUN</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td></td>
+                                        <td>용역</td>
+                                        <td>9000001928</td>
+                                        <td>일반용역</td>
+                                        <td>GUN</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">전표정보</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <colgroup>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>전표번호</th>
+                                        <td>52603442962</td> <!-- 2025-06-25 수정 -->
+                                        <th>전표건명</th>
+                                        <td colspan="3">25년_경북 산불 재산종합보험</td> <!-- 2025-06-25 수정 -->
+                                    </tr>
+                                    <tr>
+                                        <th>검사완료일(증빙일)</th>
+                                        <td>2025-05-28</td>
+                                        <th>전기일</th>
+                                        <td>2025-05-28</td>
+                                        <th>사업영역</th>
+                                        <td>1400</td>
+                                    </tr>
+                                    <tr>
+                                        <th>금액(VAT제외)</th>
+                                        <td class="t_right">208,972,500원</td>
+                                        <th>VAT</th>
+                                        <td class="t_right">208,972,500원</td>
+                                        <th>금액(VAT포함)</th>
+                                        <td class="t_right">208,972,500원</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="detail_info_btn_wrap"> <!-- 2025-06-25 추가 -->
+                                <button type="button" class="detail_info_btn no_event">상세정보<i class="ico"></i></button>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <colgroup>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>세금코드</th>
+                                        <td>IO</td>
+                                        <th>지급코드</th>
+                                        <td>A001</td>
+                                        <th>사업장코드</th>
+                                        <td>1400</td>
+                                    </tr>
+                                    <tr>
+                                        <th>증빙구분</th>
+                                        <td>세금계산서</td>
+                                        <th>지급방법</th>
+                                        <td>타 계정대체</td>
+                                        <th>유보금</th>
+                                        <td class="t_right">208,972,500원</td>
+                                    </tr>
+                                    <tr>
+                                        <th>통화</th>
+                                        <td>KRW</td> <!-- 2025-06-25 수정 -->
+                                        <th>국책계좌</th>
+                                        <td colspan="3">하나은행 / 408-920157-10809</td> <!-- 2025-06-25 수정 -->
+                                    </tr>
+                                    <tr>
+                                        <th>환율</th>
+                                        <td>####,##</td>
+                                        <th>기산일자</th>
+                                        <td>2025-05-28</td>
+                                        <th>만기일자</th>
+                                        <td>2025-05-28</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="btm_btn_area">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lg">전표삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

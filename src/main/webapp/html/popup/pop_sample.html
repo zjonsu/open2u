@@ -1,0 +1,2113 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">구매요청</h2>
+                    </div>
+                    <div class="right">
+                        <ul class="pop_progress">
+                            <li class="on"><a href="javascript:;">구매요청</a></li>
+                            <li><a href="javascript:;">구매접수</a></li>
+                            <li><a href="javascript:;">계약진행</a></li>
+                            <li><a href="javascript:;">계약완료</a></li>
+                            <li><a href="javascript:;">자산취득</a></li>
+                            <li><a href="javascript:;">검사조서</a></li>
+                            <li><a href="javascript:;">구매전표</a></li>
+                            <li><a href="javascript:;">대금지급</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_sub_area">
+                    <div class="left">
+                        <p class="pop_comment">
+                            <i class="icons i_pop_comment"></i>
+                            각 항목(또는 텍스트)에 마우스를 올리거나 물음표를 클릭하면, 도움말이 나옵니다.
+                        </p>
+                    </div>
+                    <div class="right">
+                        <button type="button" class="btn pop c_type06">구매의뢰양식 발송</button>
+                        <button type="button" class="btn pop c_type06">불러오기</button>
+                        <button type="button" class="btn pop c_type06">결재전송</button>
+                        <button type="button" class="btn pop pop_save c_type07">저장</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 주석 20230818 p_top170 -->
+            <div class="popcontents p_top170">
+                <div>
+                    <div class="poptitle m_t30">
+                        <h3>종합의견 [계약번호 : 4160077009]</h3>
+
+                        <div class="btnArea f_right">
+                            <button id="btnSaveOpinion" data-type="button" class="btn">부분저장</button>
+
+                            <button id="btnCntrtView" data-type="button" class="btn">계약서보기</button>
+                        </div>
+                    </div>
+                    <table class="tableStyle popTable m_t10">
+                        <colgroup>
+                            <col style="width: 100%" />
+                        </colgroup>
+
+                        <tbody>
+                            <tr>
+                                <td class="leftLine">
+                                    <textarea id="PKG_COMPLETE_OPINION" name="PKG_COMPLETE_OPINION" rows="5" class="wp100"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <div class="poptitle m_t30">
+                        <h3>계약변경이력</h3>
+                    </div>
+
+                    <table class="tableStyle popupType m_t10">
+                        <colgroup>
+                            <col style="width: 6%" />
+                            <col style="width: 6%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 15%" />
+                            <col style="width: *" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 10%" />
+                            <col style="width: 12%" />
+                        </colgroup>
+
+                        <thead>
+                            <tr>
+                                <th class="leftLine">상세보기</th>
+                                <th>차수</th>
+                                <th>체결일자</th>
+                                <th>계약금액</th>
+                                <th>계약기간</th>
+                                <th>공급업체명</th>
+                                <th>구매담당자</th>
+                                <th>계약관리자</th>
+                                <th>변경요청자</th>
+                                <th>변경요청부서</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td class="t_center leftLine" onclick="javascript:fn_openHistCntrt('134046');" style="cursor: pointer">
+                                    <a href="#none"><img class="dummy" src="/web/in/images/search_icon_t.png" /></a>
+                                </td>
+                                <td class="t_center">1차</td>
+                                <td class="t_center">2023-02-20</td>
+                                <td class="t_right">5,000,000</td>
+                                <td class="t_center">2023-02-20 ~ 2023-03-31</td>
+                                <td class="t_center">행복나래 주식회사</td>
+                                <td class="t_center">임종수</td>
+                                <td class="t_center">임종수</td>
+                                <td class="t_center"></td>
+                                <td class="t_center"></td>
+                            </tr>
+
+                            <tr>
+                                <td class="t_center leftLine" onclick="javascript:fn_openHistCntrt('134530');" style="cursor: pointer">
+                                    <a href="#none"><img class="dummy" src="/web/in/images/search_icon_t.png" /></a>
+                                </td>
+                                <td class="t_center">2차</td>
+                                <td class="t_center">2023-02-20</td>
+                                <td class="t_right">5,000,000</td>
+                                <td class="t_center">2023-02-20 ~ 2023-03-31</td>
+                                <td class="t_center">행복나래 주식회사</td>
+                                <td class="t_center">임종수</td>
+                                <td class="t_center">임종수</td>
+                                <td class="t_center">임종수</td>
+                                <td class="t_center">ICT Infra구매팀</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <div class="poptitle m_t30">
+                        <h3>변경계약 검토의견</h3>
+                        <div class="btnArea f_right"></div>
+                    </div>
+
+                    <table class="tableStyle popTable m_t10">
+                        <colgroup>
+                            <col style="width: 100%" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="leftLine">
+                                    <textarea id="ETC_SPCL" name="ETC_SPCL" rows="5" class="wp100">123123</textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <div class="poptitle m_t30">
+                        <h3>기본정보</h3>
+
+                        <div class="btnArea f_right">
+                            <button id="btnSaveBaseInfo" data-type="button" class="btn">부분저장</button>
+                        </div>
+                    </div>
+
+                    <form id="frm1" name="frm1">
+                        <table class="tableStyle popTable m_t10">
+                            <colgroup>
+                                <col style="width: 7%" />
+                                <col style="width: 7%" />
+                                <col style="width: 14%" />
+                                <col style="width: 22%" />
+                                <col style="width: 7%" />
+                                <col style="width: 7%" />
+                                <col style="width: 14%" />
+                                <col style="width: *" />
+                            </colgroup>
+
+                            <tbody>
+                                <tr>
+                                    <th colspan="2">계약건명</th>
+                                    <td colspan="2">테스트 구매요청 - 투자</td>
+                                    <th colspan="2">계약체결일자</th>
+                                    <td colspan="2">2023-02-20 (계약승인일 : 2023-08-03) (최초계약체결일 :2023-02-20)</td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="2">계약유형</th>
+                                    <td colspan="2">수의[경쟁 후], 수시, 내자, 신규</td>
+                                    <th colspan="2">계약기간</th>
+                                    <td colspan="2">2023-02-20 ~ 2023-03-31</td>
+                                </tr>
+
+                                <tr id="privateCntrtSau">
+                                    <th colspan="2">수의계약사유</th>
+
+                                    <td colspan="100">
+                                        <select
+                                            id="PRIVATE_CNTRT_14"
+                                            name="PRIVATE_CNTRT_14"
+                                            class="m_t0"
+                                            data-type="select"
+                                            data-bind="selectedOptions:PRIVATE_CNTRT_14"
+                                            data-disabled="true"
+                                            style="width: 600px"
+                                        >
+                                            <option></option>
+                                            <option value="01">01.【독점】 독점 또는 그에 준하는 차별적 특성 및 시장 지배력을 지니고 있는 대상으로부터의 구매</option>
+                                            <option value="02">02.【발주처 지명】 수주사업의 발주처가 지명한 대상으로부터의 구매</option>
+                                            <option value="03">03.【사업 제안자】 추진하는 사업을 제안한 대상으로부터의 구매</option>
+                                            <option value="04">04.【보안 이슈】 회사의 보안정책상 특정 대상과의 계약이 필요한 경우</option>
+                                            <option value="05">05.【전략적 의사결정】 전략적 의사결정에 의한 구매</option>
+                                            <option value="06">06.【추가/부속 구매】 이미 납품되었거나 납품 예정인 공사/용역/장비/물품의 추가 물량 구매</option>
+                                            <option value="07">07.【전환 비용】 거래처 변경 시의 전환 비용이 현저히 클 경우</option>
+                                            <option value="08">08.【입찰 실패】 입찰 또는 견적서 징구가 실패했거나 불가능한 경우</option>
+
+                                            <option value="09">09.【경쟁 비효율】 계약의 규모/목적/성질 등에 비추어 볼 때, 경쟁이 비효율적이라고 판단될 경우</option>
+
+                                            <option value="10">10.【긴급 구매요청】 긴급 구매요청에 의한 구매</option>
+
+                                            <option value="11" selected="">【독점】상품/서비스 공급이 독점적 지위일 경우</option>
+
+                                            <option value="12">【시장/기술 경쟁력】 공급업체의 경쟁력이 있고, 타 업체 대비 높은 수준의 효율성 증대효과 예상</option>
+
+                                            <option value="13">【업체 지정】 수주사업 발주처 지명, 수주사업 공동 제안자, 거래 구조/특성 상 지정 업체와의 거래 불가피</option>
+
+                                            <option value="14">【보안이슈】회사 보안정책(고객정보, HR, 영업비밀, 물리적 보안 등)으로 특정 대상과의 계약이 필요한 경우</option>
+
+                                            <option value="15">【업체변경 비효율】 거래처 변경 시 전환비용 증가, 개발 후 고도화/운영, 유지보수, 기 납품 공사/용역/장비/물품의 추가구매 등</option>
+
+                                            <option value="16">【전략적 의사결정】전략적 파트너, 위임계약, 공익적 가치 추구 기업과의 거래, 동반성장 정부과제/공모전 입상</option>
+
+                                            <option value="17">【경쟁 비효율】소액구매, 자체 업체 Pool 운영, 업체평가/경쟁입찰 후 물량배정 등</option>
+
+                                            <option value="18">【긴급 구매요청】천재지변, 긴급 사업 추진 등</option>
+                                        </select>
+
+                                        ※ 비고 :
+                                        <input
+                                            type="text"
+                                            data-type="textinput"
+                                            id="PRIVATE_CNTRT_ETC"
+                                            name="PRIVATE_CNTRT_ETC"
+                                            data-bind="value:PRIVATE_CNTRT_ETC"
+                                            data-disabled="true"
+                                            class="w200"
+                                            value="test"
+                                        />
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="2">계약번호</th>
+
+                                    <td colspan="2">4160077009</td>
+
+                                    <th colspan="2">계약금액</th>
+
+                                    <td colspan="2">5,000,000 (단위:KRW)</td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="2">구매요청자</th>
+
+                                    <td>
+                                        <input
+                                            type="hidden"
+                                            data-type="textinput"
+                                            class="inactive w60"
+                                            id="BUSI_DEPT_CD"
+                                            name="BUSI_DEPT_CD"
+                                            data-bind="value:BUSI_DEPT_CD"
+                                            data-disabled="true"
+                                            value="00003853"
+                                        />
+
+                                        <input
+                                            type="text"
+                                            data-type="textinput"
+                                            class="inactive wp100"
+                                            id="BUSI_DEPT_NAME"
+                                            name="BUSI_DEPT_NAME"
+                                            data-bind="value:BUSI_DEPT_NAME"
+                                            data-disabled="true"
+                                            value="Infra Biz"
+                                        />
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            data-type="textinput"
+                                            class="inactive w60"
+                                            id="RFX_REG_ID"
+                                            name="RFX_REG_ID"
+                                            data-bind="value:RFX_REG_ID"
+                                            data-disabled="true"
+                                            value="1106374"
+                                        />
+
+                                        <input type="text" data-type="textinput" class="inactive w80" id="RFX_REG_NAME" name="RFX_REG_NAME" data-bind="value:RFX_REG_NAME" value="최성필" />
+                                    </td>
+
+                                    <th colspan="2">구매요청관리자</th>
+
+                                    <td>
+                                        <input
+                                            type="hidden"
+                                            data-type="textinput"
+                                            class="inactive w60"
+                                            id="PUR_REQ_MANAGER_DEPT_CD"
+                                            name="PUR_REQ_MANAGER_DEPT_CD"
+                                            data-bind="value:PUR_REQ_MANAGER_DEPT_CD"
+                                            data-disabled="true"
+                                            value="00003853"
+                                        />
+
+                                        <input
+                                            type="text"
+                                            data-type="textinput"
+                                            class="inactive wp100"
+                                            id="PUR_REQ_MANAGER_DEPT_NM"
+                                            name="PUR_REQ_MANAGER_DEPT_NM"
+                                            data-bind="value:PUR_REQ_MANAGER_DEPT_NM"
+                                            data-disabled="true"
+                                            value="Infra Biz"
+                                        />
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            data-type="textinput"
+                                            class="inactive w60"
+                                            id="PUR_REQ_MANAGER_ID"
+                                            name="PUR_REQ_MANAGER_ID"
+                                            data-bind="value:PUR_REQ_MANAGER_ID"
+                                            data-disabled="true"
+                                            value="1106374"
+                                        />
+
+                                        <input
+                                            type="text"
+                                            data-type="textinput"
+                                            class="w80 USER_USR"
+                                            id="PUR_REQ_MANAGER_NAME"
+                                            name="PUR_REQ_MANAGER_NAME"
+                                            data-bind="value:PUR_REQ_MANAGER_NAME"
+                                            data-disabled="false"
+                                            value="최성필"
+                                        />
+
+                                        <a href="#none" class="btnS search" id="SEARCH_PUR_REQ_MANAGER_ID"></a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="2">구매담당자</th>
+
+                                    <td>
+                                        <input type="text" data-type="textinput" class="inactive wp100" data-disabled="true" value="ICT Infra구매팀" />
+                                    </td>
+
+                                    <td>
+                                        <input type="text" data-type="textinput" class="inactive w60" data-disabled="true" value="1111189" />
+
+                                        <input type="text" data-type="textinput" class="inactive w80 USER_USR" value="임종수" />
+                                    </td>
+
+                                    <th colspan="2">계약관리자</th>
+
+                                    <td>
+                                        <input type="text" data-type="textinput" class="inactive wp100" id="CNTRT_MANAGER_DEPTNM" data-disabled="true" value="ICT Infra구매팀" />
+                                    </td>
+
+                                    <td>
+                                        <input
+                                            type="text"
+                                            data-type="textinput"
+                                            class="w60"
+                                            id="CNTRT_MANAGER_ID"
+                                            name="CNTRT_MANAGER_ID"
+                                            data-bind="value:CNTRT_MANAGER_ID"
+                                            data-disabled="true"
+                                            value="1111189"
+                                        />
+
+                                        <input type="text" data-type="textinput" class="w80" id="CNTRT_MANAGER_NM" name="CNTRT_MANAGER_NM" data-bind="value:CNTRT_MANAGER_NM" value="임종수" />
+
+                                        <a href="#none" class="btnS search" id="SEARCH_CNTRT_MANAGER_ID"></a>
+
+                                        <!-- <button type="button" id="cntrtManagerUpdate" data-type="button" class="btn grad3">이관</button> -->
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="2">계약업체</th>
+
+                                    <td colspan="6">
+                                        행복나래 주식회사 [ 114-86-00579 ]
+
+                                        <a href="#none" class="btn grad3" id="btnVendorDetail">상세</a>
+
+                                        <a href="#none" class="btn grad3" id="btnVendorEval"><span id="evalBtnTitle">업체평가</span></a>
+
+                                        <a href="#none" class="btn grad3" id="btnVendorHistory">업체History</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="2">업체담당자</th>
+
+                                    <td colspan="2"><span id="VENDOR_DAMDANG_NAME_SPAN">황다영</span></td>
+
+                                    <th colspan="2">업체담당자 연락처</th>
+
+                                    <td colspan="2"><span id="VENDOR_DAMDANG_MOBILE_SPAN">010-0000-0000</span>&nbsp;&nbsp;(Email : <span id="VENDOR_DAMDANG_EMAIL_SPAN">test@test.com</span>)</td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="2">송장발행처</th>
+
+                                    <td colspan="6">행복나래 주식회사 ( V2012010927260 ) &nbsp;&nbsp;&nbsp;&nbsp;[ 사업자번호 : 114-86-00579 ]</td>
+                                </tr>
+
+                                <tr>
+                                    <th colspan="2">수주(대기업제외)</th>
+
+                                    <td colspan="2">
+                                        <!-- 2020.07.28 수주(대기업제외) 체크 비활성화 변경불가 개발자:정종수 검토자:임진호 -->
+
+                                        <input
+                                            type="radio"
+                                            data-type="radio"
+                                            id="SUB_CNTRT1"
+                                            name="SUB_CNTRT"
+                                            value="Y"
+                                            data-bind="checked:SUB_CNTRT"
+                                            disabled="disabled"
+                                            class="af-radio af-default"
+                                            data-converted="true"
+                                        />Yes
+
+                                        <input
+                                            type="radio"
+                                            data-type="radio"
+                                            id="SUB_CNTRT2"
+                                            name="SUB_CNTRT"
+                                            value="N"
+                                            checked="checked"
+                                            data-bind="checked:SUB_CNTRT"
+                                            disabled="disabled"
+                                            class="af-radio af-default"
+                                            data-converted="true"
+                                        />No
+                                    </td>
+
+                                    <th colspan="2">임시계약번호</th>
+
+                                    <td colspan="2">
+                                        <input type="text" id="PRE_ORDER_SEQ" name="PRE_ORDER_SEQ" data-bind="value:PRE_ORDER_SEQ" maxlength="10" value="" class="w90" />
+
+                                        <a href="#" onclick="popupPreOrder()" class="btnS search"></a>
+                                    </td>
+                                </tr>
+
+                                <tr></tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
+                <div>
+                    <form id="frmCntrt" name="frmCntrt" onsubmit="return false;">
+                        <div class="poptitle m_t30">
+                            <h3>계약조건</h3>
+
+                            <div class="btnArea f_right">
+                                <button id="btnSaveCntrtInfo" data-type="button" class="btn">부분저장</button>
+                            </div>
+                        </div>
+
+                        <table class="tableStyle popTable m_t10">
+                            <tbody>
+                                <tr>
+                                    <th>계약일반조건첨부</th>
+
+                                    <td colspan="5">
+                                        <input type="checkbox" class="m10" disabled="disabled" />장비/물품
+
+                                        <input type="checkbox" class="m10" disabled="disabled" checked="" />공사
+
+                                        <input type="checkbox" class="m10" disabled="disabled" />개발
+
+                                        <input type="checkbox" class="m10" disabled="disabled" />용역
+
+                                        <input type="checkbox" class="m10" disabled="disabled" />연구
+
+                                        <input type="checkbox" class="m10" disabled="disabled" checked="" />SGR특수조건 첨부
+                                    </td>
+
+                                    <th colspan="2" class="type1">대금지급 바로 P/G</th>
+
+                                    <td colspan="2">가입</td>
+                                </tr>
+
+                                <tr>
+                                    <th>계약특수조건첨부</th>
+
+                                    <td colspan="10">
+                                        <div class="inputFileArea">
+                                            <div class="filesBox f_left" style="width: 335px">
+                                                <!-- 지정하고 싶은 width값으로 수정 -->
+
+                                                <input
+                                                    type="text"
+                                                    id="fileSeqContract"
+                                                    class="file_input_textbox"
+                                                    readonly="readonly"
+                                                    style="width: 300px"
+                                                    value=""
+                                                /><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+
+                                                <a href="javascript:defaultFileDownLoad('')" class="btnS download"></a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>특기사항<br />(계약서 명기)</th>
+
+                                    <td colspan="10">
+                                        <textarea id="ETC_COND_ETC" name="ETC_COND_ETC" rows="3" class="wp100" readonly="">특기사항1111</textarea>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th rowspan="2">공사</th>
+
+                                    <th class="type1">지급코드</th>
+
+                                    <td colspan="10">A001 [ 회사대금결제기준 ]</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="type1">지급조건</th>
+
+                                    <td colspan="10">
+                                        선금: 0%,&nbsp;&nbsp;중도금(기성): 0%,&nbsp;&nbsp; 중도금(확정): 100%,&nbsp;&nbsp;잔금: 0%,&nbsp;&nbsp; 유보금: 0%
+
+                                        <input type="hidden" id="CHARGE_CNST_001" name="CHARGE_CNST_001" data-bind="value:CHARGE_CNST_001" value="0" />
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>부가세(10%)</th>
+
+                                    <td colspan="2">
+                                        <input type="checkbox" class="m10" disabled="disabled" readonly="" />장비/물품
+
+                                        <input type="checkbox" class="m10" disabled="disabled" checked="" readonly="" />공사
+
+                                        <input type="checkbox" class="m10" disabled="disabled" readonly="" />용역
+                                    </td>
+
+                                    <th>세금계산서유형</th>
+
+                                    <td>
+                                        <input type="radio" id="ZETUP" name="ZETUP" data-type="radio" value="Y" data-bind="checked:ZETUP" />
+
+                                        정발행
+
+                                        <input type="radio" id="ZETUP" name="ZETUP" data-type="radio" value="N" data-bind="checked:ZETUP" checked="" />
+
+                                        역발행
+                                    </td>
+
+                                    <th style="padding: 5px 5px 5px 10px">영세율</th>
+
+                                    <td style="padding: 0px 5px 0px 0px">
+                                        <input type="checkbox" data-type="checkbox" id="VAT_ZERO" name="VAT_ZERO" data-bind="checked:VAT_ZERO" data-converted="true" value="Y" disabled="disabled" />
+                                    </td>
+
+                                    <th class="type1">
+                                        지체상금율
+
+                                        <input type="checkbox" disabled="disabled" />
+
+                                        직접입력
+                                    </th>
+
+                                    <td>
+                                        0.15% &nbsp;&nbsp; 100 일
+
+                                        <span>
+                                            <input type="checkbox" data-type="checkbox" id="HOLD_PASS" name="HOLD_PASS" class="m_r10" data-bind="checked:HOLD_PASS" data-converted="true" value="Y" />
+
+                                            <label>익월 지체면제</label>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th rowspan="3">보증조건</th>
+
+                                    <th class="type1">계약이행보증</th>
+
+                                    <td colspan="10">예치 면제 &nbsp;계약금액의&nbsp; 0 (%)</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="type1">선급금보증</th>
+
+                                    <td colspan="10">예치 면제 &nbsp;계약금액의&nbsp; 0 (%)</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="type1">하자이행보증</th>
+
+                                    <td colspan="10">예치 면제 &nbsp;계약금액의&nbsp; 0 (%) &nbsp;&nbsp; 0 개월 0 (%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- [안전보건 자체평가 추가 시작] 2022.03.16 김문숙 , [2022.10.01] BSB 중대재해처벌법 고도화 추가-->
+
+                        <div class="poptitle m_t20">
+                            <h3>안전보건<span style="display: none">CNI02P015X01</span></h3>
+
+                            <div class="btnArea f_right">
+                                <button id="btnSafeResult" data-type="button" class="btn">부분저장</button>
+
+                                <!-- [2018.03.12] 계약대장 저장 -> 부분저장 명칭변경 | 개발자:정종수 | 리뷰자 :임진호 -->
+                            </div>
+                        </div>
+
+                        <table class="tableStyle">
+                            <colgroup>
+                                <col width="13%" />
+
+                                <col width="47%" />
+
+                                <col width="13%" />
+
+                                <col width="auto;" />
+                            </colgroup>
+
+                            <tbody>
+                                <tr>
+                                    <th>안전보건일반조건<span class="staricon"></span></th>
+
+                                    <td colspan="3">
+                                        <input
+                                            type="checkbox"
+                                            disabled="disabled"
+                                            data-type="checkbox"
+                                            id="APP_SEQ_SAFE_NOMAL_YN"
+                                            name="APP_SEQ_SAFE_NOMAL_YN"
+                                            class="m_r10 disabled"
+                                            data-bind="checked:APP_SEQ_SAFE_NOMAL_YN"
+                                            data-converted="true"
+                                            value="Y"
+                                            checked=""
+                                        />안전보건 일반조건
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>적격수급업체평가<span class="staricon"></span></th>
+
+                                    <td colspan="3">
+                                        <input
+                                            type="checkbox"
+                                            disabled="disabled"
+                                            data-type="checkbox"
+                                            id="VENDOR_SAFETY_ESTIMATION_CD"
+                                            name="VENDOR_SAFETY_ESTIMATION_CD"
+                                            class="m_r10"
+                                            data-bind="checked:VENDOR_SAFETY_ESTIMATION_CD"
+                                            data-converted="true"
+                                            value="01"
+                                        />안전보건수준 자체평가
+
+                                        <input
+                                            type="checkbox"
+                                            disabled="disabled"
+                                            data-type="checkbox"
+                                            id="VENDOR_SAFETY_ESTIMATION_CD"
+                                            name="VENDOR_SAFETY_ESTIMATION_CD"
+                                            class="m_r10"
+                                            data-bind="checked:VENDOR_SAFETY_ESTIMATION_CD"
+                                            data-converted="true"
+                                            value="02"
+                                            checked=""
+                                        />적격수급업체평가(공사,공사성용역)
+
+                                        <input
+                                            type="checkbox"
+                                            data-type="checkbox"
+                                            id="APP_SEQ_SAFE_NONE_YN"
+                                            disabled="disabled"
+                                            name="APP_SEQ_SAFE_NONE_YN"
+                                            class="m_r10"
+                                            data-bind="checked:VENDOR_SAFETY_ESTIMATION_CD"
+                                            data-converted="true"
+                                            value="03"
+                                        />미평가(개인/해외 등)
+                                        <!-- [2022.10.01 BSB ]Open2U 중대재해처벌법 프로세스 고도화 : 미선택 추가 끝 -->
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>적격수급업체<br />평가결과 조회</th>
+
+                                    <td colspan="3">
+                                        <input type="hidden" id="EVAL_SEQ" name="EVAL_SEQ" data-bind="value:EVAL_SEQ" value="" class="inactive w120" readonly="" />
+
+                                        <input type="hidden" id="EVAL_DEGREE" name="EVAL_DEGREE" data-bind="value:EVAL_DEGREE" value="" class="w10 inactive" readonly="" />
+
+                                        <input type="hidden" id="EVAL_TYPE" name="EVAL_TYPE" data-bind="value:EVAL_TYPE" value="" class="w10 inactive" readonly="" />
+
+                                        <input type="text" data-disabled="true" id="EVAL_NAME" name="EVAL_NAME" data-bind="value:EVAL_NAME" value="" data-type="textinput" class="w230" />
+
+                                        <a href="#" onclick="doOpenSearchEval()" class="btnS search"></a>
+
+                                        <a href="#none" class="btnS closes"></a>
+
+                                        <button type="button" onclick="fnViewEval();" data-type="button" class="btn grad3">보기</button>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th width="140">산업안전보건 <br />관리비<span class="tooltipIcon type1" onclick="doOpenHelp('900', '산업안전보건관리', 'SAFE-01')"></span></th>
+
+                                    <td colspan="11">
+                                        <table class="tableStyle noLine">
+                                            <colgroup>
+                                                <col style="width: 14%" />
+
+                                                <col style="width: 36%" />
+
+                                                <col style="width: 18%" />
+
+                                                <col style="width: auto" />
+                                            </colgroup>
+
+                                            <tbody>
+                                                <tr>
+                                                    <th>계상여부</th>
+
+                                                    <td colspan="3" style="border-top: 1px solid #dfdfdf">
+                                                        <select id="SAFE_ACCOUNT_YN" name="SAFE_ACCOUNT_YN" data-type="select" data-bind="selectedOptions:SAFE_ACCOUNT_YN" class="w130">
+                                                            <option value="">선택</option>
+
+                                                            <option value="Y" selected="">대상</option>
+
+                                                            <option value="N">비대상</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="SAFE_ACCOUNT_TR" style="display: none">
+                                                    <th>계상방식</th>
+
+                                                    <td>
+                                                        <select id="SAFE_ACCOUNT_TYPE" name="SAFE_ACCOUNT_TYPE" data-type="select" data-bind="selectedOptions:SAFE_ACCOUNT_TYPE" class="w130">
+                                                            <option value="">선택</option>
+
+                                                            <option value="01" selected="">공사원가계산서</option>
+
+                                                            <option value="02">대상액 X 70%</option>
+                                                        </select>
+                                                    </td>
+
+                                                    <th>공사분류</th>
+
+                                                    <td>
+                                                        <select
+                                                            id="SAFE_CONSTRUCTION_TYPE"
+                                                            name="SAFE_CONSTRUCTION_TYPE"
+                                                            data-type="select"
+                                                            data-bind="selectedOptions:SAFE_CONSTRUCTION_TYPE"
+                                                            class="w130"
+                                                        >
+                                                            <option value="">선택</option>
+
+                                                            <option value="01" selected="">일반건설공사(갑)</option>
+
+                                                            <option value="02">일반건설공사(을)</option>
+
+                                                            <option value="03">특수 및 기타 건설공사</option>
+                                                        </select>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="SAFE_ACCOUNT_TR" style="display: none">
+                                                    <th>적용요율</th>
+
+                                                    <td>
+                                                        <select id="SAFE_ACCOUNT_RATE" name="SAFE_ACCOUNT_RATE" data-type="select" data-bind="selectedOptions:SAFE_ACCOUNT_RATE" class="w130">
+                                                            <option value="">선택</option>
+                                                        </select>
+                                                    </td>
+
+                                                    <th>산업안전보건관리비 금액</th>
+
+                                                    <td>
+                                                        <input
+                                                            type="text"
+                                                            id="SAFE_ACCOUNT_AMT"
+                                                            name="SAFE_ACCOUNT_AMT"
+                                                            class="w130 t_right"
+                                                            data-type="testInput"
+                                                            data-bind="value:SAFE_ACCOUNT_AMT"
+                                                            value="1,500,000"
+                                                            data-keyfilter=","
+                                                            onkeyup="numChk(this);"
+                                                            data-keyfilter-rule="digits"
+                                                        />
+                                                        원
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <table class="tableStyle">
+                            <colgroup>
+                                <col width="14%" />
+
+                                <col width="14%" />
+
+                                <col width="14%" />
+
+                                <col width="14%" />
+
+                                <col width="24%" />
+
+                                <col width="24%" />
+                            </colgroup>
+                            <colgroup></colgroup>
+                            <tbody>
+                                <tr>
+                                    <th class="t_center">평가점수</th>
+
+                                    <th class="t_center">계상방식</th>
+
+                                    <th class="t_center">공사분류</th>
+
+                                    <th class="t_center">적용요율</th>
+
+                                    <th class="t_center">계상액(VAT별도)</th>
+
+                                    <th class="t_center">지급누적액</th>
+                                </tr>
+
+                                <tr>
+                                    <td class="t_center"></td>
+
+                                    <td class="t_center">공사원가계산서</td>
+
+                                    <td class="t_center">일반건설공사(갑)</td>
+
+                                    <td class="t_right">2.93%</td>
+
+                                    <td class="t_right">1,500,000원</td>
+
+                                    <td class="t_right">210,000원</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- [안전보건 자체평가 추가 시작] 2022.03.16 김문숙 , [2022.10.01] BSB 중대재해처벌법 고도화 추가-->
+                    </form>
+                </div>
+
+                <div>
+                    <div class="poptitle m_t30">
+                        <h3>예산정보(구매요청내역)&nbsp;&nbsp;[소요예산: 5,000,000 ]</h3>
+
+                        <p class="titlecoment cp_o">※ VAT별도 (단위:KRW)</p>
+                    </div>
+
+                    <table class="tableStyle popTable m_t10">
+                        <colgroup>
+                            <col style="width: 14%" />
+
+                            <col style="width: * %" />
+
+                            <col style="width: 14%" />
+
+                            <col style="width: * %" />
+                        </colgroup>
+
+                        <tbody>
+                            <tr>
+                                <th>지출품의서</th>
+
+                                <td>
+                                    <div class="filesBox f_left" style="width: 335px; padding-left: 10px">
+                                        <!-- 지정하고 싶은 width값으로 수정 -->
+
+                                        <input
+                                            type="text"
+                                            id="fileName21"
+                                            class="file_input_textbox"
+                                            readonly="readonly"
+                                            style="width: 300px"
+                                            value=""
+                                        /><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+
+                                        <a href="javascript:defaultFileDownLoad('')" class="btnS download"></a>
+                                    </div>
+                                </td>
+
+                                <th>투자사업승인서</th>
+
+                                <td>
+                                    <div class="filesBox f_left" style="width: 335px; padding-left: 10px">
+                                        <!-- 지정하고 싶은 width값으로 수정 -->
+
+                                        <input
+                                            type="text"
+                                            id="fileName31"
+                                            class="file_input_textbox"
+                                            readonly="readonly"
+                                            style="width: 300px"
+                                            value="새 텍스트 문서.txt"
+                                        /><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+
+                                        <a href="javascript:defaultFileDownLoad('279497820230220134851')" class="btnS download"></a>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <!-- 2019.01.17 계약변경시 추가된 지출품의서도 계약대장에서 확인 가능 -->
+
+                            <!-- 지출품의서
+
+-->
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="m_t10">
+                    <div id="budget_grid1" data-bind="grid: BUDGET_LIST1"></div>
+
+                    <div id="budget_grid1_height_level" class="t_right">
+                        <select data-type="select" onchange="javascript:setGridHeightByRow(this,'budget_grid1');">
+                            <option value="D">기본</option>
+                            <option value="1">1</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                            <option value="A" selected="">전체</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="poptitle m_t30">
+                        <h3>Item내역 [계약금액 : 5,000,000 ]</h3>
+                        <p class="titlecoment cp_o f_left">※ VAT별도 [유보금 : 0 ] [미지급유보금 : 0 ] (단위:KRW)</p>
+                        <div class="btnArea f_right">
+                            <button id="btnSaveItem1" data-type="button" class="btn">부분저장</button>
+                            <button id="btnSendLastInvoice" data-type="button" class="btn">최종송장전송</button>
+                        </div>
+                    </div>
+
+                    <!-- GRID -->
+
+                    <div class="m_t10">
+                        <div id="item_grid1" data-bind="grid: ITEM_LIST1"></div>
+
+                        <div id="item_grid1_height_level" class="f_right">
+                            <select data-type="select" onchange="javascript:setGridHeightByRow(this,'item_grid1');">
+                                <option value="D">기본</option>
+
+                                <option value="1">1</option>
+
+                                <option value="5">5</option>
+
+                                <option value="10">10</option>
+
+                                <option value="A" selected="">전체</option>
+                            </select>
+                        </div>
+
+                        <!-- GRID -->
+
+                        <div id="item_grid2" data-bind="grid: ITEM_LIST2" class="p_0 m_t30"></div>
+
+                        <div id="item_grid2_height_level" class="f_right">
+                            <select data-type="select" onchange="javascript:setGridHeightByRow(this,'item_grid2');">
+                                <option value="D">기본</option>
+
+                                <option value="1">1</option>
+
+                                <option value="5">5</option>
+
+                                <option value="10">10</option>
+
+                                <option value="A" selected="">전체</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p_t15">
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경(사용자권한) | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경 | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- The blueimp Gallery widget -->
+
+                    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+                        <div class="slides"></div>
+
+                        <h3 class="title"></h3>
+
+                        <a class="prev">‹</a>
+
+                        <a class="next">›</a>
+
+                        <a class="close">×</a>
+
+                        <a class="play-pause"></a>
+
+                        <ol class="indicator"></ol>
+                    </div>
+
+                    <!-- The template to display files available for upload -->
+
+                    <!-- The template to display files available for download -->
+
+                    <style type="text/css">
+                        .fileupload-list.tableStyle thead th {
+                            z-index: inherit;
+                            font-size: 12px;
+                            padding: 5px 14px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td:first-child {
+                            border-left: 1px solid #dfdfdf;
+                            padding: 6px 4px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td {
+                            padding: 6px 15px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tfoot td {
+                            padding: 6px 15px;
+                            background: #f7f6f5;
+                            border-left: 1px solid #dfdfdf;
+                            border-bottom: 1px solid #dfdfdf;
+                            border-right: 1px solid #dfdfdf;
+                            font-size: 12px;
+                            color: #5b5b5b;
+                        }
+                    </style>
+
+                    <div></div>
+                </div>
+
+                <div class="poptitle m_t20">
+                    <h3>구매실적</h3>
+
+                    <div class="btnArea f_right">
+                        <button id="btnPurResult" data-type="button" class="btn">부분저장</button>
+
+                        <!-- [2018.03.12] 계약대장 저장 -> 부분저장 명칭변경 | 개발자:정종수 | 리뷰자 :임진호 -->
+                    </div>
+                </div>
+
+                <form id="frm2" name="frm2">
+                    <input type="hidden" id="CNTRT_SEQ" name="CNTRT_SEQ" data-bind="value:CNTRT_SEQ" value="134530" />
+
+                    <table class="tableStyle popTable m_t10">
+                        <colgroup>
+                            <col style="width: 14%" />
+
+                            <col style="width: 19%" />
+
+                            <col style="width: 14%" />
+
+                            <col style="width: 19%" />
+
+                            <col style="width: 14%" />
+
+                            <col style="width: 20%" />
+                        </colgroup>
+
+                        <tbody>
+                            <tr>
+                                <th>소요일수</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        class="inactive w60 t_right"
+                                        data-type="textinput"
+                                        id="RSLT_REQMT_DAY"
+                                        name="RSLT_REQMT_DAY"
+                                        data-bind="value:RSLT_REQMT_DAY"
+                                        value="0"
+                                        data-keyfilter-rule="digits"
+                                    />일
+                                </td>
+
+                                <th>조정후 소요일수</th>
+
+                                <td><input type="text" class="w60 t_right" data-type="textinput" id="RSLT_REQMT_REDAY" name="RSLT_REQMT_REDAY" data-bind="value:RSLT_REQMT_REDAY" value="0" />일</td>
+
+                                <th>조정사유</th>
+
+                                <td>
+                                    <input type="text" class="wp100" data-type="textinput" id="RSLT_BALNC_REASON" name="RSLT_BALNC_REASON" data-bind="value:RSLT_BALNC_REASON" value="" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>기술지원계약 대상</th>
+
+                                <td>
+                                    <input type="checkbox" class="m_r10" data-type="checkbox" id="TECH_SUPPORT" name="TECH_SUPPORT" value="Y" data-bind="checked:TECH_SUPPORT" />
+                                </td>
+
+                                <th>납품단가조정</th>
+
+                                <td>
+                                    <div class="inputFileArea m_t5">
+                                        <div style="float: left">
+                                            <input type="checkbox" class="m10" disabled="disabled" />
+                                        </div>
+
+                                        <div class="filesBox f_left" style="width: 165px">
+                                            <!-- 지정하고 싶은 width값으로 수정 -->
+
+                                            <input
+                                                type="text"
+                                                id="fileNamePoPriceAdjust"
+                                                class="file_input_textbox"
+                                                readonly="readonly"
+                                                style="width: 130px"
+                                                value=""
+                                            /><!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+
+                                            <a href="javascript:defaultFileDownLoad('')" class="btnS download"></a>
+                                        </div>
+                                    </div>
+                                </td>
+
+                                <th>전략적 협상</th>
+
+                                <td>
+                                    <input type="checkbox" data-type="checkbox" id="STRATEGIC_NEGO" name="STRATEGIC_NEGO" value="Y" data-bind="checked:STRATEGIC_NEGO" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>실적SG</th>
+
+                                <td>
+                                    <select id="RESULT_SG" name="RESULT_SG" data-type="select" data-bind="selectedOptions:RESULT_SG" data-disabled="false">
+                                        <option value="">선택</option>
+
+                                        <option value="03">기지국/교환기</option>
+
+                                        <option value="04">중계기</option>
+
+                                        <option value="05">전송장비</option>
+
+                                        <option value="24">NW IT장비</option>
+
+                                        <option value="06">부대물자</option>
+
+                                        <option value="18">Access망 공사</option>
+
+                                        <option value="17">전송망 공사</option>
+
+                                        <option value="16">Core망 공사</option>
+
+                                        <option value="07">OS용역</option>
+
+                                        <option value="09">제휴사업</option>
+
+                                        <option value="25">성장 Biz</option>
+
+                                        <option value="08">일반용역</option>
+
+                                        <option value="15" selected="">일반공사</option>
+
+                                        <option value="01">일반물품</option>
+
+                                        <option value="11">개발용역</option>
+
+                                        <option value="13">유지보수</option>
+
+                                        <option value="02">IT장비</option>
+                                    </select>
+                                </td>
+
+                                <th>실적년월</th>
+
+                                <td>
+                                    <div style="float: left; padding-right: 5px; padding-top: 5px">
+                                        <input
+                                            type="text"
+                                            class="w40 t_center"
+                                            data-type="textinput"
+                                            id="RESULT_YEAR"
+                                            name="RESULT_YEAR"
+                                            data-bind="value:RESULT_YEAR"
+                                            data-keyfilter-rule="digits"
+                                            value="2023"
+                                            maxlength="4"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        년&nbsp;
+
+                                        <select id="RESULT_MONTH" name="RESULT_MONTH" data-type="select" data-bind="selectedOptions:RESULT_MONTH">
+                                            <option value="">실적제외</option>
+
+                                            <option value="01">01</option>
+
+                                            <option value="02" selected="">02</option>
+
+                                            <option value="03">03</option>
+
+                                            <option value="04">04</option>
+
+                                            <option value="05">05</option>
+
+                                            <option value="06">06</option>
+
+                                            <option value="07">07</option>
+
+                                            <option value="08">08</option>
+
+                                            <option value="09">09</option>
+
+                                            <option value="10">10</option>
+
+                                            <option value="11">11</option>
+
+                                            <option value="12">12</option></select
+                                        >월
+                                    </div>
+                                </td>
+
+                                <th>전표발행부서</th>
+
+                                <td>
+                                    <input type="radio" id="SLIP_WHO1" name="SLIP_WHO" data-type="radio" value="B" data-bind="checked:SLIP_WHO" checked="" />
+
+                                    사업
+
+                                    <input type="radio" id="SLIP_WHO2" name="SLIP_WHO" data-type="radio" value="P" data-bind="checked:SLIP_WHO" />
+
+                                    구매&nbsp;<!-- 16년고도화 REQ-0026 계약대장 전표발행부서의 변경 > 전송 -->
+
+                                    <a href="#none" class="btn grad3" id="btnSlipWhoSend">전송</a>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>최초구매요청금액</th>
+
+                                <td>
+                                    <input type="text" class="inactive w140 t_right" value="5,000,000" data-keyfilter-rule="digits" readonly="" />
+
+                                    (KRW)
+                                </td>
+
+                                <th>절감기준</th>
+
+                                <td>
+                                    <input type="radio" data-type="radio" id="RSLT_BUDGET_BASE1" name="RSLT_BUDGET_BASE" value="1" checked="checked" data-bind="checked:RSLT_BUDGET_BASE" />
+
+                                    <label>품의예산</label>
+
+                                    <span style="display: none">
+                                        <input type="radio" data-type="radio" id="RSLT_BUDGET_BASE2" name="RSLT_BUDGET_BASE" value="2" data-bind="checked:RSLT_BUDGET_BASEE" />
+
+                                        <label>추정예산</label>
+
+                                        <input type="radio" data-type="radio" id="RSLT_BUDGET_BASE3" name="RSLT_BUDGET_BASE" value="3" data-bind="checked:RSLT_BUDGET_BASE" />
+
+                                        <label>전년대비</label>
+                                    </span>
+                                </td>
+
+                                <td colspan="2"></td>
+                            </tr>
+
+                            <tr>
+                                <th>품의예산</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        data-type="textinput"
+                                        id="ASSIGN_BUDGET_AMT"
+                                        name="ASSIGN_BUDGET_AMT"
+                                        data-bind="value:ASSIGN_BUDGET_AMT"
+                                        value="5,000,000"
+                                        data-keyfilter-rule="digits"
+                                        class="w140 t_right"
+                                    />
+
+                                    (KRW)
+                                </td>
+
+                                <th>품의예산대비 절감액</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        class="inactive w140 t_right"
+                                        data-type="textinput"
+                                        id="RSLT_BUDGET_AMT"
+                                        name="RSLT_BUDGET_AMT"
+                                        data-bind="value:RSLT_BUDGET_AMT"
+                                        value="0"
+                                        data-keyfilter-rule="digits"
+                                        data-keyfilter=","
+                                        maxlength="18"
+                                        readonly="readonly"
+                                    />
+
+                                    (KRW)
+                                </td>
+
+                                <th>품의예산대비 절감율</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        class="inactive w80 t_right"
+                                        data-type="textinput"
+                                        id="RSLT_REQMT_BUDGET_RATE"
+                                        name="RSLT_REQMT_BUDGET_RATE"
+                                        data-bind="value:RSLT_REQMT_BUDGET_RATE"
+                                        value="0"
+                                        readonly="readonly"
+                                    />
+                                    %
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>전년가격</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        class="w140 t_right"
+                                        data-type="textinput"
+                                        id="REDUCTION_AMT_BY_YEAR"
+                                        name="REDUCTION_AMT_BY_YEAR"
+                                        data-bind="value:REDUCTION_AMT_BY_YEAR"
+                                        value="0"
+                                        data-keyfilter-rule="digits"
+                                        data-keyfilter=","
+                                        maxlength="18"
+                                    />
+
+                                    (KRW)
+                                </td>
+
+                                <th>전년대비 절감액</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        class="inactive w140 t_right"
+                                        data-type="textinput"
+                                        id="REDUCTION_AMT_BY_PRE_YEAR"
+                                        name="REDUCTION_AMT_BY_PRE_YEAR"
+                                        data-bind="value:REDUCTION_AMT_BY_PRE_YEAR"
+                                        value="0"
+                                        readonly="readonly"
+                                    />
+
+                                    (KRW)
+                                </td>
+
+                                <th>전년대비 절감율</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        class="inactive w80 t_right"
+                                        data-type="textinput"
+                                        id="REDUCTION_AMT_BY_YEAR_RATE"
+                                        name="REDUCTION_AMT_BY_YEAR_RATE"
+                                        data-bind="value:REDUCTION_AMT_BY_YEAR_RATE"
+                                        value="0"
+                                        readonly="readonly"
+                                    />
+                                    %
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>CA 대상</th>
+
+                                <td>
+                                    <input type="checkbox" data-type="checkbox" id="EPI_CHK" name="EPI_CHK" value="Y" class="m_r10" data-bind="checked:EPI_CHK" data-disabled="true" />
+                                </td>
+
+                                <th>CA 유형</th>
+
+                                <td colspan="3">
+                                    <select id="EPI_TYPE" name="EPI_TYPE" class="w250" data-type="select" data-bind="selectedOptions:EPI_TYPE" data-disabled="true">
+                                        <option selected=""></option>
+
+                                        <option value="A">전년 계약금액 대비 절감</option>
+
+                                        <option value="B">최초 견적가 대비 절감</option>
+
+                                        <option value="C">입찰 목표가 대비 절감</option>
+
+                                        <option value="D">무상 제공 절감</option>
+
+                                        <option value="E">절감액 재사용</option>
+
+                                        <option value="F">기타 절감</option>
+                                    </select>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>CA Base 금액</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        class="w140 t_right"
+                                        data-type="textinput"
+                                        id="EPI_BASE_AMT"
+                                        name="EPI_BASE_AMT"
+                                        data-bind="value:EPI_BASE_AMT"
+                                        value="0"
+                                        data-keyfilter-rule="digits"
+                                        data-keyfilter=","
+                                        onkeyup="numChk(this);"
+                                        maxlength="18"
+                                        data-disabled="true"
+                                    />
+
+                                    (KRW)
+                                </td>
+
+                                <th>CA 절감액</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        class="w140 t_right"
+                                        data-type="textinput"
+                                        id="EPI_REDUCTION_AMT"
+                                        name="EPI_REDUCTION_AMT"
+                                        data-bind="value:EPI_REDUCTION_AMT"
+                                        value="0"
+                                        data-keyfilter-rule="digits"
+                                        data-keyfilter=","
+                                        onkeyup="numChk(this);"
+                                        maxlength="18"
+                                        data-disabled="true"
+                                    />
+
+                                    (KRW)
+                                </td>
+
+                                <th>CA 절감율</th>
+
+                                <td>
+                                    <input
+                                        type="text"
+                                        class="inactive w80 t_right"
+                                        data-type="textinput"
+                                        id="EPI_REDUCTION_RATE"
+                                        name="EPI_REDUCTION_RATE"
+                                        data-bind="value:EPI_REDUCTION_RATE"
+                                        value=".00"
+                                        data-disabled="true"
+                                    />
+                                    %
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <th>CA 상세내역</th>
+
+                                <td colspan="5"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+
+                <div>
+                    <div class="poptitle m_t30">
+                        <h3>보안설정(조회권한)</h3>
+
+                        <div class="btnArea f_right">
+                            <button id="btnSecurity" data-type="button" class="btn">부분저장</button>
+                        </div>
+                    </div>
+
+                    <form id="frm3" name="frm3">
+                        <table class="tableStyle popTable m_t10">
+                            <colgroup>
+                                <col style="width: 14%" />
+                                <col style="width: *" />
+                                <col style="width: 14%" />
+                                <col style="width: *" />
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>구매요청부서</th>
+                                    <td>
+                                        <input type="text" id="REQ_AUTH_NM" name="REQ_AUTH_NM" data-bind="value:REQ_AUTH_NM" value="" readonly="" class="wp70" />
+                                        <input type="hidden" id="REQ_DEFAULT_AUTH" name="REQ_DEFAULT_AUTH" data-bind="value:REQ_DEFAULT_AUTH" value="N" />
+                                        <input type="hidden" id="REQ_DEPT_AUTH_CD" name="REQ_DEPT_AUTH_CD" data-bind="value:REQ_DEPT_AUTH_CD" value="00003853,00004029" />
+                                        <input type="hidden" id="REQ_DEPT_AUTH_NM" name="REQ_DEPT_AUTH_NM" data-bind="value:REQ_DEPT_AUTH_NM" value="Infra Biz,RPA추진" />
+                                        <input type="hidden" id="REQ_USER_AUTH_CD" name="REQ_USER_AUTH_CD" data-bind="value:REQ_USER_AUTH_CD" value="1108946" />
+                                        <input type="hidden" id="REQ_USER_AUTH_NM" name="REQ_USER_AUTH_NM" data-bind="value:REQ_USER_AUTH_NM" value="조두연" />
+                                        <a href="#none" class="btn grad3" id="" onclick="fn_openAuthPopup('1')"><span id="evalBtnTitle">설정</span></a>
+                                        <a href="#none" class="btn" id="" onclick="fn_cancleAuth('1')">
+                                            <span id="reqCancle">기본</span>
+                                            <!-- <div data-type="tooltip" data-position="top" data-base="#reqCancle">설정 취소 및 기본값 설정</div> -->
+                                        </a>
+                                    </td>
+                                    <th>구매부서</th>
+                                    <td>
+                                        <input type="text" id="PUR_AUTH_NM" name="PUR_AUTH_NM" data-bind="value:PUR_AUTH_NM" value="" readonly="" class="wp70" />
+                                        <input type="hidden" id="PUR_DEFAULT_AUTH" name="PUR_DEFAULT_AUTH" data-bind="value:PUR_DEFAULT_AUTH" value="Y" />
+                                        <input type="hidden" id="PUR_DEPT_AUTH_CD" name="PUR_DEPT_AUTH_CD" data-bind="value:PUR_DEPT_AUTH_CD" value="00003290" />
+                                        <input type="hidden" id="PUR_DEPT_AUTH_NM" name="PUR_DEPT_AUTH_NM" data-bind="value:PUR_DEPT_AUTH_NM" value="SCM" />
+                                        <input type="hidden" id="PUR_USER_AUTH_CD" name="PUR_USER_AUTH_CD" data-bind="value:PUR_USER_AUTH_CD" value="" />
+                                        <input type="hidden" id="PUR_USER_AUTH_NM" name="PUR_USER_AUTH_NM" data-bind="value:PUR_USER_AUTH_NM" value="" />
+                                        <a href="#none" class="btn grad3" id="" onclick="fn_openAuthPopup('2')"><span id="evalBtnTitle">설정</span></a>
+                                        <a href="#none" class="btn" id="" onclick="fn_cancleAuth('2')">
+                                            <span id="purAuthCancle">기본</span>
+                                            <!-- <div data-type="tooltip" data-position="top" data-base="#purAuthCancle">설정 취소 및 기본값 설정</div> -->
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+
+                <!-- [2020.08.28] EPI 첨부파일 추가 | 개발자:김문숙 | 리뷰자:임진호 -->
+
+                <div class="">
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경(사용자권한) | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경 | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- The blueimp Gallery widget -->
+
+                    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+                        <div class="slides"></div>
+
+                        <h3 class="title"></h3>
+
+                        <a class="prev">‹</a>
+
+                        <a class="next">›</a>
+
+                        <a class="close">×</a>
+
+                        <a class="play-pause"></a>
+
+                        <ol class="indicator"></ol>
+                    </div>
+
+                    <!-- The template to display files available for upload -->
+
+                    <!-- The template to display files available for download -->
+
+                    <style type="text/css">
+                        .fileupload-list.tableStyle thead th {
+                            z-index: inherit;
+                            font-size: 12px;
+                            padding: 5px 14px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td:first-child {
+                            border-left: 1px solid #dfdfdf;
+                            padding: 6px 4px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td {
+                            padding: 6px 15px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tfoot td {
+                            padding: 6px 15px;
+                            background: #f7f6f5;
+                            border-left: 1px solid #dfdfdf;
+                            border-bottom: 1px solid #dfdfdf;
+                            border-right: 1px solid #dfdfdf;
+                            font-size: 12px;
+                            color: #5b5b5b;
+                        }
+                    </style>
+
+                    <div>
+                        <form id="appSeqEpiFrm" name="appSeqEpiFrm" method="post" enctype="multipart/form-data" onsubmit="return false;">
+                            <!-- 이미 추가된 이후에 다시 추가하는경우 같은 APP_SEQ를 유지하기 위해서 해당 파일의 APP_SEQ를 호출하는 화면에서 넘겨줘야 함. -->
+
+                            <input type="hidden" id="APP_SEQ" name="APP_SEQ" data-bind="value: APP_SEQ" value="AT00000000613388" />
+
+                            <input type="hidden" id="SEND_OUT_FLAG" name="SEND_OUT_FLAG" data-bind="value: SEND_OUT_FLAG" value="N" />
+
+                            <input type="hidden" id="nc_trId" name="nc_trId" value="CMN99N001C01" />
+
+                            <input type="hidden" id="nc_target" name="nc_target" value="forward:in/cmn/FILE_ATTACH_RESULT.do" />
+
+                            <div class="poptitle m_t30" style="margin-bottom: 5px">
+                                <h3>CA 증빙 첨부파일</h3>
+
+                                <div class="fileupload-buttonbar f_right">
+                                    <div style="position: relative; min-height: 1px">
+                                        <span class="fileinput-button" id="appSeqEpiFrmatt_seq_btn_add">
+                                            <button data-type="button"><span data-type="icon" data-addclass="plus" data-position="left"></span>추가</button>
+
+                                            <input type="file" name="files[]" multiple="" />
+                                        </span>
+
+                                        <button id="appSeqEpiFrmatt_seq_btn_remove" data-type="button" data-addclass="delete">
+                                            <span data-type="icon" data-addclass="minus" data-position="left"></span>삭제
+                                        </button>
+
+                                        <button type="submit" class="btn btn-primary start"><i class="glyphicon glyphicon-upload"></i><span>Start upload</span></button>
+
+                                        <button data-type="button" data-addclass="download"><span data-type="icon" data-addclass="hdd" data-position="left"></span>선택 다운로드</button>
+
+                                        <button data-type="button" data-addclass="zipdownload"><span data-type="icon" data-addclass="download-alt" data-position="left"></span>압축 다운로드</button>
+
+                                        <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경 | 개발자:김문숙 | 리뷰자 :임진호 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--201711_업체전송용추가 -->
+
+                            <table class="fileupload-list tableStyle popTable">
+                                <colgroup>
+                                    <col width="30px" />
+
+                                    <col width="*" />
+
+                                    <col width="150px" />
+                                </colgroup>
+
+                                <thead>
+                                    <tr class="template-header">
+                                        <th><input type="checkbox" class="toggle" /></th>
+
+                                        <th style="text-align: left">파일명</th>
+
+                                        <th>용량</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="files"></tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" style="text-align: right">
+                                            <div class="fileupload-progress" style="float: left">
+                                                <div class="progress-extended">&nbsp;</div>
+                                            </div>
+
+                                            <span class="fileupload-footer" style="float: right">0 개체, 0,00KB 첨부됨</span>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="">
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경(사용자권한) | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경 | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- The blueimp Gallery widget -->
+
+                    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+                        <div class="slides"></div>
+
+                        <h3 class="title"></h3>
+
+                        <a class="prev">‹</a>
+
+                        <a class="next">›</a>
+
+                        <a class="close">×</a>
+
+                        <a class="play-pause"></a>
+
+                        <ol class="indicator"></ol>
+                    </div>
+
+                    <!-- The template to display files available for upload -->
+
+                    <!-- The template to display files available for download -->
+
+                    <style type="text/css">
+                        .fileupload-list.tableStyle thead th {
+                            z-index: inherit;
+                            font-size: 12px;
+                            padding: 5px 14px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td:first-child {
+                            border-left: 1px solid #dfdfdf;
+                            padding: 6px 4px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td {
+                            padding: 6px 15px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tfoot td {
+                            padding: 6px 15px;
+                            background: #f7f6f5;
+                            border-left: 1px solid #dfdfdf;
+                            border-bottom: 1px solid #dfdfdf;
+                            border-right: 1px solid #dfdfdf;
+                            font-size: 12px;
+                            color: #5b5b5b;
+                        }
+                    </style>
+
+                    <div>
+                        <form id="appSeqFrm" name="appSeqFrm" method="post" enctype="multipart/form-data" onsubmit="return false;">
+                            <!-- 이미 추가된 이후에 다시 추가하는경우 같은 APP_SEQ를 유지하기 위해서 해당 파일의 APP_SEQ를 호출하는 화면에서 넘겨줘야 함. -->
+
+                            <input type="hidden" id="APP_SEQ" name="APP_SEQ" data-bind="value: APP_SEQ" value="AT00000000613389" />
+
+                            <input type="hidden" id="SEND_OUT_FLAG" name="SEND_OUT_FLAG" data-bind="value: SEND_OUT_FLAG" value="N" />
+
+                            <input type="hidden" id="nc_trId" name="nc_trId" value="CMN99N001C01" />
+
+                            <input type="hidden" id="nc_target" name="nc_target" value="forward:in/cmn/FILE_ATTACH_RESULT.do" />
+
+                            <div class="poptitle m_t30" style="margin-bottom: 5px">
+                                <h3>계약 변경요청 첨부파일</h3>
+
+                                <div class="fileupload-buttonbar f_right">
+                                    <div style="position: relative; min-height: 1px">
+                                        <span class="fileinput-button" id="appSeqFrmatt_seq_btn_add">
+                                            <button data-type="button"><span data-type="icon" data-addclass="plus" data-position="left"></span>추가</button>
+
+                                            <input type="file" name="files[]" multiple="" />
+                                        </span>
+
+                                        <button id="appSeqFrmatt_seq_btn_remove" data-type="button" data-addclass="delete">
+                                            <span data-type="icon" data-addclass="minus" data-position="left"></span>삭제
+                                        </button>
+
+                                        <button type="submit" class="btn btn-primary start"><i class="glyphicon glyphicon-upload"></i><span>Start upload</span></button>
+
+                                        <button data-type="button" data-addclass="download"><span data-type="icon" data-addclass="hdd" data-position="left"></span>선택 다운로드</button>
+
+                                        <button data-type="button" data-addclass="zipdownload"><span data-type="icon" data-addclass="download-alt" data-position="left"></span>압축 다운로드</button>
+
+                                        <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경 | 개발자:김문숙 | 리뷰자 :임진호 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--201711_업체전송용추가 -->
+
+                            <table class="fileupload-list tableStyle popTable">
+                                <colgroup>
+                                    <col width="30px" />
+
+                                    <col width="*" />
+
+                                    <col width="150px" />
+                                </colgroup>
+
+                                <thead>
+                                    <tr class="template-header">
+                                        <th><input type="checkbox" class="toggle" /></th>
+
+                                        <th style="text-align: left">파일명</th>
+
+                                        <th>용량</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="files"></tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" style="text-align: right">
+                                            <div class="fileupload-progress" style="float: left">
+                                                <div class="progress-extended">&nbsp;</div>
+                                            </div>
+
+                                            <span class="fileupload-footer" style="float: right">0 개체, 0,00KB 첨부됨</span>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="">
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경(사용자권한) | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경 | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- The blueimp Gallery widget -->
+
+                    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+                        <div class="slides"></div>
+
+                        <h3 class="title"></h3>
+
+                        <a class="prev">‹</a>
+
+                        <a class="next">›</a>
+
+                        <a class="close">×</a>
+
+                        <a class="play-pause"></a>
+
+                        <ol class="indicator"></ol>
+                    </div>
+
+                    <!-- The template to display files available for upload -->
+
+                    <!-- The template to display files available for download -->
+
+                    <style type="text/css">
+                        .fileupload-list.tableStyle thead th {
+                            z-index: inherit;
+                            font-size: 12px;
+                            padding: 5px 14px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td:first-child {
+                            border-left: 1px solid #dfdfdf;
+                            padding: 6px 4px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td {
+                            padding: 6px 15px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tfoot td {
+                            padding: 6px 15px;
+                            background: #f7f6f5;
+                            border-left: 1px solid #dfdfdf;
+                            border-bottom: 1px solid #dfdfdf;
+                            border-right: 1px solid #dfdfdf;
+                            font-size: 12px;
+                            color: #5b5b5b;
+                        }
+                    </style>
+
+                    <div>
+                        <form id="appSeqScmFrm" name="appSeqScmFrm" method="post" enctype="multipart/form-data" onsubmit="return false;">
+                            <!-- 이미 추가된 이후에 다시 추가하는경우 같은 APP_SEQ를 유지하기 위해서 해당 파일의 APP_SEQ를 호출하는 화면에서 넘겨줘야 함. -->
+
+                            <input type="hidden" id="APP_SEQ" name="APP_SEQ" data-bind="value: APP_SEQ" value="AT00000000613390" />
+
+                            <input type="hidden" id="SEND_OUT_FLAG" name="SEND_OUT_FLAG" data-bind="value: SEND_OUT_FLAG" value="N" />
+
+                            <input type="hidden" id="nc_trId" name="nc_trId" value="CMN99N001C01" />
+
+                            <input type="hidden" id="nc_target" name="nc_target" value="forward:in/cmn/FILE_ATTACH_RESULT.do" />
+
+                            <div class="poptitle m_t30" style="margin-bottom: 5px">
+                                <h3>내부보고 및 증빙 첨부파일</h3>
+
+                                <div class="fileupload-buttonbar f_right">
+                                    <div style="position: relative; min-height: 1px">
+                                        <span class="fileinput-button" id="appSeqScmFrmatt_seq_btn_add">
+                                            <button data-type="button"><span data-type="icon" data-addclass="plus" data-position="left"></span>추가</button>
+
+                                            <input type="file" name="files[]" multiple="" />
+                                        </span>
+
+                                        <button id="appSeqScmFrmatt_seq_btn_remove" data-type="button" data-addclass="delete">
+                                            <span data-type="icon" data-addclass="minus" data-position="left"></span>삭제
+                                        </button>
+
+                                        <button type="submit" class="btn btn-primary start"><i class="glyphicon glyphicon-upload"></i><span>Start upload</span></button>
+
+                                        <button data-type="button" data-addclass="download"><span data-type="icon" data-addclass="hdd" data-position="left"></span>선택 다운로드</button>
+
+                                        <button data-type="button" data-addclass="zipdownload"><span data-type="icon" data-addclass="download-alt" data-position="left"></span>압축 다운로드</button>
+
+                                        <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경 | 개발자:김문숙 | 리뷰자 :임진호 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--201711_업체전송용추가 -->
+
+                            <table class="fileupload-list tableStyle popTable">
+                                <colgroup>
+                                    <col width="30px" />
+
+                                    <col width="*" />
+
+                                    <col width="150px" />
+                                </colgroup>
+
+                                <thead>
+                                    <tr class="template-header">
+                                        <th><input type="checkbox" class="toggle" /></th>
+
+                                        <th style="text-align: left">파일명</th>
+
+                                        <th>용량</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody class="files"></tbody>
+
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" style="text-align: right">
+                                            <div class="fileupload-progress" style="float: left">
+                                                <div class="progress-extended">&nbsp;</div>
+                                            </div>
+
+                                            <span class="fileupload-footer" style="float: right">0 개체, 0,00KB 첨부됨</span>
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                            <div class="fileupload comment commnet-default">
+                                <div class="commnet-body">
+                                    <ul style="padding-left: 15px">
+                                        <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경 | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                                        <li style="font-size: 13px; color: #231919; margin-top: 0; list-style-type: disc">첨부 제한 - 최대 20건, 건당 30MB, 최대 50MB</li>
+
+                                        <li style="font-size: 13px; color: #231919; margin-top: 0; list-style-type: disc" id="appSeqScmFrmvalidFileExtTd"></li>
+
+                                        <li style="font-size: 13px; color: #231919; margin-top: 0; list-style-type: disc">
+                                            추가버튼 또는 파일 드래그 첨부시 <span style="color: #308ff5">자동으로 업로드</span> 됩니다.
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="poptitle m_t10">
+                    <h3>비고 (내부용Comment - 필요 시 입력)</h3>
+
+                    <div class="btnArea f_right">
+                        <button id="btnSaveComment" data-type="button">비고 저장</button>
+                    </div>
+                </div>
+
+                <table class="tableStyle popTable m_t10">
+                    <colgroup>
+                        <col style="width: 10%" />
+
+                        <col style="width: *" />
+                    </colgroup>
+
+                    <tbody>
+                        <tr>
+                            <th style="text-align: center">비고&nbsp;&nbsp;</th>
+
+                            <td class="leftLine">
+                                <textarea
+                                    class="wp100"
+                                    rows="3"
+                                    id="GUME_COMMENT"
+                                    name="GUME_COMMENT"
+                                    data-bind="value:GUME_COMMENT"
+                                    data-type="textarea"
+                                    onfocus="checkResonText();"
+                                    onblur="checkResonText();"
+                                ></textarea>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="text-align: right"><span id="counter"></span> byte / 200 byte</div>
+
+                <div>
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경(사용자권한) | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- [2021.03.04] SK(주) CC 계약 검토 자료 멀티첨부파일 변경 | 개발자:김문숙 | 리뷰자 :임진호 -->
+
+                    <!-- The blueimp Gallery widget -->
+
+                    <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-filter=":even">
+                        <div class="slides"></div>
+
+                        <h3 class="title"></h3>
+
+                        <a class="prev">‹</a>
+
+                        <a class="next">›</a>
+
+                        <a class="close">×</a>
+
+                        <a class="play-pause"></a>
+
+                        <ol class="indicator"></ol>
+                    </div>
+
+                    <!-- The template to display files available for upload -->
+
+                    <!-- The template to display files available for download -->
+
+                    <style type="text/css">
+                        .fileupload-list.tableStyle thead th {
+                            z-index: inherit;
+                            font-size: 12px;
+                            padding: 5px 14px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td:first-child {
+                            border-left: 1px solid #dfdfdf;
+                            padding: 6px 4px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tbody td {
+                            padding: 6px 15px;
+                        }
+
+                        .fileupload-list.tableStyle.popTable tfoot td {
+                            padding: 6px 15px;
+                            background: #f7f6f5;
+                            border-left: 1px solid #dfdfdf;
+                            border-bottom: 1px solid #dfdfdf;
+                            border-right: 1px solid #dfdfdf;
+                            font-size: 12px;
+                            color: #5b5b5b;
+                        }
+                    </style>
+
+                    <div>
+                        <form id="appSeqEtcFrm" name="appSeqEtcFrm" method="post" enctype="multipart/form-data" onsubmit="return false;">
+                            <!-- 이미 추가된 이후에 다시 추가하는경우 같은 APP_SEQ를 유지하기 위해서 해당 파일의 APP_SEQ를 호출하는 화면에서 넘겨줘야 함. -->
+
+                            <input type="hidden" id="APP_SEQ" name="APP_SEQ" data-bind="value: APP_SEQ" value="" />
+
+                            <input type="hidden" id="SEND_OUT_FLAG" name="SEND_OUT_FLAG" data-bind="value: SEND_OUT_FLAG" value="N" />
+
+                            <input type="hidden" id="nc_trId" name="nc_trId" value="CMN99N001C01" />
+
+                            <input type="hidden" id="nc_target" name="nc_target" value="forward:in/cmn/FILE_ATTACH_RESULT.do" />
+
+                            <div class="poptitle m_t30" style="margin-bottom: 5px">
+                                <h3>계약 참고 자료</h3>
+
+                                <div class="fileupload-buttonbar f_right">
+                                    <div style="position: relative; min-height: 1px">
+                                        <span class="fileinput-button" id="appSeqEtcFrmatt_seq_btn_add">
+                                            <button data-type="button"><span data-type="icon" data-addclass="plus" data-position="left"></span>추가</button>
+
+                                            <input type="file" name="files[]" multiple="" />
+                                        </span>
+
+                                        <button id="appSeqEtcFrmatt_seq_btn_remove" data-type="button" data-addclass="delete">
+                                            <span data-type="icon" data-addclass="minus" data-position="left"></span>삭제
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

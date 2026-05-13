@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">구매업무 안내</h2>
+                        <ul class="pop_tab_area">
+                            <li><a href="javascript:;">구매절차</a></li>
+                            <li><a href="javascript:;">거래품목 안내</a></li>
+                            <li class="on"><a href="javascript:;">대금 지급</a></li>
+                            <li><a href="javascript:;">인증서 관리</a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+
+                    </div>
+                </div>
+            </div>
+            <div class="popcontents">
+                <ul id="tabList01" class="tableStyle02">
+                    <li rel="tab-cont01" class="on"><a href="javascript:;">대금결제기준ㆍ방법</a></li>
+                    <li rel="tab-cont02"><a href="javascript:;">대금지급바로 안내(舊 중소기업 Care프로그램)</a></li>
+                </ul>
+
+                <div id="tabCont01" class="transaction_tab">
+                    <div id="tab-cont01" class="active">
+                        <ul class="transaction_item_list sty02">
+                            <li>
+                                <div class="transaction_item_tit">
+                                    <h3 class="tit">대금결제기준</h3>
+                                    <span>(부가세 포함 금액 기준)</span>
+                                </div>
+                                <div class="transaction_item_detail">
+                                    <div class="transaction_img">
+                                        <img src="../../resource/images/new_common/img_transaction02.svg" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transaction_item_tit">
+                                    <h3 class="tit">대금결제절차</h3>
+                                </div>
+                                <div class="transaction_item_detail">
+                                    <div class="transaction_img">
+                                        <img src="../../resource/images/new_common/img_transaction03.svg" alt="">
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transaction_item_tit">
+                                    <h3 class="tit">대금결제방법</h3>
+                                    <span>(부가세 포함 금액 기준)</span>
+                                </div>
+                                <div class="transaction_item_detail">
+                                    <ul class="detail_list">
+                                        <li class="none">
+                                            <dl class="detail_list_item">
+                                                <dt class="detail_category">결제방법</dt>
+                                                <dd class="detail_txt">
+                                                    <p class="txt"><strong>현금 결제</strong></p>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl class="detail_list_item">
+                                                <dt class="detail_category">대상</dt>
+                                                <dd class="detail_txt">
+                                                    <p class="txt">결제예정일에 Firm banking을 통해 당사에 등록된 공급업체 계좌에 직접 입금</p>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl class="detail_list_item">
+                                                <dt class="detail_category">비고</dt>
+                                                <dd class="detail_txt">
+                                                    <p class="txt">기본 결제방식</p>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="tab-cont02">
+                        <ul class="transaction_item_list sty02">
+                            <li>
+                                <div class="transaction_item_tit">
+                                    <h3 class="tit">대금지급바로 안내</h3>
+                                    <span>(舊 중소기업 Care프로그램)</span>
+                                </div>
+                                <div class="transaction_item_detail">
+                                    <p class="transaction_desc">
+                                        SK텔레콤은 동반성장Program의 일환으로 중소기업과의 거래 시 대금 조기지급를 위해 대금지급바로 (舊 중소기업 Care프로그램)를 운영하고 있으며, 대금지급바로에 가입 된 중소기업은 거래규모와 무관하게 대금을 조기 지급하고 있습니다.
+
+                                        <br><br>
+
+                                        단, 중소기업이라 하더라도 신청을 하시지 않은 경우 일반조건으로 대금지급이 이루어 지고 있으니,
+                                        중소기업인 경우 꼭 신청하여 주시기 바랍니다.
+                                    </p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transaction_item_tit">
+                                    <h3 class="tit">신청방법</h3>
+                                </div>
+                                <div class="transaction_item_detail">
+                                     <ul class="transaction_apply">
+                                        <li>
+                                            <dl class="transaction_apply_info info01">
+                                                <dt>온라인신청</dt>
+                                                <dd>
+                                                    SK텔레콤과 신규 거래를 하는 업체는 계좌등록 <br>
+                                                    완료 후 신청 가능
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl class="transaction_apply_info info02">
+                                                <dt>중소기업 인정 기준</dt>
+                                                <dd>
+                                                    중소기업확인서(중소기업현황정보시스템) <br>
+                                                    제출 업체 한함
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transaction_item_tit">
+                                    <h3 class="tit">온라인 신청방법</h3>
+                                </div>
+                                <div class="transaction_item_detail">
+                                    <ul class="transaction_online_apply">
+                                        <li>
+                                            <dl class="transaction_online_info online01">
+                                                <dt>Step. 01</dt>
+                                                <dd>
+                                                    http://open2u.sktelecom.com <br>
+                                                    접속 (회원가입 필요)
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl class="transaction_online_info online02">
+                                                <dt>Step. 02</dt>
+                                                <dd>
+                                                    동반성장프로그램 → 금융지원 → <br>
+                                                    대금지급바로 → 신청하기 Click
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <dl class="transaction_online_info online03">
+                                                <dt>Step. 03</dt>
+                                                <dd>
+                                                    중소기업확인서 첨부
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="transaction_item_tit">
+                                    <h3 class="tit">서류관련 문의</h3>
+                                </div>
+                                <div class="transaction_item_detail">
+                                    <ul class="detail_list">
+                                        <li class="none">
+                                            <dl class="detail_list_item contact">
+                                                <dt class="detail_category">
+                                                    SK텔레콤 동반성장팀 <br>
+                                                    <strong>손진원</strong>
+                                                </dt>
+                                                <dd class="detail_txt">
+                                                    <div class="detail_contact">
+                                                        <span>Tell </span> <strong>: 02-6100-3353</strong>
+                                                    </div>
+                                                    <div class="detail_contact">
+                                                        <span>E-mail </span> <strong>: son7@sk.com</strong>
+                                                    </div>
+                                                </dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </body>
+    <script>
+        tabMenu('#tabList01','#tabCont01')
+    </script>
+</html>

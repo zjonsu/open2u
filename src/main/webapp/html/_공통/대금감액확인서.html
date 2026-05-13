@@ -1,0 +1,206 @@
+<!-- saved from url=(0041)http://localhost:8080/web/CNI02P010R02.do -->
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKT Open2u 구매시스템</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+    <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+    <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+    <script src="../../resource/js/ui.common.js"></script>
+    <style type="text/css">
+        /* reset CSS */
+        * { padding:0; margin:0; line-height:inherit; text-decoration:none; border:0 none; font-style:normal; font-weight:inherit; color:inherit; list-style-type:none; }
+        html, body { width:100%; height:100%; color:#000; font-size:12px; font-family:'맑은고딕', 'Malgun Gothic','돋움', 'Dotum', sans-serif; letter-spacing: -0.5px; }
+        table { border-spacing:0; border-collapse:collapse; }
+
+        .t_bold { font-weight:bold; }
+        .bgcolor { background:#f7f7f7; }
+        .m_t10 { margin-top:10px; }
+        .m_t20 { margin-top:20px; }
+        .m_t30 { margin-top:30px; }
+        .t_left { text-align:left !important; }
+        .t_right { text-align:right !important; }
+        .t_center { text-align:center !important; }
+
+        /* design CSS */
+        .wrap { width:595px; margin:0 auto; min-width: auto; }
+        .topArea { overflow:hidden; }
+        .leftArea { float:left; width:40%; }
+        .rightArea { float:right; width:55%; }
+
+        h1 { font-size:30px; text-align:center; margin:0 0 20px; font-weight:bold; }
+        h2 { font-size:17px; font-weight:bold; padding-left:15px; background:url('images/bt_icon.png') no-repeat 0 50%; line-height:30px;}
+        h3 { font-size:20px; font-weight:bold;  }
+
+        .tableStyle { width:100%; border-top:2px solid #201267; border-right:1px solid #dfdfdf; }
+        .tableStyle thead th { border-left:1px solid #dfdfdf; border-bottom:1px solid #dfdfdf; background:#f2f1f8; padding:6px; font-weight:bold; }
+        .tableStyle tbody th { background:#f2f1f8; padding:6px; text-align:left; border-bottom:1px solid #dfdfdf; border-left:1px solid #dfdfdf; font-weight:bold; }
+        .tableStyle tbody td { border-bottom:1px solid #dfdfdf; border-left:1px solid #dfdfdf; border-right:1px solid #dfdfdf; padding:6px; }
+
+        .sign { vertical-align: middle; margin-left: 10px; }
+        .date { font-size:15px; margin:10px 0; color:#999; }
+        .day { text-align:center; margin-top:10px; }
+        .day span { display:inline-block; width:50px; text-align:left; }
+
+        .sineArea { overflow:hidden; }
+        .sine { margin-top:15px; }
+        .sine dt { float:left; width:33%; font-size:15px; font-weight:bold; }
+        .sine dd { float:left; width:33%; }
+        .sine.type1 { float:left; width:50%; text-align:left; }
+        .sine.type2 { float:right; width:50%; text-align:right; }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <h1>【 대금 감액 확인서 】</h1>
+        <p class="date t_right">제출일 : 2014. 6. 1</p>
+
+        <h3>1. 원사업자와 수급사업자</h3>
+        <table class="tableStyle m_t10">
+            <colgroup>
+                <col style="width:15%">
+                <col style="width:15%">
+                <col style="width:25%">
+                <col style="width:18%">
+                <col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th rowspan="5" class="t_center">원사업자</th>
+                    <td class="bgcolor">사업자명</td>
+                    <td>SK텔레콤</td>
+                    <td class="bgcolor">법인번호</td>
+                    <td>12345-687-12345</td>
+                </tr>
+                <tr>
+                    <td class="bgcolor">대표자명</td>
+                    <td>홍길동</td>
+                    <td class="bgcolor">사업자등록번호</td>
+                    <td>12345-5678-124578</td>
+                </tr>
+                <tr>
+                    <td class="bgcolor">주소</td>
+                    <td colspan="3">서울시 중구 수표로 30 502호 </td>
+                </tr>
+                <tr>
+                    <td class="bgcolor">담당자</td>
+                    <td>홍길동</td>
+                    <td class="bgcolor">소속</td>
+                    <td>SK텔레콤</td>
+                </tr>
+                <tr>
+                    <td class="bgcolor">연락처</td>
+                    <td colspan="3">010-1234-5678</td>
+                </tr>
+                <tr>
+                    <th rowspan="5" class="t_center">수급사업자</th>
+                    <td class="bgcolor">사업자명</td>
+                    <td>SK텔레콤</td>
+                    <td class="bgcolor">법인번호</td>
+                    <td>12345-687-12345</td>
+                </tr>
+                <tr>
+                    <td class="bgcolor">대표자명</td>
+                    <td>홍길동</td>
+                    <td class="bgcolor">사업자등록번호</td>
+                    <td>12345-5678-124578</td>
+                </tr>
+                <tr>
+                    <td class="bgcolor">주소</td>
+                    <td colspan="3">서울시 중구 수표로 30 502호 </td>
+                </tr>
+                <tr>
+                    <td class="bgcolor">담당자</td>
+                    <td>홍길동</td>
+                    <td class="bgcolor">소속</td>
+                    <td>SK텔레콤</td>
+                </tr>
+                <tr>
+                    <td class="bgcolor">연락처</td>
+                    <td colspan="3">010-1234-5678</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="m_t20">1. 원사업자와 수급사업자</h3>
+        <table class="tableStyle m_t10">
+            <colgroup>
+                <col style="width:25%">
+                <col>
+            </colgroup>
+            <tbody>
+                <tr>
+                    <th rowspan="2">1) 감액사유</th>
+                    <td>하도급대급을 감액해야 하는 정당한 사유를 기재</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">2) 감액기준</th>
+                    <td>대금 감액 액수를 산정하는데 적용한 기준</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">3) 감액대상 목적물 물량</th>
+                    <td>위탁 목적물 중에서 감액의 대상이 되는 구체적인 물량</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">4) 감액금액</th>
+                    <td>감액기준 감액대상 물량 등을 기초로 산정한 감액금액</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th rowspan="2">5) 공제 등 감액방법</th>
+                    <td>선급금 기성금 등에서의 공제 등 감액방법</td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <th>6) 기타사항</th>
+                    <td>&nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="t_center m_t10">위의 서면 기재사항대로 하도급대금을 감액함을 확인합니다.</p>
+        <p class="day"><span>20</span><span>.</span><span>.</span><span>.</span></p>
+        <div class="sineArea">
+            <dl class="sine type1">
+                <dt>SK텔레콤</dt><dt>
+                </dt><dd>대표이사 : 하성민</dd>
+                <dd>(인)</dd>
+            </dl>
+            <dl class="sine type2">
+                <dt>법인명 : </dt><dt>
+                </dt><dd>대표이사</dd>
+                <dd>(인)</dd>
+            </dl>
+        </div>
+
+    </div>
+</body>
+
+</html>

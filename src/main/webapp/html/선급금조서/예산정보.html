@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="layer_popup" data-role-popup="samplePop01"> <!-- 2025-07-24 추가 -->
+            <div class="dim"></div>
+            <div class="layer_popup_area sm">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">검사완료일 수정</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="datepicker_area inline">
+                                    <div id="datepicker" class="datepicker"></div>
+                                </div>
+                            </div>
+
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">취소</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // datepicker -->
+        <!-- // layer_popup -->
+
+
+
+        <div class="pop_wrap">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">선급금조서 작성</h1>
+                    </div>
+                    <div class="right">
+                        <ul class="progress_step_list">
+                            <li>
+                                <a href="javascript:;">구매요청</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매접수</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약진행</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약완료</a>
+                            </li>
+                            <li class="in_progress">
+                                <a href="javascript:;">검사조서</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매전표</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">대금지급</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_info_area on">
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">검사조서번호</span>
+                            <span class="info_text">52603442962</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사요청일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">공급업체명</span>
+                            <span class="info_text">주식회사 뮤플러스</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약번호</span>
+                            <span class="info_text">4160086491</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">계약담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">인수동의일
+                                <span class="count">D<span class="num_sign">+</span><em class="count_num">00</em></span>
+                            </span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사완료일<button type="button" class="info_list_btn" onclick="layerPopup('samplePop01')">수정</button></span> <!-- 2025-07-24 수정 -->
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">검사조서건명</span>
+                            <span class="info_text">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">검사담당자<button type="button" class="info_list_btn ty02">이관</button></span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="toggle_btn"><span class="txt">Close</span><i class="ico_toggle_arr"></i></button> 
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_aside">
+                    <ul class="aside_progress_list">
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">1. 요청정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li class="in_progress">
+                            <span class="status">작성중</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">2. 예산정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">3. 확인정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">4. 결재정보</a>
+                            </h2>
+                        </li>
+                    </ul>
+                    <ul class="link_area">
+                        <li>
+                            <button type="button" class="link_btn">목적물수령증명서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="link_btn">FAQ</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <div class="cont_inner">
+                            <div class="sub_tit_area m_t0">
+                                <div class="left">
+                                    <h2 class="tit">회계정보</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="grid_area">
+                                <table id="jqGrid" class="jqgrid"></table>
+                                <div class="paging_area">
+                                    <div class="left"></div>
+                                    <div class="right">
+                                        <select class="form_control ty02">
+                                            <option>기본</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form_area">
+                                <div class="grid_container">
+                                    <div class="row gx_12 gy_20">
+                                        <div class="col_12">
+                                            <div class="grid_container">
+                                                <div class="row gx_12 gy_20">
+                                                    <div class="col">
+                                                        <div class="info_item">
+                                                            <div class="label">
+                                                                <span class="txt">예산잔액</span>
+                                                            </div> 
+                                                            <div class="cnt">
+                                                                <input type="text" class="form_control text_end" placeholder="금액 입력" value="2,000,000원" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="info_item">
+                                                            <div class="label">
+                                                                <span class="txt">요청금액</span>
+                                                            </div> 
+                                                            <div class="cnt">
+                                                                <input type="text" class="form_control text_end" placeholder="금액 입력" value="2,000,000원" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col">
+                                                        <div class="info_item">
+                                                            <div class="label">
+                                                                <span class="txt">부족금액</span>
+                                                            </div> 
+                                                            <div class="cnt">
+                                                                <input type="text" class="form_control text_end" placeholder="금액 입력" value="2,000,000원" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col_auto">
+                                                        <div class="info_item">
+                                                            <div class="label">
+                                                                <span class="txt"></span>
+                                                            </div> 
+                                                            <div class="cnt">
+                                                                <button type="button" class="btn ty03 lg">ERP예산확인</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">전표정보</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="form_area">
+                                <div class="grid_container">
+                                    <div class="row gx_12 gy_20">
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">전표번호</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control" placeholder="내용 입력" value="52603442962" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_8">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">전표건명</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="input_group">
+                                                        <input type="text" class="form_control" placeholder="내용 입력" value="25년_경북 산불 재산종합보험">
+                                                        <button type="button" class="btn_clear">삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">검사완료일(증빙일)</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="datepicker_area ty02">
+                                                        <input class="datepicker" type="text" placeholder="0000.00.00" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">전기일</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="datepicker_area ty02">
+                                                        <input class="datepicker" type="text" placeholder="0000.00.00" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">사업영역</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="input_group">
+                                                        <div class="text_group">  <!-- 2025-08-29 수정 -->
+                                                            <input type="text" class="form_control code_num" value="1400" readonly>
+                                                            <input type="text" class="form_control" value="본사" readonly>
+                                                        </div>
+                                                        <button type="button" class="btn_search">검색</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">금액(VAT제외)</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="208,972,500원" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">VAT</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="208,972,500원" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">금액(VAT포함)</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="208,972,500원" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="detail_info_btn_wrap">
+                                <button type="button" class="detail_info_btn">상세정보<i class="ico"></i></button>
+                            </div>
+
+                            <div class="form_area detail_info">
+                                <div class="grid_container">
+                                    <div class="row gx_12 gy_20">
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">세금코드</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="input_group">
+                                                        <div class="text_group">  <!-- 2025-08-29 수정 -->
+                                                            <input type="text" class="form_control code_num" value="IO" readonly>
+                                                            <input type="text" class="form_control" value="과세매입-일반" readonly>
+                                                        </div>
+                                                        <button type="button" class="btn_search">검색</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">지급코드</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="input_group">
+                                                        <div class="text_group">  <!-- 2025-08-29 수정 -->
+                                                            <input type="text" class="form_control code_num" value="A001" readonly>
+                                                            <input type="text" class="form_control" value="회사대금결제기" readonly>
+                                                        </div>
+                                                        <button type="button" class="btn_search">검색</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">사업장코드</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="input_group">
+                                                        <input type="text" class="form_control" placeholder="내용 입력" value="1400">
+                                                        <button type="button" class="btn_search">검색</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">증빙구분</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control">
+                                                        <option>세금계산서</option>
+                                                        <option>계산서</option>
+                                                        <option>INVOICE</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">지급방법</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control">
+                                                        <option>타 계정대체</option>
+                                                        <option>해외거래처</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">유보금</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="208,972,500원" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">통화</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control" placeholder="내용 입력" value="KRW" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_8">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">국책계좌</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control" placeholder="내용 입력">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 2025-08-29 삭제
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">환율</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control" placeholder="내용 입력" value="####,##" readonly>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">기산일자</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="datepicker_area ty02">
+                                                        <input class="datepicker" type="text" placeholder="0000.00.00" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">만기일자</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <div class="datepicker_area ty02">
+                                                        <input class="datepicker" type="text" placeholder="0000.00.00" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4"> <!-- 2025-08-29 추가 -->
+                                            <div class="info_item d_flex">
+                                                <div class="label">
+                                                    <span class="txt">SK아카데미</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <span class="form_check">
+                                                        <input type="checkbox" id="chk01">
+                                                        <label for="chk01">공급받는자를 SK아카데미로 변경</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btm_btn_area">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn md">반송</button>
+                                    <button type="button" class="btn pop lbtn md">저장</button>
+                                    <span class="divid"></span> 
+                                    <button type="button" class="btn pop lbtn ty02 md">이전</button>
+                                    <button type="button" class="btn pop lg">다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var mydata = [
+                {
+                    NO: "1",
+                    사업영역: "용역",
+                    예산집행부서: '1',
+                    회계계정: '9000001928',
+                    펀드실행과제: "일반용역",
+                    기능영역: "GUN",
+                    BM오더: "1",
+                },
+                {
+                    NO: "2",
+                    사업영역: "용역",
+                    예산집행부서: '1',
+                    회계계정: '9000001928',
+                    펀드실행과제: "일반용역",
+                    기능영역: "GUN",
+                    BM오더: "1",
+                },
+                {
+                    NO: "3",
+                    사업영역: "용역",
+                    예산집행부서: '1',
+                    회계계정: '9000001928',
+                    펀드실행과제: "일반용역",
+                    기능영역: "GUN",
+                    BM오더: "1",
+                },
+                {
+                    NO: "4",
+                    사업영역: "용역",
+                    예산집행부서: '1',
+                    회계계정: '9000001928',
+                    펀드실행과제: "일반용역",
+                    기능영역: "GUN",
+                    BM오더: "1",
+                },
+            ];
+
+            $(document).ready(function () {
+                $("#jqGrid").jqGrid({
+                    datatype: "local",
+                    data: mydata,
+                    autowidth: true,
+                    cellEdit: true,
+                    shrinkToFit: false,
+                    forceFit: true,
+                    pager: "#jqGridPager",
+                    colModel: [
+                        { label: "NO", name: "NO", width: 41, editable: true },
+                        { label: "사업영역", name: "사업영역", width: 143, editable: true, },
+                        { label: "예산집행부서(CC)", name: "예산집행부서", width: 143, editable: true },
+                        { label: "회계계정(G/L)", name: "회계계정", width: 143, editable: true },
+                        { label: "펀드실행과제", name: "펀드실행과제", width: 143, editable: true },
+                        { label: "기능영역", name: "기능영역", width: 143, editable: true },
+                        { label: "BM오더", name: "BM오더", width: 143, editable: true },
+                    ],
+
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+            });
+
+            $(window).bind("resize", function () {
+                $("#jqGrid").setGridWidth($(".grid_area").width());
+            }).trigger("resize");
+        </script>
+    </body>
+</html>

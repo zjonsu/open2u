@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKT Open2u 구매시스템</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+    <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+    <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+    <script src="../../resource/js/ui.common.js"></script>
+</head>
+
+<body>
+    <!-- wrap : S -->
+    <div class="wrap">
+        <!-- header_wrap : S -->
+        <header class="header_wrap">
+            <!-- 메인화면에서는 class="main" 추가  -->
+            <div class="header_top">
+                <div class="inner">
+                    <ul class="header_top_user">
+                        <li>
+                            <span class="user"><i class="icons i_header_user"></i>홍길동님</span>
+                        </li>
+                        <li>
+                            <a href="javascript:;"><i class="icons i_header_logout"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="header_top_menu">
+                        <li>
+                            <button type="button">동반성장센터 사용신청 <i class="icons i_header_apply"></i></button>
+                        </li>
+                        <li>
+                            <button type="button">인증서등록 <i class="icons i_header_registry"></i></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <nav class="header_gnb">
+                <div class="header_gnb_inner">
+                    <div class="align_lt">
+                        <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                        <ul class="gnb_menu">
+                            <li>
+                                <a href="#none">정보관리</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">기본정보</a></li>
+                                    <li><a href="javascript:;">거래정보</a></li>
+                                    <li><a href="javascript:;">거래약관</a></li>
+                                    <li><a href="javascript:;">지인관계</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">계약진행</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">입찰공고</a></li>
+                                    <li><a href="javascript:;">견적서제출</a></li>
+                                    <li><a href="javascript:;">계약변경</a></li>
+                                    <li><a href="javascript:;">납품지시</a></li>
+                                    <li><a href="javascript:;">정보요청서 회신제출</a></li>
+                                    <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">계약관리</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">전자서명/계약대장</a></li>
+                                    <li><a href="javascript:;">임시계약대장</a></li>
+                                    <li><a href="javascript:;">납품지시관리</a></li>
+                                    <li><a href="javascript:;">검사요청관리</a></li>
+                                    <li><a href="javascript:;">보증보험관리</a></li>
+                                    <li><a href="javascript:;">실적증명발급</a></li>
+                                    <li><a href="javascript:;">하도급관리</a></li>
+                                    <li><a href="javascript:;">입고예정관리</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">대금정산</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">대금지급현황</a></li>
+                                    <li><a href="javascript:;">유보금현황</a></li>
+                                    <li><a href="javascript:;">바코드입고정보현황</a></li>
+                                    <li><a href="javascript:;">IT자산입고</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#none">기타</a>
+                                <ul class="gnb_sub">
+                                    <li><a href="javascript:;">방문신청 및 시설예약</a></li>
+                                    <li><a href="javascript:;">검색시스템 표시정보</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="site_map">
+                        <button type="button" class="sitemapBtn sitemap_event"><i
+                                class="icons i_header_sitemap"></i></button>
+                    </div>
+                </div>
+            </nav>
+            <div class="siteMapArea">
+                <nav class="header_gnb">
+                    <div class="header_gnb_inner">
+                        <div class="align_lt">
+                            <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                        </div>
+                        <a href="javascript:;" class="siteMapClosebtn"></a>
+                    </div>
+                </nav>
+                <div class="siteMap_inner">
+                    <ul class="menuArea">
+                        <li>
+                            <h3>정보관리</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">기본정보</a></li>
+                                <li><a href="javascript:;">거래정보</a></li>
+                                <li><a href="javascript:;">거래약관</a></li>
+                                <li><a href="javascript:;">지인관계</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>계약진행</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">입찰공고</a></li>
+                                <li><a href="javascript:;">견적서제출</a></li>
+                                <li><a href="javascript:;">계약변경</a></li>
+                                <li><a href="javascript:;">납품지시</a></li>
+                                <li><a href="javascript:;">정보요청서 회신제출</a></li>
+                                <li><a href="javascript:;">적격수급업체 평가</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>계약관리</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">전자서명/계약대장</a></li>
+                                <li><a href="javascript:;">임시계약대장</a></li>
+                                <li><a href="javascript:;">납품지시관리</a></li>
+                                <li><a href="javascript:;">검사요청관리</a></li>
+                                <li><a href="javascript:;">보증보험관리</a></li>
+                                <li><a href="javascript:;">실적증명발급</a></li>
+                                <li><a href="javascript:;">하도급관리</a></li>
+                                <li><a href="javascript:;">입고예정관리</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>대금정산</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">대금지급현황</a></li>
+                                <li><a href="javascript:;">유보금현황</a></li>
+                                <li><a href="javascript:;">바코드입고정보현황</a></li>
+                                <li><a href="javascript:;">IT자산입고</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <h3>기타</h3>
+                            <ul class="menuList">
+                                <li><a href="javascript:;">방문신청 및 시설예약</a></li>
+                                <li><a href="javascript:;">검색시스템 표시정보</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- //header_wrap : E -->
+
+        <!-- container : S -->
+        <div class="container">
+            <div class="contents">
+                <div class="title_area">
+                    <div class="left">
+                        <h2 class="title">검색시스템 표시정보</h2>
+                        <ul class="location_area">
+                            <li>
+                                <a href="javascript:;" class="home"><i class="icons i_location_home"></i></a>
+                            </li>
+                            <li><a href="javascript:;">기타</a></li>
+                            <li><strong>검색시스템 표시정보</strong></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+
+                    </div>
+                </div>
+                <div class="user_apply_area icon02">
+                    <h3 class="user_info_h">
+                        본 페이지에 있는 정보들은 SK Telecom 내부의 업체검색시스템에 표시되는 정보들입니다.
+                    </h3>
+                    <p class="user_info_p">
+                        SK Telecom에서 사업 추진을 위한 Partner Sourcing시 참고하는 내용들이므로, 변경사항 발생 시 Update 부탁드립니다. <br>
+                        혹시 SK Telecom에 전달하고 싶은 내용이 있으시면, ‘자유의견’에 작성해주시기 바랍니다.
+                    </p>
+                </div>
+                <form id="frm1" method="post" name="frm1">
+                    <div class="poptitle m_t30">
+                        <h3>기본정보</h3>
+                        <div class="btnArea f_right">
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_save"></i> 저장</button>
+                        </div>
+                    </div>
+
+                    <table class="tableStyle m_t10">
+                        <colgroup>
+                            <col style="width:15%" />
+                            <col style="width:21%" />
+                            <col style="width:11%" />
+                            <col style="width:21%" />
+                            <col style="width:11%" />
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>업체명</th>
+                                <td>
+                                    <input type="text" value="행복나래 주식회사" class="wp100" name="POBUSI_NM"
+                                        id="POBUSI_NM" data-type="textinput" data-bind="value:POBUSI_NM"
+                                        maxlength="20">
+                                </td>
+                                <th>구분</th>
+                                <td>
+                                    <input type="text" value="법인사업자" readOnly="readonly" class="inactive w80"
+                                        name="VENDOR_ID_TYPE_NM" id="VENDOR_ID_TYPE_NM" data-type="textinput"
+                                        data-bind="value:VENDOR_ID_TYPE_NM" maxlength="20">
+                                </td>
+                                <th>기업규모</th>
+                                <td>
+
+                                    <input type="text" value="대기업" readOnly="readonly" class="inactive w100"
+                                        name="BIZ_SIZE_NM" id="BIZ_SIZE_NM" data-type="textinput"
+                                        data-bind="value:BIZ_SIZE_NM">
+                                    <div id="VIEW_BIZ_SIZE" style="float: left; display: none;">
+                                        <select data-type="select" id="BIZ_SIZE" name="BIZ_SIZE"
+                                            data-bind="selectedOptions:BIZ_SIZE" class="w90">
+                                            \
+
+                                            <option value="50" selected>대기업</option>
+
+
+                                            \
+
+
+                                            <option value="30">중견기업</option>
+
+                                            \
+
+
+                                            <option value="10">중소기업</option>
+
+                                            \
+
+
+                                            <option value="70">해외</option>
+
+                                            \
+
+
+                                            <option value="99">기타</option>
+
+
+                                        </select>
+                                    </div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>법인등록번호</th>
+                                <td>
+                                    <input type="hidden" value="1101112016940" readOnly="readonly"
+                                        class="inactive w100" name="CORP_NO" id="CORP_NO" data-type="textinput"
+                                        data-bind="value:CORP_NO" maxlength="12">
+                                    <input type="text" value="110111-2016940" readOnly="readonly"
+                                        class="inactive w160" name="CORP_NO_FORMATTED" id="CORP_NO_FORMATTED"
+                                        data-type="textinput" data-bind="value:CORP_NO_FORMATTED" maxlength="12">
+                                </td>
+                                <th>산업분류</th>
+                                <td>
+                                    <input type="text" value="상품 종합 도매업" readOnly="readonly" class="inactive wp100"
+                                        name="UPJCOND" id="UPJCOND" data-type="textinput" data-bind="value:UPJCOND"
+                                        maxlength="20">
+                                </td>
+                                <th>설립일</th>
+                                <td>
+                                    <input id="FOUND_DATE" name="FOUND_DATE" data-bind="value:FOUND_DATE"
+                                        data-type="dateinput" class="w80" data-format="yyyy-MM-dd"
+                                        data-selectyear="true" data-selectmonth="true" class="point"
+                                        value="2000-07-05" />
+                                    <a id="FOUND_DATE_BTN" class="btnS calendar"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>사업자번호</th>
+                                <td>
+                                    <input type="hidden" value="1148600579" readOnly="readonly"
+                                        class="inactive w100" name="POBUSI_REG_NO" id="POBUSI_REG_NO"
+                                        data-type="textinput" data-bind="value:POBUSI_REG_NO" maxlength="12">
+                                    <input type=text value="114-86-00579" readOnly="readonly" class="inactive w160"
+                                        name="POBUSI_REG_NO_FORMATTED" id="POBUSI_REG_NO_FORMATTED"
+                                        data-type="textinput" data-bind="value:POBUSI_REG_NO_FORMATTED"
+                                        maxlength="12">
+                                </td>
+                                <th>대표자</th>
+                                <td>
+                                    <input type="text" value="구영모" class="w80" name="REPRE_NM" id="REPRE_NM"
+                                        data-type="textinput" data-bind="value:REPRE_NM" maxlength="12">
+                                </td>
+
+                                <th>형태</th>
+                                <td>
+                                    <input type="text" value="외감" readOnly="readonly" class="inactive w100"
+                                        name="LISTYN" id="LISTYN" data-type="textinput" data-bind="value:LISTYN"
+                                        maxlength="20">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="poptitle m_t30">
+                        <h3>기타정보</h3>
+                    </div>
+                    <table class="tableStyle">
+                        <colgroup>
+                            <col style="width:15%" />
+                            <col style="width:21%" />
+                            <col style="width:11%" />
+                            <col style="width:21%" />
+                            <col style="width:11%" />
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>대표ID</th>
+                                <td>
+                                    <input type="text" value="idtest111" readOnly="readonly" class="inactive w80"
+                                        name="USER_ID" id="USER_ID" data-type="textinput" data-bind="value:USER_ID"
+                                        maxlength="12">
+                                </td>
+                                <th>주요제품명</th>
+                                <td colspan="3">
+                                    <input type="text" value="" class="wp100" name="MAIN_DEAL_ITEM"
+                                        id="MAIN_DEAL_ITEM" data-type="textinput" data-bind="value:MAIN_DEAL_ITEM"
+                                        maxlength="50">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>우편번호</th>
+                                <td colspan="3" id="zipCd">
+                                    <input type='text' id='POST_NO' name='POST_NO' data-bind='value:POST_NO'
+                                        value='156854' class='inactive w100' readOnly="readonly" maxlength="6"
+                                        align="center" />
+                                    <a href='#none' id='btnTEmailChk' onClick='postcode(2);'
+                                        class='btn type2'>우편번호검색</a>
+                                </td>
+                                <th>중소기업Care프로그램</th>
+                                <td>
+                                    <input type="text" value="승인완료" readOnly="readonly" class="inactive wp80"
+                                        name="ING_STATUS_NM" id="ING_STATUS_NM" data-type="textinput"
+                                        data-bind="value:ING_STATUS_NM" maxlength="20">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>주소</th>
+                                <td colspan="3">
+                                    <input type="text" value="테스트" readOnly="readonly" class="inactive wp100"
+                                        name="LINK_ADDR_1" id="LINK_ADDR_1" data-type="textinput"
+                                        data-bind="value:LINK_ADDR_1" maxlength="12">
+                                </td>
+                                <th>상세주소</th>
+                                <td>
+                                    <input type="text" value="테스트1" class="wp100" name="LINK_ADDR_2"
+                                        id="LINK_ADDR_2" data-type="textinput" data-bind="value:LINK_ADDR_2"
+                                        maxlength="12">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>홈페이지</th>
+                                <td>
+                                    <input type="text" value="www.happynarae.co.kr" class="wp100" name="HOMEPAGE"
+                                        id="HOMEPAGE" data-type="textinput" data-bind="value:HOMEPAGE"
+                                        maxlength="50">
+                                </td>
+                                <th>전화번호</th>
+                                <td>
+                                    <select id="PHONE1" name="PHONE1" data-type="select"
+                                        data-bind="selectedOptions:PHONE1" class="point w60">
+
+                                        <option value=""></option>
+                                    </select>&nbsp;-&nbsp;
+                                    <input type='text' id='PHONE2' name='PHONE2' data-bind='value:PHONE2' value=''
+                                        class='w30' maxlength="4" />&nbsp;-&nbsp;
+                                    <input type='text' id='PHONE3' name='PHONE3' data-bind='value:PHONE3' value=''
+                                        class='w30' maxlength="4" />
+
+                                </td>
+                                <th>팩스번호</th>
+                                <td>
+                                    <select id="FAX1" name="FAX1" data-type="select"
+                                        data-bind="selectedOptions:FAX1" class="w60">
+                                        <option value=""></option>
+                                    </select>&nbsp;-&nbsp;
+                                    <input type='text' id='FAX2' name='FAX2' data-bind='value:FAX2' value=''
+                                        class='w30' maxlength="4" />&nbsp;-&nbsp;
+                                    <input type='text' id='FAX3' name='FAX3' data-bind='value:FAX3' value=''
+                                        class='w30' maxlength="4" />
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </form>
+
+                <form id="frm12" method="post" name="frm12" onSubmit="return false;">
+                    <input type="hidden" class="w50" name="BZNO" id="BZNO" data-type="textinput"
+                        data-bind="value:BZNO" value="1148600579">
+                    <div class="poptitle m_t30">
+                        <h3>신용평가 정보</h3>
+                    </div>
+                    <div class="grid_area">
+                        <table class="jqGrid"></table>
+                    </div>
+                    <!-- 추가/삭제/저장 -->
+                    <div>
+                        <div class="poptitle t_right m_t10"></div>
+
+                        <!-- GRID -->
+                        <div id="grid12" data-bind="grid: RESULT_LIST"></div>
+                    </div>
+                </form>
+
+                <form id="frm2" method="post" name="frm2" onSubmit="return false;">
+                    <div class="poptitle m_t30">
+                        <h3>Contact Point</h3>
+                        <div class="btnArea f_right">
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                                <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                                <button type="button" class="btn c_type08"><i class="icons i_btn_save"></i> 저장</button>
+                        </div>
+                    </div>
+                    <div class="grid_area">
+                        <table class="jqGrid"></table>
+                    </div>
+                    <!-- 추가/삭제/저장 -->
+                    <div>
+                        <div class="poptitle t_right m_t10"></div>
+
+                        <!-- GRID -->
+                        <div id="grid1" data-bind="grid: RESULT_LIST"></div>
+                    </div>
+                </form>
+
+                <form id="frmWinWin" method="post" name="frmWinWin" onSubmit="return false;">
+                    <div class="poptitle m_t30">
+                        <h3>동반성장 담당자</h3>
+                        <div class="btnArea f_right">
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                                <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                                <button type="button" class="btn c_type08"><i class="icons i_btn_save"></i> 저장</button>
+                        </div>
+                    </div>
+                    <table class="tableStyle m_t10">
+                        <colgroup>
+                            <col>
+                            <col style="width:10%" />
+                            <col style="width:18%" />
+                            <col style="width:18%" />
+                            <col style="width:48%" />
+                        </colgroup>
+                        <tbody id="winwinTbody">
+                            <tr>
+                                <th class="t_center p_l0 p_r0"><input type='checkbox' id='winwin_chk_all'
+                                        name='winwin_chk_all' /></th>
+                                <th class="t_center p_l0 p_r0">순번</th>
+                                <th class="t_center p_l0 p_r0">이름</th>
+                                <th class="t_center p_l0 p_r0">전화번호</th>
+                                <th class="t_center p_l0 p_r0">이메일</th>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div id="gridWinWin" data-bind="grid: WINWIN_USER_LIST" style="display: none;"></div>
+                </form>
+
+                <form id="frm3" method="post" name="frm3" onSubmit="return false;">
+                    <!-- 회사소개서 첨부파일 APP_SEQ -->
+                    <input type="hidden" id="APP_SEQ_1" name="APP_SEQ_1" data-bind="value:APP_SEQ_1" value="" />
+                    <!-- 사업자등록증 첨부파일 APP_SEQ -->
+                    <input type="hidden" id="APP_SEQ_2" name="APP_SEQ_2" data-bind="value:APP_SEQ_2" value="" />
+                    <!-- 등기사항 전부증명서 첨부파일 APP_SEQ -->
+                    <input type="hidden" id="APP_SEQ_3" name="APP_SEQ_3" data-bind="value:APP_SEQ_3" value="" />
+                    <!-- 주요제품소개서 첨부파일 APP_SEQ -->
+                    <input type="hidden" id="APP_SEQ_4" name="APP_SEQ_4" data-bind="value:APP_SEQ_4" value="" />
+                    <!-- 공사면허증 첨부파일 APP_SEQ -->
+                    <input type="hidden" id="APP_SEQ_5" name="APP_SEQ_5" data-bind="value:APP_SEQ_5" value="" />
+                    <!-- 실적증명서 첨부파일 APP_SEQ -->
+                    <input type="hidden" id="APP_SEQ_6" name="APP_SEQ_6" data-bind="value:APP_SEQ_6" value="" />
+                    <input type="hidden" id="ATT_FILE" name="ATT_FILE" data-bind="value:ATT_FILE" value="" />
+                    <div class="poptitle m_t30">
+                        <h3>참고파일</h3>
+                        <div class="btnArea f_right">
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_save"></i> 저장</button>
+                        </div>
+                    </div>
+                </form>
+
+                <table class="tableStyle m_t10">
+                    <colgroup>
+                        <col style="width:17%" />
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <!-- 법인회원 영역 : 시작 -->
+
+                        <tr>
+                            <th>회사소개서</th>
+                            <td>
+                                <form id="appSeq1Frm" name="appSeq1Frm" method="post" enctype="multipart/form-data"
+                                    onSubmit="return false;">
+                                    <div class="inputFileArea m_t5">
+                                        <div class="filesBox f_left" style="width:335px;">
+                                            <!-- 지정하고 싶은 width값으로 수정 -->
+                                            <div class="file_input_div">
+                                                <input type="text" id="fileName1" class="file_input_textbox"
+                                                    readonly="readonly" style="width:290px;" value="">
+                                                <!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                                <input type="button" class="file_input_button"
+                                                    style="border-color: rgb(200, 200, 200);">
+                                                <input type="file" id='APP_SEQ_1_FILE' name="APP_SEQ_1_FILE"
+                                                    class="file_input_hidden"
+                                                    onchange="javascript: getAttachFileName(this.value, 'fileName1')"
+                                                    style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                            </div>
+                                        </div>
+                                        <div id="attachFile1"></div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>사업자등록증</th>
+                            <td>
+                                <form id="appSeq2Frm" name="appSeq2Frm" method="post" enctype="multipart/form-data"
+                                    onSubmit="return false;">
+                                    <div class="inputFileArea m_t5">
+                                        <div class="filesBox f_left" style="width:335px;">
+                                            <!-- 지정하고 싶은 width값으로 수정 -->
+                                            <div class="file_input_div">
+                                                <input type="text" id="fileName2" class="file_input_textbox"
+                                                    readonly="readonly" style="width:290px;" value="">
+                                                <!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                                <input type="button" class="file_input_button"
+                                                    style="border-color: rgb(200, 200, 200);">
+                                                <input type="file" id='APP_SEQ_2_FILE' name="APP_SEQ_2_FILE"
+                                                    class="file_input_hidden"
+                                                    onchange="javascript: getAttachFileName(this.value, 'fileName2')"
+                                                    style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                            </div>
+                                        </div>
+                                        <div id="attachFile2"></div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>등기사항 전부증명서</th>
+                            <td>
+                                <form id="appSeq3Frm" name="appSeq3Frm" method="post" enctype="multipart/form-data"
+                                    onSubmit="return false;">
+                                    <div class="inputFileArea m_t5">
+                                        <div class="filesBox f_left" style="width:335px;">
+                                            <!-- 지정하고 싶은 width값으로 수정 -->
+                                            <div class="file_input_div">
+                                                <input type="text" id="fileName3" class="file_input_textbox"
+                                                    readonly="readonly" style="width:290px;" value="">
+                                                <!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                                <input type="button" class="file_input_button"
+                                                    style="border-color: rgb(200, 200, 200);">
+                                                <input type="file" id='APP_SEQ_3_FILE' name="APP_SEQ_3_FILE"
+                                                    class="file_input_hidden"
+                                                    onchange="javascript: getAttachFileName(this.value, 'fileName3')"
+                                                    style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                            </div>
+                                        </div>
+                                        <div id="attachFile3"></div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>주요제품소개서</th>
+                            <td>
+                                <form id="appSeq4Frm" name="appSeq4Frm" method="post" enctype="multipart/form-data"
+                                    onSubmit="return false;">
+                                    <div class="inputFileArea m_t5">
+                                        <div class="filesBox f_left" style="width:335px;">
+                                            <!-- 지정하고 싶은 width값으로 수정 -->
+                                            <div class="file_input_div">
+                                                <input type="text" id="fileName4" class="file_input_textbox"
+                                                    readonly="readonly" style="width:290px;" value="">
+                                                <!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                                <input type="button" class="file_input_button"
+                                                    style="border-color: rgb(200, 200, 200);">
+                                                <input type="file" id='APP_SEQ_4_FILE' name="APP_SEQ_4_FILE"
+                                                    class="file_input_hidden"
+                                                    onchange="javascript: getAttachFileName(this.value, 'fileName4')"
+                                                    style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                            </div>
+                                        </div>
+                                        <div id="attachFile4"></div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>공사면허증</th>
+                            <td>
+                                <form id="appSeq5Frm" name="appSeq5Frm" method="post" enctype="multipart/form-data"
+                                    onSubmit="return false;">
+                                    <div class="inputFileArea m_t5">
+                                        <div class="filesBox f_left" style="width:335px;">
+                                            <!-- 지정하고 싶은 width값으로 수정 -->
+                                            <div class="file_input_div">
+                                                <input type="text" id="fileName5" class="file_input_textbox"
+                                                    readonly="readonly" style="width:290px;" value="">
+                                                <!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                                <input type="button" class="file_input_button"
+                                                    style="border-color: rgb(200, 200, 200);">
+                                                <input type="file" id='APP_SEQ_5_FILE' name="APP_SEQ_5_FILE"
+                                                    class="file_input_hidden"
+                                                    onchange="javascript: getAttachFileName(this.value, 'fileName5')"
+                                                    style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                            </div>
+                                        </div>
+                                        <div id="attachFile5"></div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>관련 사업 실적증명서</th>
+                            <td>
+                                <form id="appSeq6Frm" name="appSeq6Frm" method="post" enctype="multipart/form-data"
+                                    onSubmit="return false;">
+                                    <div class="inputFileArea m_t5">
+                                        <div class="filesBox f_left" style="width:335px;">
+                                            <!-- 지정하고 싶은 width값으로 수정 -->
+                                            <div class="file_input_div">
+                                                <input type="text" id="fileName6" class="file_input_textbox"
+                                                    readonly="readonly" style="width:290px;" value="">
+                                                <!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                                <input type="button" class="file_input_button"
+                                                    style="border-color: rgb(200, 200, 200);">
+                                                <input type="file" id='APP_SEQ_6_FILE' name="APP_SEQ_6_FILE"
+                                                    class="file_input_hidden"
+                                                    onchange="javascript: getAttachFileName(this.value, 'fileName6')"
+                                                    style="width:335px;"><!-- 지정하고 싶은 width값으로 수정 -->
+                                            </div>
+                                        </div>
+                                        <div id="attachFile6"></div>
+                                    </div>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br><br>
+                <hr style="visibility:visible !important; width:100% !important; height:2px; background:#5b5b5b;">
+                <br>
+
+                <form id="frmFree" method="post" name="frmWinWin" onSubmit="return false;">
+                    <div class="poptitle">
+                        <h3>자유의견</h3>
+                    </div>
+                    <div class="fileupload comment">
+                        <div class="commnet-body">
+                            <ul>
+                                <li>사업제안, 회사소개, 하고싶은 말 등을 자유롭게 기술해주시기 바랍니다.</li>
+                                <li>
+                                    자유의견 작성 및 관련파일을 첨부한 협력사에게는, SK Telecom 내부의 협력사 검색시스템에서 일정 기간 동안 Priority가 부여됩니다.
+                                </li>
+                                <li>
+                                    <strong>① 동일 조건으로 검색 시 상단 노출 ② 사명에 느낌표[!] 표시 ③ 협력사 의견 게시판에 List-up 등</strong>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <table class="tableStyle popTable m_t10">
+                        <colgroup>
+                            <col style="width:100%" />
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="leftLine">
+                                    <textarea id="FREE_COMMENT" name="FREE_COMMENT" data-bind="value:FREE_COMMENT"
+                                        rows="7" class="wp100" maxlength="4000"></textarea>
+                                    <input type="hidden" data-type="textinput" value="" name="FREE_COMMENT_ORG"
+                                        id="FREE_COMMENT_ORG" data-bind="value:FREE_COMMENT_ORG" />
+                                    <input type="hidden" data-type="textinput" value="" name="FILE_NM_ORG"
+                                        id="FILE_NM_ORG" data-bind="value:FILE_NM_ORG" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+
+                <div>
+
+                    <form id="attFrm3" name="attFrm3" method="post" enctype="multipart/form-data"
+                        onSubmit="return false;">
+                        <!-- 이미 추가된 이후에 다시 추가하는경우 같은 APP_SEQ를 유지하기 위해서 해당 파일의 APP_SEQ를 호출하는 화면에서 넘겨줘야 함. -->
+
+                        <input type="hidden" id="APP_SEQ" name="APP_SEQ" data-bind="value: APP_SEQ" value="">
+
+
+                        <input type="hidden" id="DELETE_ATTACHMENT_SEQ" name="DELETE_ATTACHMENT_SEQ"
+                            data-bind="value: DELETE_ATTACHMENT_SEQ" value="">
+                        <div class="poptitle" style="">
+                            <h3>관련파일첨부 (파일 추가/삭제 후 반드시 저장 버튼을 눌러주십시오.)</h3>
+
+
+                            
+                            <div class="btnArea f_right">
+
+
+                                <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                                <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+
+
+                            </div>
+                        </div>
+
+
+
+                        <table class="fileupload-list tableStyle fileupload">
+                            <colgroup>
+                                <col width="30px">
+                                <col width="*">
+                                <col width="150px">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th><input type="checkbox"></th>
+                                    <th>파일명</th>
+                                    <th>용량</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="template-empty">
+                                    <td colspan="3">
+                                        <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                        <div class="empty-content">첨부파일을 마우스로 끌어 넣으세요</div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="fileupload-progress" style="float: left;">
+                                            <div class="progress-extended">&nbsp;</div>
+                                        </div>
+                                        <span class="fileupload-footer" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <div class="fileupload comment commnet-default">
+                            <div class="commnet-body">
+                                <ul>
+                                    <li>첨부제한 : 최대 20건, 건당 30MB, 최대 50MB</li>
+                                    <li>
+                                        첨부 가능파일 : txt, xls, xlsx, doc, docx, ppt, pptx, hwp, zip, pdf, jpg, jpeg, gif, png, bmp, apk, dwg, html, htm, mht
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                    <br />
+
+                </div>
+
+            </div><!-- // contents -->
+        </div>
+        <!-- //container : E -->
+
+        <!-- footer_wrap : S -->
+        <footer class="footer_wrap">
+            <div class="inner">
+                <div class="footer_top">
+                    <ul class="footer_info">
+                        <li><span>우편번호 : 04539</span></li>
+                        <li><span>서울특별시 중구 을지로65(을지로2가) SK T-타워 SK텔레콤(주)</span></li>
+                        <li><span>대표이사 사장 : 유영상</span></li>
+                    </ul>
+                    <ul class="footer_info">
+                        <li><a href="javascript:;">개인정보처리방침</a></li>
+                        <li><a href="javascript:;">이메일주소무단수집거부</a></li>
+                    </ul>
+                </div>
+                <div class="footer_copy">
+                    <p>COPYRIGHT © SK TELECOM. ALL RIGHTS RESERVED.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer_wrap : E -->
+    </div>
+    <!-- //wrap : E -->
+    <script>
+        var mydata = [{
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+            {
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+            {
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+            {
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+            {
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+            {
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+            {
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+            {
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+            {
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+            {
+                data1: "",
+                data2: "",
+                data3: "",
+                data4: "",
+                data5: "",
+                data6: "",
+                data7: "",
+                data8: "",
+                data9: "",
+                data10: "",
+                data11: "",
+                data12: "",
+                data13: "",
+                data14: "",
+                data15: "",
+                data16: "",
+                data17: "",
+                data18: "",
+                data19: "",
+                data20: "",
+                data21: "",
+                data22: "",
+                data23: "",
+                data24: "",
+                data25: "",
+                data26: "",
+                data27: "",
+                data28: "",
+                data29: "",
+                data30: "",
+            },
+        ];
+
+        $(document).ready(function () {
+            $(".jqGrid").jqGrid({
+                datatype: "local",
+                data: mydata,
+                autowidth: true,
+                cellEdit: true,
+                shrinkToFit: false,
+                forceFit: true,
+                pager: "#jqGridPager",
+                colModel: [{
+                        label: "data1",
+                        name: "data1",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data2",
+                        name: "data2",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data3",
+                        name: "data3",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data4",
+                        name: "data4",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data5",
+                        name: "data5",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data6",
+                        name: "data6",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data7",
+                        name: "data7",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data8",
+                        name: "data8",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data9",
+                        name: "data9",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data10",
+                        name: "data10",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data11",
+                        name: "data11",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data12",
+                        name: "data12",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data13",
+                        name: "data13",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data14",
+                        name: "data14",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data15",
+                        name: "data15",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data16",
+                        name: "data16",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data17",
+                        name: "data17",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data18",
+                        name: "data18",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data19",
+                        name: "data19",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data20",
+                        name: "data20",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data21",
+                        name: "data21",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data22",
+                        name: "data22",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data23",
+                        name: "data23",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data24",
+                        name: "data24",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data25",
+                        name: "data25",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data26",
+                        name: "data26",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data27",
+                        name: "data27",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data28",
+                        name: "data28",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data29",
+                        name: "data29",
+                        width: 100,
+                        editable: true
+                    },
+                    {
+                        label: "data30",
+                        name: "data30",
+                        width: 100,
+                        editable: true
+                    },
+                ],
+            });
+        });
+
+        $(window)
+            .bind("resize", function () {
+                $("#jqGrid").setGridWidth($(".grid_area").width());
+            })
+            .trigger("resize");
+    </script>
+</body>
+
+</html>

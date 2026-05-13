@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="layer_popup open">
+            <div class="dim"></div>
+            <div class="layer_popup_area alert">
+                <div class="alert_body">
+                    <div class="alert_cont line_lg">
+                        <div class="info_wrap">
+                            <p class="msg">표준증빙 내용에 이상이 없는지<br>확인 후 서명 해주세요.</p>
+                            <p class="desc">증빙 내용 수정이 필요한 경우 검사요청을<br>반송해야 합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert_footer">
+                    <div class="btn_group">
+                        <button type="button" class="btn pop" onclick="layerClose($(this))">확인</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 화면 진입 알림 팝업 -->
+
+
+
+        <div class="layer_inner">
+            <div class="layer_head">
+                <div class="left">
+                    <h2 class="title">표준증빙 작성하기</h2>
+                </div>
+                <div class="right">
+                    <!-- <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button> -->
+                </div>
+            </div>
+
+            <div class="layer_body">
+                <div class="layer_cont">
+                    <div class="tit_area">
+                        <h3 class="tit">용역/공사 계약 표준 증빙</h3>
+                    </div>
+
+                    <div class="slide_box_wrap on">
+                        <div class="box_tit_area">
+                            <button type="button" class="slide_toggle_btn">접고 펼치기</button>
+                            <div class="tit_wrap">
+                                <div class="left">
+                                    <h4 class="tit">1. 기본정보</h4>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="box_cont_area">
+                            <table class="tbl_list ty03">
+                                <colgroup>
+                                    <col style="width: 100px;">
+                                    <col>
+                                    <col style="width: 100px;">
+                                    <col>
+                                    <col style="width: 100px;">
+                                    <col>
+                                    <col style="width: 100px;">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th colspan="4">계약정보</th>
+                                        <th colspan="4">검사정보</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>계약번호</th>
+                                        <td colspan="3">4160089616</td>
+                                        <th>검사조서번호</th>
+                                        <td>5260045786</td>
+                                        <th>검사차수</th>
+                                        <td>2</td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2">계약건명</th>
+                                        <td colspan="3" rowspan="2">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</td>
+                                        <th>검사금액</th>
+                                        <td class="t_right" colspan="3">999,999,999원 <span class="desc">(VAT별도)</span></td>
+                                    </tr>
+                                    <tr>
+                                        <th>남품기한</th>
+                                        <td>2025-06-14</td>
+                                        <th rowspan="2">목적물수령일(인수동의일)</th>
+                                        <td rowspan="2">2025-06-14</td>
+                                    </tr>
+                                    <tr>
+                                        <th>계약체결일</th>
+                                        <td colspan="3">2025-06-14</td>
+                                        <th>납품완료일</th>
+                                        <td>2025-06-14</td>
+                                    </tr>
+                                    <tr>
+                                        <th>계약기간</th>
+                                        <td colspan="3">2025-06-14 ~ 2025-06-14</td>
+                                        <th>검사요청일</th>
+                                        <td>2025-06-15</td>
+                                        <th>검사완료일</th>
+                                        <td>2025-06-15</td>
+                                    </tr>
+                                    <tr>
+                                        <th>계약금액</th>
+                                        <td class="t_right" colspan="3">999,999,999원 <span class="desc">(VAT별도)</span></td>
+                                        <th>검사요청자</th>
+                                        <td colspan="3">이주영 / ac.lee@sk.com / 010-4156-4561</td>
+                                    </tr>
+                                    <tr>
+                                        <th>공급업체명</th>
+                                        <td colspan="3">피에스앤마케팅 주식회사</td>
+                                        <th>SKT검사담당자</th>
+                                        <td colspan="3">이주영 / ac.lee@sk.com / 010-4156-4561</td>
+                                    </tr>
+                                    <tr>
+                                        <th>개발완료(상용일자) <span class="req">*</span></th>
+                                        <td colspan="3">
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <th>ARE코드/예산 <span class="req">*</span></th>
+                                        <td colspan="3">
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>운영부서 <span class="req">*</span></th>
+                                        <td colspan="3">
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <th>
+                                            건자번호<span class="req">*</span><!-- 공백제거용
+                                            --><div class="tooltip_wrap ty02">
+                                                <span class="tooltip_ico"></span>
+                                                <div class="tooltip_area">
+                                                    <ul class="tooltip_list">
+                                                        <li>자산 관련 정보를 확인 및 입력 해주세요.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td colspan="3">
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>관리자 <span class="req">*</span></th>
+                                        <td colspan="3">
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <th>적용시스템 <span class="req">*</span></th>
+                                        <td colspan="3">
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="slide_box_wrap on">
+                        <div class="box_tit_area">
+                            <button type="button" class="slide_toggle_btn">접고 펼치기</button>
+                            <div class="tit_wrap">
+                                <div class="left">
+                                    <h4 class="tit">2. 정산내역</h4>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="box_cont_area">
+                            <div class="sub_tit_area m_t0">
+                                <div class="left">
+                                    <h5 class="tit">2-1. 금회 청구액</h5>
+                                    <span class="desc">(VAT별도)</span>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_list">
+                                <colgroup>
+                                    <col>
+                                    <col style="width: 161px;">
+                                    <col style="width: 70px;">
+                                    <col style="width: 161px;">
+                                    <col style="width: 70px;">
+                                    <col style="width: 140px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>계약금액</th>
+                                        <th colspan="2">청구금액</th>
+                                        <th colspan="2">잔여금액</th>
+                                        <th>누적기성률</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="t_right">999,999,999원</td>
+                                        <td class="t_right">999,999,999원</td>
+                                        <td>0%</td>
+                                        <td class="t_right">999,999,999원</td>
+                                        <td>100%</td>
+                                        <td><strong>100%</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h5 class="tit">2-2. 기존 청구액</h5>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="tbl_fade_wrap">
+                                <table class="tbl_list">
+                                    <colgroup>
+                                        <col style="width: 100px;">
+                                        <col style="width: 60px;">
+                                        <col>
+                                        <col style="width: 70px;">
+                                        <col>
+                                        <col style="width: 70px;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>청구일</th>
+                                            <th>차수</th>
+                                            <th colspan="2">청구금액</th>
+                                            <th colspan="2">누적청구액</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>2025-05-28</td>
+                                            <td>N차</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-05-28</td>
+                                            <td>N차</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr class="hide_tbl_mark">
+                                            <td>2025-05-28</td>
+                                            <td>N차</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-05-28</td>
+                                            <td>N차</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-05-28</td>
+                                            <td>N차</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-05-28</td>
+                                            <td>N차</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2025-05-28</td>
+                                            <td>N차</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                            <td class="t_right">999,999,999원</td>
+                                            <td>0%</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <button type="button" class="list_fade_btn"  data-text-open="접기" data-text-close="더보기">더보기</button>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h5 class="tit">2-3. 상세내역</h5>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_list fz13">
+                                <colgroup>
+                                    <col style="width: 120px;">
+                                    <col>
+                                    <col style="width: 120px;">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>항목</th>
+                                        <th>금액</th>
+                                        <th>비율</th>
+                                        <th>비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ty02">재료비</td>
+                                        <td class="t_right">999,999,999원</td>
+                                        <td>50%</td>
+                                        <td>내용입력</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th>합계</th>
+                                        <td class="t_right">999,999,999원</td>
+                                        <td>100%</td>
+                                        <td>비고</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="slide_box_wrap on">
+                        <div class="box_tit_area">
+                            <button type="button" class="slide_toggle_btn">접고 펼치기</button>
+                            <div class="tit_wrap">
+                                <div class="left">
+                                    <h4 class="tit">3. 수행내역</h4>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="box_cont_area">
+                            <div class="sub_tit_area m_t0">
+                                <div class="left">
+                                    <h5 class="tit">3-1. 주요 수행 업무</h5>
+                                </div>
+                                <div class="right">
+                                    <div class="btn_group"></div>
+                                </div>
+                            </div>
+
+                            <div class="tbl_fade_wrap">
+                                <table class="tbl_list">
+                                    <colgroup>
+                                        <col style="width: 52px;">
+                                        <col style="width: 220px;">
+                                        <col>
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>차수</th>
+                                            <th>수행기간</th>
+                                            <th>수행 내용</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="hide_tbl_mark">
+                                            <td class="ty02">1</td>
+                                            <td class="ty02">2025-05-28 ~ 2025-05-28</td>
+                                            <td>수행내용</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ty02">2</td>
+                                            <td class="ty02">2025-05-28 ~ 2025-05-28</td>
+                                            <td>수행내용</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ty02">3</td>
+                                            <td class="ty02">2025-05-28 ~ 2025-05-28</td>
+                                            <td>수행내용</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ty02 p_0">4</td>
+                                            <td class="ty02">2025-05-28 ~ 2025-05-28</td>
+                                            <td>수행내용</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ty02">5</td>
+                                            <td class="ty02">2025-05-28 ~ 2025-05-28</td>
+                                            <td>수행내용</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ty02">6</td>
+                                            <td class="ty02">2025-05-28 ~ 2025-05-28</td>
+                                            <td>수행내용</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="ty02">7</td>
+                                            <td class="ty02">2025-05-28 ~ 2025-05-28</td>
+                                            <td>수행내용</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <button type="button" class="list_fade_btn"  data-text-open="접기" data-text-close="더보기">더보기</button>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h5 class="tit">3-2. 인력 투입 현황</h5>
+                                </div>
+                                <div class="right">
+                                    <div class="btn_group"></div>
+                                </div>
+                            </div>
+
+                            <table class="tbl_list">
+                                <colgroup>
+                                    <col style="width: 52px;">
+                                    <col style="width: 120px;">
+                                    <col style="width: 120px;">
+                                    <col>
+                                    <col style="width: 120px;">
+                                    <col style="width: 120px;">
+                                    <col style="width: 120px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>직위/직급</th>
+                                        <th>성명</th>
+                                        <th>담당업무</th>
+                                        <th>투입기간</th>
+                                        <th>투입일(MD)</th>
+                                        <th>비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>직위/직급</td>
+                                        <td>성명</td>
+                                        <td>담당업무</td>
+                                        <td>투입기간</td>
+                                        <td>투입일(MD)</td>
+                                        <td>비고</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h5 class="tit">3-3. 완료보고</h5>
+                                    <span class="desc">(선택입력)</span>
+                                </div>
+                                <div class="right">
+                                    <button type="button" class="btn ty02 sm tbl_fade_btn" data-text-open="수정취소" data-text-close="수정하기">수정하기</button>
+                                </div>
+                            </div>
+
+                            <table class="tbl_style_02 hide">
+                                <colgroup>
+                                    <col style="width: 120px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            과제개요<!-- 공백제거용
+                                            --><div class="tooltip_wrap ty02">
+                                                <span class="tooltip_ico"></span>
+                                                <div class="tooltip_area">
+                                                    <ul class="tooltip_list">
+                                                        <li>완료 보고 내용을 추가 하거나 수정할 수 있습니다.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <td>
+                                            <textarea class="form_control ty02" rows="7" placeholder="내용입력"></textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>기대효과</th>
+                                        <td>
+                                            <textarea class="form_control ty02" rows="2" placeholder="내용입력"></textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="slide_box_wrap">
+                        <div class="box_tit_area">
+                            <button type="button" class="slide_toggle_btn">접고 펼치기</button>
+                            <div class="tit_wrap">
+                                <div class="left">
+                                    <h4 class="tit">4. 산출물 목록</h4>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="box_cont_area">
+                            <table class="tbl_list">
+                                <colgroup>
+                                    <col style="width: 52px;">
+                                    <col>
+                                    <col style="width: 180px;">
+                                    <col style="width: 180px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>산출물명</th>
+                                        <th>제출방식</th>
+                                        <th>비고</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>산출물명</td>
+                                        <td>제출방식</td>
+                                        <td>비고</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="sign_desc_area">
+                        <p class="desc">본 증빙 자료의 모든 내용은 사실과 다름 없음을 확인합니다.</p>
+                    </div>
+
+                    <div class="tbl_fade_wrap">
+                        <div class="sign_tbl_area">
+                            <table class="tbl_list">
+                                <colgroup>
+                                    <col style="width: 80px;">
+                                    <col>
+                                    <col style="width: 120px;">
+                                    <col style="width: 125px;">
+                                    <col style="width: 160px;">
+                                    <col style="width: 200px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>업체명</th>
+                                        <th>성명</th>
+                                        <th>전화번호</th>
+                                        <th>E-Mail</th>
+                                        <th>전자서명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ty02">인계자</td>
+                                        <td>SK텔레콤</td>
+                                        <td>홍길동</td>
+                                        <td>010-1234-5678</td>
+                                        <td>ac.lee@sk.com</td>
+                                        <td>2025-05-28 00:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ty02">인수자</td>
+                                        <td>SK텔레콤</td>
+                                        <td>홍길동</td>
+                                        <td>010-1234-5678</td>
+                                        <td>ac.lee@sk.com</td>
+                                        <td>2025-05-28 00:00:00</td>
+                                    </tr>
+                                    <tr class="hide_tbl_mark">
+                                        <td class="ty02">인수자</td>
+                                        <td>
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <td>2025-05-28 00:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ty02">검토/확인</td>
+                                        <td>SK텔레콤</td>
+                                        <td>홍길동</td>
+                                        <td>-</td>
+                                        <td>ac.lee@sk.com</td>
+                                        <td>2025-05-28 00:00:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <button type="button" class="btn list_fade_btn" data-text-open="인수자와 SKT검사담당자가 같음" data-text-close="인수자와 SKT검사담당자가 다름">인수자와 SKT검사담당자가 다름</button> <!-- 2025-06-20 수정 -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btm_btn_area">
+                    <div class="left"></div>
+                    <div class="right">
+                        <div class="btn_group">
+                            <button type="button" class="btn pop lbtn md">저장</button>
+                            <span class="divid"></span>
+                            <button type="button" class="btn pop lbtn ty02 md">닫기</button>
+                            <button type="button" class="btn pop lg">확인/서명</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

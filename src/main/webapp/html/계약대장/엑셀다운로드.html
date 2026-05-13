@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="pop_wrap sm">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">계약대장-엑셀다운로드(옵션)</h1>
+                    </div>
+                    <div class="right"></div>
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <div class="cont_inner">
+                            <div class="sub_tit_area m_t0 m_b0">
+                                <div class="left">
+                                    <ul class="tabs_btn_wrap">
+                                        <li class="active">
+                                            <button type="button" class="tab_btn" data-tab="tab01">검사요청관리</button>
+                                        </li>
+                                        <li>
+                                            <button type="button" class="tab_btn" data-tab="tab02">검사요청</button>
+                                        </li>
+                                    </ul>
+                                    <span class="form_check">
+                                        <input type="checkbox" id="chk01">
+                                        <label for="chk01">전체선택</label>
+                                    </span>
+                                </div>
+                                <div class="right">
+                                    <button type="button" class="btn lbtn md"><i class="ico ty02 excel_down"></i>엑셀다운</button>
+                                </div>
+                            </div>
+
+                            <div class="tab_cont_area"> <!-- 2025-08-11 추가 -->
+                                <div class="tab_cont on" id="tab01"> <!-- 2025-08-11 추가 -->
+                                    <div class="item_down_list_area">
+                                        <div class="item_list"> <!-- 2025-08-11 수정 -->
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약</h3> <!-- 2025-08-11 수정 -->
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;"> <!-- 2025-08-11 수정 -->
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list"> <!-- 2025-08-11 수정 -->
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약</h3> <!-- 2025-08-11 수정 -->
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;"> <!-- 2025-08-11 수정 -->
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list"> <!-- 2025-08-11 수정 -->
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약</h3> <!-- 2025-08-11 수정 -->
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;"> <!-- 2025-08-11 수정 -->
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- 2025-08-11 추가 -->
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <!-- // 2025-08-11 추가 -->
+                                    </div>
+                                </div>
+
+                                <!-- 2025-08-11 추가 -->
+                                <div class="tab_cont" id="tab02">
+                                    <div class="item_down_list_area tab_cont" id="tab02">
+                                        <div class="item_list"> 
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약2</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약2</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약2</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약2</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약2</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약2</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약2</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="item_list">
+                                            <div class="item_inner">
+                                                <div class="item_tit_area">
+                                                    <h3 class="tit">계약2</h3>
+                                                </div>
+                                                <ul class="item_check_list scroll_y" style="max-height: 240px;">
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                    <li>계약종류</li>
+                                                    <li>계약시작일</li>
+                                                    <li>품질검사대상 여부</li>
+                                                    <li>검사조서 잔액</li>
+                                                    <li>대금지급 조건코드</li>
+                                                    <li>계약종료일</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- // 2025-08-11 추가 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

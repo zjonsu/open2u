@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">체크리스트</h2>
+                    </div>
+
+                </div>
+                <div class="pop_sub_area">
+                    <div class="left">
+
+                    </div>
+                    <div class="right">
+                        <button type="button" class="btn pop pop_save c_type07">저장</button>
+                    </div>
+                </div>
+            </div>
+            <div class="popcontents p_top170">
+                <div class="appraisal_title m_t0">
+                    <div class="left"><h3 class="title">구매요청건명</h3></div>
+                    <div class="right">
+                        <ul class="sub_info">
+                            <li>
+                                <span class="label">구매요청번호</span>
+                            </li>
+                            <li>
+                                <strong class="info">123123123</strong>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                    <!-- 테이블 1번째 -->
+                    <table class="appraisal_tbl self">
+                        <thead>
+                            <tr>
+                                <th>구간</th>
+                                <th>검토 내용</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                        <tr>
+                            <td><h4 class="appraisal_h4">~ 50점 미만</h4></td>
+                            <td><p class="appraisal_p">계약진행 불가 (구매/법무/HR 공통 검토/조정 후 진행)</p></td>
+                        </tr>
+                        <tr>
+                            <td><h4 class="appraisal_h4">50점 이상 ~ 60점 미만</h4></td>
+                            <td><p class="appraisal_p">구매팀 1차 검토/조정 후 진행 (법무/HR 내용 공유)</p></td>
+                        </tr>
+                        <tr>
+                            <td><h4 class="appraisal_h4">60점 이상 ~ 70점 미만</h4></td>
+                            <td><p class="appraisal_p">구매팀 자체 검토 후 계약 진행</p></td>
+                        </tr>
+                        <tr>
+                            <td><h4 class="appraisal_h4">70점 이상 ~</h4></td>
+                            <td><p class="appraisal_p">도급Risk 낮음 (안정권)</p></td>
+                        </tr>
+
+                        <tr>
+                            <td class="t_left leftLine" colspan="2">
+                            <strong class="appraisal_point">※ 단, 체크리스트 3, 4, 8, 9, 11, 12번의 감점 요소가</strong>
+                            <ul class="appraisal_list">
+                                <li>- 3개 이상일 경우: 계약진행 불가 (50점 미만으로 간주)</li><br>
+                                <li>- 2개일 경우: SCM그룹 1차 검토/ 조정후 진행 (60점 미만으로 간주)</li>
+                            </ul>
+
+                        </td>
+                        </tr>
+                    </tbody></table>
+                    <table class="tableStyle type1 m_t10">
+                        <colgroup>
+                            <col style="width:50px">
+                            <col>
+                            <col style="width:85px">
+                            <col style="width:8%">
+                            <col style="width:8%">
+                            <col style="width:8%">
+                        </colgroup>
+                        <tbody>
+                        <tr class="leftLine">
+                            <th class="t_center leftLine">No</th>
+                            <th class="t_center">항 목</th>
+                            <th class="t_center">점검</th>
+
+
+                            <th class="t_center">중요도</th>
+                            <th class="t_center">Yes</th>
+                            <th class="t_center">No</th>
+
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine">1</td>
+                            <td class="t_left">계약서에 협력사가 수행해야 할 대상업무를 [명확하게] 표기할 수 있습니까?</td>
+                            <td class="t_left">
+                                <input type="radio" id="CHK01" name="CHK01" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK01" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK01" name="CHK01" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK01" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center">상</td>
+                            <td class="t_center">8</td>
+                            <td class="t_center">-8</td>
+
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine">2</td>
+                            <td class="t_left">협력사는 당사 이외 [다른 회사의 업무]도 위탁받아 수행하고 있습니까?</td>
+                            <td class="t_left">
+                                <input type="radio" id="CHK02" name="CHK02" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK02" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK02" name="CHK02" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK02" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center">하</td>
+                            <td class="t_center">4</td>
+                            <td class="t_center">0</td>
+
+                        </tr>
+                        <tr style="font-weight: bold;">
+                            <td class="t_center leftLine" style="background: #FEF4F6">3</td>
+                            <td class="t_left" style="background: #FEF4F6">협력사는 당사 사옥에서 당사 매니저와 [함께 근무]해야 합니까?</td>
+                            <td class="t_left" style="background: #FEF4F6">
+                                <input type="radio" id="CHK03" name="CHK03" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK03" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK03" name="CHK03" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK03" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center" style="background: #FEF4F6">상</td>
+                            <td class="t_center" style="background: #FEF4F6">-8</td>
+                            <td class="t_center" style="background: #FEF4F6">13</td>
+
+                        </tr>
+                        <tr style="font-weight: bold;">
+                            <td class="t_center leftLine" style="background: #FEF4F6">4</td>
+                            <td class="t_left" style="background: #FEF4F6">협력사 투입인력의 [근무시간에 따라] 용역대금이 변경되어야 합니까?<br>(일반근무, 초과근무, 야간근무, 휴일근무 등 포함) </td>
+                            <td class="t_left" style="background: #FEF4F6">
+                                <input type="radio" id="CHK04" name="CHK04" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK04" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK04" name="CHK04" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK04" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center" style="background: #FEF4F6">중</td>
+                            <td class="t_center" style="background: #FEF4F6">-8</td>
+                            <td class="t_center" style="background: #FEF4F6">8</td>
+
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine">5</td>
+                            <td class="t_left">협력사는 [2차/3차 협력사의 도움]을 필요로 합니까? (재하도급)</td>
+                            <td class="t_left">
+                                <input type="radio" id="CHK05" name="CHK05" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK05" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK05" name="CHK05" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK05" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center">하</td>
+                            <td class="t_center">0</td>
+                            <td class="t_center">4</td>
+
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine">6</td>
+                            <td class="t_left">협력사의 용역수행에 필요한 자산을 [당사가 제공]해야 합니까?<br>(사무실 등 업무공간, 장비, 기자재 등) </td>
+                            <td class="t_left">
+                                <input type="radio" id="CHK06" name="CHK06" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK06" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK06" name="CHK06" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK06" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center">중</td>
+                            <td class="t_center">-8</td>
+                            <td class="t_center">8</td>
+
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine">7</td>
+                            <td class="t_left">협력사 직원들에게 Nate-on Biz나 U-key 등의 [전산망을 당사가 제공]하고<br>해당 전산망을 이용해 Communication을 해야 합니까?</td>
+                            <td class="t_left">
+                                <input type="radio" id="CHK07" name="CHK07" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK07" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK07" name="CHK07" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK07" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center">상</td>
+                            <td class="t_center">-8</td>
+                            <td class="t_center">13</td>
+
+                        </tr>
+                        <tr style="font-weight: bold;">
+                            <td class="t_center leftLine" style="background: #FEF4F6">8</td>
+                            <td class="t_left" style="background: #FEF4F6">협력사는 [현장대리인을 자체 선임]하여 당사와의 업무협의를 진행하고 있습니까?</td>
+                            <td class="t_left" style="background: #FEF4F6">
+                                <input type="radio" id="CHK08" name="CHK08" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK08" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK08" name="CHK08" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK08" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center" style="background: #FEF4F6">상</td>
+                            <td class="t_center" style="background: #FEF4F6">4</td>
+                            <td class="t_center" style="background: #FEF4F6">-13</td>
+
+                        </tr>
+                        <tr style="font-weight: bold;">
+                            <td class="t_center leftLine" style="background: #FEF4F6">9</td>
+                            <td class="t_left" style="background: #FEF4F6">협력사 직원들을 당사가 [직접 업무 배치하거나 조정]할 필요가 있습니까?</td>
+                            <td class="t_left" style="background: #FEF4F6">
+                                <input type="radio" id="CHK09" name="CHK09" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK09" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK09" name="CHK09" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK09" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center" style="background: #FEF4F6">상</td>
+                            <td class="t_center" style="background: #FEF4F6">-13</td>
+                            <td class="t_center" style="background: #FEF4F6">13</td>
+
+                        </tr>
+                        <tr>
+                            <td class="t_center leftLine">10</td>
+                            <td class="t_left">협력사 직원들을 당사가 [직접 교육]시킬 필요가 있습니까?</td>
+                            <td class="t_left">
+                                <input type="radio" id="CHK10" name="CHK10" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK10" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK10" name="CHK10" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK10" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center">중</td>
+                            <td class="t_center">-8</td>
+                            <td class="t_center">8</td>
+
+
+                        </tr>
+                        <tr style="font-weight: bold;">
+                            <td class="t_center leftLine" style="background: #FEF4F6">11</td>
+                            <td class="t_left" style="background: #FEF4F6">협력사 직원 [개인]의 업무수행실적과 태도를 [당사가 직접 평가]할 필요가 있습니까?</td>
+                            <td class="t_left" style="background: #FEF4F6">
+                                <input type="radio" id="CHK11" name="CHK11" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK11" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK11" name="CHK11" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK11" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center" style="background: #FEF4F6">상</td>
+                            <td class="t_center" style="background: #FEF4F6">-13</td>
+                            <td class="t_center" style="background: #FEF4F6">8</td>
+
+                        </tr>
+                        <tr style="font-weight: bold;">
+                            <td class="t_center leftLine" style="background: #FEF4F6">12</td>
+                            <td class="t_left" style="background: #FEF4F6">협력사 직원들의 [근무시간을 당사가 직접 결정하거나 조정]하여야 할 필요가 있습니까?</td>
+                            <td class="t_left" style="background: #FEF4F6">
+                                <input type="radio" id="CHK12" name="CHK12" value="Y" data-type="radio" onclick="onChecked()" data-bind="checked:CHK12" class="af-radio af-default" data-converted="true">Y
+                                <input type="radio" id="CHK12" name="CHK12" value="N" data-type="radio" onclick="onChecked()" data-bind="checked:CHK12" class="af-radio af-default" data-converted="true">N
+                            </td>
+
+                            <td class="t_center" style="background: #FEF4F6">상</td>
+                            <td class="t_center" style="background: #FEF4F6">-13</td>
+                            <td class="t_center" style="background: #FEF4F6">8</td>
+
+                        </tr>
+
+                        <tr>
+                            <td colspan="6">
+                                <div class="check_list_msg">
+                                    <span>60점 이하일 경우, 체크리스트 재점검 혹은 HR/법무검토가 필요합니다</span> 
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="6">
+                                <div class="layout_area">
+                                    <div class="left wp50">
+                                        100점(만점) 중 :
+                                        <input type="text" id="TOTAL" name="TOTAL" readonly="readonly" size="5" value="" data-type="text" data-bind="value:TOTAL">
+                                    점
+                                    </div>
+                                    <div class="right wp50">
+                                        (高 Risk항목 개수 반영 전 점수 :
+                                        <input type="text" id="TOTAL2" name="TOTAL2" readonly="readonly" size="5" value="" data-type="text" data-bind="value:TOTAL2">
+                                        점)
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+
+
+
+
+                    </tbody></table>
+
+            </div>
+
+        </div>
+    </body>
+</html>

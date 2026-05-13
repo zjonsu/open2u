@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/lib/animateNumber/jquery.animateNumber.min.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <body>
+        <!-- wrap : S -->
+        <div class="wrap">
+            <!-- header_wrap : S -->
+            <header class="header_wrap">
+                <!-- 메인화면에서는 class="main" 추가  -->
+                <div class="header_top">
+                    <div class="inner">
+                        <ul class="header_top_user">
+                            <li>
+                                <span class="user"><i class="icons i_header_user"></i>홍길동님</span>
+                            </li>
+                            <li>
+                                <a href="javascript:;"><i class="icons i_header_logout"></i></a>
+                            </li>
+                        </ul>
+                        <ul class="header_top_menu">
+                            <li>
+                                <button type="button">업체검색시스템 <i class="icons i_header_search"></i></button>
+                            </li>
+                            <li>
+                                <button type="button">회의실예약 <i class="icons i_header_reserve"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="header_gnb">
+                    <div class="header_gnb_inner">
+                        <div class="align_lt">
+                            <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            <ul class="gnb_menu">
+                                <li>
+                                    <a href="#none">구매요청</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매요청</a></li>
+                                        <li><a href="javascript:;">계약변경요청</a></li>
+                                        <li><a href="javascript:;">납품지시</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">구매진행</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매접수</a></li>
+                                        <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">계약변경진행</a></li>
+                                        <li><a href="javascript:;">기술평가</a></li>
+                                        <li><a href="javascript:;">BMT평가</a></li>
+                                        <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                        <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                    </ul>
+                                </li>
+                                <li class="selected">
+                                    <a href="#none">계약정산</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">검사조서</a></li>
+                                        <li><a href="javascript:;">보증관리</a></li>
+                                        <li><a href="javascript:;">자산관리</a></li>
+                                        <li><a href="javascript:;">지체면제</a></li>
+                                        <li><a href="javascript:;">구매전표</a></li>
+                                        <li><a href="javascript:;">유보금처리</a></li>
+                                        <li><a href="javascript:;">대금지급</a></li>
+                                        <li><a href="javascript:;">SCM 검사조서</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">계약대장</a></li>
+                                        <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                        <li><a href="javascript:;">[외자]계약대장</a></li>
+                                        <li><a href="javascript:;">납품지시내역</a></li>
+                                        <li><a href="javascript:;">실적증명발급</a></li>
+                                        <li><a href="javascript:;">하도급관리</a></li>
+                                        <li><a href="javascript:;">가격입찰</a></li>
+                                        <li><a href="javascript:;">제안평가</a></li>
+                                        <li><a href="javascript:;">기술평가개별조회</a></li>
+                                        <li><a href="javascript:;">기술평가완료현황</a></li>
+                                        <li><a href="javascript:;">RFx이력</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">결산/통계</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">미정산계약</a></li>
+                                        <li><a href="javascript:;">예산별구매현황</a></li>
+                                        <li><a href="javascript:;">소액구매현황</a></li>
+                                        <li><a href="javascript:;">Price Tracking</a></li>
+                                        <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                        <li><a href="javascript:;">구매체감도</a></li>
+                                        <li><a href="javascript:;">검사조서마감관리</a></li>
+                                        <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">공급사</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">공급사현황</a></li>
+                                        <li><a href="javascript:;">공급사 등록요청</a></li>
+                                        <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                        <li><a href="javascript:;">업체검색시스템</a></li>
+                                        <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                        <li><a href="javascript:;">연락처대장</a></li>
+                                        <li><a href="javascript:;">사전설문관리</a></li>
+                                        <li><a href="javascript:;">사전설문관리2</a></li>
+                                        <li><a href="javascript:;">방문신청관리</a></li>
+                                        <li><a href="javascript:;">비밀번호초기화</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">기준정보관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                        <li><a href="javascript:;">ITEM 현황</a></li>
+                                        <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                        <li><a href="javascript:;">품목 MASTER</a></li>
+                                        <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                        <li><a href="javascript:;">SG 관리</a></li>
+                                        <li><a href="javascript:;">업체평가기준</a></li>
+                                        <li><a href="javascript:;">구매소요계획</a></li>
+                                        <li><a href="javascript:;">상품입고예정정보</a></li>
+                                        <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                        <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                        <li><a href="javascript:;">상품재고 현황</a></li>
+                                        <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                        <li><a href="javascript:;">위젯관리</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">업무지원</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">마감관리</a></li>
+                                        <li><a href="javascript:;">조직/사용자관리</a></li>
+                                        <li><a href="javascript:;">권한관리</a></li>
+                                        <li><a href="javascript:;">팝업관리</a></li>
+                                        <li><a href="javascript:;">환경설정관리</a></li>
+                                        <li><a href="javascript:;">ERP연동 관리</a></li>
+                                        <li><a href="javascript:;">게시판</a></li>
+                                        <li><a href="javascript:;">운영배포 게시판</a></li>
+                                        <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                        <li><a href="javascript:;">오프라인체결</a></li>
+                                        <li><a href="javascript:;">총괄코드관리</a></li>
+                                        <li><a href="javascript:;">사용자 검색</a></li>
+                                        <li><a href="javascript:;">관리자계약재처리</a></li>
+                                        <li><a href="javascript:;">업무처리독려</a></li>
+                                        <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site_map">
+                            <button type="button" class="sitemapBtn sitemap_event"><i class="icons i_header_sitemap"></i></button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="siteMapArea">
+                    <nav class="header_gnb">
+                        <div class="header_gnb_inner">
+                            <div class="align_lt">
+                                <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            </div>
+                            <a href="javascript:;" class="siteMapClosebtn"></a>
+                        </div>
+                    </nav>
+                    <div class="siteMap_inner">
+                        <ul class="menuArea">
+                            <li><h3>구매요청</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매요청</a></li>
+                                    <li><a href="javascript:;">계약변경요청</a></li>
+                                    <li><a href="javascript:;">납품지시</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>구매진행</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매접수</a></li>
+                                    <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">계약변경진행</a></li>
+                                    <li><a href="javascript:;">기술평가</a></li>
+                                    <li><a href="javascript:;">BMT평가</a></li>
+                                    <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                    <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약정산</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">검사조서</a></li>
+                                    <li><a href="javascript:;">보증관리</a></li>
+                                    <li><a href="javascript:;">자산관리</a></li>
+                                    <li><a href="javascript:;">지체면제</a></li>
+                                    <li><a href="javascript:;">구매전표</a></li>
+                                    <li><a href="javascript:;">유보금처리</a></li>
+                                    <li><a href="javascript:;">대금지급</a></li>
+                                    <li><a href="javascript:;">SCM 검사조서</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">계약대장</a></li>
+                                    <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                    <li><a href="javascript:;">[외자]계약대장</a></li>
+                                    <li><a href="javascript:;">납품지시내역</a></li>
+                                    <li><a href="javascript:;">실적증명발급</a></li>
+                                    <li><a href="javascript:;">하도급관리</a></li>
+                                    <li><a href="javascript:;">가격입찰</a></li>
+                                    <li><a href="javascript:;">제안평가</a></li>
+                                    <li><a href="javascript:;">기술평가개별조회</a></li>
+                                    <li><a href="javascript:;">기술평가완료현황</a></li>
+                                    <li><a href="javascript:;">RFx이력</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>결산/통계</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">미정산계약</a></li>
+                                    <li><a href="javascript:;">예산별구매현황</a></li>
+                                    <li><a href="javascript:;">소액구매현황</a></li>
+                                    <li><a href="javascript:;">Price Tracking</a></li>
+                                    <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                    <li><a href="javascript:;">구매체감도</a></li>
+                                    <li><a href="javascript:;">검사조서마감관리</a></li>
+                                    <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>공급사</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">공급사현황</a></li>
+                                    <li><a href="javascript:;">공급사 등록요청</a></li>
+                                    <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                    <li><a href="javascript:;">업체검색시스템</a></li>
+                                    <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                    <li><a href="javascript:;">연락처대장</a></li>
+                                    <li><a href="javascript:;">사전설문관리</a></li>
+                                    <li><a href="javascript:;">사전설문관리2</a></li>
+                                    <li><a href="javascript:;">방문신청관리</a></li>
+                                    <li><a href="javascript:;">비밀번호초기화</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>기준정보관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                    <li><a href="javascript:;">ITEM 현황</a></li>
+                                    <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                    <li><a href="javascript:;">품목 MASTER</a></li>
+                                    <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                    <li><a href="javascript:;">SG 관리</a></li>
+                                    <li><a href="javascript:;">업체평가기준</a></li>
+                                    <li><a href="javascript:;">구매소요계획</a></li>
+                                    <li><a href="javascript:;">상품입고예정정보</a></li>
+                                    <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                    <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                    <li><a href="javascript:;">상품재고 현황</a></li>
+                                    <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                    <li><a href="javascript:;">위젯관리</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>업무지원</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">마감관리</a></li>
+                                    <li><a href="javascript:;">조직/사용자관리</a></li>
+                                    <li><a href="javascript:;">권한관리</a></li>
+                                    <li><a href="javascript:;">팝업관리</a></li>
+                                    <li><a href="javascript:;">환경설정관리</a></li>
+                                    <li><a href="javascript:;">ERP연동 관리</a></li>
+                                    <li><a href="javascript:;">게시판</a></li>
+                                    <li><a href="javascript:;">운영배포 게시판</a></li>
+                                    <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                    <li><a href="javascript:;">오프라인체결</a></li>
+                                    <li><a href="javascript:;">총괄코드관리</a></li>
+                                    <li><a href="javascript:;">사용자 검색</a></li>
+                                    <li><a href="javascript:;">관리자계약재처리</a></li>
+                                    <li><a href="javascript:;">업무처리독려</a></li>
+                                    <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <!-- //header_wrap : E -->
+
+            <!-- container : S -->
+            <div class="container">
+                <div class="content p_l0 p_r0">
+                    <div class="report_title_area">
+                        <div class="inner">
+                            <div class="title_area">
+                                <div class="left">
+                                    <h2 class="title">실적 리포트</h2>
+                                    <ul class="location_area">
+                                        <li>
+                                            <a href="javascript:;" class="home"><i class="icons i_location_home"></i></a>
+                                        </li>
+                                        <li><a href="javascript:;">1depth</a></li>
+                                        <li><strong>2depth</strong></li>
+                                    </ul>
+                                </div>
+                                <div class="right">
+                                    <div class="date_area">
+                                        <span class="text">실적 집계일</span>
+                                        <strong class="date">2025년 5월 11일 12시</strong>
+                                    </div>
+                                    <div class="btn_group">
+                                        <button type="button" class="btn md">리포트 다운 <i class="ico ty02 down"></i></button>
+                                        <button type="button" class="btn md">cash 다운 <i class="ico ty02 down"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="report_select_area">
+                        <div class="left">
+                            <div class="report_select_wrap">
+                                <div class="grid_container">
+                                    <div class="row gx_12">
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">조회기간</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>연간</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">예산구분</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">계약부서</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_12 divid">
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">조회기간</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>연간</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">예산구분</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">계약부서</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="report_select_wrap">
+                                <div class="grid_container">
+                                    <div class="row gx_12">
+                                        <div class="col">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">실적SG</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">요청부문</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">요청본부</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_12 divid">
+                                            <div class="divider"></div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">실적SG</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">요청부문</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">요청본부</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <select class="form_control ty03">
+                                                        <option>전체</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="button" class="btn_setting"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="report_chart_content">
+                        <div class="inner">
+
+                            <div class="report_chart_box">
+                                <ul class="report_chart_list">
+                                    <li>
+                                        <span class="title">예산</span>
+                                        <strong class="amount"><span class="counter">2</span>조 <span class="counter">3025</span>억</strong>
+                                        <div class="progress_chart_wrap">
+                                            <div class="progress_chart">
+                                                <div class="left">
+                                                    <span class="tit">vs<strong>PY</strong></span>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="bar_bg">
+                                                        <div class="progress_bar" data-width="48"></div>
+                                                    </div>
+                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="status_list">
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">YoY</span> <!-- 2025-11-18 수정 -->
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg minus">-<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">3Y Avg.</span>
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg plus">+<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li>
+                                        <span class="title">계약금액</span>
+                                        <strong class="amount"><span class="counter">3</span>조 <span class="counter">5921</span>억</strong>
+                                        <div class="progress_chart_wrap">
+                                            <div class="progress_chart">
+                                                <div class="left">
+                                                    <span class="tit">vs<strong>PY</strong></span>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="bar_bg">
+                                                        <div class="progress_bar" data-width="48"></div>
+                                                    </div>
+                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="status_list">
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">YoY</span> <!-- 2025-11-18 수정 -->
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg minus">-<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">3Y Avg.</span>
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg plus">+<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">계약 건</span>
+                                        <strong class="amount"><span class="counter">1487</span>억</strong>
+                                        <div class="progress_chart_wrap">
+                                            <div class="progress_chart">
+                                                <div class="left">
+                                                    <span class="tit">vs<strong>PY</strong></span>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="bar_bg">
+                                                        <div class="progress_bar" data-width="48"></div>
+                                                    </div>
+                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="status_list">
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">YoY</span> <!-- 2025-11-18 수정 -->
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg minus">-<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">3Y Avg.</span>
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg plus">+<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="st02">
+                                        <span class="title">절감액</span>
+                                        <strong class="amount"><span class="counter">312</span>억 <span class="total">/ <span class="counter">350</span>억</span></strong>
+                                        <div class="progress_chart_wrap">
+                                            <div class="progress_chart ty02">
+                                                <div class="left">
+                                                    <span class="tit">AR</span>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="bar_bg">
+                                                        <div class="progress_bar" data-width="85"></div>
+                                                    </div>
+                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress_chart">
+                                                <div class="left">
+                                                    <span class="tit">vs<strong>PY</strong></span>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="bar_bg">
+                                                        <div class="progress_bar" data-width="48"></div>
+                                                    </div>
+                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="status_list">
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">YoY</span> <!-- 2025-11-18 수정 -->
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg minus">-<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">3Y Avg.</span>
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg plus">+<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">CR</span>
+                                        <strong class="amount"><span class="counter">157</span>억 <span class="total">/ <span class="counter">160</span>억</span></strong>
+                                        <div class="progress_chart_wrap">
+                                            <div class="progress_chart ty02">
+                                                <div class="left">
+                                                    <span class="tit">AR</span>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="bar_bg">
+                                                        <div class="progress_bar" data-width="85"></div>
+                                                    </div>
+                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress_chart">
+                                                <div class="left">
+                                                    <span class="tit">vs<strong>PY</strong></span>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="bar_bg">
+                                                        <div class="progress_bar" data-width="48"></div>
+                                                    </div>
+                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="status_list">
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">YoY</span> <!-- 2025-11-18 수정 -->
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg minus">-<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">3Y Avg.</span>
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg plus">+<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">CA</span>
+                                        <strong class="amount"><span class="counter">143</span>억 <span class="total">/ <span class="counter">160</span>억</span></strong>
+                                        <div class="progress_chart_wrap">
+                                            <div class="progress_chart ty02">
+                                                <div class="left">
+                                                    <span class="tit">AR</span>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="bar_bg">
+                                                        <div class="progress_bar" data-width="85"></div>
+                                                    </div>
+                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="progress_chart">
+                                                <div class="left">
+                                                    <span class="tit">vs<strong>PY</strong></span>
+                                                </div>
+                                                <div class="right">
+                                                    <div class="bar_bg">
+                                                        <div class="progress_bar" data-width="48"></div>
+                                                    </div>
+                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <ul class="status_list">
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">YoY</span> <!-- 2025-11-18 수정 -->
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg minus">-<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="left">
+                                                    <span class="text">3Y Avg.</span>
+                                                </div>
+                                                <div class="right">
+                                                    <span class="status no_bg plus">+<em class="counter">8</em>%</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="report_chart_box">
+                                <ul class="report_chart_list">
+                                    <li>
+                                        <span class="title">입찰비율</span>
+                                        <strong class="amount"><span class="counter">12</span>%</strong>
+                                        <div class="bubble_chart_wrap">
+                                            <canvas id="bubbleChart01"></canvas>
+                                        </div>
+                                    </li>
+                                    
+                                    <li>
+                                        <span class="title">절감기여도</span>
+                                        <strong class="amount"><span class="counter">7.8</span>%</strong>
+                                        <div class="bubble_chart_wrap">
+                                            <canvas id="bubbleChart02"></canvas>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">EA</span>
+                                        <strong class="amount"><span class="counter">80</span>%</strong>
+                                        <div class="bubble_chart_wrap">
+                                            <canvas id="bubbleChart03"></canvas>
+                                        </div>
+                                    </li>
+
+                                    <li class="st02">
+                                        <span class="title">절감율</span>
+                                        <strong class="amount"><span class="counter">2.4</span>%</strong>
+                                        <div class="bubble_chart_wrap ty02">
+                                            <canvas id="bubbleChart04"></canvas>
+                                        </div>
+                                    </li>
+                                    
+                                    <li>
+                                        <span class="title">CR</span>
+                                        <strong class="amount"><span class="counter">3.6</span>%</strong>
+                                        <div class="bubble_chart_wrap">
+                                            <canvas id="bubbleChart05"></canvas>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <span class="title">CA</span>
+                                        <strong class="amount"><span class="counter">4.1</span>%</strong>
+                                        <div class="bubble_chart_wrap">
+                                            <canvas id="bubbleChart06"></canvas>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+                            <div class="report_chart_box main_chart">
+                                <ul class="main_chart_list">
+                                    <li>
+                                        <div class="report_sub_title_area">
+                                            <div class="left">
+                                                <h4 class="title">계약금액</h4>
+                                                <div class="chart_chk_area">
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk" id="yoy" checked="checked">
+                                                        <label for="yoy">YoY</label>
+                                                    </span>
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk" id="3yAvg">
+                                                        <label for="3yAvg">3Y Avg.</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="right"></div>
+                                        </div>
+
+                                        <div class="main_chart_wrap">
+                                            <canvas id="barLineChart"></canvas>
+                                        </div>
+                                    </li>
+                                    
+                                    <!-- 2025-11-18 수정 : S -->
+                                    <li>
+                                        <div class="report_sub_title_area">
+                                            <div class="left">
+                                                <h4 class="title ty2">00월</h4> <!-- 2025-11-18 수정 -->
+                                            </div>
+                                            <div class="right"></div>
+                                        </div>
+                                        
+                                        <div class="d_flex">
+                                            <div class="left">
+                                                <div class="chart_chk_area">
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk_02" id="yoy_02" checked="checked">
+                                                        <label for="yoy_02">YoY</label>
+                                                    </span>
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk_02" id="3yAvg_02">
+                                                        <label for="3yAvg_02">3Y Avg.</label>
+                                                    </span>
+                                                </div>
+                                            
+                                                <div class="main_chart_wrap">
+                                                    <canvas id="barChart"></canvas>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="right">
+                                                <div class="chart_chk_area">
+                                                    <span class="chart_chk">
+                                                        <!-- 2025-11-18 수정 -->
+                                                        <input type="radio" name="chart_chk_03" id="ALL" checked="checked">
+                                                        <label for="ALL">ALL</label>
+                                                        <!-- // 2025-11-18 수정 -->
+                                                    </span>
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk_03" id="CR">
+                                                        <label for="CR">CR</label>
+                                                    </span>
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk_03" id="CA">
+                                                        <label for="CA">CA</label>
+                                                    </span>
+                                                </div>
+                                            
+                                                <div class="main_chart_wrap -m_l6">
+                                                    <canvas id="barChart2"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- // 2025-11-18 수정 : S -->
+
+                                    <li>
+                                        <div class="report_sub_title_area">
+                                            <div class="left">
+                                                <h4 class="title">계약건</h4>
+                                                <div class="chart_chk_area">
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk_04" id="yoy_03" checked="checked">
+                                                        <label for="yoy_03">YoY</label>
+                                                    </span>
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk_04" id="3yAvg_03">
+                                                        <label for="3yAvg_03">3Y Avg.</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="right"></div>
+                                        </div>
+
+                                        <div class="main_chart_wrap">
+                                            <canvas id="barLineChart2"></canvas>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="report_sub_title_area">
+                                            <div class="left">
+                                                <h4 class="title">주요업체 Top 5</h4>
+                                            </div>
+                                            <div class="right"></div>
+                                        </div>
+
+                                        <div class="main_chart_wrap d_flex">
+                                            <div class="left">
+                                                <div class="report_sm_title_area">
+                                                    <div class="left">
+                                                        <strong class="sm_title">계약금액</strong>
+                                                    </div>
+                                                    <div class="right"></div>
+                                                </div>
+                                                
+                                                <div class="company_list_area">
+                                                    <ul class="company_list">
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK AX SK AX SK AX</span>
+
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="50"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">5,000,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 하이닉스</span>
+                                                        
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="30"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">3,000,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 이노베이션</span>
+                                                        
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="10"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">1,000,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 텔레콤</span>
+                                                        
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="6"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 네트웍스</span>
+                                                        
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="1"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="report_sm_title_area">
+                                                    <div class="left">
+                                                        <strong class="sm_title">계약건</strong>
+                                                    </div>
+                                                    <div class="right"></div>
+                                                </div>
+
+                                                <div class="company_list_area">
+                                                    <ul class="company_list">
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 에코플랜트</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="89"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">8,900,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 텔레콤</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="5"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">500,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 스퀘어</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="3"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">300,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK AX</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="2"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 온</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="1"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="report_sub_title_area">
+                                            <div class="left">
+                                                <h4 class="title">절감액</h4>
+                                                <div class="chart_chk_area">
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk_05" id="yoy_04" checked="checked">
+                                                        <label for="yoy_04">YoY</label>
+                                                    </span>
+                                                    <span class="chart_chk">
+                                                        <input type="radio" name="chart_chk_05" id="3yAvg_04">
+                                                        <label for="3yAvg_04">3Y Avg.</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="chart_chk_area_ty02">
+                                                    <span class="chart_chk_ty02">
+                                                        <input type="radio" name="chart_chk_ty02_02" id="cr_02" checked="checked">
+                                                        <label for="cr_02">CR</label>
+                                                    </span>
+                                                    <span class="chart_chk_ty02">
+                                                        <input type="radio" name="chart_chk_ty02_02" id="ca_02">
+                                                        <label for="ca_02">CA</label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="main_chart_wrap">
+                                            <canvas id="barLineChart3"></canvas>
+                                        </div>
+                                    </li>
+
+                                    <li>
+                                        <div class="report_sub_title_area">
+                                            <div class="left">
+                                                <h4 class="title">주요품목 Top 5</h4>
+                                            </div>
+                                            <div class="right"></div>
+                                        </div>
+
+                                        <div class="main_chart_wrap d_flex">
+                                            <div class="left">
+                                                <div class="report_sm_title_area">
+                                                    <div class="left">
+                                                        <strong class="sm_title">계약금액</strong>
+                                                    </div>
+                                                    <div class="right"></div>
+                                                </div>
+                                        
+                                                <div class="company_list_area">
+                                                    <ul class="company_list">
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK AX SK AX SK AX</span>
+                                        
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="60"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">6,000,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 하이닉스</span>
+                                        
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="15"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">1,500,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 이노베이션</span>
+                                        
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="8"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">800,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 텔레콤</span>
+                                        
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="6"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 네트웍스</span>
+                                        
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="4"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="right">
+                                                <div class="report_sm_title_area">
+                                                    <div class="left">
+                                                        <strong class="sm_title">계약건</strong>
+                                                    </div>
+                                                    <div class="right"></div>
+                                                </div>
+
+                                                <div class="company_list_area">
+                                                    <ul class="company_list">
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 에코플랜트</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="40"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">4,000,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 텔레콤</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="32"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">320,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 스퀘어</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="3"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                            <span class="price"><span class="counter">300,000,000,000</span>원</span>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK AX</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="2"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="contract_info">
+                                                                <span class="comp_name">SK 온</span>
+                                                
+                                                                <div class="progress_chart_sm">
+                                                                    <div class="bar_bg">
+                                                                        <div class="progress_bar" data-width="1"></div>
+                                                                    </div>
+                                                                    <span class="val"><strong class="counter"></strong>%</span>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- //container : E -->
+
+            <!-- footer_wrap : S -->
+            <footer class="footer_wrap">
+                <div class="inner">
+                    <div class="footer_top">
+                        <ul class="footer_info">
+                            <li><span>우편번호 : 04539</span></li>
+                            <li><span>서울특별시 중구 을지로65(을지로2가) SK T-타워 SK텔레콤(주)</span></li>
+                            <li><span>대표이사 사장 : 유영상</span></li>
+                        </ul>
+                        <ul class="footer_info">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이메일주소무단수집거부</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_copy">
+                        <p>COPYRIGHT © SK TELECOM. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- //footer_wrap : E -->
+        </div>
+        <!-- //wrap : E -->
+
+
+
+
+        <script>
+
+            // bubble chart : S
+            const bubbleData  = {
+                datasets: [
+                    {
+                        label: 'YoY',
+                        data: [{ x: -1, y: 0, r: 6 }],  // 왼쪽 (음수 x좌표)
+                        backgroundColor: '#FF404E'
+                    },
+                    {
+                        label: '3Y Avg',
+                        data: [{ x: 1.5, y: 0, r: 6 }],  // 오른쪽 (양수 x좌표)
+                        backgroundColor: '#39D04F'
+                    },
+                    {
+                        label: 'Baseline',
+                        data: [{ x: 0, y: 0, r: 6 }],
+                        backgroundColor: '#4C3E8E'
+                    }
+                ]
+            };
+
+
+            const bubbleConfig = {
+                type: 'bubble',
+                data: bubbleData,
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            min: -2,
+                            max: 2,
+                            display: false,
+                            ticks: { display: false },
+                        },
+                        y: {
+                            min: -1,
+                            max: 1,
+                            display: false,
+                        }
+                    },
+
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label;
+                                const value = context.raw.r * 1;
+                                return `${label}: ${value}%`;
+                            }
+                            }
+                        }
+                    }
+                },
+
+                plugins: [
+                    {
+                        id: 'backgroundBar',
+                        beforeDraw: (chart) => {
+                            const { ctx, chartArea: { left, right }, scales: { y } } = chart;
+                            const barHeight = 14;
+                            const yPosition = y.getPixelForValue(0) - barHeight / 2;
+
+                            ctx.save();
+                            ctx.fillStyle = '#ffffff';
+                            ctx.beginPath();
+                            ctx.roundRect(left, yPosition, right - left, barHeight, 7);
+                            ctx.fill();
+                            ctx.restore();
+                        }
+                    },
+                    {
+                        id: 'centerLine',
+                        beforeDraw(chart) {
+                            const { ctx, chartArea: { top, bottom }, scales: { x } } = chart;
+                            const cx = x.getPixelForValue(0);
+
+                            const shorterTop = top + 3; // 가운데 선 길이 조절
+                            const shorterBottom = bottom - 3;
+
+                            ctx.save();
+                            ctx.beginPath();
+                            ctx.setLineDash([]);
+                            ctx.strokeStyle = 'rgba(76, 62, 142, 0.3)';
+                            ctx.lineWidth = 1;
+                            ctx.moveTo(cx, shorterTop);
+                            ctx.lineTo(cx, shorterBottom);
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                    }
+                ]
+            };
+
+            const bubbleConfigTy02 = {
+                type: 'bubble',
+                data: bubbleData,
+                options: {
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            min: -2,
+                            max: 2,
+                            display: false,
+                            ticks: { display: false },
+                        },
+                        y: {
+                            min: -1,
+                            max: 1,
+                            display: false,
+                        }
+                    },
+
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                            label: function(context) {
+                                const label = context.dataset.label;
+                                const value = context.raw.r * 1;
+                                return `${label}: ${value}%`;
+                            }
+                            }
+                        }
+                    }
+                },
+
+                plugins: [
+                    {
+                        id: 'backgroundBar',
+                        beforeDraw: (chart) => {
+                            const { ctx, chartArea: { left, right }, scales: { y } } = chart;
+                            const barHeight = 14;
+                            const yPosition = y.getPixelForValue(0) - barHeight / 2;
+
+                            ctx.save();
+                            ctx.fillStyle = '#EBE9F7';
+                            ctx.beginPath();
+                            ctx.roundRect(left, yPosition, right - left, barHeight, 7);
+                            ctx.fill();
+                            ctx.restore();
+                        }
+                    },
+                    {
+                        id: 'centerLine',
+                        beforeDraw(chart) {
+                            const { ctx, chartArea: { top, bottom }, scales: { x } } = chart;
+                            const cx = x.getPixelForValue(0);
+
+                            const shorterTop = top + 3; // 가운데 선 길이 조절
+                            const shorterBottom = bottom - 3;
+
+                            ctx.save();
+                            ctx.beginPath();
+                            ctx.setLineDash([]);
+                            ctx.strokeStyle = 'rgba(76, 62, 142, 0.3)';
+                            ctx.lineWidth = 1;
+                            ctx.moveTo(cx, shorterTop);
+                            ctx.lineTo(cx, shorterBottom);
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                    }
+                ]
+            };
+
+
+            new Chart(document.getElementById('bubbleChart01'), bubbleConfig);
+            new Chart(document.getElementById('bubbleChart02'), bubbleConfig);
+            new Chart(document.getElementById('bubbleChart03'), bubbleConfig);
+            new Chart(document.getElementById('bubbleChart04'), bubbleConfigTy02);
+            new Chart(document.getElementById('bubbleChart05'), bubbleConfig);
+            new Chart(document.getElementById('bubbleChart06'), bubbleConfig);
+            // bubble chart : E
+
+
+
+
+            // bar&line chart : S
+            const labels = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
+
+            const barLineData = {
+                labels,
+                datasets: [
+                    {
+                        type: 'bar',
+                        label: '25년',
+                        backgroundColor: '#4C3E8E',
+                        borderColor: '#4C3E8E',
+                        borderRadius: 2,
+                        barPercentage: 0.75,
+                        categoryPercentage: 0.6,
+                        data: [14000, 23000, 27000, 6000, 9000, 14000, 14000, 14000, 14000, 14000, 14000, 14000],
+                        yAxisID: 'yLeft',
+                        order: 3
+                    },
+                    {
+                        type: 'bar',
+                        label: '24년',
+                        backgroundColor: '#6A8BDD',
+                        borderColor: '#6A8BDD',
+                        borderRadius: 2,
+                        barPercentage: 0.75,
+                        categoryPercentage: 0.6,
+                        data: [14000, 14000, 25000, 7000, 9000, 14000, 14000, 14000, 14000, 14000, 14000, 14000],
+                        yAxisID: 'yLeft',
+                        order: 4
+                    },
+                    {
+                        type: 'line',
+                        label: '25년 누적',
+                        backgroundColor: '#4C3E8E',
+                        borderColor: '#4C3E8E',
+                        borderWidth: 1,
+                        data: [4, 5.8, 7, 8.2, 8, 9, 10, 10.5, 11.8, 12.5, 14.7, 14.5],
+                        yAxisID: 'yRight',
+                        order: 2
+                    },
+                    {
+                        type: 'line',
+                        label: '24년 누적',
+                        backgroundColor: '#6A8BDD',
+                        borderColor: '#6A8BDD',
+                        borderWidth: 1,
+                        borderDash: [3, 3],
+                        data: [3.9, 5.5, 6.7, 7.6, 7.6, 9, 10.4, 10.5, 11.5, 12.2, 14.6, 15.2],
+                        yAxisID: 'yRight',
+                        order: 1
+                    }
+                ]
+            };
+
+            const barLineConfig = {
+                type: 'bar',
+                data: barLineData,
+                options: {
+                    maintainAspectRatio: false,
+                    elements: {
+                        line: {
+                            tension: 0.4
+                        },
+                        point: {
+                            radius: 0,
+                            hitRadius: 5,
+                            hoverRadius: 5,
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            align: 'end',
+                            labels: {
+                                boxWidth: 8,
+                                boxHeight: 8,
+                                padding: 17,
+                                usePointStyle: true,
+                                font: { 
+                                    family: 'pretendard',
+                                    size: 13,
+                                    weight: '500'
+                                },
+                                generateLabels: function(chart) {
+                                    return chart.data.datasets.map((dataset, i) => ({
+                                        text: dataset.label,
+                                        fillStyle: dataset.backgroundColor,
+                                        strokeStyle: dataset.borderColor,
+                                        lineWidth: dataset.borderWidth,
+                                        hidden: !chart.isDatasetVisible(i),
+                                        index: i,
+                                        pointStyle: dataset.type === 'line' ? 'line' : 'rectRounded',
+                                        fontColor: '#666',
+                                        lineDash: dataset.borderDash || [],
+                                    }));
+                                }
+                            },
+                            onClick: function(e, legendItem, legend) {
+                                const index = legendItem.index;
+                                const chart = legend.chart;
+                                chart.setDatasetVisibility(index, !chart.isDatasetVisible(index));
+                                chart.update();
+                            },
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'category',
+                            grid: { 
+                                drawOnChartArea: false,
+                                drawTicks: false
+                            },
+                            ticks: {
+                                font: { 
+                                    family: 'pretendard',
+                                    size: 14,
+                                    weight: '400'
+                                },
+                                color: '#76757B',
+                                padding: 8
+                            }
+                        },
+                        yLeft: {
+                            display: true,
+                            min: 0,
+                            max: 50000,
+                            border: {
+                                display: false
+                            },
+                            grid: {
+                                drawTicks: false,
+                                color: 'transparent',
+                            },
+                            ticks: {
+                                stepSize: 10000,
+                                font: {
+                                    family: 'pretendard',
+                                    size: 13,
+                                    weight: '400'
+                                },
+                                color: '#999'
+                            }
+                        },
+                        yRight: {
+                            display: true,
+                            position: 'right',
+                            min: 0,
+                            max: 20,
+                            border: {
+                                display: false
+                            },
+                            grid: {
+                                drawOnChartArea: false,
+                                drawTicks: false
+                            },
+                            ticks: {
+                                stepSize: 4,
+                                font: {
+                                    family: 'pretendard',
+                                    size: 13,
+                                    weight: '400'
+                                },
+                                color: '#999'
+                            }
+                        }
+                    }
+                },
+                plugins: [
+                    {
+                        id: 'yleftDashedLinesBelow',
+                        beforeDatasetsDraw: (chart) => {
+                            const ctx = chart.ctx;
+                            const yScale = chart.scales.yLeft;
+                            const xScale = chart.scales.x;
+                            ctx.save();
+                            ctx.strokeStyle = '#E2E2E2';
+                            ctx.setLineDash([3, 3]);
+                            ctx.lineWidth = 1;
+
+                            const stepSize = yScale.options.ticks.stepSize || 10;
+                            const min = yScale.min;
+                            const max = yScale.max;
+
+                            for (let val = min + stepSize; val <= max; val += stepSize) {
+                                const y = yScale.getPixelForValue(val);
+                                ctx.beginPath();
+                                ctx.moveTo(xScale.left, y);
+                                ctx.lineTo(xScale.right, y);
+                                ctx.stroke();
+                            }
+                            ctx.restore();
+                        }
+                    },
+                    {
+                        id: 'unitLabel',
+                        afterDraw(chart) {
+                            const ctx = chart.ctx;
+                            const yScale = chart.scales.yLeft;
+                            const xScale = chart.scales.x;
+
+                            ctx.save();
+                            ctx.font = "13px pretendard";
+                            ctx.fillStyle = "#999";
+                            ctx.textBaseline = "top";
+
+                            ctx.fillText('억', xScale.left - 15, yScale.bottom + 11);
+
+                            ctx.restore();
+                        }
+                    }
+                ]
+            };
+
+            new Chart(document.getElementById('barLineChart'), barLineConfig);
+            new Chart(document.getElementById('barLineChart2'), barLineConfig);
+            new Chart(document.getElementById('barLineChart3'), barLineConfig);
+            // bar&line chart : E
+
+
+
+
+
+            // bar chart : S
+            const bardata = {
+                labels: ['계약금액','계약건','입찰비율'],
+                datasets: [{
+                    data: [29, -16, 64, 46, -45, -28],
+                    backgroundColor: ['#3617CE','#DD6AAF','#93A0D9'],
+                    borderRadius: 10,
+                    barPercentage: 0.8,
+                    categoryPercentage: 0.9
+                }]
+            };
+
+            const hiddenBars = [false, false, false, false, false, false];
+
+            const barconfig = {
+                type: 'bar',
+                data: bardata,
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            align: 'center', // 2025-11-18 수정
+                            position: 'top',
+                            labels: {
+                                boxWidth: 8,
+                                boxHeight: 8,
+                                padding: 17,
+                                usePointStyle: true,
+                                font: {
+                                    family: 'pretendard',
+                                    size: 13,
+                                    weight: '500'
+                                },
+                                generateLabels: (chart) => {
+                                    return chart.data.labels.map((label, i) => ({
+                                        text: label,
+                                        fillStyle: chart.data.datasets[0].backgroundColor[i],
+                                        strokeStyle: chart.data.datasets[0].backgroundColor[i],
+                                        index: i,
+                                        hidden: hiddenBars[i],
+                                        datasetIndex: 0,
+                                        pointStyle: 'rectRounded',
+                                        fontColor: '#666',
+                                    }));
+                                }
+                            },
+                            onClick: (e, legendItem, legend) => {
+                                const index = legendItem.index;
+                                const meta = legend.chart.getDatasetMeta(legendItem.datasetIndex);
+
+                                hiddenBars[index] = !hiddenBars[index];
+                                meta.data[index].hidden = hiddenBars[index];
+
+                                legend.chart.update();
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            stacked: false,
+                            grid: {
+                                drawOnChartArea: false,
+                                drawTicks: false
+                            },
+                            ticks: {
+                                display: false
+                            }
+                        },
+                        y: {
+                            suggestedMax: 100,
+                            grid: {
+                                drawOnChartArea: false,
+                                drawTicks: false,
+                                drawBorder: false
+                            },
+                            border: {
+                                display: false
+                            },
+                            ticks: {
+                                stepSize: 20,
+                                font: {
+                                    family: 'Pretendard',
+                                    size: 13,
+                                    weight: '400'
+                                },
+                                color: '#999'
+                            }
+                        }
+                    },
+                },
+                plugins: [
+                    {
+                        id: 'yDashedLinesBelowBars',
+                        beforeDatasetsDraw: (chart) => {
+                            const ctx = chart.ctx;
+                            const yScale = chart.scales.y;
+                            const xScale = chart.scales.x;
+                            const stepSize = yScale.options.ticks.stepSize || 20;
+                            const min = yScale.min;
+                            const max = yScale.max;
+
+                            ctx.save();
+                            ctx.strokeStyle = '#E2E2E2';
+                            ctx.setLineDash([3, 3]);
+                            ctx.lineWidth = 1;
+
+                            for (let val = min + stepSize; val <= max; val += stepSize) {
+                                const y = yScale.getPixelForValue(val);
+                                ctx.beginPath();
+                                ctx.moveTo(xScale.left, y);
+                                ctx.lineTo(xScale.right, y);
+                                ctx.stroke();
+                            }
+                            ctx.restore();
+                        }
+                    }
+                ]
+            };
+
+            new Chart(document.getElementById('barChart'), barconfig);
+            // bar chart : E
+
+
+
+
+
+            // bar chart2 : S
+            const bardata2 = {
+                labels: ['절감액', '절감율', 'EA'],
+                datasets: [{
+                    data: [46, -45, -28],
+                    backgroundColor: ['#1782CE', '#3BA39A', '#58BC5E'],
+                    borderRadius: 10,
+                    barPercentage: 0.72,
+                    categoryPercentage: 0.9
+                }]
+            };
+
+            const hiddenBars2 = [false, false, false, false, false, false];
+
+            const barconfig2 = {
+                type: 'bar',
+                data: bardata2,
+                options: {
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            align: 'center', // 2025-11-18 수정
+                            position: 'top',
+                            labels: {
+                                boxWidth: 8,
+                                boxHeight: 8,
+                                padding: 17,
+                                usePointStyle: true,
+                                font: {
+                                    family: 'pretendard',
+                                    size: 13,
+                                    weight: '500'
+                                },
+                                generateLabels: (chart) => {
+                                    return chart.data.labels.map((label, i) => ({
+                                        text: label,
+                                        fillStyle: chart.data.datasets[0].backgroundColor[i],
+                                        strokeStyle: chart.data.datasets[0].backgroundColor[i],
+                                        index: i,
+                                        hidden: hiddenBars2[i],
+                                        datasetIndex: 0,
+                                        pointStyle: 'rectRounded',
+                                        fontColor: '#666',
+                                    }));
+                                }
+                            },
+                            onClick: (e, legendItem, legend) => {
+                                const index = legendItem.index;
+                                const meta = legend.chart.getDatasetMeta(legendItem.datasetIndex);
+
+                                hiddenBars2[index] = !hiddenBars2[index];
+                                meta.data[index].hidden = hiddenBars2[index];
+
+                                legend.chart.update();
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            stacked: false,
+                            grid: {
+                                drawOnChartArea: false,
+                                drawTicks: false
+                            },
+                            ticks: {
+                                display: false
+                            },
+                        },
+                        y: {
+                            suggestedMax: 100,
+                            grid: {
+                                drawOnChartArea: false,
+                                drawTicks: false,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                stepSize: 20,
+                                font: {
+                                    family: 'Pretendard',
+                                    size: 13,
+                                    weight: '400'
+                                },
+                                color: '#999',
+                                callback: function () {
+                                    return '';
+                                }
+                            }
+                        }
+                    },
+                },
+                plugins: [
+                    {
+                        id: 'yDashedLinesBelowBars',
+                        beforeDatasetsDraw: (chart) => {
+                            const ctx = chart.ctx;
+                            const yScale = chart.scales.y;
+                            const xScale = chart.scales.x;
+                            const stepSize = yScale.options.ticks.stepSize || 20;
+                            const min = yScale.min;
+                            const max = yScale.max;
+
+                            ctx.save();
+                            ctx.strokeStyle = '#E2E2E2';
+                            ctx.setLineDash([3, 3]);
+                            ctx.lineWidth = 1;
+
+                            for (let val = min + stepSize; val <= max; val += stepSize) {
+                                const y = yScale.getPixelForValue(val);
+                                ctx.beginPath();
+                                ctx.moveTo(xScale.left, y);
+                                ctx.lineTo(xScale.right, y);
+                                ctx.stroke();
+                            }
+                            ctx.restore();
+                        }
+                    }
+                ]
+            };
+
+            new Chart(document.getElementById('barChart2'), barconfig2);
+            // bar chart2 : E
+
+        </script>
+    </body>
+</html>

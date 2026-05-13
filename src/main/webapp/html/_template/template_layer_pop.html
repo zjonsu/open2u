@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+    <html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css">
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css">
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css">
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css">
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <style>
+            xmp {
+                display: block;
+                border: 1px dashed #ddd;
+                background: #f7f8fa;
+                padding: 0 20px 0;
+                font-size: 12px;
+                font-family: "dotum";
+                letter-spacing: 0;
+                color: #666;
+                line-height: 20px;
+                margin: 10px 0 30px;
+                overflow: auto;
+                max-height:500px;
+            }
+            .sub_title_area{ margin: 30px 0 15px 0; }
+        </style>
+        <!-- <xmp></xmp> -->
+    </head>
+
+    <body>
+        <!-- CMN98P001X01.jsp B-1 : S -->
+        <div id="popUp02" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">조회조건</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">진행상태</h3>
+                    <div class="guidance_box">
+                        <ol class="guidance_list_ty01">
+                            <li>
+                                <span class="numb">1. 작성중 :</span>
+                                <p class="desc">구매요청부서에서 구매요청서를 입력하고 저장한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">2. 결제중 :</span>
+                                <p class="desc">
+                                    구매요청서를 전자결재로 결재전송했거나, 결재권자가 반려한 상태 <br>
+                                    <span class="desc_point">※ 전자결재에서 결재권자 선택 후 결재품의 필요</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">3. 대행 :</span>
+                                <p class="desc">구매요청대행이 완료된 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">4. 사전검토 :</span>
+                                <p class="desc">구매요청에 대한 법무/구매 사전 Issue 검토 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">5. 반송 :</span>
+                                <p class="desc">구매요청서를 구매부서에 반송한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">6. 접수 :</span>
+                                <p class="desc">구매부서에서 구매요청서를 접수한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">7. 구매진행 :</span>
+                                <p class="desc">구매담당자가 공급업체와 구매계약 진행 중인 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">8. 계약체결 :</span>
+                                <p class="desc">구매계약에 대해 공급업체에서 전자서명 완료한 상태</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp B-1 : E -->
+
+         <!-- GRT01P001X04.jsp : S -->
+         <div id="popUp03" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>중요</h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <div class="guidance_box">
+                        <p class="guidance_p desc_point">
+                            공급사가 검사요청시 입력한 산업안전보건관리비 사용금액 및 증빙자료(산안비 사용내역서 등)를 반드시 확인/검증 바랍니다.
+                        </p>
+                    </div>
+                    <div class="lay_pop_btn">
+                        <button type="button" class="btn c_type07">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // GRT01P001X04.jsp : E -->
+
+        <!-- POR03N010X13.jsp : S -->
+        <div id="popUp04" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>외부업체 전송 파일 주의사항</h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <div class="guidance_box">
+                        <p class="guidance_p">
+                            납품 지시 작성 중 외부 업체 전송파일 첨부 시 내부 민감자료*가 첨부되지 않도록 확인해 주시기 바랍니다.
+                        </p>
+                        <span class="guidance_span desc_point">* 품의서, 해당업체 납품지시 근거자료 외 타업체 납품지시 관련 자료, 내부 보고서 등</span>
+                    </div>
+                    <div class="lay_pop_btn">
+                        <button type="button" class="btn c_type07">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // POR03N010X13.jsp : E -->
+
+        <!-- CMN98P001X01.jsp C-1 : S -->
+        <div id="popUp05" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">조회조건</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">검사부서</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02">
+                            <li>
+                                <span class="numb">접수전 :</span>
+                                <p class="desc">공급업체가 검사요청한 건을 검사부서가 접수하지 않은 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">작성중 :</span>
+                                <p class="desc">공급업체가 검사요청한 건을 검사부서에서 접수하고 저장한 상태 사업부서에서 자체검사하고 저장한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">취소 :</span>
+                                <p class="desc_point">결재완료된 검사조서를 구매/회계부서에서 반송하고 세금계산서가 취소된 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">결재중 :</span>
+                                <p class="desc">
+                                    검사조서를 전자결재로 결재전송 했거나, 결재권자가 반려한 상태 <br>
+                                    <span class="desc_under">※ 전자결재에서 결재권자 선택 후 결재품의 필요</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">결재완료 :</span>
+                                <p class="desc">결재전송한 검사조서를 결재권자가 승인한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">자체검사 :</span>
+                                <p class="desc">
+                                    검사부서에서 직접 검사조서 작성이 가능한 계약 상태 <br>
+                                    <span class="desc_under">※ 거래처가 개인 혹은 해외사업자인 경우 등 검사요청 불가한/어려운 계약</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">전표작성 :</span>
+                                <p class="desc">결재완료된 검사조서를 구매부서에서 전표로 작성중/작성완료한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">업체반송 :</span>
+                                <p class="desc">업체에서 작성한 검사요청서를 반송한 사태</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp C-1 : E -->
+
+        <!-- CMN98P001X01.jsp C-2 : S -->
+        <div id="popUp06" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">조회조건</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">진행상태</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02">
+                            <li>
+                                <p class="desc">로그인한 사용자의 소속팀이 기본 조건, 소속본부내의 팀까지 조회 가능</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp C-2 : E -->
+
+        <!-- CMN98P001X01.jsp N-1 : S -->
+        <div id="popUp07" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">조회조건</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">진행상태</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02">
+                            <li>
+                                <span class="numb">작성중 :</span>
+                                <p class="desc">납품지시서를 작성하고 저장한 상태 (<span class="desc_point">작성중인 시점에 투자예산 반영함</span>)</p>
+                            </li>
+                            <li>
+                                <span class="numb">결재중 :</span>
+                                <p class="desc">
+                                    납품지시서를 전자결재로 전송하거나 결재권자가 전자결재내에서 반려한 상태 <br>
+                                    <span class="desc_under">※ 전자결재에서 결재권자 선택 후 결재품의 필요</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">결재완료 :</span>
+                                <p class="desc">결재권자가 납품지시서를 승인한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">동의완료 :</span>
+                                <p class="desc">
+                                    공급업체가 납품지시서를 접수하고 계약에 동의한 상태
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">수정요청 :</span>
+                                <p class="desc">
+                                    공급업체가 납품지시서를 접수하지 않고 수정을 요청한 상태
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">변경요청 :</span>
+                                <p class="desc">
+                                    공급업체가 납품지시서에 동의한 이후에 변경을 요청한 상태
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">수정반송 :</span>
+                                <p class="desc">공급업체가 수정요청한 납품지시서를 반송한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">변경반송 :</span>
+                                <p class="desc">공급업체가 변경요청한 납품지시서를 반송한 상태</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp N-1 : E -->
+
+        <!-- CMN98P001X01.jsp Z-1 : S -->
+        <div id="popUp08" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">화면기능</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">검사요청시 제한사항은 다음과 같습니다.</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02">
+                            <li>
+                                <span class="numb">1 :</span>
+                                <p class="desc">장비/물품과 공사/용역은 분리하여 검사요청</p>
+                            </li>
+                            <li>
+                                <span class="numb">2 :</span>
+                                <p class="desc">
+                                    계산서 발행 아이템과 세금계산서 발행 아이템은 분리하여 검사요청
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">3 :</span>
+                                <p class="desc">
+                                    납품일자와 플랜트가 동일한 아이템은 통합하여 검사요청(품질보증 프로세스 관련) <br>
+                                    <span class="desc_point">※ 아이템을 분리하여 납품이 필요한 경우는 납품일자를 다르게 변경해야 함</span>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp Z-1 : E -->
+
+        <!-- CMN98P001X01.jsp F-1 : S -->
+        <div id="popUp09" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">입력항목</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">검사요청정보/기본정보</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02 nowrap">
+                            <li>
+                                <span class="numb">검사요청일자 :</span>
+                                <p class="desc"> SK 텔레콤 검사담당자가 검사를 완료하고 검사조서에 입력할 '검사일자'</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp F-1 : E -->
+
+        <!-- CMN98P001X01.jsp F-2 : S -->
+        <div id="popUp10" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">입력항목</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">기본정보</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02 nowrap">
+                            <li>
+                                <span class="numb">검사조서건명 :</span>
+                                <p class="desc">검사요청건명으로 기본 입력, 수정 가능</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp F-2 : E -->
+
+        <!-- CMN98P001X01.jsp F-3 : S -->
+        <div id="popUp11" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">입력항목</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">기본정보</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02 nowrap">
+                            <li>
+                                <span class="numb">검사완료일자 :</span>
+                                <p class="desc">검사완료하고 납품받는 날짜 입력<strong>(세금계산서 증빙일과 동일)</strong></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp F-3 : E -->
+
+        <!-- CMN98P001X01.jsp F-4 : S -->
+        <div id="popUp12" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">입력항목</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">기본정보</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02">
+                            <li>
+                                <span class="numb">검사부서 :</span>
+                                <p class="desc">검사담당자가 속한 부서</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp F-4 : E -->
+
+        <!-- CMN98P001X01.jsp F-5 : S -->
+        <div id="popUp13" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">입력항목</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">기본정보</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02 nowrap">
+                            <li>
+                                <span class="numb">검사책임자 :</span>
+                                <p class="desc">검사부서의 팀장</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp F-5 : E -->
+
+        <!-- CMN98P001X01.jsp F-7 : S -->
+        <div id="popUp14" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">화면기능</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">검사조서작성시 주의사항은 다음과 같습니다.</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02">
+                            <li>
+                                <span class="numb">1 :</span>
+                                <p class="desc">장비/물품과 공사/용역은 분리하여 검사조서 작성</p>
+                            </li>
+                            <li>
+                                <span class="numb">2 :</span>
+                                <p class="desc">계산서 발행 아이템과 세금계산서 발행 아이템은 분리하여 검사조서 작성(전표)</p>
+                            </li>
+                            <li>
+                                <span class="numb">3 :</span>
+                                <p class="desc">
+                                    납품일자와 플랜트가 동일한 아이템은 통합하여 검사조서 작성(품질보증 프로세스)
+                                    <span class="desc_point">※ 아이템을 분리하여 납품이 필요한 경우는 납품일자를 다르게 변경해야 함</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">4 :</span>
+                                <p class="desc">NW분의 예산처리구분 P인 공사/용역은 중도금 처리가 불가능(사전 공정분리 필요)</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp F-7 : E -->
+
+        <!-- CMN98P001X01.jsp B-2 : S -->
+        <div id="popUp15" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">요청형태</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">진행상태</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty02 nowrap">
+                            <li>
+                                <span class="numb">1. 정상 :</span>
+                                <p class="desc">예산품의정보 입력하고 거래품목이 위임품목이 아닌 구매요청 형태</p>
+                            </li>
+                            <li>
+                                <span class="numb desc_point02">2. 위임 :</span>
+                                <p class="desc"><span class="desc_point02">거래품목이 위임품목인 구매요청서의 상태 (연구용역 등)</span></p>
+                            </li>
+                            <li>
+                                <span class="numb">3. 사전 :</span>
+                                <p class="desc">
+                                    <span class="desc_point">예산품의정보 입력하지 않은 구매요청서 형태 (계약체결 불가능)</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">4. 사전>정상 :</span>
+                                <p class="desc">사전구매요청에 대해 구매요청부서에서 예산품의정보를 입력한 형태</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp B-2 : E -->
+
+        <!-- CMN98P001X01.jsp B-3 : S -->
+        <div id="popUp16" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">예산/품목정보</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">예산승인여부</h3>
+                    <div class="guidance_box">
+                        <p class="guidance_p">예산품의가 완료된 것은 "정상" 선택하고 예산품의 문서 필수 첨부 예산품의가 완료되지 않은 건은 "사전" 선택</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp B-3 : E -->
+
+        <!-- CMN98P001X01.jsp B-4(out) : S -->
+        <div id="popUp17" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">예산/품목정보</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">품목상세정보</h3>
+                    <div class="guidance_box">
+                        <p class="guidance_p">"항목추가" 버튼을 눌러서 구매요청 할 Item 정보를 입력해야합니다. (Item명, 수량, 단가, 납품기한 필수입력)</p>
+                        <span class="guidance_span desc_point">※ 세부 Item분류가 정확하지 않을경우 대략적인 정보만 입력하셔도 무방 합니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp B-4(out) : E -->
+
+        <!-- CMN98P001X01.jsp B-4(in) : S -->
+        <div id="popUp18" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말</h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">품목상세정보</h3>
+                    <div class="guidance_box">
+                        <p class="guidance_p">"항목추가" 버튼을 눌러서 구매요청 할 Item 정보를 입력해야합니다. (Item명, 수량, 단가, 납품기한 필수입력)</p>
+                        <ol class="guidance_list_ty02 nowrap">
+                            <li>
+                                <span class="numb">1. 소싱그룹 :</span>
+                                <p class="desc">
+                                    아이템을 분류하는 단위 (ex. IT장비, 컨설팅, OA기기 등)
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">2. Item코드 :</span>
+                                <p class="desc">
+                                    아이템을 검색하여 추가, 혼동될 경우 비워도 무방함.
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">3. Item명 :</span>
+                                <p class="desc">
+                                    구매요청 품목 상세내역 입력 (ex. 32인치 모니터 등)
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">4. 수량 :</span>
+                                <p class="desc">
+                                    물품/장비는 수량 입력 공사/용역은 1 입력 후 단가에 총액 입력
+                                </p>
+                            </li>
+                        </ol>
+                        <span class="guidance_span desc_point">※ 세부 Item분류가 정확하지 않을경우 대략적인 정보만 입력하셔도 무방 합니다.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp B-4(in) : E -->
+
+        <!-- CMN98P001X01.jsp B-5 : S -->
+        <div id="popUp19" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:700px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">예산/품목정보</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">예산상세정보</h3>
+                    <div class="guidance_box">
+                        <p class="guidance_p">
+                            1. 회계처리구분 : 운영예산 K, 투자예산 A 선택. (P, Q는 NW부문 전용)
+                        </p>
+                        <p class="guidance_p">
+                            <span class="desc_point">2. 운영예산 K의 경우, 예산관련정보는 본부 예산담당자에게 문의 하셔야 합니다.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp B-5 : E -->
+
+        <!-- CMN98P001X01.jsp B-6 : S -->
+        <div id="popUp20" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:700px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">기타정보</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">연관정보</h3>
+                    <ol class="guidance_list_ty03">
+                        <li>
+                            <span class="guidance_span02">1. 고객정보영향평가</span>
+                            <p class="guidance_p02">
+                                : 고객정보를 이용/취급하는 새로운 시스템/서비스를 개발하는 경우에 발생할 수 있는 개인 정보 침해 요인을 사전에 분석하고 방지대책 수립/이행 여부를 관리하기 위하여 사전에 등록된 건에 한하여 구매요청이 가능하도록 함. <br>
+                                <span class="desc_point">해당 프로젝트의 승인코드(PIA코드)를 검색하여 입력.</span> <br>
+                                (T-net > 정보보안포탈 > 고객정보영향평가 에서 신청하시면 됩니다.)
+                            </p>
+                        </li>
+                        <li>
+                            <span class="guidance_span02">2. R＆D프로젝트명</span>
+                            <p class="guidance_p02">
+                                : 전사 기술원의 개발프로젝트를 통합관리하기 위하여 R2D2시스템에 등록된 프로젝트에 한하여 구매요청이 가능하도록 함. 해당 프로젝트의 등록번호를 검색하여 입력.
+                            </p>
+                        </li>
+                        <li>
+                            <span class="guidance_span02">3. 영업프로젝트 번호</span>
+                            <p class="guidance_p02">
+                                : 매출연동계약의 구매요청의 경우, 영업프로젝트번호를 필수로 입력해야 합니다. <br>
+                                (문의 : 기업사업전략팀)
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp B-6 : E -->
+
+        <!-- CMN98P001X01.jsp I-1 : S -->
+        <div id="popUp21" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">조회조건</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">진행상태</h3>
+                    <div class="guidance_box">
+                        <ol class="guidance_list_ty02 nowrap">
+                            <li>
+                                <span class="numb">미작성 :</span>
+                                <p class="desc">작성 대상이면서 아직 작성치 않은 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">작성중 :</span>
+                                <p class="desc">
+                                    담당자가 Open2U내 작성 후 저장만 한 상태
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">미결재 :</span>
+                                <p class="desc">
+                                    Open2U내 결재라인 지정화면에서 결재전송을 하지 않은 상태 <br>
+                                    <span class="desc_under">※ ERP 임시전표 생성된 상태</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">반려/결재실패 :</span>
+                                <p class="desc">전자결재에서 해당 전표를 반려하거나, 전자결재 시스템으로 전송 오류</p>
+                            </li>
+                            <li>
+                                <span class="numb">결재중 :</span>
+                                <p class="desc">전자결재 시스템에서 결재 진행중인 경우</p>
+                            </li>
+                            <li>
+                                <span class="numb">결재완료 :</span>
+                                <p class="desc">회계부서 최종 결재 완료된 상태</p>
+                            </li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp I-1 : E -->
+
+        <!-- CMN98P001X01.jsp I-1 : S -->
+        <div id="popUp22" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">조회조건</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">진행상태</h3>
+                    <div class="guidance_box">
+                        <ol class="guidance_list_ty02 nowrap">
+                            <li>
+                                <span class="numb">작성중(업체) :</span>
+                                <p class="desc">유보금 지급대상 이지만 공급업체가 유보금지급을 미요청한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">지급요청(업체) :</span>
+                                <p class="desc">
+                                    공급업체가 유보금지급을 요청한 상태
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">반송(사업부서) :</span>
+                                <p class="desc">
+                                    사업부서에서 유보금지급요청서를 반려한 상태
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">작성중(사업부서) :</span>
+                                <p class="desc">
+                                    공급업체가 유보금지급을 요청한 건을 작성하고 저장한 상태
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">결재중(사업부서) :</span>
+                                <p class="desc">
+                                    유보금지급요청서를 전자결재로 결재전송한 상태 <br>
+                                    <span class="desc_under">※ 전자결재에서 결재권자 선택 후 결재품의 필요</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">결재반려(사업부서) :</span>
+                                <p class="desc"><span class="desc_point">유보금지급요청서를 결재권자가 반려한 상태</span></p>
+                            </li>
+                            <li>
+                                <span class="numb">결재완료(사업부서) :</span>
+                                <p class="desc">결재전송한 유보금지급요청서를 결재권자가 승인한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">해제요청(구매부서) :</span>
+                                <p class="desc">구매부서에서 유보금지급요청서를 접수하고 해제요청한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">반송(구매부서) :</span>
+                                <p class="desc">구매부서에서 유보금지급요청서를 반려한 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">지급완료 :</span>
+                                <p class="desc">자금부서에서 유보금지급이 완료된 상태</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp I-1 : E -->
+
+        <!-- CMN98P001X01.jsp GN-2 : S -->
+        <div id="popUp23" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">조회조건</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">진행상태</h3>
+                    <div class="guidance_box">
+                        <ol class="guidance_list_ty02 nowrap">
+                            <li>
+                                <span class="numb">미작성 :</span>
+                                <p class="desc">결재된 검사조서를 전표를 작성하지 않은 상태</p>
+                            </li>
+                            <li>
+                                <span class="numb">작성중 :</span>
+                                <p class="desc">
+                                    결재된 검사조서를 전표로 작성하고 저장한 상태
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">ERP전송 :</span>
+                                <p class="desc">
+                                    <span class="desc_point">검사조서를 작성/결재전송하고 공급업체에 세금계산서 발행을 요청한 상태</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">결재중 :</span>
+                                <p class="desc">
+                                    공급업체의 세금계산서 발행이 완료되어 구매전표의 품의가 가능한 상태 <br>
+                                    <span class="desc_under">※ 전자결재에서 결재권자 선택 후 결재품의 필요</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">반려/결재실패 :</span>
+                                <p class="desc">
+                                    반려/결재전송한 구매전표를 결재권자가 반려한 상태 <br>
+                                    <span class="desc_under">취소/결재완료된 구매전표를 회계부서에서 취소한 상태</span>
+                                </p>
+                            </li>
+                            <li>
+                                <span class="numb">결재완료 :</span>
+                                <p class="desc">결재전송한 구매전표를 걸재권자가 승인한 상태</p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp GN-2 : E -->
+
+        <!-- CMN98P001X01.jsp B-7(in) : S -->
+        <div id="popUp24" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">고객정보 취급 여부</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <ol class="guidance_list_ty03 mt">
+                        <li>
+                            <span class="guidance_span02">1. 수탁사의 고객정보 취급 여부를 정확히 입력 필요</span>
+                            <p class="guidance_p02">
+                                : 고객정보 취급 계약 누락 및 관리ㆍ감독 소홀 시 정통망법 위반에 따른 시정조치 및 과징금 부과가능
+                            </p>
+                            <div class="guidance_box">
+                                <ul class="guidance_list_ty04">
+                                    <li>
+                                        <span>다음의 모든 경우는 고객정보에 해당 :</span>
+                                        <ul class="guidance_list_ty05">
+                                            <li>
+                                                <span>- 생존하는 고객을 식별할 수 있는 일체의 고유정보</span>
+                                                <div class="guidance_inner">
+                                                    <span>*예시 :</span>
+                                                    <p>
+                                                        주민번호, 카드번호, 이동전화번호, 이메일 주소, 영상, 녹취 등 그 자체만으로 특정 고객을 지칭할 수 있거나 유일한 식별값인 경우
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <span>
+                                                    - 단일 정보만으로 고객을 식별할 수 없도라도 다른 정보와 쉽게 결합하여 알아볼 수 있는 모든 정보
+                                                </span>
+                                                <div class="guidance_inner">
+                                                    <span>*예시 :</span>
+                                                    <p>
+                                                        이름+주소
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="guidance_span02">2. 고객정보를 취급하는 수탁사가 있는 경우</span>
+                            <p class="guidance_p02">
+                                : T-Legalent을 통해 정확한 취급유형(위탁처리, 제3자 제공, 병행+위탁+제3자제공 등)을 문의하여
+                                SQMS에 수탁사 상세정보 등록 진행 요망
+                            </p>
+                            <div class="guidance_box">
+                                <ul class="guidance_list_ty04">
+                                    <li>
+                                        <span>단, 아래 유형의 계약인 경우 T-Legalnet 문의 Skip 가능</span>
+                                        <ul class="guidance_list_ty05">
+                                            <li>
+                                                <span>- 취급 고객정보의 변동이 없고 이전에 고객정보 취급 유형 법무검토를 받았던 동일 반복 계약</span>
+                                                <div class="guidance_inner">
+                                                    <span>*예시 :</span>
+                                                    <p>
+                                                        19년 T월드 위탁 운영
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="guidance_span02">3. 문의사항</span>
+                            <p class="guidance_p02">
+                                : 정보보호팀 진단파트 공용번호 : 02-6060-1641
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp B-7(in) : E -->
+
+        <!-- CMN98P001X01.jsp SAFE-01(in) : S -->
+        <div id="popUp25" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:700px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>도움말 <span class="sub">도움말</span></h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="guidance_h3">산업안전보건관리비란?</h3>
+                    <div class="guidance_box">
+                        <ul class="guidance_list_ty05 m_t0">
+                            <li>
+                                <span>- 산업재해 예방을 위하여 건설공사 현장 등에서 소요되는 비용을 의미합니다.</span>
+                            </li>
+                            <li>
+                                <span>
+                                    - 안전관리자 인건비, 안전시설비, 안전보건진단 등에 사용할 수 있습니다.
+                                    (사용 가능 범위는 관련 법규 확인)
+                                </span>
+                            </li>
+                            <li>
+                                <span>
+                                    - 산업안전관리비는 적법한 증빙을 확인 후 지급되어야 합니다.
+                                    (증빙없이 100% 지급 불가)
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="guidance_box">
+                        <p class="guidance_p">산업안전보건관리비 적용요율(고용노동부 고시 제2020-63호)</p>
+                        <h4 class="guidance_h4">[적용 요율, 2022년 기준]</h4>
+                        <table class="tableStyle t_center">
+                            <colgroup>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th rowspan="2">대상액<br>공사분류</th>
+                                    <th rowspan="2">2천만원<br>~<br>5억원<br>미안(%)</th>
+                                    <th colspan="2">5억원 이상 ~ 50억원 미만</th>
+                                    <th rowspan="2">50억원 이상<br>~<br>800억원<br>미안(%)</th>
+                                    <th rowspan="2">800억원<br>이상(%)</th>
+                                </tr>
+                                <tr>
+                                    <th>비율(%)</th>
+                                    <th>기초액(원)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>일반건설공사(갑)</td>
+                                    <td>2.93</td>
+                                    <td>1.86</td>
+                                    <td>5,349,000</td>
+                                    <td>1.97</td>
+                                    <td>2.15</td>
+                                </tr>
+                                <tr>
+                                    <td>일반건설공사(을)</td>
+                                    <td>3.09</td>
+                                    <td>1.99</td>
+                                    <td>5,499,000</td>
+                                    <td>2.10</td>
+                                    <td>2.29</td>
+                                </tr>
+                                <tr>
+                                    <td>특수 및 기타 건설공사</td>
+                                    <td>1.85</td>
+                                    <td>1.20</td>
+                                    <td>3,250,000</td>
+                                    <td>1.27</td>
+                                    <td>1.38</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <ul class="guidance_list_ty05">
+                            <li>
+                                <span>※ 공사분류</span>
+                                <ul class="guidance_list_ty05">
+                                    <li>
+                                        <span>- 일반건설공사(갑) : 건축물 등의 건설공사, 도로신설공사, 기타 건설공사</span>
+                                    </li>
+                                    <li>
+                                        <span>- 일반건설공사(을) : 기계장치공사</span>
+                                    </li>
+                                    <li>
+                                        <span>- 특수 및 기타건설공사 : 준설/조경/택지조성/포장공사, 전기공사, 정보통신공사</span>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="guidance_list_ty05">
+                            <li>
+                                <span class="desc_under">공사 종류, 산안비 대상 금액 규모에 맞는 적정 요율을 확인하여 적용 필요</span>
+                            </li>
+                            <li>
+                                <span class="desc_under">적용범위 : 모든 공사 및 공사성 용역</span>
+                            </li>
+                            <li>
+                                <span class="desc_under">산업안전보건관리비 계상 금액은</span>
+                            </li>
+                        </ul>
+                        <ul class="guidance_list_ty05 flex">
+                            <li>
+                                <span>- 대상액이 구분되는 경우 :</span>
+                                <div>
+                                    {(재료비 + 직접노무비 + 지입자재비 + <span class="desc_under">사급자재비</span>) x 요율(%)}과 <br>
+                                    {(재료비 + 직접노무비 + 지입자재비) x 요율(%)} x 1.2배 중 <span class="desc_under">작은 금액을 적용</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span>- 대상액이 구분되지 않는 경우 :</span>
+                                <div>
+                                    {(총 공사비 x 70%) x 요율(%)} <br>
+                                    {(총 공사비 x 70% - <span class="desc_under">사급자재비</span>) x 요율(%)} x 1.2배 중 <span class="desc_under">작은금액을 적용</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // CMN98P001X01.jsp SAFE-01(in) : E -->
+
+        <!-- 실적증명서선택 : S -->
+        <div id="popUp28" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>실적증명서 선택</h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <div class="certifi_selection_area">
+                        <div class="comment fileupload">
+                            <div class="commnet-body">
+                                <ul>
+                                    <li>
+                                        “전기공사협회”용 실적증명서는 SKT인감을 직접날인 받아 제출해야합니다. <br>
+                                        (전자증명발급서 불인정)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <h3 class="certifi_title">증명서 구분</h3>
+                        <ul class="certifi_group">
+                            <li>
+                                <span class="rdo_sty">
+                                    <input type="radio" id="rdo01" name="rdo" checked>
+                                    <label for="rdo01">정보통신공사</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="rdo_sty">
+                                    <input type="radio" id="rdo02" name="rdo">
+                                    <label for="rdo02">건설공사</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="rdo_sty">
+                                    <input type="radio" id="rdo03" name="rdo">
+                                    <label for="rdo03">전기공사</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="rdo_sty">
+                                    <input type="radio" id="rdo04" name="rdo">
+                                    <label for="rdo04">용역이행</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="rdo_sty">
+                                    <input type="radio" id="rdo05" name="rdo">
+                                    <label for="rdo05">조달청</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="rdo_sty">
+                                    <input type="radio" id="rdo06" name="rdo">
+                                    <label for="rdo06">자사양식</label>
+                                </span>
+                            </li>
+                        </ul>
+                        <ul class="reservation_txt">
+                            <li>
+                                <input type="text" class="inpt wp100" placeholder="제출처 입력(필수)">
+                            </li>
+                            <li>
+                                <textarea rows="5" placeholder="증명서 용도 작성(필수)" style="height: 60px"></textarea>
+                            </li>
+                        </ul>
+                        <div class="lay_pop_btn">
+                            <button type="button" class="btn c_type10">취소</button>
+                            <button type="button" class="btn c_type07">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 실적증명서선택 : E -->
+
+        <!-- 방문층선택 : S -->
+        <div id="popUp29" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:380px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>방문층 선택</h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="visit_floor_title">방문하실 층을 선택해 주세요.(다중선택 가능)</h3>
+                    <ul class="visit_floor_list">
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk01">
+                                <label for="chk01">4</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk02">
+                                <label for="chk02">5</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk03">
+                                <label for="chk03">6</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk04">
+                                <label for="chk04">7</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk05">
+                                <label for="chk05">8</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk06">
+                                <label for="chk06">9</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk07">
+                                <label for="chk07">10</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk08">
+                                <label for="chk08">11</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk09">
+                                <label for="chk09">12</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk10">
+                                <label for="chk10">13</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk11">
+                                <label for="chk11">14</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk12">
+                                <label for="chk12">15</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk13">
+                                <label for="chk13">16</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk14">
+                                <label for="chk14">17</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk15">
+                                <label for="chk15">18</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk16">
+                                <label for="chk16">19</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk17">
+                                <label for="chk17">20</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk18">
+                                <label for="chk18">21</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk19">
+                                <label for="chk19">22</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk20">
+                                <label for="chk20">23</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk21">
+                                <label for="chk21">24</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk22">
+                                <label for="chk22">25</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk23">
+                                <label for="chk23">26</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk24">
+                                <label for="chk24">27</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk25">
+                                <label for="chk25">28</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk26">
+                                <label for="chk26">29</label>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk27">
+                                <label for="chk27">30</label>
+                            </span>
+                        </li>
+                        <li class="last">
+                            <span class="chk_sty">
+                                <input type="checkbox" id="chk28">
+                                <label for="chk28">체력단련실</label>
+                            </span>
+                        </li>
+                    </ul>
+                    <div class="lay_pop_btn">
+                        <button type="button" class="btn c_type10">취소</button>
+                        <button type="button" class="btn c_type07">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 실적증명서선택 : E -->
+
+        <!-- 공지사항 : S -->
+        <div id="popUp30" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div class="lay_pop_area" style="width:600px">
+                <div class="lay_pop_head">
+                    <div class="lay_pop_title">
+                        <h2>공지사항</h2>
+                    </div>
+                    <button type="button" class="lay_pop_close"></button>
+                </div>
+                <div class="lay_pop_cont">
+                    <h3 class="lay_notice_title">
+                        SK텔레콤 파트너사와 임직원 전용 <br>
+                        <span>Biz몰/안전관리용품몰 운영 안내</span>
+                    </h3>
+                    <div class="lay_notice_cont">
+                        <p class="lay_notice_desc">
+                            12.22일 기존 11번가 동반성장몰이 전용 혜택을 더욱 강화하여 Biz몰과 안전관리용품몰로 확대 Open합니다.
+                        </p>
+                        <p class="lay_notice_sdesc">
+                            ※ SK그룹 임직원 특판 가격 동일 수준으로 제공, 사업자회원의 경우 기프티콘(모바일상품권)VIP 등급 자동부여(시장가 대비 12%할인 판매)
+                        </p>
+                        <div class="lay_notice_link">
+                            <p>아래 URL을 클릭하시면 이용 안내 내용을 확인하실 수 있습니다.</p>
+                            <a href="javascript:;">https://plan.11stskljslfj/sdksdlfs/sdfjasdklf</a>
+                        </div>
+                        <p class="lay_notice_desc">
+                            인증절차 후 사업자회원(규모 무관) 및 소속 임직원 분들까지 자율로 이용 가능합니다. <br>
+                            관련 문의는 <strong>11번가 박태관님(usertest@sk.com)</strong>에게 메일 주시기 바랍니다. <br><br>
+
+                            감사합니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="lay_notice_btn">
+                    <a href="javascript:;" class="type01">하루동안 이 창을 띄우지 않습니다</a>
+                    <a href="javascript:;" class="type02">확인</a>
+                </div>
+            </div>
+        </div>
+        <!-- // 공지사항 : E -->
+
+         <!-- alert1 : S -->
+        <div id="popUp01" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div id="dialog_messagebox" data-type="dialog" class="messagebox container" style="position: fixed; z-index: 1001; opacity: 1; overflow: hidden; display: block; top: 50%; left: 50%; transform: translate(-50%,-50%);" data-converted="true">
+                <div class="messageWrap clearfix">
+                    <div class="msg_icon confirm"></div>
+                    <div class="msg_txt" id="text">
+                        지출품의서를 첨부하신 경우
+                        투자사업승인서를 첨부할 수 없습니다.
+                    </div>
+                </div>
+                <div class="msgBtnWrap">
+                    <button id="msgBoxCancel" class="btn_common black noicon">
+                        <span class="btn_icon"></span>
+                        <span class="btn_txt">취소</span>
+                    </button>
+                    <button id="msgBoxOk" class="btn_common black noicon">
+                        <span class="btn_icon"></span>
+                        <span class="btn_txt">확인</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+         <!-- // alert1 : S -->
+
+        <!-- alert1 : S -->
+        <div id="popUp26" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div id="dialog_messagebox" data-type="dialog" class="messagebox container" style="position: fixed; z-index: 1001; opacity: 1; overflow: hidden; display: block; top: 50%; left: 50%; transform: translate(-50%,-50%);" data-converted="true">
+                <div class="messageWrap clearfix">
+                    <div class="msg_icon confirm"></div>
+                    <div class="msg_txt" id="text">
+                        전송하시겠습니까?
+                        <span class="msg_stxt">
+                            결재전송 후 전자결재시스템에서 결재권자 지정 및 <br>
+                            결재요청을 하시기 바랍니다.
+                        </span>
+                    </div>
+                </div>
+                <div class="msgBtnWrap">
+                    <button id="msgBoxCancel" class="btn_common black noicon">
+                        <span class="btn_icon"></span>
+                        <span class="btn_txt">취소</span>
+                    </button>
+                    <button id="msgBoxOk" class="btn_common black noicon">
+                        <span class="btn_icon"></span>
+                        <span class="btn_txt">확인</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+         <!-- // alert1 : S -->
+
+         <!-- alert1 : S -->
+        <div id="popUp27" class="lay_pop_wrap">
+            <div class="lay_pop_bg"></div>
+            <div id="dialog_messagebox" data-type="dialog" class="messagebox container" style="position: fixed; z-index: 1001; opacity: 1; overflow: hidden; display: block; top: 50%; left: 50%; transform: translate(-50%,-50%);" data-converted="true">
+                <div class="messageWrap clearfix">
+                    <div class="msg_icon confirm"></div>
+                    <div class="msg_txt" id="text">
+                        납품지시 금액합계가 물품 금액합계와 <br>
+                        같지 않습니다.
+                        <span class="msg_stxt">
+                            \n납품지시 물품의 금액과 납품지시 금액합계 금액을
+                            확인해주세요. \n\n1.수량,금액 수정후 그리드외의 다른곳을
+                            클릭해 보세요.\n2.수량 또는 금액을 변경해보시기 바랍니다.
+                        </span>
+                    </div>
+                </div>
+                <div class="msgBtnWrap">
+                    <button id="msgBoxCancel" class="btn_common black noicon">
+                        <span class="btn_icon"></span>
+                        <span class="btn_txt">취소</span>
+                    </button>
+                    <button id="msgBoxOk" class="btn_common black noicon">
+                        <span class="btn_icon"></span>
+                        <span class="btn_txt">확인</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+         <!-- // alert1 : S -->
+
+        <!-- wrap : S -->
+        <div class="wrap">
+            <!-- header_wrap : S -->
+            <header class="header_wrap"> <!-- 메인화면에서는 class="main" 추가  -->
+                <div class="header_top">
+                    <div class="inner">
+                        <ul class="header_top_user">
+                            <li><span class="user"><i class="icons i_header_user"></i>홍길동님</span></li>
+                            <li><a href="javascript:;"><i class="icons i_header_logout"></i></a></li>
+                        </ul>
+                        <ul class="header_top_menu">
+                            <li><button type="button">업체검색시스템 <i class="icons i_header_search"></i></button></li>
+                            <li><button type="button">회의실예약 <i class="icons i_header_reserve"></i></button></li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="header_gnb">
+                    <div class="header_gnb_inner">
+                        <div class="align_lt">
+                            <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            <ul class="gnb_menu">
+                                <li>
+                                    <a href="#none">구매요청</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매요청</a></li>
+                                        <li><a href="javascript:;">계약변경요청</a></li>
+                                        <li><a href="javascript:;">납품지시</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">구매진행</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">구매접수</a></li>
+                                        <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">구매진행</a></li>
+                                        <li><a href="javascript:;">계약변경진행</a></li>
+                                        <li><a href="javascript:;">기술평가</a></li>
+                                        <li><a href="javascript:;">BMT평가</a></li>
+                                        <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                        <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약정산</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">검사조서</a></li>
+                                        <li><a href="javascript:;">보증관리</a></li>
+                                        <li><a href="javascript:;">자산관리</a></li>
+                                        <li><a href="javascript:;">지체면제</a></li>
+                                        <li><a href="javascript:;">구매전표</a></li>
+                                        <li><a href="javascript:;">유보금처리</a></li>
+                                        <li><a href="javascript:;">대금지급</a></li>
+                                        <li><a href="javascript:;">SCM 검사조서</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">계약대장</a></li>
+                                        <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                        <li><a href="javascript:;">[외자]계약대장</a></li>
+                                        <li><a href="javascript:;">납품지시내역</a></li>
+                                        <li><a href="javascript:;">실적증명발급</a></li>
+                                        <li><a href="javascript:;">하도급관리</a></li>
+                                        <li><a href="javascript:;">가격입찰</a></li>
+                                        <li><a href="javascript:;">제안평가</a></li>
+                                        <li><a href="javascript:;">기술평가개별조회</a></li>
+                                        <li><a href="javascript:;">기술평가완료현황</a></li>
+                                        <li><a href="javascript:;">RFx이력</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">결산/통계</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">미정산계약</a></li>
+                                        <li><a href="javascript:;">예산별구매현황</a></li>
+                                        <li><a href="javascript:;">소액구매현황</a></li>
+                                        <li><a href="javascript:;">Price Tracking</a></li>
+                                        <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                        <li><a href="javascript:;">구매체감도</a></li>
+                                        <li><a href="javascript:;">검사조서마감관리</a></li>
+                                        <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">공급사</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">공급사현황</a></li>
+                                        <li><a href="javascript:;">공급사 등록요청</a></li>
+                                        <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                        <li><a href="javascript:;">업체검색시스템</a></li>
+                                        <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                        <li><a href="javascript:;">연락처대장</a></li>
+                                        <li><a href="javascript:;">사전설문관리</a></li>
+                                        <li><a href="javascript:;">사전설문관리2</a></li>
+                                        <li><a href="javascript:;">방문신청관리</a></li>
+                                        <li><a href="javascript:;">비밀번호초기화</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">기준정보관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                        <li><a href="javascript:;">ITEM 현황</a></li>
+                                        <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                        <li><a href="javascript:;">품목 MASTER</a></li>
+                                        <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                        <li><a href="javascript:;">SG 관리</a></li>
+                                        <li><a href="javascript:;">업체평가기준</a></li>
+                                        <li><a href="javascript:;">구매소요계획</a></li>
+                                        <li><a href="javascript:;">상품입고예정정보</a></li>
+                                        <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                        <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                        <li><a href="javascript:;">상품재고 현황</a></li>
+                                        <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                        <li><a href="javascript:;">위젯관리</a></li>
+                                    </ul>
+                                </li>
+                                <li class="">
+                                    <a href="#none">업무지원</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">마감관리</a></li>
+                                        <li><a href="javascript:;">조직/사용자관리</a></li>
+                                        <li><a href="javascript:;">권한관리</a></li>
+                                        <li><a href="javascript:;">팝업관리</a></li>
+                                        <li><a href="javascript:;">환경설정관리</a></li>
+                                        <li><a href="javascript:;">ERP연동 관리</a></li>
+                                        <li><a href="javascript:;">게시판</a></li>
+                                        <li><a href="javascript:;">운영배포 게시판</a></li>
+                                        <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                        <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                        <li><a href="javascript:;">오프라인체결</a></li>
+                                        <li><a href="javascript:;">총괄코드관리</a></li>
+                                        <li><a href="javascript:;">사용자 검색</a></li>
+                                        <li><a href="javascript:;">관리자계약재처리</a></li>
+                                        <li><a href="javascript:;">업무처리독려</a></li>
+                                        <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site_map">
+                            <button type="button" class="sitemapBtn sitemap_event"><i class="icons i_header_sitemap"></i></button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="siteMapArea">
+                    <nav class="header_gnb">
+                        <div class="header_gnb_inner">
+                            <div class="align_lt">
+                                <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            </div>
+                            <a href="javascript:;" class="siteMapClosebtn"></a>
+                        </div>
+                    </nav>
+                    <div class="siteMap_inner">
+                        <ul class="menuArea">
+                            <li><h3>구매요청</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매요청</a></li>
+                                    <li><a href="javascript:;">계약변경요청</a></li>
+                                    <li><a href="javascript:;">납품지시</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>구매진행</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">구매접수</a></li>
+                                    <li><a href="javascript:;">경쟁입찰공고</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">구매진행</a></li>
+                                    <li><a href="javascript:;">계약변경진행</a></li>
+                                    <li><a href="javascript:;">기술평가</a></li>
+                                    <li><a href="javascript:;">BMT평가</a></li>
+                                    <li><a href="javascript:;">정보요청서(RFI)</a></li>
+                                    <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약정산</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">검사조서</a></li>
+                                    <li><a href="javascript:;">보증관리</a></li>
+                                    <li><a href="javascript:;">자산관리</a></li>
+                                    <li><a href="javascript:;">지체면제</a></li>
+                                    <li><a href="javascript:;">구매전표</a></li>
+                                    <li><a href="javascript:;">유보금처리</a></li>
+                                    <li><a href="javascript:;">대금지급</a></li>
+                                    <li><a href="javascript:;">SCM 검사조서</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">계약대장</a></li>
+                                    <li><a href="javascript:;">[아이템별]계약대장</a></li>
+                                    <li><a href="javascript:;">[외자]계약대장</a></li>
+                                    <li><a href="javascript:;">납품지시내역</a></li>
+                                    <li><a href="javascript:;">실적증명발급</a></li>
+                                    <li><a href="javascript:;">하도급관리</a></li>
+                                    <li><a href="javascript:;">가격입찰</a></li>
+                                    <li><a href="javascript:;">제안평가</a></li>
+                                    <li><a href="javascript:;">기술평가개별조회</a></li>
+                                    <li><a href="javascript:;">기술평가완료현황</a></li>
+                                    <li><a href="javascript:;">RFx이력</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>결산/통계</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">미정산계약</a></li>
+                                    <li><a href="javascript:;">예산별구매현황</a></li>
+                                    <li><a href="javascript:;">소액구매현황</a></li>
+                                    <li><a href="javascript:;">Price Tracking</a></li>
+                                    <li><a href="javascript:;">Item/Price Tracking</a></li>
+                                    <li><a href="javascript:;">구매체감도</a></li>
+                                    <li><a href="javascript:;">검사조서마감관리</a></li>
+                                    <li><a href="javascript:;">BW 투자예산리포트</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>공급사</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">공급사현황</a></li>
+                                    <li><a href="javascript:;">공급사 등록요청</a></li>
+                                    <li><a href="javascript:;">공급사 등록접수/진행</a></li>
+                                    <li><a href="javascript:;">업체검색시스템</a></li>
+                                    <li><a href="javascript:;">신용평가 메일 요청</a></li>
+                                    <li><a href="javascript:;">연락처대장</a></li>
+                                    <li><a href="javascript:;">사전설문관리</a></li>
+                                    <li><a href="javascript:;">사전설문관리2</a></li>
+                                    <li><a href="javascript:;">방문신청관리</a></li>
+                                    <li><a href="javascript:;">비밀번호초기화</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>기준정보관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">ITEM 등록/관리</a></li>
+                                    <li><a href="javascript:;">ITEM 현황</a></li>
+                                    <li><a href="javascript:;">ITEM 자산분류 조회</a></li>
+                                    <li><a href="javascript:;">품목 MASTER</a></li>
+                                    <li><a href="javascript:;">ITEM자산업로드현황</a></li>
+                                    <li><a href="javascript:;">SG 관리</a></li>
+                                    <li><a href="javascript:;">업체평가기준</a></li>
+                                    <li><a href="javascript:;">구매소요계획</a></li>
+                                    <li><a href="javascript:;">상품입고예정정보</a></li>
+                                    <li><a href="javascript:;">입고예정정보 작성</a></li>
+                                    <li><a href="javascript:;">상품재고 코드관리 SKU코드 外</a></li>
+                                    <li><a href="javascript:;">상품재고 현황</a></li>
+                                    <li><a href="javascript:;">구매운영센터 지원조직 관리</a></li>
+                                    <li><a href="javascript:;">위젯관리</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>업무지원</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">마감관리</a></li>
+                                    <li><a href="javascript:;">조직/사용자관리</a></li>
+                                    <li><a href="javascript:;">권한관리</a></li>
+                                    <li><a href="javascript:;">팝업관리</a></li>
+                                    <li><a href="javascript:;">환경설정관리</a></li>
+                                    <li><a href="javascript:;">ERP연동 관리</a></li>
+                                    <li><a href="javascript:;">게시판</a></li>
+                                    <li><a href="javascript:;">운영배포 게시판</a></li>
+                                    <li><a href="javascript:;">SMS&Mail 로그관리</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 문구 확인</a></li>
+                                    <li><a href="javascript:;">SMS/Mail/쪽지 단체 발송</a></li>
+                                    <li><a href="javascript:;">오프라인체결</a></li>
+                                    <li><a href="javascript:;">총괄코드관리</a></li>
+                                    <li><a href="javascript:;">사용자 검색</a></li>
+                                    <li><a href="javascript:;">관리자계약재처리</a></li>
+                                    <li><a href="javascript:;">업무처리독려</a></li>
+                                    <li><a href="javascript:;">검사조서 및 구매전표 처리상태</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <!-- //header_wrap : E -->
+
+            <!-- container : S -->
+            <div class="container">
+                <div class="content">
+
+                    <div class="sub_title_area">
+                        <div class="left">
+                            <h3 class="sub_title">layer 팝업</h3>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp03')">GRT01P001X04.jsp</button>
+
+                    <br><br>
+
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp04')">POR03N010X13.jsp</button>
+
+                    <br><br>
+
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp06')">CMN98P001X01.jsp C-1</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp05')">CMN98P001X01.jsp C-2</button>
+
+                    <br><br>
+
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp07')">CMN98P001X01.jsp N-1</button>
+
+                    <br><br>
+
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp08')">CMN98P001X01.jsp Z-1</button>
+
+                    <br><br>
+
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp09')">CMN98P001X01.jsp F-1</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp10')">CMN98P001X01.jsp F-2</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp11')">CMN98P001X01.jsp F-3</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp12')">CMN98P001X01.jsp F-4</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp13')">CMN98P001X01.jsp F-5</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp14')">CMN98P001X01.jsp F-7</button>
+
+                    <br><br>
+
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp02')">CMN98P001X01.jsp B-1</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp15')">CMN98P001X01.jsp B-2</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp16')">CMN98P001X01.jsp B-3</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp17')">CMN98P001X01.jsp B-4(out)</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp18')">CMN98P001X01.jsp B-4(in)</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp19')">CMN98P001X01.jsp B-5</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp20')">CMN98P001X01.jsp B-6</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp24')">CMN98P001X01.jsp B-7(in)</button>
+
+                    <br><br>
+
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp21')">CMN98P001X01.jsp I-1</button>
+
+                    <br><br>
+
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp22')">CMN98P001X01.jsp D-1</button>
+
+                    <br><br>
+
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp23')">CMN98P001X01.jsp GN-2</button>
+
+                    <br><br>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp25')">CMN98P001X01.jsp SAFE-01(in)</button>
+
+                    <br><br>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp28')">실적증명서 선택</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp29')">방문층 선택</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp30')">공지사항</button>
+
+
+                    <div class="sub_title_area">
+                        <div class="left">
+                            <h3 class="sub_title">alert 팝업</h3>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp01')">alert01</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp26')">alert02</button>
+                    <button type="button" class="btn c_type03" onclick="popupFunc('popUp27')">alert03</button>
+
+                </div>
+            </div>
+            <!-- //container : E -->
+
+            <!-- footer_wrap : S -->
+            <footer class="footer_wrap">
+                <div class="inner">
+                    <div class="footer_top">
+                        <ul class="footer_info">
+                            <li><span>우편번호 : 04539</span></li>
+                            <li><span>서울특별시 중구 을지로65(을지로2가) SK T-타워 SK텔레콤(주)</span></li>
+                            <li><span>대표이사 사장 : 유영상</span></li>
+                        </ul>
+                        <ul class="footer_info">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이메일주소무단수집거부</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_copy">
+                        <p>COPYRIGHT © SK TELECOM. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- //footer_wrap : E -->
+        </div>
+        <!-- //wrap : E -->
+        <script>
+
+        </script>
+    </body>
+</html>

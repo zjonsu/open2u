@@ -1,0 +1,88 @@
+@charset "utf-8";
+@import url(reset.css);
+@import url(jquery-ui.css);
+@import url(jquery-ui.theme.css);
+@import url(jquery.mCustomScrollbar.css);
+
+
+/* 탭디자인 - 회원가입용(이벤트 따로 적용시키기 위해) */
+.tabDesign2 {
+	border-bottom:1px solid #be5757;
+	height:40px;
+}
+.tabDesign2 li {
+	float:left;
+	margin-right:5px;
+}
+.tabDesign2 li a {
+	display:block;
+	border:1px solid #ddd;
+	height:39px;
+	line-height:39px;
+	text-align:center;
+	font-size:14px;
+	color:#777;
+	background:#f9f9f9;
+	border-bottom:0;
+	padding:0 20px;
+}
+.tabDesign2 li.on a {
+	border-top:3px solid #be5757;
+	border-left:1px solid #be5757;
+	border-right:1px solid #be5757;
+	border-bottom:0;
+	height:38px;
+	line-height:38px;
+	color:#be5757;
+	font-weight:bold;
+	background:#fff;
+}
+.tabDesign2 li a:hover {
+	color:#be5757;
+}
+
+.tabCont2 {
+	padding:15px 0px;
+}
+/* 탭디자인 - 회원가입용(이벤트 따로 적용시키기 위해)  끝 */
+
+
+/* 텝디자인 - 거래품목/용어설명용(탭안에 서브용탭) */
+.tabDesignSub {
+	border-bottom:1px solid #be5757;
+	height:40px;
+}
+.tabDesignSub li {
+	float:left;
+	margin-right:5px;
+}
+.tabDesignSub li a {
+	display:block;
+	border:1px solid #ddd;
+	height:39px;
+	line-height:39px;
+	text-align:center;
+	font-size:14px;
+	color:#777;
+	background:#f9f9f9;
+	border-bottom:0;
+	padding:0 20px;
+}
+.tabDesignSub li.on a {
+	border-top:3px solid #be5757;
+	border-left:1px solid #be5757;
+	border-right:1px solid #be5757;
+	border-bottom:0;
+	height:38px;
+	line-height:38px;
+	color:#be5757;
+	font-weight:bold;
+	background:#fff;
+}
+.tabDesignSub li a:hover {
+	color:#be5757;
+}
+
+.tabContSub {
+	padding:15px 0px;
+}

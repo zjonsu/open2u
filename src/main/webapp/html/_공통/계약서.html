@@ -1,0 +1,1754 @@
+<!-- saved from url=(0041)http://localhost:8080/web/CNI02P010R02.do -->
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKT Open2u 구매시스템</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+    <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+    <link rel="stylesheet" href="../../resource/css/ContractCss.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+    <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+    <script src="../../resource/js/ui.common.js"></script>
+    
+    <style type="text/css">
+        /* 상단 버튼 영역 */
+        td {
+            letter-spacing: -0.05em !important
+        }
+
+        .t_right {
+            text-align: right;
+        }
+
+        .btnArea {
+            overflow: hidden;
+            padding: 10px 0;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        #contents {
+            overflow: hidden
+        }
+
+        body,
+        div,
+        p,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        ul,
+        ol,
+        li,
+        dl,
+        dt,
+        dd,
+        table,
+        th,
+        td,
+        form,
+        fieldset,
+        legend,
+        input,
+        textarea,
+        a,
+        button,
+        select {
+            margin: 0;
+            padding: 2px;
+            font-style: normal;
+        }
+        body{ padding: 0 5px; box-sizing: border-box; }
+    </style>
+</head>
+
+<body>
+    <div style="display: block;">
+        <form id="frm1" method="post">
+            <input type="hidden" id="CNTRT_SEQ" name="CNTRT_SEQ" data-bind="value:CNTRT_SEQ" value="134230">
+            <input type="hidden" id="CNTRT_MOD" name="CNTRT_MOD" data-bind="value:CNTRT_MOD" value="">
+            <input type="hidden" id="FORM_SEQ" name="FORM_SEQ" data-bind="value:FORM_SEQ" value="1">
+        </form>
+
+        <div id="btnArea" class="btnArea t_right">
+
+            <a href="#none" class="btn pop pop_save t_center c_type07" id="btnPrint">인쇄</a>
+
+            <a href="#none" class="btn pop pop_save t_center c_type06" id="btnResign">계약서재생성</a>
+            <!-- <a href="#none" class="btn" id="btnReInform" >체결통보서재발송</a> -->
+
+
+        </div>
+
+        <div style="text-align:left;color:#201267;font-size: 13px;font-weight: 600;">
+
+
+        </div>
+        <div style="padding:5px 5px 5px 5px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;font-weight: 600;background:#F6F6F6" "="">
+본 문서는 전자서명법 등 관련 법령(전자서명법 제3조 1항, 2항, 전자거래기본법 제5조, 7조, 18조)에 의하여 효력이 인정되는 공인인증기관이 발행한 인증서를 사용하여 전자서명된 문서입니다.
+</div>
+<p></p>
+
+
+
+
+
+
+<div id=" content">
+
+            <style type="text/css">
+                .ellipsis {
+                    margin-left: 50px;
+                    margin-top: -24px;
+                    overflow: hidden;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                    width: 180px;
+                    height: 54px;
+                    padding: 0px 5px 0px 0px;
+                    font-size: 14px;
+                }
+
+                .writedate2 {
+                    font-style: italic;
+                    color: red
+                }
+            </style>
+            <div id="contents" style="width:100%;clear:both">
+                <div style="float:left;width:100%">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td style="width:250px;">
+                                    <table style="width:100%;border-collapse:collapse;vertical-align: top;border-bottom:1px solid #ddd;border-right:1px solid #ddd;">
+                                        <tbody>
+                                            <tr>
+                                                <td
+                                                    style="padding:6px 4px 6px 0px;text-align:center;color:#201267;font-size: 13px;font-weight: 600;color:#FFFFFF;background:#201267;vertical-align: top;border-left:1px solid #201267;border-right:1px solid #201267;">
+                                                    수시 계약서 (Purchase Contract)</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="padding:10px 0px 10px 10px;text-align:justify;color:#222;font-size: 13px;font-weight: 600;vertical-align: top;border-left:1px solid #ddd;">
+                                                    계약번호 : 4160077082</td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="padding:10px 0px 10px 10px;text-align:justify;color:#222;font-size: 13px;font-weight: 600;vertical-align: top;border-left:1px solid #ddd;">
+                                                    계약체결일 : <span>2023.03.22</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td
+                                                    style="padding:10px 0px 0px 10px;color:#222;font-size: 13px;font-weight: 600;vertical-align: top;border-left:1px solid #ddd;">
+                                                    계약건명 : <div class="ellipsis">테스트 구매계약 - 투자(A)/운영(K)/P/Q</div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td>
+                                    <div>
+                                        <table style="width:100%;border-collapse:collapse;">
+                                            <colgroup>
+                                                <col width="55">
+                                                <col>
+                                                <col>
+                                            </colgroup>
+                                            <tbody>
+                                                <tr style="height:20px">
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        구 매 자</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        :&nbsp;</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        SK 텔레콤주식회사 / 104-81-37225</td>
+                                                </tr>
+                                                <tr style="height:20px">
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        :</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        서울특별시 중구 을지로65(을지로2가) SK T-타워</td>
+                                                </tr>
+                                                <tr style="height:20px">
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        대표이사</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        :</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        유영상&nbsp;(인)
+                                                        &nbsp;<span style="font-style: italic;color:red">전자서명일시 :
+                                                            2023.03.22 13:37:11</span></td>
+                                                </tr>
+                                                <tr style="height:30px">
+                                                    <td>&nbsp;</td>
+                                                </tr>
+                                                <tr style="height:20px">
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        공 급 자</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        :</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        행복나래 주식회사 / 114-86-00579</td>
+                                                </tr>
+                                                <tr style="height:20px">
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        주&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;소</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        :</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        테스트 테스트1</td>
+                                                </tr>
+                                                <tr style="height:20px">
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        대 표 자</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        :</td>
+                                                    <td style="font-size: 13px;font-weight: 600;vertical-align: top;">
+                                                        구영모&nbsp;(인)
+                                                        &nbsp;<span style="font-style: italic;color:red">전자서명일시 :
+                                                            <span>2023.03.22 13:37:33</span></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div style="padding:0px 0px 25px 0px;clear:both"></div>
+                    <div
+                        style="margin-top:-20px;padding:10px 0px 10px 0px;text-align:left;color:#222;font-size: 13px;font-weight: 600;line-height:150%">
+                        구매자와 공급자는 상호 대등한 입장에서 본 수시계약서 및 첨부서류에 의하여 본 계약을 체결하고 신의ㆍ성실의 원칙에 따라 계약상의 의무를 이행할 것을 확약하며, 본 계약의
+                        체결을 증명하기 위하여 본 계약서에 전자서명하여 이를 보관한다.
+                    </div>
+                    <div style="padding:2px 0px 2px 0px;clear:both"></div>
+                    <div style="padding:0px 0px 0px 0px;">
+                        <table style="width:100%;border:1px solid #ddd;border-collapse:collapse;border-top:2px solid #201267;">
+                            <colgroup>
+                                <col width="15%">
+                                <col width="85%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                        계약금액</td>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;">
+                                        KRW&nbsp;4,600,663원
+
+
+                                        (VAT 별도)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                        계약기간</td>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;">
+                                        <span id="sCntrtStartDate">2023.03.22 ~ 2023.04.28</span>
+                                        (납품기한은 아이템내역 참조)
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                        납품검사</td>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;font-weight: 600;">
+                                        <table style="text-align:left;">
+                                            <tbody>
+                                                <tr>
+                                                    <td>ㆍ</td>
+                                                    <td style="color:#222;font-size: 13px;">공급자는 납품 후 증빙서류를 첨부하여 납품기한 10일전부터 납품기한까지 검사요청</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>ㆍ</td>
+                                                    <td style="color:#222;font-size: 13px;">구매자는 검사요청 접수 후 첨부서류에 의한 방법으로 검사 시행</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                        납품장소</td>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;">
+                                        구매자 지정장소
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="padding:20px 0px 0px 0px;color:#222;font-size: 13px;font-weight: 600;">■ 계약조건</div>
+                    <div style="padding:5px 0px 5px 0px;clear:both"></div>
+                    <div style="padding:0px 0px 0px 0px;">
+                        <table style="width:100%;border-collapse:collapse;border-top:2px solid #201267;">
+                            <colgroup>
+                                <col width="15%">
+                                <col width="85%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                        지급조건</td>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;font-weight: 600;">
+                                        <table style="text-align:left;font:normal 13px #3939 ;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="vertical-align: top;width:10px;">ㆍ</td>
+                                                    <td style="color:#222;font-size: 13px;">
+                                                        유형 : [장비/물품]
+                                                        납품시 100%, <br>
+                                                        유형 : [공사]
+                                                        중도금(기성) 100%, <br>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align: top;width:10px;">ㆍ</td>
+                                                    <td style="color:#222;font-size: 13px;">
+                                                        지체상금(지체상금 상한) : 납품기한 초과 1일당 계약금액의 0.15%
+
+                                                        (100 일)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="color:#222;font-size: 13px;">&nbsp;※ 납품검사 후 현금지급</td>
+                                                </tr>
+                                                <tr>
+                                                    <td colspan="2" style="color:#222;font-size: 13px;">&nbsp;※ 하도급계약은 목적물 수령일로부터 60일 이내 지급</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                        보증조건</td>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;font-weight: 600;">
+                                        <table style="text-align:left;font:normal 13px #3939 ;">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="vertical-align: top;">ㆍ</td>
+                                                    <td style="color:#222;font-size: 13px;">계약이행보증 : (보증방법)&nbsp;
+
+                                                        예치 면제&nbsp;/&nbsp;(보증금)&nbsp;계약금액의&nbsp;0(%)
+
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align: top;">ㆍ</td>
+                                                    <td style="color:#222;font-size: 13px;">선급금보증 : (보증방법)&nbsp;
+
+                                                        예치 면제&nbsp;/&nbsp;(보증금)&nbsp;계약금액의&nbsp;0(%)
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="vertical-align: top;">ㆍ</td>
+                                                    <td style="color:#222;font-size: 13px;">하자이행보증 : (보증방법)&nbsp;
+
+                                                        예치 면제&nbsp;/
+                                                        &nbsp;(보증금)&nbsp;계약금액의&nbsp;0(%)&nbsp;/&nbsp;(보증기간) &nbsp;0 개월
+
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                        특기사항</td>
+                                    <td
+                                        style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;font-weight: 600;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div style="padding:20px 0px 0px 0px;color:#222;font-size: 13px;font-weight: 600;">■ 아이템 내역</div>
+            <div style="padding:5px 0px 5px 0px;clear:both"></div>
+            <div style="padding:0px 0px 0px 0px;">
+                <table style="width:100%;border:1px solid #ddd;border-collapse:collapse;border-top:2px solid #201267;">
+                    <colgroup>
+                        <col width="6%">
+                        <col width="16%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="18%">
+                        <col width="18%">
+                        <col width="*%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8"
+                                rowspan="2">번호</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8"
+                                rowspan="2">아이템코드<br>[지급조건 유형]</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8"
+                                colspan="4">아이템명 및 규격</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8"
+                                colspan="1" rowspan="2">납품기한</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                수량</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                단위</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                단가</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                금액</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">1</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">1000065998<br>[장비/물품]</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;"
+                                colspan="4">리튬축전지 전원케이블(48V)(1000065998)</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">2023.04.27</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                10</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;">
+                                EA</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                100,011</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                1,000,110</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">2</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">1000065998<br>[장비/물품]</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;"
+                                colspan="4">리튬축전지 전원케이블(48V)(1000065998)</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">2023.04.25</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                10</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;">
+                                EA</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                100,033</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                1,000,330</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">3</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">1000065998<br>[장비/물품]</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;"
+                                colspan="4">리튬축전지 전원케이블(48V)(1000065998)</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">2023.04.26</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                10</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;">
+                                EA</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                100,022</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                1,000,220</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">4</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">1000065998<br>[장비/물품]</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;"
+                                colspan="4">리튬축전지 전원케이블(48V)(1000065998)</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">2023.04.28</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                10</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;">
+                                EA</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                100,000</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                1,000,000</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">5</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">8000000554<br>[공사]</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;"
+                                colspan="4">사옥인테리어공사(8000000554)</td>
+                            <td style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;"
+                                rowspan="2">2023.04.28</td>
+                        </tr>
+                        <tr>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                1</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;">
+                                GUN</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                600,003</td>
+                            <td
+                                style="padding:3px 4px 3px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                600,003</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8"
+                                colspan="2">합계</td>
+                            <td style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;"
+                                colspan="4">4,600,663</td>
+                            <td style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;"
+                                rowspan="3"></td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8"
+                                colspan="2">부가가치세(VAT)</td>
+                            <td style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;"
+                                colspan="4">부가세 별도</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div style="padding:1px 0px 1px 0px"></div>
+            <div style="padding:10px 0px 0px 20px;color:#222;font-size: 13px;font-weight: 600;">
+                ○ 납품기한별 상세 아이템 내역 &nbsp;
+                <a style="cursor:pointer;text-decoration:none">
+                    <img id="poDateItemDetailimg" src="../../resource/images/spinner_up.png">
+                </a>
+            </div>
+
+            <div id="poDateItemDetail">
+
+
+                <div style="float:right; margin-bottom:5px" class="tbl_contract">
+                    <table style="width:220px;border-collapse:collapse;">
+                        <colgroup>
+                            <col>
+
+                            <col width="135">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="HeaderMultiRow">납품기한</td>
+                                <td class="TdMultiRowCenter">
+
+
+                                    2023.04.25
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <table class="TblBase">
+                    <colgroup>
+                        <col width="6%">
+                        <col width="16%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="18%">
+                        <col width="18%">
+                        <col width="*%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="HeaderMultiRow">번호</td>
+                            <td rowspan="2" class="HeaderMultiRow">아이템코드<br>[지급조건 유형]</td>
+                            <td colspan="4" class="HeaderMultiRow">아이템명 및 규격</td>
+                            <!-- <td rowspan="2" class="HeaderMultiRow">납품장소</td> -->
+                        </tr>
+                        <tr>
+                            <td class="HeaderMultiRow">수량</td>
+                            <td class="HeaderMultiRow">단위</td>
+                            <td class="HeaderMultiRow">단가</td>
+                            <td class="HeaderMultiRow">금액</td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">1</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                1000065998
+                                <br>
+                                [장비/물품]
+
+
+
+
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">리튬축전지 전원케이블(48V)(1000065998)</td>
+
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                10
+                            </td>
+                            <td class="TdMultiRowCenter">EA</td>
+                            <td class="TdMultiRowRight">
+                                100,033
+                            </td>
+                            <td class="TdMultiRowRight">
+                                1,000,330
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">합계</td>
+                            <td colspan="5" class="TdMultiRowRight">1,000,330</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">부가가치세(VAT)</td>
+                            <td colspan="5" class="TdMultiRowRight">
+                                <!-- 2018.12.26 계약서 갑지의 부가세 표시 방법 변경 -->
+                                <!-- 100,033 -->
+                                부가세 별도
+                            </td>
+                        </tr>
+
+                        <!-- 2018.12.26 계약서 갑지의 부가세 표시 방법 변경 -->
+                        <!--
+				<tr>
+					<td colspan="2" class="HeaderMultiRow">합계 (VAT 포함)</td>
+					<td colspan="5" class="TdMultiRowRight">1,100,363</td>
+				</tr>
+				-->
+
+                    </tbody>
+                </table>
+
+                <div style="padding:4px 0px 4px 0px"></div>
+
+
+
+
+                <div style="float:right; margin-bottom:5px" class="tbl_contract">
+                    <table style="width:220px;border-collapse:collapse;">
+                        <colgroup>
+                            <col>
+
+                            <col width="135">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="HeaderMultiRow">납품기한</td>
+                                <td class="TdMultiRowCenter">
+
+
+                                    2023.04.26
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <table class="TblBase">
+                    <colgroup>
+                        <col width="6%">
+                        <col width="16%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="18%">
+                        <col width="18%">
+                        <col width="*%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="HeaderMultiRow">번호</td>
+                            <td rowspan="2" class="HeaderMultiRow">아이템코드<br>[지급조건 유형]</td>
+                            <td colspan="4" class="HeaderMultiRow">아이템명 및 규격</td>
+                            <!-- <td rowspan="2" class="HeaderMultiRow">납품장소</td> -->
+                        </tr>
+                        <tr>
+                            <td class="HeaderMultiRow">수량</td>
+                            <td class="HeaderMultiRow">단위</td>
+                            <td class="HeaderMultiRow">단가</td>
+                            <td class="HeaderMultiRow">금액</td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">1</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                1000065998
+                                <br>
+                                [장비/물품]
+
+
+
+
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">리튬축전지 전원케이블(48V)(1000065998)</td>
+
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                10
+                            </td>
+                            <td class="TdMultiRowCenter">EA</td>
+                            <td class="TdMultiRowRight">
+                                100,022
+                            </td>
+                            <td class="TdMultiRowRight">
+                                1,000,220
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">합계</td>
+                            <td colspan="5" class="TdMultiRowRight">1,000,220</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">부가가치세(VAT)</td>
+                            <td colspan="5" class="TdMultiRowRight">
+                                <!-- 2018.12.26 계약서 갑지의 부가세 표시 방법 변경 -->
+                                <!-- 100,022 -->
+                                부가세 별도
+                            </td>
+                        </tr>
+
+                        <!-- 2018.12.26 계약서 갑지의 부가세 표시 방법 변경 -->
+                        <!--
+				<tr>
+					<td colspan="2" class="HeaderMultiRow">합계 (VAT 포함)</td>
+					<td colspan="5" class="TdMultiRowRight">1,100,242</td>
+				</tr>
+				-->
+
+                    </tbody>
+                </table>
+
+                <div style="padding:4px 0px 4px 0px"></div>
+
+
+
+
+                <div style="float:right; margin-bottom:5px" class="tbl_contract">
+                    <table style="width:220px;border-collapse:collapse;">
+                        <colgroup>
+                            <col>
+
+                            <col width="135">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="HeaderMultiRow">납품기한</td>
+                                <td class="TdMultiRowCenter">
+
+
+                                    2023.04.27
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <table class="TblBase">
+                    <colgroup>
+                        <col width="6%">
+                        <col width="16%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="18%">
+                        <col width="18%">
+                        <col width="*%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="HeaderMultiRow">번호</td>
+                            <td rowspan="2" class="HeaderMultiRow">아이템코드<br>[지급조건 유형]</td>
+                            <td colspan="4" class="HeaderMultiRow">아이템명 및 규격</td>
+                            <!-- <td rowspan="2" class="HeaderMultiRow">납품장소</td> -->
+                        </tr>
+                        <tr>
+                            <td class="HeaderMultiRow">수량</td>
+                            <td class="HeaderMultiRow">단위</td>
+                            <td class="HeaderMultiRow">단가</td>
+                            <td class="HeaderMultiRow">금액</td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">1</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                1000065998
+                                <br>
+                                [장비/물품]
+
+
+
+
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">리튬축전지 전원케이블(48V)(1000065998)</td>
+
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                10
+                            </td>
+                            <td class="TdMultiRowCenter">EA</td>
+                            <td class="TdMultiRowRight">
+                                100,011
+                            </td>
+                            <td class="TdMultiRowRight">
+                                1,000,110
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">합계</td>
+                            <td colspan="5" class="TdMultiRowRight">1,000,110</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">부가가치세(VAT)</td>
+                            <td colspan="5" class="TdMultiRowRight">
+                                <!-- 2018.12.26 계약서 갑지의 부가세 표시 방법 변경 -->
+                                <!-- 100,011 -->
+                                부가세 별도
+                            </td>
+                        </tr>
+
+                        <!-- 2018.12.26 계약서 갑지의 부가세 표시 방법 변경 -->
+                        <!--
+				<tr>
+					<td colspan="2" class="HeaderMultiRow">합계 (VAT 포함)</td>
+					<td colspan="5" class="TdMultiRowRight">1,100,121</td>
+				</tr>
+				-->
+
+                    </tbody>
+                </table>
+
+                <div style="padding:4px 0px 4px 0px"></div>
+
+
+
+
+                <div style="float:right; margin-bottom:5px" class="tbl_contract">
+                    <table style="width:220px;border-collapse:collapse;">
+                        <colgroup>
+                            <col>
+
+                            <col width="135">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="HeaderMultiRow">납품기한</td>
+                                <td class="TdMultiRowCenter">
+
+
+                                    2023.04.28
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <table class="TblBase">
+                    <colgroup>
+                        <col width="6%">
+                        <col width="16%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="18%">
+                        <col width="18%">
+                        <col width="*%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="HeaderMultiRow">번호</td>
+                            <td rowspan="2" class="HeaderMultiRow">아이템코드<br>[지급조건 유형]</td>
+                            <td colspan="4" class="HeaderMultiRow">아이템명 및 규격</td>
+                            <!-- <td rowspan="2" class="HeaderMultiRow">납품장소</td> -->
+                        </tr>
+                        <tr>
+                            <td class="HeaderMultiRow">수량</td>
+                            <td class="HeaderMultiRow">단위</td>
+                            <td class="HeaderMultiRow">단가</td>
+                            <td class="HeaderMultiRow">금액</td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">1</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                1000065998
+                                <br>
+                                [장비/물품]
+
+
+
+
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">리튬축전지 전원케이블(48V)(1000065998)</td>
+
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                10
+                            </td>
+                            <td class="TdMultiRowCenter">EA</td>
+                            <td class="TdMultiRowRight">
+                                100,000
+                            </td>
+                            <td class="TdMultiRowRight">
+                                1,000,000
+                            </td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">2</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                8000000554
+                                <br>
+
+
+
+
+                                [공사]
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">사옥인테리어공사(8000000554)</td>
+
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                1
+                            </td>
+                            <td class="TdMultiRowCenter">GUN</td>
+                            <td class="TdMultiRowRight">
+                                200,000
+                            </td>
+                            <td class="TdMultiRowRight">
+                                200,000
+                            </td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">3</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                8000000554
+                                <br>
+
+
+
+
+                                [공사]
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">사옥인테리어공사(8000000554)</td>
+
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                1
+                            </td>
+                            <td class="TdMultiRowCenter">GUN</td>
+                            <td class="TdMultiRowRight">
+                                200,001
+                            </td>
+                            <td class="TdMultiRowRight">
+                                200,001
+                            </td>
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">4</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                8000000554
+                                <br>
+
+
+
+
+                                [공사]
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">사옥인테리어공사(8000000554)</td>
+
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                1
+                            </td>
+                            <td class="TdMultiRowCenter">GUN</td>
+                            <td class="TdMultiRowRight">
+                                200,002
+                            </td>
+                            <td class="TdMultiRowRight">
+                                200,002
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">합계</td>
+                            <td colspan="5" class="TdMultiRowRight">1,600,003</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">부가가치세(VAT)</td>
+                            <td colspan="5" class="TdMultiRowRight">
+                                <!-- 2018.12.26 계약서 갑지의 부가세 표시 방법 변경 -->
+                                <!-- 160,000 -->
+                                부가세 별도
+                            </td>
+                        </tr>
+
+                        <!-- 2018.12.26 계약서 갑지의 부가세 표시 방법 변경 -->
+                        <!--
+				<tr>
+					<td colspan="2" class="HeaderMultiRow">합계 (VAT 포함)</td>
+					<td colspan="5" class="TdMultiRowRight">1,760,003</td>
+				</tr>
+				-->
+
+                    </tbody>
+                </table>
+
+                <div style="padding:4px 0px 4px 0px"></div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+            <div style="padding:5px 0px 5px 0px"></div>
+            <div style="padding:10px 0px 0px 20px;color:#222;font-size: 13px;font-weight: 600;">
+                ○ 납품장소별 상세 아이템 내역 &nbsp;
+                <a style="cursor:pointer;">
+                    <img id="poPlantItemDetailimg" src="../../resource/images/spinner_up.png"
+                </a>
+            </div>
+
+
+            <div id="poPlantItemDetail">
+
+
+
+
+
+                <div style="float:right; margin-bottom:5px" class="tbl_contract">
+                    <table style="width:450px;border-collapse:collapse;">
+                        <colgroup>
+                            <col width="80">
+                            <col>
+                            <col width="135">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="HeaderMultiRow">납품장소</td>
+                                <td class="TdMultiRowCenter">수도권Infra본부/수도권구축_main</td>
+                                <td class="TdMultiRowCenter">구매자 지정장소</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="padding:1px 0px 1px 0px"></div>
+                <table class="TblBase">
+                    <colgroup>
+                        <col width="6%">
+                        <col width="14%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="19%">
+                        <col width="19%">
+                        <col width="20%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="HeaderMultiRow">번호</td>
+                            <td rowspan="2" class="HeaderMultiRow">아이템코드<br>[지급조건 유형]</td>
+                            <td colspan="4" class="HeaderMultiRow">아이템명 및 규격</td>
+                            <td class="HeaderMultiRow" colspan="1" rowspan="2">납품기한</td>
+                        </tr>
+                        <tr>
+                            <td class="HeaderMultiRow">수량</td>
+                            <td class="HeaderMultiRow">단위</td>
+                            <td class="HeaderMultiRow">단가</td>
+                            <td class="HeaderMultiRow">금액</td>
+
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">1</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                1000065998
+                                <br>
+                                [장비/물품]
+
+
+
+
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">리튬축전지 전원케이블(48V)(1000065998)</td>
+
+
+                            <td rowspan="2" class="TdMultiRowCenter">2023.04.27</td>
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                10
+                            </td>
+                            <td class="TdMultiRowCenter">EA</td>
+                            <td class="TdMultiRowRight">
+                                100,011
+                            </td>
+                            <td class="TdMultiRowRight">
+                                1,000,110
+                            </td>
+
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">2</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                1000065998
+                                <br>
+                                [장비/물품]
+
+
+
+
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">리튬축전지 전원케이블(48V)(1000065998)</td>
+
+
+                            <td rowspan="2" class="TdMultiRowCenter">2023.04.26</td>
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                10
+                            </td>
+                            <td class="TdMultiRowCenter">EA</td>
+                            <td class="TdMultiRowRight">
+                                100,022
+                            </td>
+                            <td class="TdMultiRowRight">
+                                1,000,220
+                            </td>
+
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">3</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                8000000554
+                                <br>
+
+
+
+
+                                [공사]
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">사옥인테리어공사(8000000554)</td>
+
+
+                            <td rowspan="2" class="TdMultiRowCenter">2023.04.28</td>
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                1
+                            </td>
+                            <td class="TdMultiRowCenter">GUN</td>
+                            <td class="TdMultiRowRight">
+                                200,000
+                            </td>
+                            <td class="TdMultiRowRight">
+                                200,000
+                            </td>
+
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">4</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                8000000554
+                                <br>
+
+
+
+
+                                [공사]
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">사옥인테리어공사(8000000554)</td>
+
+
+                            <td rowspan="2" class="TdMultiRowCenter">2023.04.28</td>
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                1
+                            </td>
+                            <td class="TdMultiRowCenter">GUN</td>
+                            <td class="TdMultiRowRight">
+                                200,001
+                            </td>
+                            <td class="TdMultiRowRight">
+                                200,001
+                            </td>
+
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">5</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                8000000554
+                                <br>
+
+
+
+
+                                [공사]
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">사옥인테리어공사(8000000554)</td>
+
+
+                            <td rowspan="2" class="TdMultiRowCenter">2023.04.28</td>
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                1
+                            </td>
+                            <td class="TdMultiRowCenter">GUN</td>
+                            <td class="TdMultiRowRight">
+                                200,002
+                            </td>
+                            <td class="TdMultiRowRight">
+                                200,002
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">합계</td>
+                            <td colspan="5" class="TdMultiRowRight">2,600,333</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">부가가치세(VAT)</td>
+                            <td colspan="5" class="TdMultiRowRight">부가세 별도</td>
+                        </tr>
+
+
+
+
+                    </tbody>
+                </table>
+                <div style="padding:4px 0px 4px 0px"></div>
+
+
+
+
+
+                <div style="float:right; margin-bottom:5px" class="tbl_contract">
+                    <table style="width:450px;border-collapse:collapse;">
+                        <colgroup>
+                            <col width="80">
+                            <col>
+                            <col width="135">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td class="HeaderMultiRow">납품장소</td>
+                                <td class="TdMultiRowCenter">중부Infra본부/중부구축_main</td>
+                                <td class="TdMultiRowCenter">구매자 지정장소</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="padding:1px 0px 1px 0px"></div>
+                <table class="TblBase">
+                    <colgroup>
+                        <col width="6%">
+                        <col width="14%">
+                        <col width="12%">
+                        <col width="12%">
+                        <col width="19%">
+                        <col width="19%">
+                        <col width="20%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" class="HeaderMultiRow">번호</td>
+                            <td rowspan="2" class="HeaderMultiRow">아이템코드<br>[지급조건 유형]</td>
+                            <td colspan="4" class="HeaderMultiRow">아이템명 및 규격</td>
+                            <td class="HeaderMultiRow" colspan="1" rowspan="2">납품기한</td>
+                        </tr>
+                        <tr>
+                            <td class="HeaderMultiRow">수량</td>
+                            <td class="HeaderMultiRow">단위</td>
+                            <td class="HeaderMultiRow">단가</td>
+                            <td class="HeaderMultiRow">금액</td>
+
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">1</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                1000065998
+                                <br>
+                                [장비/물품]
+
+
+
+
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">리튬축전지 전원케이블(48V)(1000065998)</td>
+
+
+                            <td rowspan="2" class="TdMultiRowCenter">2023.04.28</td>
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                10
+                            </td>
+                            <td class="TdMultiRowCenter">EA</td>
+                            <td class="TdMultiRowRight">
+                                100,000
+                            </td>
+                            <td class="TdMultiRowRight">
+                                1,000,000
+                            </td>
+
+                        </tr>
+
+
+
+
+
+
+
+
+
+
+
+                        <tr>
+                            <td rowspan="2" class="TdMultiRowCenter">2</td>
+                            <td rowspan="2" class="TdMultiRowCenter">
+                                1000065998
+                                <br>
+                                [장비/물품]
+
+
+
+
+
+                            </td>
+                            <td colspan="4" class="TdMultiRowLeft">리튬축전지 전원케이블(48V)(1000065998)</td>
+
+
+                            <td rowspan="2" class="TdMultiRowCenter">2023.04.25</td>
+                        </tr>
+                        <tr>
+                            <td class="TdMultiRowRight">
+                                10
+                            </td>
+                            <td class="TdMultiRowCenter">EA</td>
+                            <td class="TdMultiRowRight">
+                                100,033
+                            </td>
+                            <td class="TdMultiRowRight">
+                                1,000,330
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">합계</td>
+                            <td colspan="5" class="TdMultiRowRight">2,000,330</td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2" class="HeaderMultiRow">부가가치세(VAT)</td>
+                            <td colspan="5" class="TdMultiRowRight">부가세 별도</td>
+                        </tr>
+
+
+
+
+                    </tbody>
+                </table>
+                <div style="padding:4px 0px 4px 0px"></div>
+
+            </div>
+
+
+
+
+
+
+            <!-- [2018.03.12] 임시계약 링크| 개발자:정종수 | 리뷰자 :임진호 -->
+
+
+
+
+            <div style="padding:5px 0px 5px 0px;width:30px;"></div>
+
+
+            <div style="padding:10px 0px 0px 0px;color:#222;font-size: 13px;font-weight: 600;">■ 첨부서류 내역</div>
+            <div style="padding:5px 0px 5px 0px;clear:both"></div>
+            <div style="padding:0px 0px 0px 0px;">
+                <table style="width:100%;border-collapse:collapse;border-top:2px solid #201267;">
+                    <colgroup>
+                        <col width="8%">
+                        <col>
+                        <col width="14%">
+                        <col width="20%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <td
+                                style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                번호</td>
+                            <td
+                                style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                파일명</td>
+                            <td
+                                style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                파일크기</td>
+                            <td
+                                style="padding:5px 4px 5px 4px;border:1px solid #ddd;text-align:center;color:#201267;font-size: 13px;font-weight: 600;background:#f2f1f8">
+                                다운로드</td>
+                        </tr>
+
+                        <tr>
+                            <td
+                                style="padding:4px 4px 4px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;">
+                                1</td>
+                            <td
+                                style="padding:4px 4px 4px 4px;border:1px solid #ddd;text-align:left;color:#222;font-size: 13px;">
+                                인수검사증(서비스).htm</td>
+                            <td
+                                style="padding:4px 4px 4px 4px;border:1px solid #ddd;text-align:right;color:#222;font-size: 13px;">
+                                68.45 KB</td>
+                            <td
+                                style="padding:4px 4px 4px 4px;border:1px solid #ddd;text-align:center;color:#222;font-size: 13px;">
+                                <a href="javascript:defaultFileDownLoad(#3939;2640225#3939;)">다운로드</a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+            <div style="padding:5px 0px 5px 0px"></div>
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>

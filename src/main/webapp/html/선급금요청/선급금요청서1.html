@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="pop_wrap">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">선급금요청서 작성</h1>
+                    </div>
+                    <div class="right">
+                        <ul class="progress_step_list">
+                            <li>
+                                <a href="javascript:;">견적/제안서</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약서</a>
+                            </li>
+                            <li class="in_progress">
+                                <a href="javascript:;">검사요청</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">대금정산</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_info_area on">
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">요청번호</span>
+                            <span class="info_text">52603442962</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">요청건명</span>
+                            <span class="info_text">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</span>
+                        </li>
+                        <li class="w330">
+                            <span class="info_label">요청자</span>
+                            <span class="info_text">이주영 / ac.lee@sk.com / 010-4156-4561</span>
+                        </li>
+                    </ul>
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">요청일자</span>
+                            <span class="info_text">2025-05-31</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">요청금액(VAT제외)</span>
+                            <span class="info_text">100,000,000</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">요청차수</span>
+                            <span class="info_text">00차 / 최종</span>
+                        </li>
+                        <li class="w330">
+                            <span class="info_label">SKT검사담당자</span>
+                            <span class="info_text">SCM상생기획팀 / 이주영</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="toggle_btn"><span class="txt">Close</span><i class="ico_toggle_arr"></i></button> 
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_aside">
+                    <ul class="aside_progress_list">
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript::" class="point">1. 기본정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">2. 요청정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">3. 확인정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li class="in_progress">
+                            <span class="status">작성중</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">선급금요청서</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                    </ul>
+                    <ul class="link_area">
+                        <li>
+                            <button type="button" class="link_btn">FAQ</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <!-- 
+                            * 버튼을 하단에 고정하기 위해
+                            컨텐츠의 내용이 없어도 "cont_inner" 는 넣어주셔야 합니다.
+                        -->
+                        <div class="cont_inner">
+                            <div class="sub_tit_area m_t0">
+                                <div class="left">
+                                    <h2 class="tit">선급금요청내역</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_list">
+                                <colgroup>
+                                    <col style="width: 36px;">
+                                    <col style="width: 70px;">
+                                    <col style="width: 110px;">
+                                    <col style="width: 70px;">
+                                    <col style="width: 50px;">
+                                    <col style="width: 106px;">
+                                    <col>
+                                    <col>
+                                    <col>
+                                    <col style="width: 50px;">
+                                    <col>
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>NO</th>
+                                        <th>입고지역</th>
+                                        <th>Item 코드</th>
+                                        <th>Item 명</th>
+                                        <th>규칙</th>
+                                        <th>납품기한</th>
+                                        <th>검사요청금액</th>
+                                        <th>잔여금액</th>
+                                        <th>계약금액</th>
+                                        <th>수량</th>
+                                        <th>단가</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1000</td>
+                                        <td>9000001928</td>
+                                        <td>일반용역</td>
+                                        <td>GUN</td>
+                                        <td>2026-03-31</td>
+                                        <td class="t_right">0</td>
+                                        <td class="t_right">381,000,000</td>
+                                        <td class="t_right">461,000,000</td>
+                                        <td>1</td>
+                                        <td class="t_right">461,000,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>1000</td>
+                                        <td>9000001928</td>
+                                        <td>일반용역</td>
+                                        <td>GUN</td>
+                                        <td>2026-03-31</td>
+                                        <td class="t_right">0</td>
+                                        <td class="t_right">381,000,000</td>
+                                        <td class="t_right">461,000,000</td>
+                                        <td>1</td>
+                                        <td class="t_right">461,000,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>1000</td>
+                                        <td>9000001928</td>
+                                        <td>일반용역</td>
+                                        <td>GUN</td>
+                                        <td>2026-03-31</td>
+                                        <td class="t_right">0</td>
+                                        <td class="t_right">381,000,000</td>
+                                        <td class="t_right">461,000,000</td>
+                                        <td>1</td>
+                                        <td class="t_right">461,000,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>1000</td>
+                                        <td>9000001928</td>
+                                        <td>일반용역</td>
+                                        <td>GUN</td>
+                                        <td>2026-03-31</td>
+                                        <td class="t_right">0</td>
+                                        <td class="t_right">381,000,000</td>
+                                        <td class="t_right">461,000,000</td>
+                                        <td>1</td>
+                                        <td class="t_right">461,000,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">선급금요청금액</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <colgroup>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th><span class="value">금회</span></th>
+                                        <td class="t_right">9,999,999원 <span class="per">(20%)</span></td>
+                                        <th><span class="value ty02">누적</span></th>
+                                        <td class="t_right">9,999,999원 <span class="per">(20%)</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">산업안전보건관리비</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <colgroup>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>계상총액</th>
+                                        <td class="t_right">353,000원</td>
+                                        <th>사용금액</th>
+                                        <td class="t_right">353,000원</td>
+                                        <th>검사요청금액(누적)</th>
+                                        <td class="t_right">353,000원</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">선급금요청증빙</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <colgroup>
+                                    <col style="width: 146px;">
+                                    <col style="width: 146px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th rowspan="2">필수증빙</th>
+                                        <th>표준증빙</th>
+                                        <td>
+                                            <ul class="tbl_file_list_area">
+                                                <li>
+                                                    <div class="file_list text_wrap">
+                                                        <p class="file_name">
+                                                            <a href="javascript:;">[표준증빙] 검사요청건명_250620.pdf</a>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>산업안전보건관리비 사용내역서</th>
+                                        <td>
+                                            <ul class="tbl_file_list_area">
+                                                <li>
+                                                    <div class="file_list text_wrap">
+                                                        <p class="file_name">
+                                                            <a href="javascript:;">산업안전보건관리비 사용내역서_250620.pdf</a>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th rowspan="2">추가증빙</th>
+                                        <td colspan="2">
+                                            <ul class="tbl_file_list_area">
+                                                <li>
+                                                    <div class="file_list text_wrap">
+                                                        <p class="file_name">
+                                                            <strong>태그</strong><a href="javascript:;">[추가증빙] 검사요청건명 _250620.pdf [추가증빙] 검사요청건명 _250620.pdf [추가증빙] 검사요청건명 _250620.pdf [추가증빙] 검사요청건명 _250620.pdf</a>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li> 
+                                                    <div class="file_list text_wrap">
+                                                        <p class="file_name">
+                                                            <strong>태그</strong><a href="javascript:;">[추가증빙] 검사요청건명 _250620.pdf</a>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="file_list text_wrap">
+                                                        <p class="file_name">
+                                                            <strong>태그</strong><a href="javascript:;">[추가증빙] 검사요청건명 _250620.pdf</a>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">선급금요청의견</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <tbody>
+                                    <tr>
+                                        <td class="p_10">
+                                            <textarea rows="4" readonly>검사요청의견 내용</textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">지급처정보</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <colgroup>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>거래처유형</th>
+                                        <td>DELT</td>
+                                        <th>금융기관명</th>
+                                        <td>국민은행</td>
+                                    </tr>
+                                    <tr>
+                                        <th>계좌번호</th>
+                                        <td>12345678900</td>
+                                        <th>예금주명</th>
+                                        <td>주식회사 뮤플러스</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">보증정보</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <colgroup>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>하자보증증빙</th>
+                                        <td>하자보증증빙</td>
+                                        <th>첨부파일</th>
+                                        <td>
+                                            <ul class="tbl_file_list_area">
+                                                <li>
+                                                    <div class="file_list text_wrap">
+                                                        <p class="file_name">
+                                                            <a href="javascript:;">표준증빙 파일</a>
+                                                        </p>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">최종인수</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <colgroup>
+                                    <col style="width: 146px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>최종인수 요청하기</th>
+                                        <td>
+                                            <a class="file_link" href="javascript:;">최종인수확인서</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">지체상금</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <table class="tbl_style_01">
+                                <colgroup>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                    <col style="width: 146px;">
+                                    <col>
+                                </colgroup>
+                                <tbody>
+                                    <tr>
+                                        <th>지체발생일</th>
+                                        <td>149일</td>
+                                        <th>지체상금율</th>
+                                        <td class="t_right">0.15%</td>
+                                        <th>지체상금</th>
+                                        <td class="t_right">353,000원</td>
+                                    </tr>
+                                    <tr>
+                                        <th>지체발생원인주체</th>
+                                        <td colspan="5">지체발생원인주체</td>
+                                    </tr>
+                                    <tr>
+                                        <th>지체발생사유</th>
+                                        <td colspan="5">
+                                            <textarea rows="2" readonly>지체발생사유</textarea>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>면제요청일</th>
+                                        <td>149일</td>
+                                        <th>면제요청금액</th>
+                                        <td class="t_right">353,000원</td>
+                                        <th>부과지체상금</th>
+                                        <td class="t_right">353,000원</td>
+                                    </tr>
+                                    <tr>
+                                        <th>요청사유</th>
+                                        <td colspan="5">
+                                            <textarea rows="2" readonly>요청사유</textarea>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="btm_btn_area">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn md">저장</button>
+                                    <span class="divid"></span>
+                                    <button type="button" class="btn pop lbtn ty02 md">이전</button>
+                                    <button type="button" class="btn pop lg">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var mydata = [
+                {
+                    선택: "",
+                    NO: "1",
+                    입고지역: "1000",
+                    Item_코드: '9000001928',
+                    Item_명: '일반용역',
+                    규격: "GUN",
+                    남풉기한: "2026-03-31",
+                    검사요청금액: "0",
+                    잔여금액: "381,000,000",
+                    계약금액: "461,000,000",
+                    수량: "1",
+                    단가: "00,000,000,000",
+                },
+                {
+                    선택: "",
+                    NO: "1",
+                    입고지역: "1000",
+                    Item_코드: '9000001928',
+                    Item_명: '일반용역',
+                    규격: "GUN",
+                    남풉기한: "2026-03-31",
+                    검사요청금액: "0",
+                    잔여금액: "381,000,000",
+                    계약금액: "461,000,000",
+                    수량: "1",
+                    단가: "00,000,000,000",
+                },
+                {
+                    선택: "",
+                    NO: "1",
+                    입고지역: "1000",
+                    Item_코드: '9000001928',
+                    Item_명: '일반용역',
+                    규격: "GUN",
+                    남풉기한: "2026-03-31",
+                    검사요청금액: "0",
+                    잔여금액: "381,000,000",
+                    계약금액: "461,000,000",
+                    수량: "1",
+                    단가: "00,000,000,000",
+                },
+                {
+                    선택: "",
+                    NO: "1",
+                    입고지역: "1000",
+                    Item_코드: '9000001928',
+                    Item_명: '일반용역',
+                    규격: "GUN",
+                    남풉기한: "2026-03-31",
+                    검사요청금액: "0",
+                    잔여금액: "381,000,000",
+                    계약금액: "461,000,000",
+                    수량: "1",
+                    단가: "00,000,000,000",
+                },
+            ];
+
+            $(document).ready(function () {
+                $("#jqGrid").jqGrid({
+                    datatype: "local",
+                    data: mydata,
+                    autowidth: true,
+                    cellEdit: true,
+                    shrinkToFit: false,
+                    forceFit: true,
+                    pager: "#jqGridPager",
+                    colModel: [
+                        {
+                            label: "선택",
+                            name: "선택",
+                            width: 40,
+                            editable: true,
+                            align: "center",
+                            formatter: "checkbox",
+                            edittype: "checkbox",
+                            formatoptions: {
+                                disabled: false
+                            }
+                        },
+                        { label: "NO", name: "NO", width: 40, editable: true },
+                        { label: "입고지역", name: "입고지역", width: 70, editable: true, },
+                        { label: "Item 코드", name: "Item_코드", width: 110, editable: true },
+                        { label: "Item 명", name: "Item_명", width: 70, editable: true },
+                        { label: "규격", name: "규격", width: 45, editable: true },
+                        { label: "납품기한", name: "납품기한", width: 106, editable: true },
+                        { label: "검사요청금액", name: "검사요청금액", width: 154, align: 'right', editable: true },
+                        { label: "잔여금액", name: "잔여금액", width: 154, align: 'right', editable: true },
+                        { label: "계약금액", name: "계약금액", width: 154, align: 'right', editable: true },
+                        { label: "수량", name: "수량", width: 60, editable: true },
+                        { label: "단가", name: "단가", width: 170, align: 'right', editable: true },
+                    ],
+
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+            });
+
+            $(window).bind("resize", function () {
+                $("#jqGrid").setGridWidth($(".grid_area").width());
+            }).trigger("resize");
+        </script>
+    </body>
+</html>

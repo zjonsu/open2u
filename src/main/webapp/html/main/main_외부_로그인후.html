@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script> 
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <!-- wrap : S -->
+        <div class="wrap main">
+            <!-- header_wrap : S -->
+            <header class="header_wrap">
+                <!-- 메인화면에서는 class="main" 추가  -->
+                <div class="header_top">
+                    <div class="inner">
+                        <ul class="header_top_user">
+                            <li>
+                                <span class="user"><i class="icons i_header_user"></i>홍길동님</span>
+                            </li>
+                            <li>
+                                <a href="javascript:;"><i class="icons i_header_logout"></i></a>
+                            </li>
+                        </ul>
+                        <ul class="header_top_menu">
+                            <li>
+                                <button type="button">동반성장센터 사용신청 <i class="icons i_header_apply"></i></button>
+                            </li>
+                            <li>
+                                <button type="button">인증서등록 <i class="icons i_header_registry"></i></button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <nav class="header_gnb">
+                    <div class="header_gnb_inner">
+                        <div class="align_lt">
+                            <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            <ul class="gnb_menu">
+                                <li>
+                                    <a href="#none">정보관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">기본정보</a></li>
+                                        <li><a href="javascript:;">거래정보</a></li>
+                                        <li><a href="javascript:;">거래약관</a></li>
+                                        <li><a href="javascript:;">지인관계</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약진행</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">입찰공고</a></li>
+                                        <li><a href="javascript:;">견적서제출</a></li>
+                                        <li><a href="javascript:;">계약변경</a></li>
+                                        <li><a href="javascript:;">납품지시</a></li>
+                                        <li><a href="javascript:;">정보요청서 회신제출</a></li>
+                                        <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">계약관리</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">전자서명/계약대장</a></li>
+                                        <li><a href="javascript:;">임시계약대장</a></li>
+                                        <li><a href="javascript:;">납품지시관리</a></li>
+                                        <li><a href="javascript:;">검사요청관리</a></li>
+                                        <li><a href="javascript:;">보증보험관리</a></li>
+                                        <li><a href="javascript:;">실적증명발급</a></li>
+                                        <li><a href="javascript:;">하도급관리</a></li>
+                                        <li><a href="javascript:;">입고예정관리</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">대금정산</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">대금지급현황</a></li>
+                                        <li><a href="javascript:;">유보금현황</a></li>
+                                        <li><a href="javascript:;">바코드입고정보현황</a></li>
+                                        <li><a href="javascript:;">IT자산입고</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#none">기타</a>
+                                    <ul class="gnb_sub">
+                                        <li><a href="javascript:;">방문신청 및 시설예약</a></li>
+                                        <li><a href="javascript:;">검색시스템 표시정보</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="site_map">
+                            <button type="button" class="sitemapBtn sitemap_event"><i class="icons i_header_sitemap"></i></button>
+                        </div>
+                    </div>
+                </nav>
+                <div class="siteMapArea">
+                    <nav class="header_gnb">
+                        <div class="header_gnb_inner">
+                            <div class="align_lt">
+                                <h1 class="logo"><a href="javascript:;">Open2U</a></h1>
+                            </div>
+                            <a href="javascript:;" class="siteMapClosebtn"></a>
+                        </div>
+                    </nav>
+                    <div class="siteMap_inner">
+                        <ul class="menuArea">
+                            <li><h3>정보관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">기본정보</a></li>
+                                    <li><a href="javascript:;">거래정보</a></li>
+                                    <li><a href="javascript:;">거래약관</a></li>
+                                    <li><a href="javascript:;">지인관계</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약진행</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">입찰공고</a></li>
+                                    <li><a href="javascript:;">견적서제출</a></li>
+                                    <li><a href="javascript:;">계약변경</a></li>
+                                    <li><a href="javascript:;">납품지시</a></li>
+                                    <li><a href="javascript:;">정보요청서 회신제출</a></li>
+                                    <li><a href="javascript:;">적격수급업체 평가</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>계약관리</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">전자서명/계약대장</a></li>
+                                    <li><a href="javascript:;">임시계약대장</a></li>
+                                    <li><a href="javascript:;">납품지시관리</a></li>
+                                    <li><a href="javascript:;">검사요청관리</a></li>
+                                    <li><a href="javascript:;">보증보험관리</a></li>
+                                    <li><a href="javascript:;">실적증명발급</a></li>
+                                    <li><a href="javascript:;">하도급관리</a></li>
+                                    <li><a href="javascript:;">입고예정관리</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>대금정산</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">대금지급현황</a></li>
+                                    <li><a href="javascript:;">유보금현황</a></li>
+                                    <li><a href="javascript:;">바코드입고정보현황</a></li>
+                                    <li><a href="javascript:;">IT자산입고</a></li>
+                                </ul>
+                            </li>
+                            <li><h3>기타</h3>
+                                <ul class="menuList">
+                                    <li><a href="javascript:;">방문신청 및 시설예약</a></li>
+                                    <li><a href="javascript:;">검색시스템 표시정보</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
+            <!-- //header_wrap : E -->
+
+            <!-- container : S -->
+            <div class="container">
+                <div class="main_cont outside">
+                    <div class="main_cont_left">
+                        <div class="main_board_outside">
+                            <div class="main_outside_inner">
+                                <div class="main_quick_menu">
+                                    <ul class="main_quick_list">
+                                        <li class="bg_type01">
+                                            <a href="javascript:;">
+                                                <i class="icons i_main_quick01"></i>
+                                                <span>구매업무안내</span>
+                                            </a>
+                                        </li>
+                                        <li class="bg_type02">
+                                            <a href="javascript:;">
+                                                <i class="icons i_main_quick02"></i>
+                                                <span>구매규정/정책</span>
+                                            </a>
+                                        </li>
+                                        <li class="bg_type02">
+                                            <a href="javascript:;">
+                                                <i class="icons i_main_quick03"></i>
+                                                <span>SCM 우체통</span>
+                                            </a>
+                                        </li> 
+                                        <li class="bg_type01">
+                                            <a href="javascript:;">
+                                                <i class="icons i_main_quick04"></i>
+                                                <span>윤리경영 상담센터</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="main_qlink_list">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="icon"><i class="icons i_main_qlink01"></i></span>
+                                                <em>동반성장 Program</em>
+                                            </a>
+                                        </li>
+                                        <!-- <li>
+                                            <a href="javascript:;">
+                                                <span class="icon"><i class="icons i_main_qlink02"></i></span>
+                                                <em>동반성장몰 / 기타</em>
+                                            </a>
+                                        </li> -->
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="icon"><i class="icons i_main_qlink03"></i></span>
+                                                <em>공정거래 4대 실천사항</em>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="main_login_area">
+                                    <div class="main_intro_msg">
+                                        <h2>안녕하세요, <strong>홍길동</strong>님</h2>
+                                        <p>찾으시는 서비스를 빠르게 확인해보세요!</p>
+                                    </div>
+                                    <ul class="main_board_wrap">
+                                        <li>
+                                            <ul class="main_board_area">
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board01"></i>
+                                                        <span class="board_label">견적/제안서 현황</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board02"></i>
+                                                        <span class="board_label">계약서 서명</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board03"></i>
+                                                        <span class="board_label">납품지시접수</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board04"></i>
+                                                        <span class="board_label">계약대장</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul class="main_board_area">
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board05"></i>
+                                                        <span class="board_label">검사요청</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board06"></i>
+                                                        <span class="board_label">세금계산서수취</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board07"></i>
+                                                        <span class="board_label">보증보험</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board08"></i>
+                                                        <span class="board_label">유보금</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <ul class="main_board_area">
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board09"></i>
+                                                        <span class="board_label">실적증명발급</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board10"></i>
+                                                        <span class="board_label">계약변경요청</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icons i_main_board11"></i>
+                                                        <span class="board_label">적격수급업체평가</span>
+                                                        <strong class="board_number">52</strong>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main_bot_area outside">
+                            <ul class="main_banner_list">
+                                <li>
+                                    <a href="javascript:;" class="border type01">
+                                        <span>
+                                            계약담당자 <br>
+                                            검색하기
+                                        </span>
+                                        <i class="icons i_main_banner"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="javascript:;" class="border type02">
+                                        <span>
+                                            ETAX <br>
+                                            바로가기
+                                        </span>
+                                        <i class="icons i_main_banner"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="main_help_area">
+                                <div class="main_help_top">
+                                    <h3>Help Desk</h3>
+                                    <a href="javascript:;"><i class="icons i_main_help_link"></i></a>
+                                </div>
+                                <div class="main_help_notice">
+                                    <ul class="main_help_list">
+                                        <li><a href="javascript:;">회원가입 및 구매업무 문의</a></li>
+                                        <li><a href="javascript:;">대금지급, 실적증명 및 서류제출 안내</a></li>
+                                    </ul>
+                                    <ul class="main_number_list">
+                                        <li>
+                                            <span class="team">서비스구매팀</span>
+                                            <span class="phonenumber">: 02-6100-3350</span>
+                                        </li>
+                                        <li>
+                                            <span class="team">ICT Infra구매팀</span>
+                                            <span class="phonenumber">: 02-6100-3329</span>
+                                        </li>
+                                        <li>
+                                            <span class="team">성장Tech구매팀</span>
+                                            <span class="phonenumber">: 02-6100-3350</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main_cont_right">
+                        <div class="main_title_area mt">
+                            <div class="left">
+                                <h2><a href="javascript:;">공지사항</a></h2>
+                            </div>
+                            <div class="right">
+                                <ul id="tabList01" class="main_notice_tab">
+                                    <li rel="tabCont01-01" class="on"><a href="javascript:;">신규</a></li>
+                                    <li rel="tabCont01-02"><a href="javascript:;">주요</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tabCont01" class="main_notice_area">
+                            <div id="tabCont01-01" class="active">
+                                <ul class="main_notice_list">
+                                    <li>
+                                        <div class="date_box">
+                                            <span class="days">07</span>
+                                            <span class="year_month">23.07</span>
+                                        </div>
+                                        <a href="javascript:;" class="title new">
+                                            <em class="notice_new"></em>
+                                            2023 KISS 국제안전보건전시회에 초청합니다.
+                                            2023 KISS 국제안전보건전시회에 초청합니다.
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="date_box">
+                                            <span class="days">07</span>
+                                            <span class="year_month">23.07</span>
+                                        </div>
+                                        <a href="javascript:;" class="title">안전보건 동영상 유튜브 채널 오픈 및 활용 안내</a>
+                                    </li>
+                                    <li>
+                                        <div class="date_box">
+                                            <span class="days">07</span>
+                                            <span class="year_month">23.07</span>
+                                        </div>
+                                        <a href="javascript:;" class="title">적격수급업체평가 프로세스 안내</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="tabCont01-02">
+                                <ul class="main_notice_list">
+                                    <li>
+                                        <div class="date_box">
+                                            <span class="days">07</span>
+                                            <span class="year_month">23.07</span>
+                                        </div>
+                                        <a href="javascript:;" class="title new">
+                                            <em class="new"></em>
+                                            2023 KISS 국제안전보건전시회에 초청합니다.
+                                            2023 KISS 국제안전보건전시회에 초청합니다.
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <div class="date_box">
+                                            <span class="days">07</span>
+                                            <span class="year_month">23.07</span>
+                                        </div>
+                                        <a href="javascript:;" class="title">안전보건 동영상 유튜브 채널 오픈 및 활용 안내</a>
+                                    </li>
+                                    <li>
+                                        <div class="date_box">
+                                            <span class="days">07</span>
+                                            <span class="year_month">23.07</span>
+                                        </div>
+                                        <a href="javascript:;" class="title">적격수급업체평가 프로세스 안내</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="main_title_area">
+                            <div class="left">
+                                <h2><a href="javascript:;">입찰공고</a></h2>
+                            </div>
+                            <div class="right"></div>
+                        </div>
+                        <ul class="bid_notice_list">
+                            <li>
+                                <div class="bid_inner">
+                                    <span class="bid_status">진행</span>
+                                    <a href="javascript:;" class="bid_info">
+                                        <span class="bid_title">
+                                            <em class="notice_new"></em>
+                                            전송장비 10G 광모듈 공급사 선정 전송장비 10G 광모듈 공급사 선정
+                                        </span>
+                                        <span class="bid_date">
+                                            <em class="start">2023.05.24 13:00</em> ~ <em class="end">2023.05.30 12:00</em>
+                                        </span>
+                                    </a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="bid_inner">
+                                    <span class="bid_status">진행</span>
+                                    <a href="javascript:;" class="bid_info">
+                                        <span class="bid_title">전송장비 10G 광모듈 공급사 선정</span>
+                                        <span class="bid_date">
+                                            <em class="start">2023.05.24 13:00</em> ~ <em class="end">2023.05.30 12:00</em>
+                                        </span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <div class="main_title_tab">
+                            <ul id="tabList02" class="main_notice_board_tab">
+                                <li rel="tabCont02-01" class="on"><a href="javascript:;">자료실</a></li>
+                                <li rel="tabCont02-02"><a href="javascript:;">FAQ</a></li>
+                            </ul>
+                            <a href="javascript:;" class="notice_link"><i class="icons i_notice_link"></i></a>
+                        </div>
+                        <div id="tabCont02" class="main_notice_cont">
+                            <div id="tabCont02-01" class="active">
+                                <ul class="main_notice_board">
+                                    <li>
+                                        <a href="javascript:;" class="notice_links">
+                                            <span class="notice_title">2022년 Open2U 메뉴얼 (공급업체)2022년 Open2U 메뉴얼 (공급업체)</span>
+                                            <em class="notice_date">2023.01.01</em>
+                                        </a>
+                                        <button type="button" class="notice_down"><i class="icons i_notice_down"></i></button>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" class="notice_links">
+                                            <span class="notice_title">2022년 Open2U 메뉴얼 (공급업체)</span>
+                                            <em class="notice_date">2023.01.01</em>
+                                        </a>
+                                        <button type="button" class="notice_down"><i class="icons i_notice_down"></i></button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div id="tabCont02-02"></div>
+                        </div>
+                        <!-- 주석 여기까지진행 -->
+                    </div>
+                </div>
+            </div>
+            <!-- //container : E -->
+
+            <!-- footer_wrap : S -->
+            <footer class="footer_wrap">
+                <div class="inner">
+                    <div class="footer_top">
+                        <ul class="footer_info">
+                            <li><span>우편번호 : 04539</span></li>
+                            <li><span>서울특별시 중구 을지로65(을지로2가) SK T-타워 SK텔레콤(주)</span></li>
+                            <li><span>대표이사 사장 : 유영상</span></li>
+                        </ul>
+                        <ul class="footer_info">
+                            <li><a href="javascript:;">개인정보처리방침</a></li>
+                            <li><a href="javascript:;">이메일주소무단수집거부</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_copy">
+                        <p>COPYRIGHT © SK TELECOM. ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </footer>
+            <!-- //footer_wrap : E -->
+        </div>
+        <!-- // wrap : S -->
+        <script>
+            tabMenu('#tabList01','#tabCont01');
+            tabMenu('#tabList02','#tabCont02');
+        </script>
+    </body>
+</html>

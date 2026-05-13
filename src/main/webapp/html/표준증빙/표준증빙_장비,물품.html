@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="cm_layer_popup open">
+            <div class="dim"></div>
+            <div class="cm_layer_popup_area">
+                <button type="button" class="coach_mark_close" onclick="layerClose($(this))"></button>
+                <div class="layer_inner">
+                    <div class="layer_body">
+                        <div class="layer_cont">
+                            <div class="swiper coarch_mark">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="visual_area">
+                                            <img src="../../resource/images/renewal/img_slide_05_01.svg" alt="" />
+                                            <div class="desc_wrap">
+                                                <p class="desc"><strong>납품 내역을 확인</strong> 해주세요.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="visual_area">
+                                            <img src="../../resource/images/renewal/img_slide_05_02.svg" alt="" />
+                                            <div class="desc_wrap">
+                                                <p class="desc"><strong>특이사항이 있는 경우</strong>만 작성 해주세요.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="visual_area">
+                                            <img src="../../resource/images/renewal/img_slide_04_03.svg" alt="" />
+                                            <div class="desc_wrap">
+                                                <p class="desc">인수자가 SKT검사담당자가 아닌 경우<br><strong>인수자 정보를 추가 작성</strong> 해주세요.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper_util">
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper_btn_area">
+                                        <div class="swiper_prev">이전</div>
+                                        <div class="swiper_next">다음</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
+                    </div>
+                </div>
+                <div class="coach_mark_form_check">
+                    <input type="checkbox" id="coach_mark_cls_02" />
+                    <label for="coach_mark_cls_02">오늘 하루 보지 않기</label>
+                </div>
+            </div>
+        </div>
+        <!-- //코치마크 -->
+
+
+
+        <div class="layer_inner">
+            <div class="layer_head">
+                <div class="left">
+                    <h2 class="title">표준증빙 작성하기</h2>
+                </div>
+                <div class="right">
+                    <!-- <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button> -->
+                </div>
+            </div>
+
+            <div class="layer_body">
+                <div class="layer_cont">
+                    <div class="tit_area">
+                        <h3 class="tit">장비/물품 계약 표준 증빙</h3>
+                    </div>
+
+                    <div class="middle_tit_area m_t30">
+                        <div class="left">
+                            <h4 class="tit">1. 기본정보</h4>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+
+                    <table class="tbl_list ty03">
+                        <colgroup>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                            <col style="width: 100px;">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th colspan="4">계약정보</th>
+                                <th colspan="4">검사정보</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>계약번호</th>
+                                <td colspan="3">4160089616</td>
+                                <th>검사조서번호</th>
+                                <td>5260045786</td>
+                                <th>최종인수요청</th>
+                                <td>4160086491</td>
+                            </tr>
+                            <tr>
+                                <th rowspan="2">계약건명</th>
+                                <td colspan="3" rowspan="2">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</td>
+                                <th>검사금액</th>
+                                <td class="t_right" colspan="3">999,999,999원 <span class="desc">(VAT별도)</span></td>
+                            </tr>
+                            <tr>
+                                <th>남품기한</th>
+                                <td>2025-06-14</td>
+                                <th rowspan="2">목적물수령일(인수동의일)</th>
+                                <td rowspan="2">2025-06-14</td>
+                            </tr>
+                            <tr>
+                                <th>계약체결일</th>
+                                <td colspan="3">2025-06-14</td>
+                                <th>납품완료일</th>
+                                <td>2025-06-14</td>
+                            </tr>
+                            <tr>
+                                <th>계약기간</th>
+                                <td colspan="3">2025-06-14 ~ 2025-06-14</td>
+                                <th>검사요청일</th>
+                                <td>2025-06-15</td>
+                                <th>검사완료일</th>
+                                <td>2025-06-15</td>
+                            </tr>
+                            <tr>
+                                <th>계약금액</th>
+                                <td class="t_right" colspan="3">999,999,999원 <span class="desc">(VAT별도)</span></td>
+                                <th>검사요청자</th>
+                                <td colspan="3">이주영 / ac.lee@sk.com / 010-4156-4561</td>
+                            </tr>
+                            <tr>
+                                <th>공급업체명</th>
+                                <td colspan="3">피에스앤마케팅 주식회사</td>
+                                <th>SKT검사담당자</th>
+                                <td colspan="3">이주영 / ac.lee@sk.com / 010-4156-4561</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="middle_tit_area">
+                        <div class="left">
+                            <h4 class="tit">2. 납품내역</h4>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+
+                    <table class="tbl_list ty02">
+                        <colgroup>
+                            <col style="width: 45px;">
+                            <col>
+                            <col style="width: 51px;">
+                            <col style="width: 51px;">
+                            <col style="width: 110px;">
+                            <col style="width: 110px;">
+                            <col style="width: 100px;">
+                            <col style="width: 78px;">
+                            <col style="width: 18.5%;">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th rowspan="2">NO</th>
+                                <th rowspan="2">ITEM명 [ITEM코드]</th>
+                                <th colspan="4">청구금액</th>
+                                <th>입고지역(코드)</th>
+                                <th rowspan="2">제조사</th>
+                                <th>Serial Number / 제조번호</th>
+                            </tr>
+                            <tr>
+                                <th>단위</th>
+                                <th>수량</th>
+                                <th>단가</th>
+                                <th>금액</th>
+                                <th>납품/설치장소</th>
+                                <th>비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td rowspan="2">1</td>
+                                <td rowspan="2">서버 [1000056077]</td>
+                                <td colspan="4">gen10 NSN/ENB/HSFP 1590nm 3G</td>
+                                <td>본사(1000)</td>
+                                <td rowspan="2">SKSK</td>
+                                <td>GLM0Q34 GV9XS34 HV9XS34</td>
+                            </tr>
+                            <tr>
+                                <td>EA</td>
+                                <td>10</td>
+                                <td  class="t_right">999,999,999원</td>
+                                <td  class="t_right">999,999,999원</td>
+                                <td>T타워 17층</td>
+                                <td>특별 할인율 10%적용</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th colspan="2">합계</th>
+                                <td colspan="4" class="t_right">999,999,999원</td>
+                                <td colspan="3">비고</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+
+                    <div class="middle_tit_area">
+                        <div class="left">
+                            <h4 class="tit">3. 특이사항</h4>
+                        </div>
+                        <div class="right"></div>
+                    </div>
+
+                    <textarea class="form_control ty02" rows="2" placeholder="내용입력"></textarea>
+
+                    <div class="sign_desc_area">
+                        <p class="desc">본 증빙 자료의 모든 내용은 사실과 다름 없음을 확인합니다.</p>
+                    </div>
+
+                    <div class="tbl_fade_wrap">
+                        <div class="sign_tbl_area">
+                            <table class="tbl_list">
+                                <colgroup>
+                                    <col style="width: 80px;">
+                                    <col>
+                                    <col style="width: 120px;">
+                                    <col style="width: 125px;">
+                                    <col style="width: 160px;">
+                                    <col style="width: 200px;">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>구분</th>
+                                        <th>업체명</th>
+                                        <th>성명</th>
+                                        <th>전화번호</th>
+                                        <th>E-Mail</th>
+                                        <th>전자서명</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="ty02">인계자</td>
+                                        <td>SK텔레콤</td>
+                                        <td>홍길동</td>
+                                        <td>010-1234-5678</td>
+                                        <td>ac.lee@sk.com</td>
+                                        <td>2025-05-28 00:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ty02">인수자</td>
+                                        <td>SK텔레콤</td>
+                                        <td>홍길동</td>
+                                        <td>010-1234-5678</td>
+                                        <td>ac.lee@sk.com</td>
+                                        <td>2025-05-28 00:00:00</td>
+                                    </tr>
+                                    <tr class="hide_tbl_mark">
+                                        <td class="ty02">인수자</td>
+                                        <td>
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <td>
+                                            <input type="text" class="form_control ty02" placeholder="내용입력">
+                                        </td>
+                                        <td>2025-05-28 00:00:00</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="ty02">검토/확인</td>
+                                        <td>SK텔레콤</td>
+                                        <td>홍길동</td>
+                                        <td>-</td>
+                                        <td>ac.lee@sk.com</td>
+                                        <td>2025-05-28 00:00:00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <button type="button" class="btn list_fade_btn" data-text-open="인수자와 SKT검사담당자가 같음" data-text-close="인수자와 SKT검사담당자가 다름">인수자와 SKT검사담당자가 다름</button> <!-- 2025-06-20 수정 -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="btm_btn_area">
+                    <div class="left"></div>
+                    <div class="right">
+                        <div class="btn_group">
+                            <button type="button" class="btn pop lbtn md">저장</button>
+                            <span class="divid"></span>
+                            <button type="button" class="btn pop lbtn ty02 md">닫기</button>
+                            <button type="button" class="btn pop lg">완료/서명</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            //swiper
+            var swiper = new Swiper(".coarch_mark", {
+                cssMode: true,
+                navigation: {
+                    prevEl: '.swiper_util .swiper_prev',
+                    nextEl: '.swiper_util .swiper_next',
+                    clickable: true,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                },
+                mousewheel: true,
+                keyboard: true,
+            });
+        </script>
+    </body>
+</html>

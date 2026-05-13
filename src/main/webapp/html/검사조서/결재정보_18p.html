@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="pop_wrap">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">검사조서 작성</h1>
+                    </div>
+                    <div class="right">
+                        <ul class="progress_step_list">
+                            <li>
+                                <a href="javascript:;">구매요청</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매접수</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약진행</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약완료</a>
+                            </li>
+                            <li class="in_progress">
+                                <a href="javascript:;">검사조서</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매전표</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">대금지급</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_info_area on">
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">검사조서번호</span>
+                            <span class="info_text">52603442962</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사요청일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">공급업체명</span>
+                            <span class="info_text">주식회사 뮤플러스</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약번호</span>
+                            <span class="info_text">4160086491</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">계약담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">인수동의일
+                                <span class="count">D<span class="num_sign">+</span><em class="count_num">00</em></span>
+                            </span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사완료일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">검사조서건명</span>
+                            <span class="info_text">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">검사담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="toggle_btn"><span class="txt">Close</span><i class="ico_toggle_arr"></i></button> 
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_aside">
+                    <ul class="aside_progress_list">
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript::" class="point">1. 인수동의</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li> <!-- 2025-09-12 수정 -->
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">2. 요청정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li> <!-- 2025-09-12 수정 -->
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">3. 예산정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li> <!-- 2025-09-12 수정 -->
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">4. 확인정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li class="in_progress"> <!-- 2025-09-12 수정 -->
+                            <span class="status">작성중</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">5. 결재정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                    </ul>
+                    <ul class="link_area">
+                        <li>
+                            <button type="button" class="link_btn">목적물수령증명서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="link_btn">FAQ</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <div class="cont_inner">
+                            <div class="sub_tit_area m_t0">
+                                <div class="left">
+                                    <h2 class="tit">검사조서 결재선</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="table_area">
+                                <div class="thead_custom">
+                                    <span>소속부서</span>
+                                </div>
+                                <table class="tbl_style_03">
+                                    <colgroup>
+                                        <col style="width: 136px;">
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col>
+                                        <col style="width: 136px;">
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th>기안</th>
+                                            <th colspan="5">검토</th>
+                                            <th>승인</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>팀원</td>
+                                            <td>팀원</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>팀장</td>
+                                        </tr>
+                                        <tr>
+                                            <td> <!-- 2025-08-11 수정 -->
+                                                <strong>전진리님 <button type="button" class="btn_del">삭제</button></strong>
+                                                <span class="status">기안</span>
+                                            </td>
+                                            <td> <!-- 2025-08-11 수정 -->
+                                                <strong>홍길동님 <button type="button" class="btn_del">삭제</button></strong>
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn lbtn ty02 xs">추가 <i class="ico plus_st02"></i></button>
+                                            </td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td> <!-- 2025-08-11 수정 -->
+                                                <strong>이혜정님 <button type="button" class="btn_del">삭제</button></strong>
+                                            </td>
+                                        </tr>
+                                        <!-- 2025-08-11 삭제 -->
+                                        <!-- <tr>
+                                            <td><span class="date">2025-06-16<br>00:00:00</span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td><span class="date">2025-06-16<br>00:00:00</span></td>
+                                        </tr> -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">구매전표 결재선</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="table_layout_wrap">
+                                <div class="table_area">
+                                    <div class="thead_custom">
+                                        <span>신청부서</span>
+                                    </div>
+                                    <table class="tbl_style_03">
+                                        <!-- 2025-09-19 삭제 -->
+                                        <!-- <colgroup>
+                                            <col style="width: 136px;">
+                                            <col>
+                                            <col style="width: 136px;">
+                                        </colgroup> -->
+                                        <thead>
+                                            <tr>
+                                                <th>기안</th>
+                                                <th>검토</th>
+                                                <th>승인</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>팀원</td>
+                                                <td>팀원</td>
+                                                <td>팀장</td>
+                                            </tr>
+                                            <tr>
+                                                <td> <!-- 2025-08-11 수정 -->
+                                                    <strong>이주영님</strong>
+                                                    <span class="status">기안</span>
+                                                </td>
+                                                <td> <!-- 2025-08-11 수정 -->
+                                                    <strong>홍길동님</strong>
+                                                    <span class="status">검토</span>
+                                                </td>
+                                                <td> <!-- 2025-08-11 수정 -->
+                                                    <strong>한태호님</strong>
+                                                    <button type="button" class="btn lbtn ty02 xs">수정 <i class="ico plus_st02"></i></button> <!-- 2025-09-19 수정 -->
+                                                </td>
+                                            </tr>
+                                            <!-- 2025-08-11 삭제 -->
+                                            <!-- <tr>
+                                                <td><span class="date">2025-06-16<br>00:00:00</span></td>
+                                                <td></td>
+                                                <td><span class="date">2025-06-16<br>00:00:00</span></td>
+                                            </tr> -->
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="table_area">
+                                    <div class="thead_custom">
+                                        <span>담당부서</span>
+                                    </div>
+                                    <table class="tbl_style_03">
+                                        <!-- 2025-09-19 삭제 -->
+                                        <!-- <colgroup>
+                                            <col style="width: 136px;">
+                                            <col>
+                                            <col style="width: 136px;">
+                                        </colgroup> -->
+                                        <thead>
+                                            <tr>
+                                                <th>담당</th>
+                                                <th>검토</th>
+                                                <th>승인</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="del_cell"></td> <!-- 2025-07-16 수정 -->
+                                                <td class="del_cell"></td> <!-- 2025-07-16 수정 -->
+                                                <td class="del_cell"></td> <!-- 2025-07-16 수정 -->
+                                            </tr>
+                                            <!-- 2025-08-11 삭제 -->
+                                            <!-- <tr>
+                                                <td><span class="date">2025-06-16<br>00:00:00</span></td>
+                                                <td></td>
+                                                <td><span class="date">2025-06-16<br>00:00:00</span></td>
+                                            </tr> -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btm_btn_area"> <!-- 2025-06-16 수정 -->
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn md">반송</button>
+                                    <button type="button" class="btn pop lbtn md">저장</button>
+                                    <span class="divid"></span> 
+                                    <button type="button" class="btn pop lbtn ty02 md">이전</button>
+                                    <button type="button" class="btn pop lg">결재요청</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

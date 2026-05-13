@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">구매업무 안내</h2>
+                        <ul class="pop_tab_area">
+                            <li><a href="javascript:;">구매절차</a></li>
+                            <li class="on"><a href="javascript:;">거래품목 안내</a></li>
+                            <li><a href="javascript:;">대금 지급</a></li>
+                            <li><a href="javascript:;">인증서 관리</a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+
+                    </div>
+                </div>
+            </div>
+            <div class="popcontents">
+                
+                <div class="transaction_item_area">
+                    <ul class="transaction_item_list">
+                        <li>
+                            <div class="transaction_item_tit">
+                                <h3 class="tit">공사</h3>
+                            </div>
+                            <div class="transaction_item_detail">
+                                <ul class="detail_list">
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">NW공사</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">NW보수공사, NW시설공사, NW전기공사, NW통신공사, 교환기설치공사, 기지국설치공사, 부가부대장비설치공사, 전송망설치공사, 중계기설치공사</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">인테리어공사</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">건축토목공사, 일반보수공사, 일반시설공사, 일반전기공사, 일반통신공사</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">일반공사</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">SI인테리어공사, 사옥인테리어공사</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="transaction_item_tit">
+                                <h3 class="tit">물품</h3>
+                            </div>
+                            <div class="transaction_item_detail">
+                                <ul class="detail_list">
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">가구/차량</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">가구, 차량/차량용품</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">기타물품</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">건축설비, 사무용품, 상품권/멤버쉽/선불카드, 생활잡화, 콘텐츠, 특수품목</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">인쇄물/MD</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">VMD, 청구서/식지/인쇄물</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">전기설비</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">기타전기설비, 전력설비, 조명기기</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">전자제품</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">PC/PC부품, 가전제품, 영상기기, 음향기기, 전자기기</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">통신기기자재</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">기타단말/주변기기, 무선모뎀, 통신기기, 통신자재, 휴대폰 </p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="transaction_item_tit">
+                                <h3 class="tit">용역</h3>
+                            </div>
+                            <div class="transaction_item_detail">
+                                <ul class="detail_list">
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">OS용역</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">OS_Marketing, OS_Network, OS_기타</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">개발용역</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">개발용역_IT시스템, 개발용역_Network, 개발용역_Service&Contents, 개발용역_Terminal, 개발용역_신기술 &기타</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">기술용역</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">설계감리용역, 안전점검용역, 측정용역</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">외자</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">외자</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">운영용역</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">서비스/시스템운영, 위탁업무</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">유지보수</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">유지보수_IT장비, 유지보수_S/W, 유지보수_기타장비, 유지 보수_부가장비, 유지보수_부대물자, 유지보수_전송장비, 유지보수_주장비, 유지보수_중계기</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">일반용역</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">광고용역, 디자인용역, 사옥관리, 영상물제작용역, 운송용역, 일반용역, 임차용역, 전시및행사대행, 직접조사, 편집 기획용역</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">전문용역</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">간접조사, 법무/회계자문/감정평가, 연구용역, 컨설팅</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">제휴사업</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">제휴서비스, 콘텐츠판권/사용권</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="transaction_item_tit">
+                                <h3 class="tit">장비</h3>
+                            </div>
+                            <div class="transaction_item_detail">
+                                <ul class="detail_list">
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">IT장비</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">IT NW장비, IT보안장비, 서버/서버부품, 스토리지</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">SOFTWARE</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">N/W PKG, 범용S/W, 특수S/W</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">기타장비</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">측정장비</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">부가장비</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">Bridge장비, Femto장비, WiFi장비</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">부대장비</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">감시장치, 공조/소화장치, 공중선, 급전선/콘넥터, 부가장치, 전원장치, 축전지, 함체/랙</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">전송장비</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">DCS, IP백홀장비, Microwave, MUX, TDM, WDM, 기타전송장비</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">주장비</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">교환기, 기지국</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                    <li>
+                                        <dl class="detail_list_item">
+                                            <dt class="detail_category">중계기</dt>
+                                            <dd class="detail_txt">
+                                                <p class="txt">RF중계기, 광중계기</p>
+                                            </dd>
+                                        </dl>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </body>
+    <script>
+
+    </script>
+</html>

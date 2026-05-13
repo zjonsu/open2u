@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="layer_popup" data-role-popup="samplePop01"> <!-- 2025-07-24 추가 -->
+            <div class="dim"></div>
+            <div class="layer_popup_area sm">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">검사완료일 수정</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="datepicker_area inline">
+                                    <div id="datepicker" class="datepicker"></div>
+                                </div>
+                            </div>
+
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">취소</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // datepicker -->
+
+        <div class="layer_popup" data-role-popup="samplePop02"> <!-- 2025-08-29 추가 -->
+            <div class="dim"></div>
+            <div class="layer_popup_area sm">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">검사조서건명 수정</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner p_b55">
+                                <div class="input_group ty02">
+                                    <input type="text" class="form_control" placeholder="내용 입력" value="25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진">
+                                    <button type="button" class="btn_clear">삭제</button>
+                                </div>
+                            </div>
+
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">취소</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 검사조서건명 수정 -->
+        <!-- // layer_popup -->
+
+
+
+        <div class="pop_wrap">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">선급금조서 작성</h1>
+                    </div>
+                    <div class="right">
+                        <ul class="progress_step_list">
+                            <li>
+                                <a href="javascript:;">구매요청</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매접수</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약진행</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약완료</a>
+                            </li>
+                            <li class="in_progress">
+                                <a href="javascript:;">검사조서</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매전표</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">대금지급</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_info_area on">
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">검사조서번호</span>
+                            <span class="info_text">52603442962</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사요청일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">공급업체명</span>
+                            <span class="info_text">주식회사 뮤플러스</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약번호</span>
+                            <span class="info_text">4160086491</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">계약담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">인수동의일
+                                <span class="count">D<span class="num_sign">+</span><em class="count_num">00</em></span>
+                            </span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사완료일<button type="button" class="info_list_btn" onclick="layerPopup('samplePop01')">수정</button></span> <!-- 2025-07-24 수정 -->
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">검사조서건명<button type="button" class="info_list_btn" onclick="layerPopup('samplePop02')">수정</button></span>
+                            <span class="info_text">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">검사담당자<button type="button" class="info_list_btn ty02">이관</button></span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="toggle_btn"><span class="txt">Close</span><i class="ico_toggle_arr"></i></button> 
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_aside">
+                    <ul class="aside_progress_list">
+                        <li class="in_progress">
+                            <span class="status">작성중</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">1. 요청정보</a> <!-- 2025-09-12 수정 -->
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">2. 예산정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">3. 확인정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <h2 class="tit">
+                                <a href="javascript:;">4. 결재정보</a>
+                            </h2>
+                        </li>
+                    </ul>
+                    <ul class="link_area">
+                        <li>
+                            <button type="button" class="link_btn">목적물수령증명서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="link_btn">FAQ</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <div class="cont_inner">
+                            <div class="sub_tit_area m_t0">
+                                <div class="left">
+                                    <h2 class="tit">선급금요청내역</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="grid_area">
+                                <table id="jqGrid" class="jqgrid"></table>
+                                <div class="paging_area">
+                                    <div class="left">
+                                        <div class="grid_info_area">
+                                            <ul class="info_list">
+                                                <li>
+                                                    <span class="tit">저장위치</span>
+                                                    <span class="txt">1000</span>
+                                                </li>
+                                                <li>
+                                                    <span class="tit">예산구분</span>
+                                                    <span class="txt">예산구분</span>
+                                                </li>
+                                                <li>
+                                                    <span class="tit">최종송장</span>
+                                                    <span class="txt">123456789098</span>
+                                                </li>
+                                                <li>
+                                                    <span class="tit">WBS요소</span>
+                                                    <span class="txt">WBS요소</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="right">
+                                        <select class="form_control ty02">
+                                            <option>기본</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">선급금요청금액</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="form_area">
+                                <div class="grid_container">
+                                    <div class="row gx_12 gy_20">
+                                        <div class="col_6">
+                                            <div class="info_item">
+                                                <div class="cnt">
+                                                    <div class="grid_container">
+                                                        <div class="row gx_6">
+                                                            <div class="col_auto">
+                                                                <div class="value">금회</div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <input type="text" class="form_control text_end" placeholder="금액 입력" value="9,999,999원" readonly>
+                                                            </div>
+                                                            <div class="col_auto">
+                                                                <input type="text" class="form_control text_end w93" value="20%" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_6">
+                                            <div class="info_item">
+                                                <div class="cnt">
+                                                    <div class="grid_container">
+                                                        <div class="row gx_6">
+                                                            <div class="col_auto">
+                                                                <div class="value ty02">누적</div>
+                                                            </div>
+                                                            <div class="col">
+                                                                <input type="text" class="form_control text_end" placeholder="금액 입력" value="9,999,999원" readonly>
+                                                            </div>
+                                                            <div class="col_auto">
+                                                                <input type="text" class="form_control text_end w93" value="100%" readonly>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">산업안전보건관리비</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="form_area">
+                                <div class="grid_container">
+                                    <div class="row gx_12 gy_20">
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">계상총액</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="353,000" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">사용금액</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="353,000원" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col_4">
+                                            <div class="info_item">
+                                                <div class="label">
+                                                    <span class="txt">누적사용금액</span>
+                                                </div>
+                                                <div class="cnt">
+                                                    <input type="text" class="form_control text_end" placeholder="금액 입력" value="0원" readonly>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="sub_tit_area">
+                                <div class="left">
+                                    <h2 class="tit">선급금요청증빙</h2>
+                                </div>
+                                <div class="right"></div>
+                            </div>
+
+                            <div class="file_upload_area">
+                                <div class="file_req_area">
+                                    <p class="sm_tit">필수증빙</p>
+                                    <ul class="file_list_wrap">
+                                        <li>
+                                            <span class="label">표준증빙</span>
+                                            <button type="button" class="btn">확인하기</button>
+                                            <div class="file_list_area">
+                                                <div class="file_list">
+                                                    <p class="file_name">
+                                                        <a href="javascript:;">표준증빙 파일</a>
+                                                    </p>
+                                                </div>
+                                            </div>             
+                                        </li>
+                                        <li>
+                                            <span class="label">선급금사용계획서</span>
+                                            <button type="button" class="btn">첨부하기</button>
+                                            <div class="file_list_area">
+                                                <div class="file_list">
+                                                    <p class="file_name">
+                                                        <a href="javascript:;">첨부서류_01_첨부서류_01_첨부서류_01_첨부서류_01_첨부서류_01_첨부서류_01_첨부서류_01_첨부서류.pdf</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="file_add_area">
+                                    <p class="sm_tit">추가증빙</p>
+                                    <ul class="file_list_wrap">
+                                        <li>
+                                            <div class="file_select_wrap">
+                                                <input type="text" class="file_form_control" placeholder="증빙유형선택" readonly>
+                                                <button type="button" class="select_list_btn"></button>
+                                                <div class="file_select_list_wrap">
+                                                    <ul class="file_select_list">
+                                                        <li>
+                                                            <a href="javascript:;">견적서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">내역서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">공사원가계산서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">INVOICE</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">증빙사진</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">기타증빙</a>
+                                                        </li>
+                                                        <li class="self_write">
+                                                            <a href="javascript:;">직접입력</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="file_list_area">
+                                                <div class="file_list">
+                                                    <p class="file_name">
+                                                        <strong>태그</strong><a href="javascript:;">추가증빙_서류_01.pdf</a>
+                                                    </p>
+                                                    <div class="btn_group">
+                                                        <button type="button" class="file_upload_btn">업로드</button>
+                                                        <button type="button" class="file_del_btn">삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div>             
+                                        </li>
+                                        <li>
+                                            <div class="file_select_wrap">
+                                                <input type="text" class="file_form_control" placeholder="증빙유형선택" readonly>
+                                                <button type="button" class="select_list_btn"></button>
+                                                <div class="file_select_list_wrap">
+                                                    <ul class="file_select_list">
+                                                        <li>
+                                                            <a href="javascript:;">견적서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">내역서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">공사원가계산서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">INVOICE</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">증빙사진</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">기타증빙</a>
+                                                        </li>
+                                                        <li class="self_write">
+                                                            <a href="javascript:;">직접입력</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="file_list_area">
+                                                <div class="file_list">
+                                                    <p class="file_name">
+                                                        <a href="javascript:;">추가증빙_서류_01_추가증빙_서류_01_추가증빙_서류_01_추가증빙_서류_01_추가증빙_서류_01.pdf</a>
+                                                    </p>
+                                                    <div class="btn_group">
+                                                        <button type="button" class="file_upload_btn">업로드</button>
+                                                        <button type="button" class="file_del_btn">삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div>    
+                                        </li>
+                                        <li>
+                                            <div class="file_select_wrap">
+                                                <input type="text" class="file_form_control" placeholder="증빙유형선택" readonly>
+                                                <button type="button" class="select_list_btn"></button>
+                                                <div class="file_select_list_wrap">
+                                                    <ul class="file_select_list">
+                                                        <li>
+                                                            <a href="javascript:;">견적서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">내역서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">공사원가계산서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">INVOICE</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">증빙사진</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">기타증빙</a>
+                                                        </li>
+                                                        <li class="self_write">
+                                                            <a href="javascript:;">직접입력</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="file_list_area">
+                                                <div class="file_list">
+                                                    <p class="file_name">
+                                                        <a href="javascript:;">추가증빙_서류_01.pdf</a>
+                                                    </p>
+                                                    <div class="btn_group">
+                                                        <button type="button" class="file_upload_btn">업로드</button>
+                                                        <button type="button" class="file_del_btn">삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div> 
+                                        </li>
+                                        <li>
+                                            <div class="file_select_wrap">
+                                                <input type="text" class="file_form_control" placeholder="증빙유형선택" readonly>
+                                                <button type="button" class="select_list_btn"></button>
+                                                <div class="file_select_list_wrap">
+                                                    <ul class="file_select_list">
+                                                        <li>
+                                                            <a href="javascript:;">견적서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">내역서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">공사원가계산서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">INVOICE</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">증빙사진</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">기타증빙</a>
+                                                        </li>
+                                                        <li class="self_write">
+                                                            <a href="javascript:;">직접입력</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="file_list_area">
+                                                <div class="file_list">
+                                                    <p class="file_name">
+                                                        <a href="javascript:;">추가증빙_서류_01.pdf</a>
+                                                    </p>
+                                                    <div class="btn_group">
+                                                        <button type="button" class="file_upload_btn">업로드</button>
+                                                        <button type="button" class="file_del_btn">삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </li>
+                                        <li>
+                                            <div class="file_select_wrap">
+                                                <input type="text" class="file_form_control" placeholder="증빙유형선택" readonly>
+                                                <button type="button" class="select_list_btn"></button>
+                                                <div class="file_select_list_wrap">
+                                                    <ul class="file_select_list">
+                                                        <li>
+                                                            <a href="javascript:;">견적서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">내역서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">공사원가계산서</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">INVOICE</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">증빙사진</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="javascript:;">기타증빙</a>
+                                                        </li>
+                                                        <li class="self_write">
+                                                            <a href="javascript:;">직접입력</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="file_list_area">
+                                                <div class="file_list">
+                                                    <p class="file_name">
+                                                        <a href="javascript:;">추가증빙_서류_01.pdf</a>
+                                                    </p>
+                                                    <div class="btn_group">
+                                                        <button type="button" class="file_upload_btn">업로드</button>
+                                                        <button type="button" class="file_del_btn">삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div>   
+                                        </li>
+                                    </ul>
+                                    
+                                    <div class="file_drag_wrap">
+                                        <div class="file_drag_area">
+                                            <a href="javascript:;">
+                                                <p class="desc">파일을 이곳에 끌어오거나 클릭하여 선택할 수 있습니다.</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="btm_btn_area">
+                            <div class="left">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty03 md" onclick="layerPopup('sampleCoachMark01')">작성가이드</button>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn md">저장</button>
+                                    <span class="divid"></span>
+                                    <button type="button" class="btn pop lbtn ty02 md">이전</button>
+                                    <button type="button" class="btn pop lg">다음</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var mydata = [
+                {
+                    NO: "1",
+                    입고지역: "1000",
+                    Item_코드: '9000001928',
+                    Item_명: '일반용역',
+                    규격: "GUN",
+                    납품기한: "2026-03-31",
+                    선급금요청금액: "0",
+                    잔여금액: "381,000,000",
+                    계약금액: "461,000,000",
+                    수량: "1",
+                    단가: "00,000,000,000",
+                    추가정보: ''
+                },
+                {
+                    NO: "1",
+                    입고지역: "1000",
+                    Item_코드: '9000001928',
+                    Item_명: '일반용역',
+                    규격: "GUN",
+                    납품기한: "2026-03-31",
+                    선급금요청금액: "0",
+                    잔여금액: "381,000,000",
+                    계약금액: "461,000,000",
+                    수량: "1",
+                    단가: "00,000,000,000",
+                    추가정보: ''
+                },
+                {
+                    NO: "1",
+                    입고지역: "1000",
+                    Item_코드: '9000001928',
+                    Item_명: '일반용역',
+                    규격: "GUN",
+                    납품기한: "2026-03-31",
+                    선급금요청금액: "0",
+                    잔여금액: "381,000,000",
+                    계약금액: "461,000,000",
+                    수량: "1",
+                    단가: "00,000,000,000",
+                    추가정보: ''
+                },
+                {
+                    NO: "1",
+                    입고지역: "1000",
+                    Item_코드: '9000001928',
+                    Item_명: '일반용역',
+                    규격: "GUN",
+                    납품기한: "2026-03-31",
+                    선급금요청금액: "0",
+                    잔여금액: "381,000,000",
+                    계약금액: "461,000,000",
+                    수량: "1",
+                    단가: "00,000,000,000",
+                    추가정보: ''
+                },
+            ];
+
+            $(document).ready(function () {
+                $("#jqGrid").jqGrid({
+                    datatype: "local",
+                    data: mydata,
+                    autowidth: true,
+                    cellEdit: true,
+                    shrinkToFit: false,
+                    forceFit: true,
+                    pager: "#jqGridPager",
+                    colModel: [
+                        { label: "NO", name: "NO", width: 40 },
+                        { label: "입고지역", name: "입고지역", width: 70 },
+                        { label: "Item 코드", name: "Item_코드", width: 110 },
+                        { label: "Item 명", name: "Item_명", width: 70 },
+                        { label: "규격", name: "규격", width: 45 },
+                        { label: "납품기한", name: "납품기한", width: 106 },
+                        { label: "선급금요청금액", name: "선급금요청금액", width: 154, align: 'right', editoptions: { style: 'text-align:right;' } }, //2025-06-11 수정
+                        { label: "잔여금액", name: "잔여금액", width: 154, align: 'right', editoptions: { style: 'text-align:right;' } }, //2025-06-11 수정
+                        { label: "계약금액", name: "계약금액", width: 154, align: 'right', editoptions: { style: 'text-align:right;' } }, //2025-06-11 수정
+                        { label: "수량", name: "수량", width: 60 },
+                        { label: "단가", name: "단가", width: 170, align: 'right', editoptions: { style: 'text-align:right;' } }, //2025-06-11 수정
+                        {
+                            label: "추가정보",
+                            name: "추가정보",
+                            width: 114,
+                            align: 'center',
+                            formatter: function () {
+                                return '<button type="button" class="btn">보기/닫기</button>';
+                            }
+                        },
+                    ],
+
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+            });
+
+            $(window).bind("resize", function () {
+                $("#jqGrid").setGridWidth($(".grid_area").width());
+            }).trigger("resize");
+        </script>
+    </body>
+</html>

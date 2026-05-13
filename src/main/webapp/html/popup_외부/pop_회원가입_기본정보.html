@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/newmain.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <div class="pop_header_area">
+            <div class="pop_top_area">
+                <div class="left">
+                    <h2 class="pop_title">회원가입</h2>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="popcontents">
+            <ul class="member_join_step">
+                <li class="off">
+                    <div class="member_step step01">
+                        <span>약관동의</span>
+                    </div>
+                </li>
+                <li class="off">
+                    <div class="member_step step02">
+                        <span>회원인증</span>
+                    </div>
+                </li>
+                <li class="on">
+                    <div class="member_step step03">
+                        <span>기본정보</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="member_step step04">
+                        <span>거래희망영역</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="member_step step05">
+                        <span>대금지급바로</span>
+                    </div>
+                </li>
+            </ul>
+
+            <div id="signDIv">
+                <div class="poptitle type1">
+                    <h3 id="topTitle">개인회원 정보입력</h3>
+                </div>
+
+                <div class="poptitle type2 m_t10">
+                    <h3>기본정보</h3>
+                    <p class="titlecoment cp_o">(<span class="staricon"></span> 필수입력)</p>
+                </div>
+
+                <table class="tableStyle popTable m_t10">
+                <colgroup>
+                    <col style="width:15%">
+                    <col>
+                    <col style="width:15%">
+                    <col style="width:31%">
+                </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>ID<span class="staricon"></span></th>
+                            <td colspan="3">
+                                <input type="text" id="USERID_SI" name="USERID_SI" data-bind="value:USERID_SI" value="" class="point w160" maxlength="12">
+                                <a href="#none" id="btnTUserSiChk" class="btn type2">중복확인</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <!--  [2021.1.14] 비밀번호 특수문자 허용 - 문구변경 | 개발자: 김은아 | 리뷰자: 임진호 -->
+                            <th>비밀번호<span class="staricon"></span></th>
+                            <td><input type="password" id="PASSWORD_SI" name="PASSWORD_SI" data-bind="value:PASSWORD_SI" value="" class="point w160" maxlength="50">&nbsp;(10~20자리, 영문, 숫자, 기호혼용)</td>
+                            <th>비밀번호확인<span class="staricon"></span></th>
+                            <td>
+                                <input type="password" id="PASSWORD1_SI" name="PASSWORD1_SI" data-bind="value:PASSWORD1_SI" value="" maxlength="50" class="point w160">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>성명</th>
+                            <td id="siNameTd"></td>
+                            <th>이메일</th>
+                            <td id="siEmailTd">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>연락처<span class="staricon"></span></th>
+                            <td>
+                                <select id="PHONE1_SI" name="PHONE1_SI" data-type="select" data-bind="selectedOptions:PHONE1_SI" class="point w60" data-converted="true">
+                                    <option value="010">010</option>
+                                </select>&nbsp;-&nbsp;
+                                <input type="text" id="PHONE2_SI" name="PHONE2_SI" data-bind="value:PHONE2_SI" value="" class="point w30" maxlength="4">&nbsp;-&nbsp;
+                                <input type="text" id="PHONE3_SI" name="PHONE3_SI" data-bind="value:PHONE3_SI" value="" class="point w30" maxlength="4">
+                            </td>
+                            <th>핸드폰번호<span class="staricon"></span></th>
+                            <td>
+                                <select id="CELL1_SI" name="CELL1_SI" data-type="select" data-bind="selectedOptions:CELL1_SI" class="point w60" data-converted="true">
+                                    <option value="010">010</option>
+                                </select>&nbsp;-&nbsp;
+                                <input type="text" id="CELL2_SI" name="CELL2_SI" data-bind="value:CELL2_SI" value="" class="point w30" maxlength="4">&nbsp;-&nbsp;
+                                <input type="text" id="CELL3_SI" name="CELL3_SI" data-bind="value:CELL3_SI" value="" class="point w30" maxlength="4">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>우편번호<span class="staricon"></span></th>
+                            <td colspan="3">
+                                <input type="text" id="ZIP_CD1_SI" name="ZIP_CD1_SI" data-bind="value:ZIP_CD1_SI" value="" class="point w40" maxlength="3" align="center">
+                                <input type="hidden" id="ZIP_CD2_SI" name="ZIP_CD2_SI" data-bind="value:ZIP_CD2_SI" value="" class="point w30" maxlength="3" align="center">&nbsp;
+                                <a href="#none" id="btnTPost3Chk" class="btn type2">우편번호검색</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주소<span class="staricon"></span></th>
+                            <td><input type="text" id="ADDR_SI" name="ADDR_SI" data-bind="value:ADDR_SI" value="" maxlength="100" class="point wp100"></td>
+                            <th>상세주소<span class="staricon"></span></th>
+                            <td><input type="text" id="ADDR1_SI" name="ADDR1_SI" data-bind="value:ADDR1_SI" value="" maxlength="100" class="point wp100"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle m_t20">
+                    <h3>추가정보(선택입력)</h3>
+                </div>
+
+                <table class="tableStyle popTable m_t10">
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:30%">
+                        <col style="width:20%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>직장/학교명</th>
+                            <td><input type="text" id="COMP_NAME_SI" name="COMP_NAME_SI" data-bind="value:COMP_NAME_SI" value="" maxlength="50" class="w160"></td>
+                            <th>부서/학과명</th>
+                            <td><input type="text" id="DEPT_NAME_SI" name="DEPT_NAME_SI" data-bind="value:DEPT_NAME_SI" value="" maxlength="50" class="w160"></td>
+                        </tr>
+                        <tr>
+                            <th>직위/학년</th>
+                            <td><input type="text" id="OFPOS_NAME_SI" name="OFPOS_NAME_SI" data-bind="value:OFPOS_NAME_SI" value="" maxlength="50" class="w160"></td>
+                            <th>직무유형/전공</th>
+                            <td><input type="text" id="RSPOF_NAME_SI" name="RSPOF_NAME_SI" data-bind="value:RSPOF_NAME_SI" value="" maxlength="50" class="w160"></td>
+                        </tr>
+                        <tr>
+                            <th>홈페이지</th>
+                            <td colspan="3"><input type="text" id="HOMEPAGE_SI" name="HOMEPAGE_SI" data-bind="value:HOMEPAGE_SI" value="" maxlength="100" class="wp60"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="lay_pop_btn">
+                    <button type="button" class="btn c_type07">다음</button>
+                </div>
+
+            </div>
+
+            <div id="bizUserDIv">
+                <div class="poptitle type1">
+                    <h3 id="topTitle1">개인 사업자 회원 정보입력</h3>
+                </div>
+
+
+                <div id="bizN">
+                <div class="poptitle type2 m_t10">
+                    <h3>기본정보</h3>
+                    <p class="titlecoment cp_o">(<span class="staricon"></span> 필수입력)</p>
+                </div>
+                <table class="tableStyle popTable m_t10">
+                    <colgroup>
+                        <col style="width:19%">
+                        <col style="width:31%">
+                        <col style="width:13%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>사업자등록번호</th>
+                            <td id="bizNBizTd"></td>
+                            <th>사업자명</th>
+                            <td id="bizNPobusiNmTd"></td>
+                        </tr>
+                        <tr id="bizNBTr">
+                            <th>법인등록번호<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" name="COP_NO1" id="COP_NO1" data-bind="value:COP_NO1" class="point w80" maxlength="6"> -
+                                <input type="text" name="COP_NO2" id="COP_NO2" data-bind="value:COP_NO2" class="point w80" maxlength="7">
+                            </td>
+                            <th>법인명<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" name="COP_NAME" id="COP_NAME" data-bind="value:COP_NAME" class="point w160" maxlength="100">
+                                <a href="#none" id="btnTCopChk" class="btn type2">법인번호인증</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>대표자성명<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" id="REPRE_NM" name="REPRE_NM" data-bind="value:REPRE_NM" value="" maxlength="30" class="point w160">
+                            </td>
+                            <th>기업규모<span class="staricon"></span></th>
+                            <td>
+                                <select id="BIZ_SIZE" name="BIZ_SIZE" data-type="select" data-bind="selectedOptions:BIZ_SIZE" class="point w110" data-converted="true">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>대표 전화번호<span class="staricon"></span></th>
+                            <td>
+                                <select id="REPRE_PHN_NO1" name="REPRE_PHN_NO1" data-type="select" data-bind="selectedOptions:REPRE_PHN_NO1" class="point w60" data-converted="true">
+                                    <option value=""></option>
+                                </select>&nbsp;-&nbsp;
+                                <input type="text" id="REPRE_PHN_NO2" name="REPRE_PHN_NO2" data-bind="value:REPRE_PHN_NO2" value="" class="point w30" maxlength="4" data-keyfilter-rule="digits">&nbsp;-&nbsp;
+                                <input type="text" id="REPRE_PHN_NO3" name="REPRE_PHN_NO3" data-bind="value:REPRE_PHN_NO3" value="" class="point w30" maxlength="4" data-keyfilter-rule="digits">
+                            </td>
+                            <th>대표 팩스번호</th>
+                            <td>
+                                <select id="REPRE_FAX_NO1" name="REPRE_FAX_NO1" data-type="select" data-bind="selectedOptions:REPRE_FAX_NO1" class="w60" data-converted="true">
+                                    <option value=""></option>
+                                </select>&nbsp;-&nbsp;
+                                <input type="text" id="REPRE_FAX_NO2" name="REPRE_FAX_NO2" data-bind="value:REPRE_FAX_NO2" value="" class="w30" maxlength="4" data-keyfilter-rule="digits">&nbsp;-&nbsp;
+                                <input type="text" id="REPRE_FAX_NO3" name="REPRE_FAX_NO3" data-bind="value:REPRE_FAX_NO3" value="" class="w30" maxlength="4" data-keyfilter-rule="digits">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>우편번호<span class="staricon"></span></th>
+                            <td colspan="3">
+                                <input type="text" id="POST_NO1" name="POST_NO1" data-bind="value:POST_NO1" value="" class="point w40" maxlength="3" align="center" data-keyfilter-rule="digits">
+                                <input type="hidden" id="POST_NO2" name="POST_NO2" data-bind="value:POST_NO2" value="" class="point w30" maxlength="3" align="center" data-keyfilter-rule="digits">&nbsp;
+                                <a href="#none" id="btnTPost1Chk" class="btn type2">우편번호검색</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주소<span class="staricon"></span></th>
+                            <td><input type="text" id="LINK_ADDR_1" name="LINK_ADDR_1" data-bind="value:LINK_ADDR_1" value="" maxlength="100" class="point wp100"></td>
+                            <th>상세주소<span class="staricon"></span></th>
+                            <td><input type="text" id="LINK_ADDR_2" name="LINK_ADDR_2" data-bind="value:LINK_ADDR_2" value="" maxlength="100" class="point wp100"></td>
+                        </tr>
+                        <tr>
+                            <th>업태<span class="staricon"></span></th>
+                            <td><input type="text" id="BUSICDT" name="BUSICDT" data-bind="value:BUSICDT" value="" maxlength="100" class="point w230"></td>
+                            <th>업종<span class="staricon"></span></th>
+                            <td><input type="text" id="IND" name="IND" data-bind="value:IND" value="" maxlength="100" class="point w230"></td>
+                        </tr>
+                        <tr>
+                            <th>주요품목 및 서비스<span class="staricon"></span></th>
+                            <td colspan="3"><input type="text" id="MAIN_DEAL_ITEM" name="MAIN_DEAL_ITEM" data-bind="value:MAIN_DEAL_ITEM" value="" maxlength="100" class="point w230"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle m_t20">
+                    <h3>추가정보</h3>
+                    <!-- <p class="titlecoment cp_o">(<span class="staricon"></span> 필수입력)</p> -->
+                </div>
+
+                <table class="tableStyle popTable m_t10">
+                    <colgroup>
+                        <col style="width:19%">
+                        <col style="width:31%">
+                        <col style="width:13%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>설립일</th>
+                            <td>
+                                <div data-type="daterange" class="af-daterange af-default" data-converted="true">
+                                    <input class="w80" data-role="startdate" id="FOUND_DATE" name="FOUND_DATE" data-bind="value:FOUND_DATE" data-format="yyyy-MM-dd" data-selectyear="true" data-selectmonth="true" data-mindate="1950-01-01" value="" data-type="dateinput" maxlength="10" placeholder="yyyy-MM-dd" type="text" data-converted="true"><a class="btnS calendar2" id="FOUND_DATE_BTN"></a>
+                                </div>
+                            </td>
+                            <th>과세구분</th>
+                            <td>
+                                <select id="TAX_CLS" name="TAX_CLS" data-type="select" data-bind="selectedOptions:TAX_CLS" class="w160" data-converted="true">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>사업장 소재지</th>
+                            <td>
+                                <select id="POBUSI_RGNLOC_LOC" name="POBUSI_RGNLOC_LOC" data-type="select" data-bind="selectedOptions:POBUSI_RGNLOC_LOC" class="w80" data-converted="true">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <th>홈페이지URL</th>
+                            <td><input type="text" id="HOMEPAGE" name="HOMEPAGE" data-bind="value:HOMEPAGE" value="" maxlength="100" class="w230"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <div id="bizY">
+                <div class="poptitle type2 m_t10">
+                    <h3>기본정보</h3>
+                </div>
+                <table class="tableStyle popTable m_t10">
+                    <colgroup>
+                        <col style="width:19%">
+                        <col style="width:31%">
+                        <col style="width:17%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>사업자등록번호</th>
+                            <td id="bizYBizTd"></td>
+                            <th>사업자명</th>
+                            <td id="bizYPobusiNmTd"></td>
+                        </tr>
+                        <tr id="bizYBTr">
+                            <th>법인등록번호</th>
+                            <td id="bizYCopNoTd"></td>
+                            <th>법인명</th>
+                            <td id="bizYCopNameTd"></td>
+                        </tr>
+                        <tr>
+                            <th>대표자성명</th>
+                            <td colspan="3" id="bizYRepreNmTd"></td>
+                        </tr>
+                        <tr>
+                            <th>대표 전화번호</th>
+                            <td id="bizYReprePhnNoTd"></td>
+                            <th>대표 팩스번호</th>
+                            <td id="bizYRepreFaxNoTd"></td>
+                        </tr>
+                        <tr>
+                            <th>우편번호</th>
+                            <td colspan="3" id="bizYPostNoTd"></td>
+                        </tr>
+                        <tr>
+                            <th>주소</th>
+                            <td id="bizYLinkAddr1Td"></td>
+                            <th>상세주소</th>
+                            <td id="bizYLinkAddr2Td"></td>
+                        </tr>
+                        <tr>
+                            <th>업태</th>
+                            <td id="bizYBusicdtTd"></td>
+                            <th>업종</th>
+                            <td id="bizYIndTd"></td>
+                        </tr>
+                        <tr>
+                            <th>주요품목 및 서비스</th>
+                            <td colspan="3" id="bizYMainDealItemTd"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle m_t20">
+                    <h3>추가정보</h3>
+                    <!-- <p class="titlecoment cp_o">(<span class="staricon"></span> 필수입력)</p> -->
+                </div>
+                <input type="hidden" id="TAX_TYPE" name="TAX_TYPE" data-bind="value:TAX_TYPE">
+                <input type="hidden" id="COMPANY_AREA" name="COMPANY_AREA" data-bind="value:COMPANY_AREA">
+
+                <table class="tableStyle popTable m_t10">
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:30%">
+                        <col style="width:20%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>설립일</th>
+                            <td id="bizYFoundDateTd"></td>
+                            <th>과세구분</th>
+                            <td id="bizYTaxClsTd"></td>
+                        </tr>
+                        <tr>
+                            <th>사업장 소재지</th>
+                            <td id="bizYPobusiRgnlocLocTd"></td>
+                            <th>홈페이지URL</th>
+                            <td id="bizYHomepageTd"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <div class="poptitle m_t20">
+                    <p class="titlecoment cp_o">(<span class="staricon"></span> 필수입력)</p>
+                </div>
+
+                <table class="tableStyle popTable m_t10">
+                    <colgroup>
+                        <col style="width:14%">
+                        <col>
+                        <col style="width:14%">
+                        <col style="width:36%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>ID<span class="staricon"></span></th>
+                            <td colspan="3">
+                                <input type="text" id="USERID" name="USERID" data-bind="value:USERID" value="" class="point w160" maxlength="12">
+                                <a href="#none" id="btnTUserChk" class="btn type2">중복확인</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <!--  [2021.1.14] 비밀번호 특수문자 허용 - 문구변경 | 개발자: 김은아 | 리뷰자: 임진호 -->
+                            <th>비밀번호<span class="staricon"></span></th>
+                            <td><input type="password" id="PASSWORD" name="PASSWORD" value="" class="point w140" data-bind="value:PASSWORD" maxlength="50">&nbsp;(10~20자리, 영문, 숫자, 기호혼용)</td>
+                            <th>비밀번호확인<span class="staricon"></span></th>
+                            <td>
+                                <input type="password" id="PASSWORD1" name="PASSWORD1" data-bind="value:PASSWORD1" value="" maxlength="50" class="point w160">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>성명<span class="staricon"></span></th>
+                            <td><input type="text" class="point w80" id="userName" name="userName" data-bind="value:userName" maxlength="50"></td>
+                            <th>이메일<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" id="EMAIL_IN" name="EMAIL_IN" data-bind="value:EMAIL_IN" value="" maxlength="50" class="point w160">&nbsp;
+                                <a href="#none" id="btnTEmailChk" class="btn type2">중복확인</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>전화번호<span class="staricon"></span></th>
+                            <td>
+                                <select id="PHONE1" name="PHONE1" data-type="select" data-bind="selectedOptions:PHONE1" class="point w60" data-converted="true">
+                                    <option value=""></option>
+                                </select>&nbsp;-&nbsp;
+                                <input type="text" id="PHONE2" name="PHONE2" data-bind="value:PHONE2" value="" class="point w30" maxlength="4" data-keyfilter-rule="digits">&nbsp;-&nbsp;
+                                <input type="text" id="PHONE3" name="PHONE3" data-bind="value:PHONE3" value="" class="point w30" maxlength="4" data-keyfilter-rule="digits">
+                            </td>
+                            <th>팩스번호</th>
+                            <td>
+                                <select id="FAX1" name="FAX1" data-type="select" data-bind="selectedOptions:FAX1" class="w60" data-converted="true">
+                                    <option value=""></option>
+                                </select>&nbsp;-&nbsp;
+                                <input type="text" id="FAX2" name="FAX2" data-bind="value:FAX2" value="" class="w30" maxlength="4" data-keyfilter-rule="digits">&nbsp;-&nbsp;
+                                <input type="text" id="FAX3" name="FAX3" data-bind="value:FAX3" value="" class="w30" maxlength="4" data-keyfilter-rule="digits">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>핸드폰<span class="staricon"></span></th>
+                            <td colspan="3">
+                                <select id="CELL1" name="CELL1" data-type="select" data-bind="selectedOptions:CELL1" class="point w60" data-converted="true">
+                                    <option value=""></option>
+                                </select>&nbsp;-&nbsp;
+                                <input type="text" id="CELL2" name="CELL2" data-bind="value:CELL2" value="" class="point w30" maxlength="4" data-keyfilter-rule="digits">&nbsp;-&nbsp;
+                                <input type="text" id="CELL3" name="CELL3" data-bind="value:CELL3" value="" class="point w30" maxlength="4" data-keyfilter-rule="digits">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>직위<span class="staricon"></span></th>
+                            <td><input type="text" id="OFPOS_NAME" name="OFPOS_NAME" data-bind="value:OFPOS_NAME" value="" maxlength="50" class="point w160"></td>
+                            <th>담당업무<span class="staricon"></span></th>
+                            <td><input type="text" id="RSPOF_NAME" name="RSPOF_NAME" data-bind="value:RSPOF_NAME" value="" maxlength="50" class="point w160"></td>
+                        </tr>
+                        <tr>
+                            <th>우편번호<span class="staricon"></span></th>
+                            <td colspan="3">
+                                <input type="text" id="ZIP_CD1" name="ZIP_CD1" data-bind="value:ZIP_CD1" value="" class="point w40" maxlength="3" align="center" data-keyfilter-rule="digits">
+                                <input type="hidden" id="ZIP_CD2" name="ZIP_CD2" data-bind="value:ZIP_CD2" value="" class="point w30" maxlength="3" align="center" data-keyfilter-rule="digits">&nbsp;
+                                <a href="#none" id="btnTPost2Chk" class="btn type2">우편번호검색</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>주소<span class="staricon"></span></th>
+                            <td><input type="text" id="ADDR" name="ADDR" data-bind="value:ADDR" value="" maxlength="100" class="point wp100"></td>
+                            <th>상세주소<span class="staricon"></span></th>
+                            <td><input type="text" id="ADDR1" name="ADDR1" data-bind="value:ADDR1" value="" maxlength="100" class="point wp100"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle m_t20">
+                    <h3 id="titlePer"></h3>
+                    <!-- <p class="titlecoment cp_o">(<span class="staricon"></span> 필수입력)</p> -->
+                </div>
+
+                <table class="tableStyle popTable m_t10">
+                    <colgroup>
+                        <col style="width:19%">
+                        <col style="width:31%">
+                        <col style="width:13%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>부서</th>
+                            <td><input type="text" id="DEPT_NAME" name="DEPT_NAME" data-bind="value:DEPT_NAME" value="" class="w160" maxlength="50"></td>
+                            <th>비고ID 구분</th>
+                            <td id="bizIdType"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="lay_pop_btn">
+                    <button type="button" class="btn c_type07">다음</button>
+                </div>
+                </div>
+        </div>
+
+    </body>
+</html>

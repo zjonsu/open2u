@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <!-- 담당자 지정 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop01">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">담당자 지정</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);"> <!-- 2025-07-24 수정 -->
+                            <div class="cont_inner">
+                                <div class="search_form_area">
+                                    <div class="grid_container">
+                                        <div class="row gx_10 gy_12">
+                                            <div class="col_3">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">이름</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_3">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">사번</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_6">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">부서명</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search_btn_area">
+                                        <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="manager_list_area">
+                                    <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <strong class="man_name">정종수</strong>
+                                                <span class="man_num">1070239</span>
+                                                <span class="man_team">AT Biz 구매팀</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <strong class="man_name">박길동</strong>
+                                                <span class="man_num">1070239</span>
+                                                <span class="man_team">AT Biz 구매팀</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <strong class="man_name">홍길동</strong>
+                                                <span class="man_num">1070239</span>
+                                                <span class="man_team">AT Biz 구매팀</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <strong class="man_name">이길동</strong>
+                                                <span class="man_num">1070239</span>
+                                                <span class="man_team">AT Biz 구매팀</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <strong class="man_name">정종수</strong>
+                                                <span class="man_num">1070239</span>
+                                                <span class="man_team">AT Biz 구매팀</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <strong class="man_name">박길동</strong>
+                                                <span class="man_num">1070239</span>
+                                                <span class="man_team">AT Biz 구매팀</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <strong class="man_name">홍길동</strong>
+                                                <span class="man_num">1070239</span>
+                                                <span class="man_team">AT Biz 구매팀</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <strong class="man_name">이길동</strong>
+                                                <span class="man_num">1070239</span>
+                                                <span class="man_team">AT Biz 구매팀</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                    <!-- <button type="button" class="btn pop md" onclick="layerClose($(this))" disabled>확인</button> 선택 전 비활성화 버튼 -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 담당자 지정 팝업 -->
+
+
+        <!-- 담당자 이관 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop02">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">담당자 이관</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);"> <!-- 2025-07-24 수정 -->
+                            <div class="cont_inner">
+                                <div class="manager_info_area">
+                                    <div class="info_inner">
+                                        <div class="left">
+                                            <h4 class="tit">기존담당자</h4>
+                                        </div>
+                                        <div class="right">
+                                            <strong class="man_name">이주영</strong>
+                                            <span class="man_num">1070239</span>
+                                            <span class="man_team">AT Biz 구매팀</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="section">
+                                    <div class="sub_tit_area m_t0">
+                                        <div class="left">
+                                            <h3 class="tit">이관담당자 조회</h3>
+                                            <p class="info_msg sm">※ 이관할 담당자를 검색해주세요.</p>
+                                        </div>
+                                        <div class="right"></div>
+                                    </div>
+
+                                    <div class="search_form_area">
+                                        <div class="grid_container">
+                                            <div class="row gx_10 gy_12">
+                                                <div class="col_3">
+                                                    <div class="info_item">
+                                                        <div class="label">
+                                                            <span class="txt">이름</span>
+                                                        </div>
+                                                        <div class="cnt">
+                                                            <input type="text" class="form_control" placeholder="내용입력"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col_3">
+                                                    <div class="info_item">
+                                                        <div class="label">
+                                                            <span class="txt">사번</span>
+                                                        </div>
+                                                        <div class="cnt">
+                                                            <input type="text" class="form_control" placeholder="내용입력"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col_6">
+                                                    <div class="info_item">
+                                                        <div class="label">
+                                                            <span class="txt">부서명</span>
+                                                        </div>
+                                                        <div class="cnt">
+                                                            <input type="text" class="form_control" placeholder="내용입력"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="search_btn_area">
+                                            <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="manager_list_area">
+                                        <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <strong class="man_name">정종수</strong>
+                                                    <span class="man_num">1070239</span>
+                                                    <span class="man_team">AT Biz 구매팀</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <strong class="man_name">박길동</strong>
+                                                    <span class="man_num">1070239</span>
+                                                    <span class="man_team">AT Biz 구매팀</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <strong class="man_name">홍길동</strong>
+                                                    <span class="man_num">1070239</span>
+                                                    <span class="man_team">AT Biz 구매팀</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <strong class="man_name">이길동</strong>
+                                                    <span class="man_num">1070239</span>
+                                                    <span class="man_team">AT Biz 구매팀</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <strong class="man_name">정종수</strong>
+                                                    <span class="man_num">1070239</span>
+                                                    <span class="man_team">AT Biz 구매팀</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <strong class="man_name">박길동</strong>
+                                                    <span class="man_num">1070239</span>
+                                                    <span class="man_team">AT Biz 구매팀</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <strong class="man_name">홍길동</strong>
+                                                    <span class="man_num">1070239</span>
+                                                    <span class="man_team">AT Biz 구매팀</span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:;">
+                                                    <strong class="man_name">이길동</strong>
+                                                    <span class="man_num">1070239</span>
+                                                    <span class="man_team">AT Biz 구매팀</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 담당자 이관 팝업 -->
+
+
+        <!-- 사업영역 조회 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop03">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">사업영역 조회</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="search_form_area">
+                                    <div class="grid_container">
+                                        <div class="row gx_10 gy_12">
+                                            <div class="col_5">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">코드</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_7">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">명칭</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search_btn_area">
+                                        <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="manager_list_area">
+                                    <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">1400</span>
+                                                <strong class="man_name">MVNO사업부</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">1400</span>
+                                                <strong class="man_name">MVNO사업부</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">1400</span>
+                                                <strong class="man_name">MVNO사업부</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">1400</span>
+                                                <strong class="man_name">MVNO사업부</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                    <!-- <button type="button" class="btn pop md" onclick="layerClose($(this))" disabled>확인</button> 선택 전 비활성화 버튼 -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 사업영역 조회 팝업 -->
+
+
+        <!-- 예산집행부서(CC) 조회 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop04">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">예산집행부서(CC) 조회</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="search_form_area">
+                                    <div class="grid_container">
+                                        <div class="row gx_10 gy_12">
+                                            <div class="col_5">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">코드</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_7">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">명칭</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search_btn_area">
+                                        <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="manager_list_area">
+                                    <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">22320</span>
+                                                <strong class="man_name">유통IMC팀_공통</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">22320</span>
+                                                <strong class="man_name">유통IMC팀_공통</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">22320</span>
+                                                <strong class="man_name">유통IMC팀_공통</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">22320</span>
+                                                <strong class="man_name">유통IMC팀_공통</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                    <!-- <button type="button" class="btn pop md" onclick="layerClose($(this))" disabled>확인</button> 선택 전 비활성화 버튼 -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 예산집행부서(CC) 조회 팝업 -->
+
+
+        <!-- 회계계정(G/L) 조회 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop05">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">회계계정(G/L) 조회</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="search_form_area">
+                                    <div class="grid_container">
+                                        <div class="row gx_10 gy_12">
+                                            <div class="col_5">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">코드</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_7">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">상세</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search_btn_area">
+                                        <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="manager_list_area">
+                                    <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">625900</span>
+                                                <strong class="man_name">명칭</strong>
+                                                <span class="detail">기타외주용역비</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">625900</span>
+                                                <strong class="man_name">명칭</strong>
+                                                <span class="detail">기타외주용역비</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">625900</span>
+                                                <strong class="man_name">명칭</strong>
+                                                <span class="detail">기타외주용역비</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">625900</span>
+                                                <strong class="man_name">명칭</strong>
+                                                <span class="detail">기타외주용역비</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                    <!-- <button type="button" class="btn pop md" onclick="layerClose($(this))" disabled>확인</button> 선택 전 비활성화 버튼 -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 회계계정(G/L) 조회 팝업 -->
+
+
+        <!-- 펀드실행과제 조회 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop06">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">펀드실행과제 조회</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="search_form_area">
+                                    <div class="grid_container">
+                                        <div class="row gx_10 gy_12">
+                                            <div class="col_3">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">예산집행부서(CC)</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_3">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">코드</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_6">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">명칭</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search_btn_area">
+                                        <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="manager_list_area">
+                                    <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_team">부서명</span>
+                                                <span class="man_num">11010G1219</span>
+                                                <strong class="man_name">Seg. Marketing 프로그램</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_team">부서명</span>
+                                                <span class="man_num">11010G1219</span>
+                                                <strong class="man_name">Seg. Marketing 프로그램</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_team">부서명</span>
+                                                <span class="man_num">11010G1219</span>
+                                                <strong class="man_name">Seg. Marketing 프로그램</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_team">부서명</span>
+                                                <span class="man_num">11010G1219</span>
+                                                <strong class="man_name">Seg. Marketing 프로그램</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                    <!-- <button type="button" class="btn pop md" onclick="layerClose($(this))" disabled>확인</button> 선택 전 비활성화 버튼 -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 펀드실행과제 조회 팝업 -->
+
+
+        <!-- 기능영역 조회 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop07">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">기능영역 조회</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="search_form_area">
+                                    <div class="grid_container">
+                                        <div class="row gx_10 gy_12">
+                                            <div class="col_5">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">코드</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_7">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">명칭</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search_btn_area">
+                                        <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="manager_list_area">
+                                    <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">33</span>
+                                                <strong class="man_name">일반관리비</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">33</span>
+                                                <strong class="man_name">일반관리비</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">33</span>
+                                                <strong class="man_name">일반관리비</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">33</span>
+                                                <strong class="man_name">일반관리비</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                    <!-- <button type="button" class="btn pop md" onclick="layerClose($(this))" disabled>확인</button> 선택 전 비활성화 버튼 -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 기능영역 조회 팝업 -->
+
+
+        <!-- BM오더 조회 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop08">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">BM오더 조회</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="search_form_area">
+                                    <div class="grid_container">
+                                        <div class="row gx_10 gy_12">
+                                            <div class="col_5">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">코드</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_7">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">명칭</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search_btn_area">
+                                        <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="manager_list_area">
+                                    <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">123456</span>
+                                                <strong class="man_name">명칭</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">123456</span>
+                                                <strong class="man_name">명칭</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">123456</span>
+                                                <strong class="man_name">명칭</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">123456</span>
+                                                <strong class="man_name">명칭</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                    <!-- <button type="button" class="btn pop md" onclick="layerClose($(this))" disabled>확인</button> 선택 전 비활성화 버튼 -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // BM오더 조회 팝업 -->
+
+
+        <!-- 세금코드 조회 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop09">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">세금코드 조회</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="search_form_area">
+                                    <div class="grid_container">
+                                        <div class="row gx_10 gy_12">
+                                            <div class="col_5">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">코드</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_6">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">명칭</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_1">
+                                                <div class="info_item d_flex">
+                                                    <div class="label">
+                                                        <span class="txt">확장</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <span class="form_check">
+                                                            <input type="checkbox" id="chk01">
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search_btn_area">
+                                        <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="manager_list_area">
+                                    <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">IO</span>
+                                                <strong class="man_name">과세매입-일반</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">IO</span>
+                                                <strong class="man_name">과세매입-일반</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">IO</span>
+                                                <strong class="man_name">과세매입-일반</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">IO</span>
+                                                <strong class="man_name">과세매입-일반</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                    <!-- <button type="button" class="btn pop md" onclick="layerClose($(this))" disabled>확인</button> 선택 전 비활성화 버튼 -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 세금코드 조회 팝업 -->
+
+
+        <!-- 지급코드 조회 팝업 -->
+        <div class="layer_popup" data-role-popup="samplePop10">
+            <div class="dim"></div>
+            <div class="layer_popup_area">
+                <div class="layer_inner">
+                    <div class="layer_head">
+                        <div class="left">
+                            <h2 class="title">지급코드 조회</h2>
+                        </div>
+                        <div class="right">
+                            <button type="button" class="pop_close" onclick="layerClose($(this))">닫기</button>
+                        </div>
+                    </div>
+                    <div class="layer_body">
+                        <div class="layer_cont" style="max-height: calc(100vh - 25vh);">
+                            <div class="cont_inner">
+                                <div class="search_form_area">
+                                    <div class="grid_container">
+                                        <div class="row gx_10 gy_12">
+                                            <div class="col_5">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">코드</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col_7">
+                                                <div class="info_item">
+                                                    <div class="label">
+                                                        <span class="txt">명칭</span>
+                                                    </div>
+                                                    <div class="cnt">
+                                                        <input type="text" class="form_control" placeholder="내용입력"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="search_btn_area">
+                                        <button type="button" class="search_btn"><i class="ico search"></i></button>
+                                    </div>
+                                </div>
+
+                                <div class="manager_list_area">
+                                    <ul class="manager_list scroll_y" style="max-height: 264px;">
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">A001</span>
+                                                <strong class="man_name">회사대금결제기준</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">A001</span>
+                                                <strong class="man_name">회사대금결제기준</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">A001</span>
+                                                <strong class="man_name">회사대금결제기준</strong>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:;">
+                                                <span class="man_num">A001</span>
+                                                <strong class="man_name">회사대금결제기준</strong>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="btm_btn_area">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn ty02 md" onclick="layerClose($(this))">닫기</button>
+                                    <button type="button" class="btn pop md" onclick="layerClose($(this))">확인</button>
+                                    <!-- <button type="button" class="btn pop md" onclick="layerClose($(this))" disabled>확인</button> 선택 전 비활성화 버튼 -->
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // 지급코드 조회 팝업 -->
+        <!-- layer_popup -->
+
+
+
+        <div class="pop_wrap">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">검사조서 작성</h1>
+                    </div>
+                    <div class="right">
+                        <ul class="progress_step_list">
+                            <li>
+                                <a href="javascript:;">구매요청</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매접수</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약진행</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약완료</a>
+                            </li>
+                            <li class="in_progress">
+                                <a href="javascript:;">검사조서</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">구매전표</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">대금지급</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_info_area on">
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">검사조서번호</span>
+                            <span class="info_text">52603442962</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사요청일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">공급업체명</span>
+                            <span class="info_text">주식회사 뮤플러스</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약번호</span>
+                            <span class="info_text">4160086491</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">계약담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">인수동의일
+                                <span class="count">D<span class="num_sign">+</span><em class="count_num">00</em></span>
+                            </span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="w146">
+                            <span class="info_label">검사완료일</span>
+                            <span class="info_text">2025-05-13</span>
+                        </li>
+                        <li class="flex1">
+                            <span class="info_label">검사조서건명</span>
+                            <span class="info_text">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</span>
+                        </li>
+                        <li class="w226">
+                            <span class="info_label">검사담당자</span>
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="toggle_btn"><span class="txt">Close</span><i class="ico_toggle_arr"></i></button> 
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_aside">
+                    <ul class="aside_progress_list">
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript::" class="point">1. 인수동의</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">2. 요청정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">3. 예산정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <span class="status">작성완료</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">4. 확인정보</a>
+                            </h2>
+                        </li>
+                        <li class="in_progress">
+                            <span class="status">작성중</span>
+                            <h2 class="tit">
+                                <a href="javascript:;" class="point">5. 결재정보</a>
+                            </h2>
+                        </li>
+                    </ul>
+                    <ul class="link_area">
+                        <li>
+                            <button type="button" class="link_btn">목적물수령증명서</button>
+                        </li>
+                        <li>
+                            <button type="button" class="link_btn">FAQ</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <div class="cont_inner">
+                            <div class="btn_group ty02">
+                                <button type="button" class="btn" onclick="layerPopup('samplePop01')">담당자 지정 팝업</button>
+                                <button type="button" class="btn" onclick="layerPopup('samplePop02')">담당자 이관 팝업</button>
+                                <button type="button" class="btn" onclick="layerPopup('samplePop03')">사업영역 조회 팝업</button>
+                                <button type="button" class="btn" onclick="layerPopup('samplePop04')">예산집행부서(CC) 조회 팝업</button>
+                                <button type="button" class="btn" onclick="layerPopup('samplePop05')">회계계정(G/L) 조회 팝업</button>
+                                <button type="button" class="btn" onclick="layerPopup('samplePop06')">펀드실행과제 조회 팝업</button>
+                                <button type="button" class="btn" onclick="layerPopup('samplePop07')">기능영역 조회 팝업</button>
+                                <button type="button" class="btn" onclick="layerPopup('samplePop08')">BM오더 조회 팝업</button>
+                                <button type="button" class="btn" onclick="layerPopup('samplePop09')">세금코드 조회 팝업</button>
+                                <button type="button" class="btn" onclick="layerPopup('samplePop10')">지급코드 조회 팝업</button>
+                            </div>
+                        </div>
+
+                        <div class="btm_btn_area">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn md">반송</button>
+                                    <span class="divid"></span> 
+                                    <button type="button" class="btn pop lg">검사조서취소</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

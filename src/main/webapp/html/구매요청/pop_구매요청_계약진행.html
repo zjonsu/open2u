@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_ui_theme.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_ui.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">구매진행</h2>
+                    </div>
+                    <div class="right">
+                        <ul class="pop_progress">
+                            <li class="off"><a href="javascript:;">구매요청</a></li>
+                            <li class="off"><a href="javascript:;">구매접수</a></li>
+                            <li class="on"><a href="javascript:;">계약진행</a></li>
+                            <li><a href="javascript:;">계약완료</a></li>
+                            <li><a href="javascript:;">자산취득</a></li>
+                            <li><a href="javascript:;">검사조서</a></li>
+                            <li><a href="javascript:;">구매전표</a></li>
+                            <li><a href="javascript:;">대금지급</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="popcontents">
+                <div id="tabPage" data-type="tabs">
+                    <!-- Tab Buttons -->
+                    <ul class="tabs popup m_t20">
+                        <li id="tab1" class="tabs_on" data-content="#subTab1">구매계획</li>
+                        <li id="tab2" data-content="#subTab2">계약품의</li>
+                    </ul>
+                </div>
+
+                <div id="subTab1">
+                    <div class="poptitle">
+                        <h3>종합의견</h3>
+                        <div class="sizetoggle_area">
+                            <a href="javascript:;" class="sizetoggle"><i class="icons i_size_toggle"></i></a>
+                        </div>
+                        <div class="btnArea f_right m_r10">
+                            <button type="button" class="btn c_type08">선정취소</button>
+                            <button type="button" class="btn c_type08">결과보고</button>
+                            <button type="button" class="btn c_type08">계약품의작성</button>
+                            <button type="button" class="btn c_type08">유찰/재수행</button>
+                            <button type="button" class="btn c_type08">종료</button>
+                        </div>
+                    </div>
+                    <div class="sizetoggle_box">
+                        <div class="sizetoggle_txt">
+                            <textarea rows="6" class="wp100"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="poptitle">
+                        <h3>기본정보</h3>
+                    </div>
+                    <table class="tableStyle">
+                        <colgroup>
+                            <col style="width: 145px">
+                            <col>
+                            <col style="width: 145px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>구매계획건명<span class="staricon"></span></th>
+                                <td>
+                                    <input type="text" value="투자 장비건" class="point wp100">
+                                </td>
+                                <th>구매계획번호</th>
+                                <td>
+                                    <input type="text" class="w80 readonly" readonly="readonly">
+                                    <input type="text" class="w90 readonly" readonly="readonly">
+                                    <a href="javascript:;" class="btnS search"></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>계약유형<span class="staricon"></span></th>
+                                <td>
+                                    <input type="radio" name="rdo01">
+                                    <span>수시</span>
+                                    <input type="radio" name="rdo01">
+                                    <span>단가</span>
+                                </td>
+                                <th>계약기간</th>
+                                <td>2023-07-17 ~  2023-11-30</td>
+                            </tr>
+                            <tr>
+                                <th>경쟁/수의<span class="staricon"></span></th>
+                                <td>
+                                    <input type="radio" name="rdo01">
+                                    <span>경쟁</span>
+                                    <input type="radio" name="rdo01">
+                                    <span>수의</span>
+                                </td>
+                                <th>입찰유형<span class="staricon"></span></th>
+                                <td>
+                                    <select class="w175">
+                                        <option>선택</option>
+                                        <option>견적요청</option>
+                                        <option>가격입찰</option>
+                                        <option>기술평가</option>
+                                        <option>2-Step입찰</option>
+                                        <option>2-Step종합평가입찰</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>예산승인서첨부</th>
+                                <td colspan="3">
+                                    <div class="inputFileArea f_left">
+                                        <p class="">지출품의서 :&nbsp;</p>
+                                        <div class="filesBox f_left" style="width: 201px;">
+                                            <!-- 지정하고 싶은 width값으로 수정 -->
+                                            <div class="file_input_div">
+                                                <input type="text" id="fileName2" class="file_input_textbox" readonly="readonly" style="width: 165px;"
+                                                    value="">
+                                                <!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="inputFileArea f_left m_l30 ">
+                                        <p class="">투자사업승인서 :&nbsp;</p>
+                                        <div class="filesBox f_left" style="width: 201px;">
+                                            <!-- 지정하고 싶은 width값으로 수정 -->
+                                            <div class="file_input_div">
+                                                <input type="text" id="fileName3" class="file_input_textbox" readonly="readonly" style="width: 165px;"
+                                                    value="새 텍스트 문서.txt">
+                                                <!-- 지정하고 싶은 width값에서 버튼 값 35px 빼준다 -->
+                                            </div>
+                                        </div>
+                                        <button type="button" class="btn t_down c_type09"><i class="icons i_tr_download"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>수주(대기업제외)</th>
+                                <td>
+                                    <input type="radio" name="rdo01">
+                                    <span>Yes</span>
+                                    <input type="radio" name="rdo01">
+                                    <span>No</span>
+                                </td>
+                                <th>선정알림 <a href="#none" class="btn grad3">옵션</a></th>
+                                <td>
+                                    <input type="checkbox" class="m_r10">
+                                    선정통보
+                                    <input type="checkbox" class="m_r10">
+                                    미선정통보
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="poptitle">
+                        <h3>평가결과</h3>
+                    </div>
+                    <div class="poptitle">
+                        <div class="popTextArea">
+                            <select class="w160 f_left">
+                                <option>종합결과</option>
+                                <option>품목별 가격</option>
+                                <option>Item별 가격</option>
+                            </select>
+                            <p class='titlecoment cp_o f_right'>&nbsp;&nbsp;※ '견적상세'를 누르면 금액조정(가격협상)이 가능합니다.</p>
+                        </div>
+                    </div>
+                    <div class="grid_area">
+                        <table id="jqGrid" class="jqgrid"></table>
+                    </div>
+
+                    <div class="poptitle">
+                        <h3>연관 RFX</h3>
+                        <div class="btnArea f_right">
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_save"></i> 저장</button>
+                            <button type="button" class="btn c_type08"><i class="icons i_btn_result"></i> 평가결과 보기</button>
+                        </div>
+                    </div>
+                    <div class="grid_area">
+                        <table id="jqGrid" class="jqgrid"></table>
+                    </div>
+
+                    <div class="poptitle">
+                        <h3>계약조건</h3>
+                    </div>
+                    <table class="tableStyle" id="tblCniCondition">
+                        <colgroup>
+                            <col style="width: 145px">
+                            <col>
+                            <col style="width: 145px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>계약일반조건첨부<span class="staricon"></span></th>
+                                <td colspan="3">
+                                    <input type="checkbox" class="m_r10" value="Y" checked />장비/물품
+                                    <input type="checkbox" class="m_r10" value="Y">공사
+                                    <input type="checkbox" class="m_r10" value="Y">개발
+                                    <input type="checkbox" class="m_r10" value="Y">용역
+                                    <input type="checkbox" class="m_r10" value="Y">연구
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>하도급계약조건첨부<span class="staricon"></span></th>
+                                <td colspan="3">
+                                    <input type="checkbox" class="m_r10" value="Y" checked />장비/물품
+                                    <input type="checkbox" class="m_r10" value="Y">공사
+                                    <input type="checkbox" class="m_r10" value="Y">개발
+                                    <input type="checkbox" class="m_r10" value="Y">용역
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>계약특수조건첨부</th>
+                                <td>
+                                    <input type="text" class="readonly dashed w170" readonly="readonly">
+                                    <a href="javascript:;" class="btnS closes"></a>
+                                    <input type="file" id="file01" class="upload_hidden">
+                                    <label for="file01" class="btn c_type03">파일찾기</label>
+                                </td>
+                                <th>SGR특수조건 첨부</th>
+                                <td>
+                                    <input type="checkbox" value="Y">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>특기사항<br>(계약서 명기)<span class="tooltipIcon type1"></span></th>
+                                <td colspan="3">
+                                    <textarea rows="5" class="wp100"></textarea>
+                                </td>
+                            </tr>
+                            <tr id="trMod">
+                                <th rowspan="2">대금지급조건(%)<span class="staricon"></span></th>
+                                <td colspan="3">
+                                    <input type="checkbox" class="m_r10" value="Y" checked><label>장비/물품</label>
+                                    <input type="checkbox" class="m_r10" value="Y" checked><label>공사</label>
+                                    <input type="checkbox" class="m_r10" value="Y" checked><label>용역</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="3">
+                                    <table class="tableStyle noLine" style="border-top: 1px solid #dfdfdf;">
+                                       <tbody>
+                                            <!-- 장비물품 -->
+                                            <tr>
+                                                <th class="type1" rowspan="2">장비/물품</th>
+                                                <th class="type2">지급코드</th>
+                                                <td colspan="10">
+                                                    <input type="text" class="w80 CONDITION" value="ZP54" />
+                                                    <input type="text" class="w300" readonly="readonly" value="납품시 30%,개통시 40%,최종인수시 30%" />
+                                                    <a href="#none" class="btnS search CONDITION"></a>
+                                                    <a href="#none" class="btnS closes"></a>
+                                                    <button type="button" class="btn grad3">A001</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="type2">선금</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="0" />
+                                                </td>
+                                                <th class="type2">납품시</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="30" />
+                                                </td>
+                                                <th class="type2">개통시</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="40" />
+                                                </td>
+                                                <th class="type2">최종인수시</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="30" />
+                                                </td>
+                                                <th class="type2">유보금</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="0" />
+                                                </td>
+                                            </tr>
+                                            <!-- 장비물품 END -->
+                                            <!-- 공사 -->
+                                            <tr>
+                                                <th class="type1" rowspan="2">장비/물품</th>
+                                                <th class="type2">지급코드</th>
+                                                <td colspan="10">
+                                                    <input type="text" class="w80 CONDITION" value="" />
+                                                    <input type="text" class="w300" readonly="readonly" value="" />
+                                                    <a href="#none" class="btnS search CONDITION"></a>
+                                                    <a href="#none" class="btnS closes"></a>
+                                                    <button type="button" class="btn grad3">A001</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="type2">선금</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="0" />
+                                                </td>
+                                                <th class="type2">납품시</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="30" />
+                                                </td>
+                                                <th class="type2">개통시</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="40" />
+                                                </td>
+                                                <th class="type2">최종인수시</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="30" />
+                                                </td>
+                                                <th class="type2">유보금</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="0" />
+                                                </td>
+                                            </tr>
+                                            <!-- 공사 END -->
+                                            <!-- 용역 -->
+                                            <tr>
+                                                <th class="type1" rowspan="2">장비/물품</th>
+                                                <th class="type2">지급코드</th>
+                                                <td colspan="10">
+                                                    <input type="text" class="w80 CONDITION" value="" />
+                                                    <input type="text" class="w300" readonly="readonly" value="" />
+                                                    <a href="#none" class="btnS search CONDITION"></a>
+                                                    <a href="#none" class="btnS closes"></a>
+                                                    <button type="button" class="btn grad3">A001</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th class="type2">선금</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="0" />
+                                                </td>
+                                                <th class="type2">납품시</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="30" />
+                                                </td>
+                                                <th class="type2">개통시</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="40" />
+                                                </td>
+                                                <th class="type2">최종인수시</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="30" />
+                                                </td>
+                                                <th class="type2">유보금</th>
+                                                <td>
+                                                    <input type="text" class="w80 t_right" value="0" />
+                                                </td>
+                                            </tr>
+                                            <!-- 용역 END -->
+                                       </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="tableStyle noLine">
+                        <colgroup>
+                            <col style="width: 145px">
+                            <col>
+                            <col style="width: 145px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>부가세</th>
+                                <td><input type="checkbox" class="m_r10" value="10" checked /> <label>장비/물품</label>
+                                    <input type="checkbox" class="m_r10" value="10" /> <label>공사</label>
+                                    <input type="checkbox" class="m_r10" value="10" /> <label>용역</label>
+                                    <input type="checkbox" class="m_r10" value="Y" /> <label>영세율</label></td>
+                                <th>
+                                    지체상금율
+                                    <input type="checkbox" class="m_r0" value="Y" /> 직접입력
+                                </th>
+                                <td>
+                                    <span id="holdArea">
+                                        <input type="text" class="w60 t_right" value="0.15" />%
+                                        <input type="text" class="w60 t_right" value="100" />
+                                        <select class="w70">
+                                            <option selected>일</option>
+                                            <option>%</option>
+                                            <option>없음</option>
+                                        </select>
+                                        <span>
+                                            <input type="checkbox" class="m_r10" value="Y" />
+                                            <label>익월 지체면제</label>
+                                        </span>
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- 지체상금조건 : S -->
+                    <table class="tableStyle noLine">
+                        <colgroup>
+                            <col style="width: 145px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>지체상금조건</th>
+                                <td>
+                                    <textarea data-type="textarea" rows="5" class="wp100"></textarea>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //지체상금조건 : E -->
+                    <!-- 보증방법 : S -->
+                    <table class="tableStyle noLine">
+                        <colgroup>
+                            <col style="width: 145px">
+                            <col>
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th rowspan="3">보증방법</th>
+                                <th class="type1">계약이행보증</th>
+                                <td>
+                                    <select class="w160">
+                                        <option value="06" selected>예치 면제</option>
+                                        <option value="04">보증보험</option>
+                                        <option value="01">어음</option>
+                                        <option value="02">현금</option>
+                                        <option value="03">지급각서</option>
+                                        <option value="05">은행지급보증서</option>
+                                    </select>
+                                    &nbsp;계약금액의
+                                    <input type="text" class="w60 t_right"/> (%)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="type1">선급금보증</th>
+                                <td>
+                                    <select class="w160">
+                                        <option value="06" selected>예치 면제</option>
+                                        <option value="04">보증보험</option>
+                                        <option value="01">어음</option>
+                                        <option value="02">현금</option>
+                                        <option value="03">지급각서</option>
+                                        <option value="05">은행지급보증서</option>
+                                    </select>
+                                    &nbsp;계약금액의
+                                    <input type="text" class="w60 t_right"/> (%)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th class="type1">하자이행보증</th>
+                                <td>
+                                    <select class="w160">
+                                        <option value="06" selected>예치 면제</option>
+                                        <option value="04">보증보험</option>
+                                        <option value="01">어음</option>
+                                        <option value="02">현금</option>
+                                        <option value="03">지급각서</option>
+                                        <option value="05">은행지급보증서</option>
+                                    </select>
+                                    <select class="w160">
+                                        <option value="">선택</option>
+                                        <option value="A">납품일로부터</option>
+                                        <option value="B">개통일로부터</option>
+                                        <option value="C">최종인수일로부터</option>
+                                    </select>
+                                    <input type="text" class="w60 t_right"/>
+                                    개월 &nbsp;계약금액의
+                                    <input type="text" class="w60 t_right"/> (%)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //보증방법 : E -->
+
+                    <div class="poptitle">
+                        <h3>안전보건</h3>
+                    </div>
+                    <table class="tableStyle">
+                        <colgroup>
+                            <col style="width: 145px">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th>안전보건 일반조건 <span class="staricon"></span></th>
+                                <td>
+                                    <input type="checkbox" class="m_r10"checked />
+                                    안전보건 일반조건
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>적격수급업체평가 <span class="staricon"></span></th>
+                                <td>
+                                    <input type="checkbox" class="m_r10"checked />
+                                    안전보건수준 자체평가
+                                    <input type="checkbox" class="m_r10"checked />
+                                    적격수급업체평가(공사,공사성용역)
+                                    <input type="checkbox" class="m_r10"checked />
+                                    미평가(개인/해외 등)
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>산업안전보건관리비 <span class="tooltipIcon"></span></th>
+                                <td>
+                                    계상여부
+                                    <select class="w130">
+                                        <option>선택</option>
+                                        <option>대상</option>
+                                        <option selected>비대상</option>
+                                     </select>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="poptitle">
+                        <h3>품목예산정보</h3>
+                        <div class="f_left wp59">
+                            <p class="titlecoment type1 cp_o wp100">
+                                &nbsp;&nbsp;※
+                            소요예산
+                                : <input type="text" id="REQMT_BUDGET" name="REQMT_BUDGET" data-bind="value:REQMT_BUDGET" value="10,000,000"
+                                    class="w110 t_right t_s14 inputreadon" readOnly />
+                                &nbsp;&nbsp;VAT 별도(단위 :원)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid_area">
+                        <table id="jqGrid" class="jqgrid"></table>
+                    </div>
+                    <div class="grid_area">
+                        <table id="jqGrid" class="jqgrid"></table>
+                    </div>
+
+                    <div class='poptitle'>
+						<h3>견적양식</h3>
+						<div class="f_left wp60">
+							<p class='titlecoment cp_o'>&nbsp;&nbsp;※ 2개이상 선택이 가능합니다</p>
+						</div>
+					</div>
+                    <table class="tableStyle">
+						<colgroup>
+							<col >
+							<col >
+							<col >
+							<col >
+							<col >
+							<col >
+							<col >
+							<col >
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>공사</th>
+								<td>
+                                    <input type="checkbox" class="m_r10" />
+                                </td>
+								<th>장비/물품</th>
+								<td>
+                                    <input type="checkbox" class="m_r10" />
+                                </td>
+								<th>용역</th>
+								<td>
+                                    <select class="w140">
+										<option value="">선택</option>
+										<option value="PE001@0">S/W노임</option>
+										<option value="PE003@0">컨설턴트/조사/연구</option>
+										<option value="PE004@0">상세노임</option>
+										<option value="PE005@0">단순노임</option>
+								    </select>
+                                </td>
+								<th>총액기준</th>
+								<td>
+                                    <input type="checkbox" class="m_r10" />
+                                </td>
+							</tr>
+						</tbody>
+					</table>
+
+                    <div class="poptitle">
+                        <h3>참여업체</h3>
+                    </div>
+                    <div class="grid_area">
+                        <table id="jqGrid" class="jqgrid"></table>
+                    </div>
+
+                    <div class="poptitle">
+						<h3>견적요청</h3>
+					</div>
+                    <table class="tableStyle">
+						<colgroup>
+							<col style="width:145px">
+							<col style="width:300px;">
+							<col style="width:145px">
+							<col style="width:220px;">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th>견적요청발송일시<span class="staricon"></span></th>
+								<td>
+                                    <div class="datepicker_area">
+                                        <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                    </div>
+                                    <input type="text" class="w35">시
+                                    <input type="text" class="w35">분
+                                    <button type="button"class="btn grad3">현재일시</button>
+                                </td>
+								<th>견적마감일시<span class="staricon"></span></th>
+								<td>
+                                    <div class="datepicker_area">
+                                        <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                    </div>
+                                    <input type="text" class="w35">시
+                                    <input type="text" class="w35">분
+								</td>
+                                <td>
+                                    <ul class="time_selec_list">
+                                        <li><button type="button" class="btn grad3";">금일</button></li>
+                                        <li><button type="button" class="btn grad3">+1일</button></li>
+                                        <li><button type="button" class="btn grad3">+2일</button></li>
+                                        <li><button type="button" class="btn grad3">+3일</button></li>
+                                        <li><button type="button" class="btn grad3";">9시</button></li>
+                                        <li><button type="button" class="btn grad3";">12시</button></li>
+                                        <li><button type="button" class="btn grad3";">18시</button></li>
+                                        <li><button type="button" class="btn grad3";">23시</button></li>
+                                    </ul>
+                                </td>
+							</tr>
+						</tbody>
+					</table>
+
+                    <div class="poptitle">
+                        <h3>제안평가</h3>
+                    </div>
+                    <table class="tableStyle">
+						<colgroup>
+							<col style="width:145px">
+							<col>
+							<col style="width:145px">
+							<col>
+						</colgroup>
+                        <tbody>
+                            <tr>
+                                <th>기술평가방법</th>
+								<td>
+                                    <select class="w110">
+										<option value="">선택</option>
+											<option value="PT" >PT</option>
+											<option value="SE" >제안평가</option>
+											<option value="EC" >품평회</option>
+											<option value="BM" >BMT</option>
+								    </select>
+                                </td>
+								<th>가격평가기준<span class="staricon"></span></th>
+								<td>
+                                    <select class="w110">
+											<option value="T" selected>최저가</option>
+											<option value="P" >근접가</option>
+											<option value="O" >제한적최저가</option>
+								    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>평가비율<span class="staricon"></span></th>
+								<td>
+                                    기술 : <input type="text" class="w60" />%
+                                    가격 : <input type="text" class="w60" />%
+                                    총합 : <input type="text" class="w60 b_none t_center" style="background-color: rgb(190, 247, 129);" readonly="readonly" />
+								</td>
+                                <th>동점자처리기준</th>
+								<td>
+                                    <input type="radio" />
+                                    <label>가격평가우선</label>
+                                    <input type="radio" />
+                                    <label>기술평가우선</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>가격산정기준</th>
+								<td>
+                                    <input type="text" class="wp100" />
+                                </td>
+                                <th>기술평가등록</th>
+								<td><a href="#none" id="btnTech" class="btn grad3">기술평가기준등록</a> </td>
+                            </tr>
+                            <tr>
+                                <th>입찰 설명회</th>
+								<td>
+                                    <div class="datepicker_area">
+                                        <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                    </div>
+                                    <input type="text" class="w35" />시
+                                    <input type="text" class="w35" />분
+                                </td>
+								<th>제안서 발표회</th>
+								<td>
+                                    <div class="datepicker_area">
+                                        <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                    </div>
+                                    <input type="text" class="w35" />시
+                                    <input type="text" class="w35" />분
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>설명회장소</th>
+								<td>
+                                    <input type="text" class="w150" />
+                                    <a href="javascript:;" class="btn grad3">회의실 예약</a>
+                                </td>
+                                <th>제안요청서 발송<span class="staricon"></span></th>
+								<td>
+                                    <div class="datepicker_area">
+                                        <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                    </div>
+                                    <input type="text" class="w35" />시
+                                    <input type="text" class="w35" />분
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>제안요청서 마감<span class="staricon"></span></th>
+								<td colspan="3">
+                                    <div class="datepicker_area">
+                                        <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                    </div>
+                                    <input type="text" class="w35" />시
+                                    <input type="text" class="w35" />분
+                                </td>
+                            </tr>
+                        </tbody>
+					</table>
+
+                    <div class="poptitle">
+                        <h3>업체전달 특이사항</h3>
+                        <div class="sizetoggle_area">
+                            <a href="javascript:;" class="sizetoggle"><i class="icons i_size_toggle"></i></a>
+                        </div>
+                    </div>
+                    <div class="sizetoggle_box">
+                        <div class="sizetoggle_txt">
+                            <textarea rows="6" class="wp100"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="poptitle">
+                        <h3>업체전송용 파일첨부</h3>
+                        <p class="titlecoment cp_r">&nbsp;(업체전송용) - 내부파일 유출 주의</p>
+                    </div>
+                    <table class="fileupload-list tableStyle fileupload">
+                        <colgroup>
+                            <col width="30px">
+                            <col width="*">
+                            <col width="150px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>파일명</th>
+                                <th>용량</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="template-empty">
+                                <td colspan="3">
+                                    <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                    <div class="nodata-content">첨부 된<span>파일이</span> 없습니다.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="fileupload-progress" style="float: left;">
+                                        <div class="progress-extended">&nbsp;</div>
+                                    </div>
+                                    <span class="fileupload-footer" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <div class="fileupload comment commnet-default">
+                        <div class="commnet-body">
+                            <ul>
+                                <li>
+                                    제안요청 동의사항,참가신청서,비밀유지각서,평가승복확약각서,입찰 유의서,사전 정보 제공  자료는 자동으로 업체로 전송이 됩니다.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="poptitle">
+                        <h3>목표금액가안(VAT별도)</h3>
+                        <div class="f_left wp60">
+							<p class="titlecoment cp_o">&nbsp;&nbsp;목표가 :</p>
+						</div>
+                    </div>
+                    <div class="grid_area">
+                        <table id="jqGrid" class="jqgrid"></table>
+                    </div>
+
+                    <div class="poptitle">
+                        <h3>하한금액가안(목표금액 대비 비율)</h3>
+                        <div class="f_left wp60">
+							<p class="titlecoment cp_o">&nbsp;&nbsp;하한가 = 목표가 * 하한비율 (70% 입력시 하한가 : 100 * 70% = 70)</p>
+						</div>
+                    </div>
+                    <div class="grid_area">
+                        <table id="jqGrid" class="jqgrid"></table>
+                    </div>
+
+                    <div class="poptitle">
+                        <h3>계획품의보고용 첨부파일</h3>
+                    </div>
+                    <table class="fileupload-list tableStyle fileupload">
+                        <colgroup>
+                            <col width="30px">
+                            <col width="*">
+                            <col width="150px">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox"></th>
+                                <th>파일명</th>
+                                <th>용량</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="template-empty">
+                                <td colspan="3">
+                                    <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                    <div class="nodata-content">첨부 된<span>파일이</span> 없습니다.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="3">
+                                    <div class="fileupload-progress" style="float: left;">
+                                        <div class="progress-extended">&nbsp;</div>
+                                    </div>
+                                    <span class="fileupload-footer" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn_top"><i class="icons i_btn_top"></i></a>
+        <script>
+            var mydata = [
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+            ];
+
+            $(document).ready(function () {
+                $(".jqgrid").jqGrid({
+                    datatype: "local",
+                    // data: mydata,
+                    autowidth: true,
+                    cellEdit:true,
+                    shrinkToFit:false,
+                    forceFit:true,
+                    pager: '#jqGridPager',
+                    colModel: [
+                        { label: 'data1', name: 'data1', width:100, editable:true },
+                        { label: 'data2', name: 'data2', width:100, editable:true },
+                        { label: 'data3', name: 'data3', width:100, editable:true },
+                        { label: 'data4', name: 'data4', width:100, editable:true },
+                        { label: 'data5', name: 'data5', width:100, editable:true },
+                        { label: 'data6', name: 'data6', width:100, editable:true },
+                        { label: 'data7', name: 'data7', width:100, editable:true },
+                        { label: 'data8', name: 'data8', width:100, editable:true },
+                        { label: 'data9', name: 'data9', width:100, editable:true },
+                        { label: 'data10', name: 'data10', width:100, editable:true },
+                    ],
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+
+            });
+
+            $(window).bind('resize', function() {
+                $(".jqgrid").setGridWidth($('.grid_area').width());
+            }).trigger('resize');
+        </script>
+        <script>
+            $a.setup('tabs', {
+
+            });
+        </script>
+    </body>
+</html>

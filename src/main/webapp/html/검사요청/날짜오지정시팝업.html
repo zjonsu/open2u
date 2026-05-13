@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/lib/swiper/swiper.css" />
+        <link rel="stylesheet" href="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.css">
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.renewal.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/lib/swiper/swiper.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery-mousewheel/3.1.12/jquery.mousewheel.min.js"></script>
+        <script src="../../resource/lib/mCustomScrollbar/jquery.mCustomScrollbar.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+        <script src="../../resource/js/ui.renewal.js"></script>
+    </head>
+    <body>
+        <div class="layer_popup" data-role-popup="sampleAlert01"> <!-- 2025-06-18 수정 -->
+            <div class="dim"></div>
+            <div class="layer_popup_area alert">
+                <div class="alert_body">
+                    <div class="alert_cont no_desc">
+                        <div class="info_wrap">
+                            <p class="msg">요청일자는 D-6일까지 설정 가능합니다.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert_footer">
+                    <div class="btn_group">
+                        <button type="button" class="btn pop" onclick="layerClose($(this))">확인</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- 날짜 오지정시 팝업 -->
+        <!-- layer_popup -->
+
+
+
+        <div class="pop_wrap">
+            <div class="pop_header">
+                <div class="pop_tit_area">
+                    <div class="left">
+                        <h1 class="tit">검사요청서 작성</h1>
+                    </div>
+                    <div class="right">
+                        <ul class="progress_step_list">
+                            <li>
+                                <a href="javascript:;">견적/제안서</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">계약서</a>
+                            </li>
+                            <li class="in_progress">
+                                <a href="javascript:;">검사요청</a>
+                            </li>
+                            <li>
+                                <a href="javascript:;">대금정산</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_info_area on">
+                    <ul class="info_list">
+                        <li>
+                            <span class="info_label">요청번호</span>
+                            <span class="info_text">52603442962</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약번호</span>
+                            <span class="info_text">4160086491</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약건명</span>
+                            <span class="info_text">25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진 25년_경북 산불 재산종합보험 청구를 위한 독립 손해사정 용역_신진</span>
+                        </li>
+                        <li>
+                            <span class="info_label">계약담당자</span> <!-- 2025-06-12 수정 -->
+                            <span class="info_text">AT Biz구매팀 / 이주형</span>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="toggle_btn"><span class="txt">Close</span><i class="ico_toggle_arr"></i></button> 
+                </div>
+            </div>
+            <div class="pop_container">
+                <div class="pop_aside">
+                    <ul class="aside_progress_list"> 
+                        <li  class="in_progress">
+                            <span class="status">작성중</span> <!-- 2025-06-10 수정 -->
+                            <h2 class="tit">
+                                <a href="javascript::" class="point">1. 기본정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <!-- <span class="status">대기중</span> --> <!-- 2025-06-10 삭제 -->
+                            <h2 class="tit">
+                                <a href="javascript:;">2. 요청정보</a>
+                            </h2>
+                        </li>
+                        <li>
+                            <!-- <span class="status">대기중</span> --> <!-- 2025-06-10 삭제 -->
+                            <h2 class="tit">
+                                <a href="javascript:;">3. 확인정보</a>
+                            </h2>
+                        </li>
+                    </ul>
+                    <ul class="link_area">
+                        <li>
+                            <button type="button" class="link_btn">FAQ</button>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pop_contents">
+                    <div class="cont_area">
+                        <div class="cont_inner">
+                            <div class="btn_group ty02">
+                                <button type="button" class="btn" onclick="layerPopup('sampleAlert01')">날짜 오지정시 팝업</button> <!-- 2025-06-16 추가 -->
+                            </div>
+                        </div>
+
+                        <div class="btm_btn_area"> <!-- 2025-06-16 수정 -->
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="btn_group">
+                                    <button type="button" class="btn pop lbtn md">반송</button>
+                                    <span class="divid"></span> 
+                                    <button type="button" class="btn pop lg">검사조서취소</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

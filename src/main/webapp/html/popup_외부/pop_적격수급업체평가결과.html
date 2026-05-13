@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+
+    <body>
+        <div class="pop_header_area">
+            <div class="pop_top_area">
+                <div class="left">
+                    <h2 class="pop_title">적격수급업체 평가 결과</h2>
+                </div>
+                <div class="right"></div>
+            </div>
+        </div>
+        <div class="popcontents">
+            <div class="appraisal_title">
+                <div class="left"><h3 class="title">행복나래 주식회사</h3></div>
+                <div class="right">
+                    <ul class="sub_info">
+                        <li>
+                            <span class="label">평가제출일</span>
+                        </li>
+                        <li>
+                            <strong class="info">2023.09.21</strong>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="appraisal_tbl_top">
+                <table class="appraisal_tbl">
+                    <colgroup>
+                        <col style="width:22%">
+                        <col>
+                        <col style="width:10%">
+                        <col style="width:10%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>구분</th>
+                            <th>평가항목</th>
+                            <th>배점</th>
+                            <th>평가점수</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td colspan="4" class="appraisal_step_td"><span class="appraisal_step">A. 안전보건관리체제</span></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">1. 일반원칙</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    도급 수급인의 안전보건방침
+                                    적정 여부</h5>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">2. 계획수립</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    산업재해예방 활동에 대한 수급인의 이행계획 적정 여부
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">15</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr class="td_b_none">
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">3. 역할 및 책임</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    이행계획 추진을 위한 구성원의 역할 분담(본사, 현장)
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="appraisal_step_td"><span class="appraisal_step">B. 안전보건실행능력</span></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">4. 위험성평가</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    도급작업에 대한 이해수준 및 자체 유해 위험요인 평가수준
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">5. 안전점검</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    안전점검 및 모니터링(보호구 착용 확인 포함)
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">6. 교육 및 기록</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    안전보건교육 계획 및 기록관리
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr class="td_b_none">
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">7. 안전작업허가</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    유해 위험작업에 대한 안전작업허가 이행수준
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="appraisal_step_td"><span class="appraisal_step">C. 안전보건운영관리</span></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">8. 신호 및 연락체계</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    도급,수급업체 신호 및 연락체계
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">9. 위험물질 및 설비</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    유해,위험 물질 및 취급 기계,기구,설비의 안전성 확인
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr class="td_b_none">
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">10. 비상대책</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    비상시 대피 및 피해 최소화 대책
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="appraisal_step_td"><span class="appraisal_step">D. 재해발생 수준</span></td>
+                        </tr>
+                        <tr class="td_b_none">
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">11. 산업재해 현황</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    최근 3년간 산업재해 발생 현황
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">20</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" class="appraisal_step_td"><span class="appraisal_step">E. 외부 안전 인증 (가점항목)</span></td>
+                        </tr>
+                        <tr>
+                            <td class="appraisal_td">
+                                <h4 class="appraisal_h4">12. 안전보건관련인증</h4>
+                            </td>
+                            <td class="appraisal_td">
+                                <h5 class="appraisal_h5">
+                                    안전보건 경영시스템 인증 현황
+                                </h5>
+                            </td>
+                            <td><strong class="appraisal_point">10</strong></td>
+                            <td><strong class="appraisal_point">5</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </body>
+</html>

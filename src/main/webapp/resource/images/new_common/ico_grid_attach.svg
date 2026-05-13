@@ -1,0 +1,18 @@
+<svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon-park-twotone:mouse-one">
+<g id="Mask group">
+<mask id="mask0_267_7842" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="6" y="0" width="25" height="36">
+<g id="Group">
+<g id="Group_2">
+<path id="Vector" opacity="0.4" d="M27.3541 17.867C27.3541 12.3577 22.8879 7.8916 17.3787 7.8916C11.8694 7.8916 7.40332 12.3577 7.40332 17.867V24.5172C7.40332 30.0265 11.8694 34.4926 17.3787 34.4926C22.8879 34.4926 27.3541 30.0265 27.3541 24.5172V17.867Z" fill="white" stroke="white" stroke-width="2"/>
+<path id="Vector_2" opacity="0.3" d="M7.40332 17.867C7.40332 12.3581 11.8698 7.8916 17.3787 7.8916C22.8876 7.8916 27.3541 12.3581 27.3541 17.867V18.6983H7.40332V17.867Z" fill="#555555" stroke="white" stroke-width="2"/>
+<path id="Vector_3" opacity="0.5" d="M17.3792 18.6981V7.89146C17.3792 4.56633 18.6261 1.24121 23.1981 1.24121C28.1858 1.24121 29.8484 5.39761 29.8484 8.72274" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+</mask>
+<g mask="url(#mask0_267_7842)">
+<path id="Vector_4" d="M-2.57251 -2.08398H37.329V37.8175H-2.57251V-2.08398Z" fill="#3617CE"/>
+</g>
+</g>
+</g>
+</svg>

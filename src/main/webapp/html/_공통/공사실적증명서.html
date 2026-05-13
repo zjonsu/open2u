@@ -1,0 +1,286 @@
+<!-- saved from url=(0041)http://localhost:8080/web/CNI02P010R02.do -->
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKT Open2u 구매시스템</title>
+    <!-- css -->
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+    <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+    <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+    <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+    <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+    <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+    <script src="../../resource/js/ui.common.js"></script>
+
+</head>
+
+<body>
+    <div class="popwrap">
+        <div class="pop_header_area">
+            <div class="pop_top_area">
+                <div class="left">
+                    <h2 class="pop_title">공사실적증명서 방급요청서 작성</h2>
+                </div>
+                <div class="right">
+                </div>
+            </div>
+            <div class="pop_sub_area">
+                <div class="left">
+
+                </div>
+                <div class="right">
+                    <button type="button" class="btn pop c_type06">닫기</button>
+                    <button type="button" class="btn pop c_type06">삭제</button>
+                    <button type="button" class="btn pop c_type06">발급요청</button>
+                    <button type="button" class="btn pop pop_save c_type07">저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- <ul class="progressBar">
+            <li class="on"><a href="#none">구매요청</a></li>
+            <li><a href="#none">계약진행</a></li>
+            <li><a href="#none">계약완료</a></li>
+            <li><a href="#none">검사조서</a></li>
+            <li><a href="#none">구매전표</a></li>
+            <li><a href="#none">대금지금</a></li>
+        </ul> -->
+
+        <div class="popcontents p_top170">
+
+                <div class="poptitle m_t0">
+                    <h3 class="m_t10">건설공사기성실적증명서</h3>
+                </div>
+                <table class="tableStyle type1 m_t10">
+                    <colgroup>
+                        <col>
+                        <col style="width:20%">
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2" class="t_center">
+                                <p class="t-titletext"><input type="text" class="w60">년 건 설 공 사 기 성 실 적 증 명 (신 청) 서</p>
+                            </th>
+                            <th class="t_center">처리기간</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tableStyle noLine type1">
+                    <colgroup>
+                        <col style="width:10%">
+                        <col style="width:15%">
+                        <col style="width:30%">
+                        <col style="width:15%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2" class="t_center">신청인</th>
+                            <th>(1) 상호</th>
+                            <td><input type="text" class="wp100"></td>
+                            <th>(2) 대표자</th>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                        <tr>
+                            <th>(3) 영업소재지</th>
+                            <td colspan="3"><input type="text" class="wp100"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tableStyle noLine type1">
+                    <colgroup>
+                        <col style="width:15%">
+                        <col style="width:35%">
+                        <col style="width:15%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th colspan="4" class="t_center">공 사 내 역 ( <input type="text" class="w80 thinput"> )</th>
+                        </tr>
+                        <tr>
+                            <th>(5) 공사명</th>
+                            <td><input type="text" class="wp100"></td>
+                            <th>(7) 공종<br><span class="t_s11">(전산법시행규책제25조)</span></th>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                        <tr>
+                            <th>(6) - 1 현장소재지<br><span class="t_s11">(번지까지 기재)</span></th>
+                            <td><input type="text" class="wp100"></td>
+                            <th>(8) 인허가기관</th>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                        <tr>
+                            <th>(6) - 2 총공사금액</th>
+                            <td><input type="text" class="wp100"></td>
+                            <th>(8) 인허가연월일</th>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tableStyle noLine type1">
+                    <colgroup>
+                        <col style="width:15%">
+                        <col style="width:17%">
+                        <col style="width:15%">
+                        <col style="width:18%">
+                        <col style="width:18%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>(9) 계약연월일</th>
+                            <td><input type="text" class="wp100"></td>
+                            <th>(10) 착공연월일</th>
+                            <td><input type="text" class="wp100"></td>
+                            <th>(11) 준공 (예정) 연월일</th>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="bottomComent">※ 인허가연월일, 계약연월일, 착공연월일, 준공(예정) 연월일 등 년월일 입력양식 : YYYY/MM/DD</p>
+                <table class="tableStyle type2 popTable  m_t10">
+                    <colgroup>
+                        <col style="width:5%">
+                        <col style="width:9%">
+                        <col style="width:9%">
+                        <col style="width:13%">
+                        <col style="width:13%">
+                        <col style="width:13%">
+                        <col style="width:12%">
+                        <col style="width:12%">
+                        <col>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>일년<br>번호</th>
+                            <th>(4) 업종</th>
+                            <th>등록번호</th>
+                            <th>(12) 당년도 계약액 또는 이원액<br>(단위:천원)</th>
+                            <th class="fc_o">(14) 당년도 기성액<br>(단위:천원)</th>
+                            <th>(14) 당년도 기성지급액<br>(단위:천원)</th>
+                            <th>(13) 총계약금액<br>(단위:천원)</th>
+                            <th>(15) 전년도까지 누계기성액<br>(단위:천원)</th>
+                            <th>(17) 전년도까지 누계지급액<br>(단위:천원)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="leftLine">1</td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                        <tr>
+                            <td class="leftLine">2</td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                        <tr>
+                            <td class="leftLine">3</td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="tableStyle noLine type1">
+                    <colgroup>
+                        <col style="width:20%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>(18) 기타<br><span class="t_s11">(공사의규모ㆍ공법공동도급내역등)</span></th>
+                            <td><textarea class="wp100"></textarea></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle m_t30">
+                    <h3>발급요청자 정보</h3>
+                </div>
+                <table class="tableStyle type1 m_t10">
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:30%">
+                        <col style="width:20%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>요청자명</th>
+                            <td><input type="text" class="wp100"></td>
+                            <th>요청자 전화번호</th>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                        <tr>
+                            <th>요청자 Mail</th>
+                            <td><input type="text" class="wp100"></td>
+                            <th>발행요청 부수</th>
+                            <td><input type="text" class="wp100"></td>
+                        </tr>
+                        <tr>
+                            <th>우편받을 주소지</th>
+                            <td colspan="3"><input type="text" class="wp100"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle m_t30">
+                    <h3>증명서 발급담당자</h3>
+                </div>
+                <table class="tableStyle type1 m_t10">
+                    <colgroup>
+                        <col style="width:20%">
+                        <col style="width:30%">
+                        <col style="width:20%">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>증명서방급담당자</th>
+                            <td class="t_left">
+                                <select>
+                                    <option>담당자선택</option>
+                                </select>
+                            </td>
+                            <th>전화번호</th>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+        </div><!-- //popcontents -->
+    </div>
+</body>
+
+</html>

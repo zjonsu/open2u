@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">구매요청</h2>
+                    </div>
+                    <div class="right">
+                        <ul class="pop_progress">
+                            <li class="on"><a href="javascript:;">구매요청</a></li>
+                            <li><a href="javascript:;">구매접수</a></li>
+                            <li><a href="javascript:;">계약진행</a></li>
+                            <li><a href="javascript:;">계약완료</a></li>
+                            <li><a href="javascript:;">자산취득</a></li>
+                            <li><a href="javascript:;">검사조서</a></li>
+                            <li><a href="javascript:;">구매전표</a></li>
+                            <li><a href="javascript:;">대금지급</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="pop_sub_area">
+                    <div class="left">
+                        <p class="pop_comment">
+                            <i class="icons i_pop_comment"></i>
+                            각 항목에 마우스를 올리거나 물음표를 클릭하면, 도움말이 나옵니다.
+                        </p>
+                    </div>
+                    <div class="right">
+                        <button type="button" class="btn pop c_type06">구매의뢰양식 발송</button>
+                        <button type="button" class="btn pop c_type06">불러오기</button>
+                        <button type="button" class="btn pop c_type06">결재전송</button>
+                        <button type="button" class="btn pop pop_save c_type07">저장</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 주석
+                 20230818 p_top170 pop_sub_area 없을시 삭제
+            -->
+            <div class="popcontents p_top170">
+                <div class="poptitle">
+                    <h3>구매요청 개요 및 특이사항</h3>
+                    <div class="sizetoggle_area">
+                        <a href="javascript:;" class="sizetoggle"><i class="icons i_size_toggle"></i></a>
+                    </div>
+                </div>
+                <!-- 주석
+                        20230823 sizetoggle_box class 추가
+                    -->
+                <div class="sizetoggle_box">
+                    <div class="sizetoggle_txt">
+                        <textarea rows="6" class="wp100">○ 관련사업개요 :
+    ○ 구매요청품목 :
+    ○ 특이사항 :
+    ○ 구매요청금액 관련 History 및 의견 :
+    ※ 구매요청 관련 필수 증빙은, 반드시 &#034;구매요청 증빙파일&#034;에 첨부하여 주시기 바랍니다. (사업계획서, 견적서, 예산산출내역서 등)
+                        </textarea>
+                    </div>
+                </div>
+
+                <div class="poptitle">
+                    <h3>구매요청 기본정보  : 1160051326</h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width: 145px">
+                        <col>
+                        <col style="width: 145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>구매계약 요청건명<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="point readonly wp100" value="경쟁 - 투자 - 물품_종합평가" readonly="readonly">
+                            </td>
+                            <th class="ui_tooltip" title="본인 소속 본부의 타 구성원 선택 가능">
+                                구매요청자<span class="staricon"></span>
+                            </th>
+                            <td>
+                                <input type="text" class="w80 readonly" readonly="readonly">
+                                <input type="text" class="w80 readonly" readonly="readonly">
+                                <input type="text" class="w90 readonly" readonly="readonly">
+                                <a href="javascript:;" class="btnS search"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="ui_tooltip" title="납품 및 수행기간 + 정산기간(약1주일) 고려">구매계약 기간<span class="staricon"></span></th>
+                            <td>
+                                <div class="datepicker_area">
+                                    <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                    <div class="datepicker_box"><input class="datepicker" type="text"></div>
+                                </div>
+                            </td>
+                            <th class="ui_tooltip" title="구매요청부서의 해당 계약 건 현재 담당자 (IoT/Data사업부의 경우, 검사조서 담당자)">구매요청관리자<span class="staricon"></span></th>
+                            <td>
+                                <input type="text" class="w80 readonly" readonly="readonly">
+                                <input type="text" class="w80 readonly" readonly="readonly">
+                                <input type="text" class="w90 readonly" readonly="readonly">
+                                <a href="javascript:;" class="btnS search"></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th id="cntrtRegDate">계약체결예정일</th>
+                            <td>
+                                <input type="text" class="readonly w100" readonly="readonly" value="2013-05-22" />
+                                구매요청일 +15로 자동 설정됩니다
+                            </td>
+                            <th>계약요청 유형<span class="staricon"></span></th>
+                            <td>
+                                <input type="radio" name="rdo01" checked>
+                                <span class="ui_tooltip" title="계약 시 구매 품목/수량/단가/납품기한/납품장소 를 모두 확정">
+                                    수시계약
+                                </span>
+                                <input type="radio" name="rdo01">
+                                <span class="ui_tooltip" title="계약 시 구매품목의 단가만 확정하고, 수량/납품기한/납품장소는 추후 확정하여 납품지시">
+                                    단가계약
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>구매계약 담당부서<span class="staricon"></span><span class="tooltipIcon type1"></span></th>
+                            <td>
+                                <select>
+                                    <option>서비스구매팀</option>
+                                    <option selected>ICT Infra구매팀</option>
+                                    <option>성장Tech구매팀</option>
+                                    <option>성장SCM담당</option>
+                                    <option>구매지원팀</option>
+                                    <option>동반성장팀</option>
+                                </select>
+                            </td>
+                            <th>구매계약 담당자</th>
+                            <td>
+                                <select class="w80">
+                                    <option>선택</option>
+                                </select>
+                                담당자를 모를 경우 담당부서만 지정하세요
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>예산승인 여부<span class="staricon"></span><span class="tooltipIcon type1"></span></th>
+                            <td>
+                                <input type="radio" name="rdo01" checked>
+                                <span class="ui_tooltip" title="예산승인이 완료된 일반적인 구매요청">
+                                    완료(정상구매요청)
+                                </span>
+                                <input type="radio" name="rdo01">
+                                <span class="ui_tooltip" title="예산승인 전 구매 사전검토가 필요한 경우 (계약체결은 예산승인 후 진행)">
+                                    미완료(사전구매요청)
+                                </span>
+                            </td>
+                            <th class="ui_tooltip" title="공급사 선정방식은 SCM그룹의 검토 후 변경될 수 있습니다.">
+                                <span>공급사 선정방식 요청</span><span class="staricon"></span>
+                            </th>
+                            <td>
+                                <input type="radio" name="rdo01" checked>
+                                <span class="ui_tooltip" title="다수의 업체를 대상으로 입찰을 하여 공급사 선정">
+                                    경쟁입찰
+                                </span>
+                                <input type="radio" name="rdo01">
+                                <span class="ui_tooltip" title="특정 업체를 지정하여 계약 (추천 공급업체 및 수의계약요청사유 반드시 입력)">
+                                    수의계약
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3 class="ui_tooltip" title="(추천할 공급업체가 없을 경우 생략 가능하며 공급업체는 Open2U에 회원 가입되어 있어야 추천 가능)">
+                        <span>추천 공급업체</span>
+                        <a href="javascript:;" class="help_msg"><i class="icons i_help_msg"></i>신규업체 등록절차</a>
+                    </h3>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <div class="grid_area">
+                    <table id="jqGrid" class="jqgrid"></table>
+                </div>
+
+                <div class="poptitle">
+                    <h3>
+                        <span>품목 상세정보</span>
+                        <!-- <a href="javascript:;" class="help_msg c_type02"><i class="icons i_help_msg_type02"></i></a> -->
+                        <a href="javascript:;" class="tooltipIcon type1"></a>
+                    </h3>
+                    <p class="titlecoment typ02">소요예산 : 접수예산 : VAT 별도(단위 :원)</p>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <div class="grid_area">
+                    <table id="jqGrid" class="jqgrid"></table>
+                </div>
+
+                <div class="poptitle">
+                    <h3>
+                        <span class="ui_tooltip" title="운영예산 상세정보는 본부/팀 예산담당자에게 문의하세요">품목별 예산 상세정보</span>
+                    </h3>
+                    <p class="titlecoment">※ 구매요청 할 Item 항목을 추가하고, 각 항목별 예산정보를 입력해야 합니다.</p>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_apply"></i> 회계처리정보 일괄적용</button>
+                    </div>
+                </div>
+                <div class="grid_area">
+                    <table id="jqGrid" class="jqgrid"></table>
+                </div>
+
+                <div class="poptitle">
+                    <h3><span>안전보건</span></h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width: 145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>안전보건 일반조건 <span class="staricon"></span></th>
+                            <td>
+                                <input type="checkbox" class="m_r10"checked />
+                                안전보건 일반조건
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>적격수급업체평가 <span class="staricon"></span></th>
+                            <td>
+                                <input type="checkbox" class="m_r10"checked />
+                                안전보건수준 자체평가
+                                <input type="checkbox" class="m_r10"checked />
+                                적격수급업체평가(공사,공사성용역)
+                                <input type="checkbox" class="m_r10"checked />
+                                미평가(개인/해외 등)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>산업안전보건관리비 <span class="tooltipIcon"></span></th>
+                            <td>
+                                계상여부
+                                <select class="w130">
+                                    <option>선택</option>
+                                    <option>대상</option>
+                                    <option selected>비대상</option>
+                                 </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <div class="poptitle">
+                    <h3>
+                        <span class="ui_tooltip" title="예산승인서 관련 파일은, 반드시 아래 증빙파일로 추가하여 주시기 바랍니다.">예산승인서</span>
+                    </h3>
+                    <p class="titlecoment">※ 예산승인서 관련 증빙파일은,반드시 아래 [구매요청 증빙파일]에 추가하여 주시기 바랍니다.
+                    </p>
+                </div>
+                <div class="sub_title_area">
+                    <h4 class="sub_title">지출품의서</h4>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>지출품의서</th>
+                            <td>
+                                <input type="text" class="readonly w110" readonly="readonly">
+                                <input type="text" class="readonly w110" readonly="readonly">
+                                <a href="javascript:;" class="btnS search"></a>
+                            </td>
+                            <th>지출품의서 첨부 (PDF/JPG)</th>
+                            <td class="br_none">
+                                <input type="text" class="readonly dashed w170" readonly="readonly">
+                                <a href="javascript:;" class="btnS closes"></a>
+                                <input type="file" id="file01" class="upload_hidden">
+                                <label for="file01" class="btn c_type03">파일찾기</label>
+                                <button type="button" class="btn t_down c_type09"><i class="icons i_tr_download"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="sub_title_area">
+                    <h4 class="sub_title">투자사업승인서</h4>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width:145px">
+                        <col>
+                        <col style="width:145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>투자사업승인서</th>
+                            <td>
+                                <input type="text" class="readonly w110" readonly="readonly">
+                                <input type="text" class="readonly w110" readonly="readonly">
+                                <a href="javascript:;" class="btnS search"></a>
+                            </td>
+                            <th>투자사업승인서 첨부 (PDF/JPG)</th>
+                            <td class="br_none">
+                                <input type="text" class="readonly dashed w170" readonly="readonly">
+                                <a href="javascript:;" class="btnS closes"></a>
+                                <input type="file" id="file01" class="upload_hidden">
+                                <label for="file01" class="btn c_type03">파일찾기</label>
+                                <button type="button" class="btn t_down c_type09"><i class="icons i_tr_download"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="poptitle">
+                    <h3>
+                        <span>구매요청 증빙파일(예산상세내역 포함)</span>
+                    </h3>
+                    <p class="titlecoment typ02">사업계획서, 견적서, 예산품의 증빙 등</p>
+                    <div class="btnArea f_right">
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_add"></i> 추가</button>
+                        <button type="button" class="btn c_type08"><i class="icons i_btn_remove"></i> 삭제</button>
+                    </div>
+                </div>
+                <table class="fileupload-list tableStyle fileupload">
+                    <colgroup>
+                        <col width="30px">
+                        <col width="*">
+                        <col width="150px">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th><input type="checkbox"></th>
+                            <th>파일명</th>
+                            <th>용량</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="template-empty">
+                            <td colspan="3">
+                                <!-- <div class="grid_status attachment">첨부파일을 마우스로 끌어 넣으세요</div> -->
+                                <div class="nodata-content">첨부 된<span>파일이</span> 없습니다.</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">
+                                <div class="fileupload-progress" style="float: left;">
+                                    <div class="progress-extended">&nbsp;</div>
+                                </div>
+                                <span class="fileupload-footer" style="float: right;">0 개체, 0,00KB 첨부됨</span>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+                
+                <!-- <ul class="guide_attachment">
+                    <li>첨부제한 : 최대 20건, 건당 30MB, 최대 50MB</li>
+                    <li>첨부 가능파일 : txt, xls, xlsx, doc, docx, ppt, pptx, hwp, zip, pdf, jpg, jpeg, gif, png, bmp, apk, dwg, html, htm, mht</li>
+                </ul> -->
+                <div class="fileupload comment commnet-default">
+                    <div class="commnet-body">
+                        <ul>
+                            <li>첨부제한 : 최대 20건, 건당 30MB, 최대 50MB</li>
+                            <li>
+                                첨부 가능파일 : txt, xls, xlsx, doc, docx, ppt, pptx, hwp, zip, pdf, jpg, jpeg, gif, png, bmp, apk, dwg, html, htm, mht
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="poptitle">
+                    <h3>
+                        <span>예산승인서</span>
+                    </h3>
+                </div>
+                <table class="tableStyle">
+                    <colgroup>
+                        <col style="width: 145px">
+                        <col>
+                        <col style="width: 145px">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>ITGO 프로젝트명</th>
+                            <td>
+                                <input type="text" class="w80 readonly" readonly="readonly">
+                                <input type="text" class="w90 readonly" readonly="readonly">
+                                <a href="javascript:;" class="btnS search"></a>
+                                <a href="javascript:;" class="btnS closes"></a>
+                            </td>
+                            <th>고객정보 취급 여부 <span class="tooltipIcon type1"></span></th>
+                            <td>
+                                <input type="radio" name="rdo01" checked>
+                                <span>YES</span>
+                                <input type="radio" name="rdo01">
+                                <span>NO</span>
+                                <!-- 주석
+                                    20230821 외부 IDC 사용여부
+                                -->
+                                <span style="display: none; padding-left: 20px;">
+                                    외부 IDC 사용여부
+                                    YES
+                                    <input type="radio">
+                                    NO
+                                    <input type="radio">
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>SGR특수조건 첨부</th>
+                            <td colspan="3">
+                                <input type="radio" name="rdo01" checked>
+                                <span>YES</span>
+                                <input type="radio" name="rdo01">
+                                <span>NO</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>SSOne Funnel ID</th>
+                            <td colspan="3">
+                                <input type="text" class="w80 readonly" readonly="readonly">
+                                <input type="text" class="w90 readonly" readonly="readonly">
+                                <a href="javascript:;" class="btnS search"></a>
+                                <a href="javascript:;" class="btnS closes"></a>
+                                <button class="btn grad3">Funnel ID저장</button>
+                                <button class="btn grad3">ssone 바로가기</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="javascript:;" class="btn_top"><i class="icons i_btn_top"></i></a>
+        <script>
+            var mydata = [
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+                { data1: "data1", data2: "data", data3: "data", data4: "data", data5: "data", data6: "data", data7: "data", data8: "data", data9: "data", data10: "data"},
+            ];
+
+            $(document).ready(function () {
+                $(".jqgrid").jqGrid({
+                    datatype: "local",
+                    // data: mydata,
+                    autowidth: true,
+                    cellEdit:true,
+                    shrinkToFit:false,
+                    forceFit:true,
+                    pager: '#jqGridPager',
+                    colModel: [
+                        { label: 'data1', name: 'data1', width:100, editable:true },
+                        { label: 'data2', name: 'data2', width:100, editable:true },
+                        { label: 'data3', name: 'data3', width:100, editable:true },
+                        { label: 'data4', name: 'data4', width:100, editable:true },
+                        { label: 'data5', name: 'data5', width:100, editable:true },
+                        { label: 'data6', name: 'data6', width:100, editable:true },
+                        { label: 'data7', name: 'data7', width:100, editable:true },
+                        { label: 'data8', name: 'data8', width:100, editable:true },
+                        { label: 'data9', name: 'data9', width:100, editable:true },
+                        { label: 'data10', name: 'data10', width:100, editable:true },
+                    ],
+                    // jQGrid 데이터 없는 경우
+                    loadComplete: function() {
+                        if ($(".jqgrid").getGridParam("records")==0) {
+                            $(".jqgrid").addRowData(
+                            $(".jqgrid")
+                                .empty()
+                                .append('<tr><td><div class="grid_status nodata">데이터가 존재하지 않습니다.</div></td></tr>')
+                            );
+                        }
+                    }
+                });
+
+            });
+
+            $(window).bind('resize', function() {
+                $(".jqgrid").setGridWidth($('.grid_area').width());
+            }).trigger('resize');
+        </script>
+    </body>
+</html>

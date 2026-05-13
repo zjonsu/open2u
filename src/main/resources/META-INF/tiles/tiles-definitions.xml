@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+    "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+    "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <!--
+        레이아웃은 "레이아웃 가족" 단위로 묶는다.
+          /WEB-INF/layouts/<family>/
+              layout.jsp     : 전체 골격 (template)
+              header.jsp     : 상단 헤더 (공통)
+              menu.jsp       : 메뉴      (공통)
+              footer.jsp     : 하단 푸터 (공통)
+        페이지 콘텐츠는 /WEB-INF/jsp/<page>/ 아래에 둔다.
+              head.jsp       : 페이지 전용 추가 CSS/JS (선택)
+              body.jsp       : 중앙 콘텐츠
+        - 기본 레이아웃은 default 가족을 사용한다.
+        - popup 등 다른 레이아웃이 필요해지면 layouts/popup/ 폴더와
+          그에 대응하는 popup.definition 을 추가한다.
+    -->
+
+    <!-- 기본(default) 레이아웃 -->
+    <definition name="base.definition" template="/WEB-INF/layouts/default/layout.jsp">
+        <put-attribute name="title"     value="Open2U"/>
+        <put-attribute name="wrapClass" value=""/>
+        <put-attribute name="head"      value=""/>
+        <put-attribute name="header"    value="/WEB-INF/layouts/default/header.jsp"/>
+        <put-attribute name="menu"      value="/WEB-INF/layouts/default/menu.jsp"/>
+        <put-attribute name="body"      value=""/>
+        <put-attribute name="footer"    value="/WEB-INF/layouts/default/footer.jsp"/>
+    </definition>
+
+    <!-- 메인(홈) 화면 : 기본 레이아웃 + home 전용 콘텐츠 -->
+    <definition name="home" extends="base.definition">
+        <put-attribute name="title"     value="SKT Open2u 구매시스템"/>
+        <put-attribute name="wrapClass" value="main"/>
+        <put-attribute name="head"      value="/WEB-INF/jsp/home/head.jsp"/>
+        <put-attribute name="body"      value="/WEB-INF/jsp/home/body.jsp"/>
+    </definition>
+
+</tiles-definitions>

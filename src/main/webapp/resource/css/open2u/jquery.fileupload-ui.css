@@ -1,0 +1,226 @@
+@charset "UTF-8";
+/*
+ * jQuery File Upload UI Plugin CSS
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2010, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * https://opensource.org/licenses/MIT
+ */
+
+/* .fileupload-buttonbar {
+  margin-bottom: 5px;
+} */
+/* .fileupload-buttonbar {
+	line-height: 28px;
+    margin-bottom: 10px;
+} */
+.fileupload-buttonbar .download, .fileupload-buttonbar .start, .fileupload-buttonbar .zipdownload {
+  display:none;
+}
+.progress-animated .progress-bar,
+.progress-animated .bar {
+  background: url("./progressbar.gif") !important;
+  filter: none;
+}
+.fileupload-process {
+  float: right;
+  display: none;
+}
+.fileupload-processing .fileupload-process,
+.files .processing .preview {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url("./fileupload-loading.gif") center no-repeat;
+  background-size: contain;
+}
+.files audio,
+.files video {
+  max-width: 250px;
+  max-height: 30px;
+}
+
+@media (max-width: 767px) {
+  .fileupload-buttonbar .toggle,
+  .files .toggle,
+  .files .btn span {
+    display: none;
+  }
+  .files .name {
+    width: 80px;
+    word-wrap: break-word;
+  }
+  .files audio,
+  .files video {
+    max-width: 80px;
+  }
+  .files img,
+  .files canvas {
+    max-width: 100%;
+  }
+}
+.fileupload-list .preview {
+  display: inline-block;
+}
+/* .fileupload-list .name a {text-decoration: underline;} */
+.fileupload-list .label {
+    display: inline-block;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    position: relative;
+    top:-4px;
+}
+.fileupload-list .label-danger {
+    background-color: #d9534f;
+}
+.fileupload-list .label-error {
+    background-color: #d9534f;
+    top:0;
+    margin-left: 10px;
+}
+.fileupload-list .text-danger {
+    color: #a94442;
+    display: inline-block;
+}
+.fileupload-list .text-error {
+    color: #a94442;
+    font-size: 11px;
+    padding-left:5px;
+}
+.fileupload-list img {
+	border:0 none;
+}
+.fileupload-list .name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 60%;
+    display: inline-block;
+}
+
+/* .fileupload-list .newfile {  
+  background: url("./new.png") left no-repeat;
+  background-size: contain;
+  padding-left:20px;
+} */
+.fileupload-list .template-empty .empty-content {
+  display: inline-block;
+  background: url("./move-file.png") left no-repeat;
+  background-size: contain;
+  padding-left:50px;
+  text-align: left;
+}
+.fileupload-list .template-empty .nodata-content {
+  display: inline-block;
+  background: url("./empty-file.png") left no-repeat;
+  background-size: contain;
+  padding-left:50px;
+  text-align: left;
+}
+.fileupload-list .template-empty .load-content {
+  display: inline-block;
+  background: url("./fileupload-loading.gif") left no-repeat;
+  background-size: contain;
+  padding-left:50px;
+  text-align: left;
+}
+.fileupload-list .template-empty .empty-content span {
+  color:#5391f1;
+  font-weight:bold;  
+}
+.fileupload-list .template-empty .nodata-content span {
+  color:#5391f1;
+  font-weight:bold;  
+}
+
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 1rem 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 1rem 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+.progress {
+  display: -ms-flexbox;
+  display: inline-block;
+  height: 22px;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+  width: 130px;
+  
+  margin-bottom :0;
+}
+
+.progress-bar {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e0bd6e;
+  transition: width 0.6s ease;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .progress-bar {
+    transition: none;
+  }
+}
+
+.progress-bar-striped {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+}
+
+.progress-bar-animated {
+  -webkit-animation: progress-bar-stripes 1s linear infinite;
+  animation: progress-bar-stripes 1s linear infinite;
+}
+
+.fileupload.comment {
+    background-color: #fff;
+    border: 1px solid transparent;
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    /* border-radius: 4px; */
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.fileupload.commnet-default {
+	margin-top:5px;
+    border-color: #ddd;
+}
+.fileupload .commnet-body {
+	background-color: #ffffff;
+    padding: 12px;
+    display: inline-block;
+}

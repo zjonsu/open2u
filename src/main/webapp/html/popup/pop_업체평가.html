@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SKT Open2u 구매시스템</title>
+        <!-- css -->
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.css" />
+        <link rel="stylesheet" href="../../resource/css/jquery-ui.theme.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="../../resource/css/alopex3/alopex_grid.css" />
+        <link rel="stylesheet" href="../../resource/css/ui.common.css" />
+        <!-- javascript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="../../resource/lib/jQuery/jquery-ui.js"></script>
+        <script src="../../resource/lib/jQuery/jquery.jqgrid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alopex-grid.min.js"></script>
+        <script src="../../resource/lib/Alopex/alpopex_data.js"></script>
+        <script src="../../resource/js/ui.common.js"></script>
+    </head>
+    <body>
+        <div class="popwrap">
+            <div class="pop_header_area">
+                <div class="pop_top_area">
+                    <div class="left">
+                        <h2 class="pop_title">업체평가</h2>
+                    </div>
+                    <div class="right"></div>
+                </div>
+            </div>
+            <div class="popcontents">
+                <h3 class="company_checklist_title">SK네트웍스(주)</h3>
+                <ul class="company_checklist_info">
+                    <li>
+                        <span class="label">점수</span>
+                        <span class="desc">90</span>
+                    </li>
+                    <li>
+                        <span class="label">EG명 </span>
+                        <span class="desc">[8] 일반물품</span>
+                    </li>
+                    <li> 
+                        <span class="label">SG명</span>
+                        <span class="desc">유지보수_S/W</span>
+                    </li>
+                </ul>
+                <div class="company_checklist_box">
+                    <h3>Price</h3>
+                    <ul class="company_checklist">
+                        <li>
+                            <span class="desc">
+                                <em class="numb">1.</em>
+                                [Price] 가격 협상과정에서의 업무 협조도 (자료제출, 계약체결 등)
+                            </span>
+                            <ul class="company_checklist_score">
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo01" name="rdo01">
+                                        <label for="rdo01">매우 만족 (100)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo02" name="rdo01">
+                                        <label for="rdo02">만족 (80)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo03" name="rdo01">
+                                        <label for="rdo03">보통 (60)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo04" name="rdo01">
+                                        <label for="rdo04">불만족 (40)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo05" name="rdo01">
+                                        <label for="rdo05">매우 불만족 (20)</label>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="desc">
+                                <em class="numb">2.</em>
+                                [Price] 가격 협상과정에서의 업무 협조도 (자료제출, 계약체결 등) - 가격 협상과정에서의 업무 협조고 (자료제출, 계약체결 등)
+                            </span>
+                            <ul class="company_checklist_score">
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo06" name="rdo02">
+                                        <label for="rdo06">매우 만족 (100)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo07" name="rdo02">
+                                        <label for="rdo07">만족 (80)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo08" name="rdo02">
+                                        <label for="rdo08">보통 (60)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo09" name="rdo02">
+                                        <label for="rdo09">불만족 (40)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo10" name="rdo02">
+                                        <label for="rdo10">매우 불만족 (20)</label>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="desc">
+                                <em class="numb">3.</em>
+                                [Price] 가격 협상과정에서의 업무 협조도 (자료제출, 계약체결 등) - 가격 협상과정에서의 업무 협조고 (자료제출, 계약체결 등)
+                            </span>
+                            <ul class="company_checklist_score">
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo11" name="rdo03">
+                                        <label for="rdo11">매우 만족 (100)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo12" name="rdo03">
+                                        <label for="rdo12">만족 (80)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo13" name="rdo03">
+                                        <label for="rdo13">보통 (60)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo14" name="rdo03">
+                                        <label for="rdo14">불만족 (40)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo15" name="rdo03">
+                                        <label for="rdo15">매우 불만족 (20)</label>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span class="desc">
+                                <em class="numb">4.</em>
+                                [Price] 가격 협상과정에서의 업무 협조도 (자료제출, 계약체결 등) - 가격 협상과정에서의 업무 협조고 (자료제출, 계약체결 등)
+                            </span>
+                            <ul class="company_checklist_score">
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo16" name="rdo04">
+                                        <label for="rdo16">매우 만족 (100)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo17" name="rdo04">
+                                        <label for="rdo17">만족 (80)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo18" name="rdo04">
+                                        <label for="rdo18">보통 (60)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo19" name="rdo04">
+                                        <label for="rdo19">불만족 (40)</label>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span class="rdo">
+                                        <input type="radio" id="rdo20" name="rdo04">
+                                        <label for="rdo20">매우 불만족 (20)</label>
+                                    </span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+
+    </script>
+</html>
