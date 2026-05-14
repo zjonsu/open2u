@@ -330,7 +330,7 @@
      <script>window.OPEN2U_AI_HELPDESK_ADMIN = <%= admin %>;</script>
 
 
-<%@ include file="/WEB-INF/jsp/home/ai-helpdesk-modal.jspf" %>
+<%@ include file="/WEB-INF/jsp/home/ai-helpdesk-modal.jsp" %>
 <script>
     tabMenu('#tabList01', '#tabCont01');
     tabMenu('#tabList02', '#tabCont02');
