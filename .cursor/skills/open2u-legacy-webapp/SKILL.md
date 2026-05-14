@@ -19,3 +19,7 @@ description: Open2U legacy Spring Framework 4.1 (non-Boot) Maven WAR project con
 - 비밀번호 등 민감 값은 properties / 환경변수로 분리
 
 자세한 사양·디렉터리 규약·이관 절차는 [README.md](../../../README.md) 1~8장을 참조하세요.
+
+## 서버 레이어 (Controller / Service / DAO / MyBatis)
+
+업무별 패키지(`com.skt.open2u.adm`, `cmn`, `pur` 등), 레이어 분리, MyBatis namespace·`RESULT_LIST` 관례, SLF4J 로깅, JSON API 시 Jackson, **신규 DB 테이블·컬럼·인덱스 등 객체 식별자 대문자 작명** 등은 **[open2u-server-architecture](../../rules/open2u-server-architecture.mdc)** 규칙을 따른다. `src/main/java` 및 `META-INF/persistence.mybatis` 작업 시 해당 규칙을 우선 적용한다.

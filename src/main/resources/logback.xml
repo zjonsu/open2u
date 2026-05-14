@@ -1,14 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
-        <encoder>
-            <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+    <!--
+      애플리케이션(SLF4J) 로그는 ./logs/jetty.log 에 직접 기록한다.
+      ./run.sh start 시 nohup 이 같은 파일로 Maven/Jetty stdout 도 붙이므로,
+      콘솔 appender 는 쓰지 않는다(동일 로그가 jetty.log 에 두 번 쌓이는 것을 방지).
+      실시간 확인: tail -f logs/jetty.log
+    -->
+    <property name="LOG_DIR" value="logs"/>
+    <property name="JETTY_LOG" value="${LOG_DIR}/jetty.log"/>
+
+    <appender name="JETTY_LOG" class="ch.qos.logback.core.FileAppender">
+        <file>${JETTY_LOG}</file>
+        <append>true</append>
+        <immediateFlush>true</immediateFlush>
+        <encoder charset="UTF-8">
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{48} - %msg%n</pattern>
         </encoder>
     </appender>
 
+    <!-- 정리된 SQL 블록(파라미터 매핑 + 인라인 미리보기): DEBUG 시 출력 -->
+    <logger name="com.skt.config" level="DEBUG"/>
+
+    <!-- 업무 MyBatis namespace 가 adm.XxxDAO, scm.XxxDAO 형태이므로 모듈 단위로 레벨 지정 -->
+    <logger name="adm" level="TRACE"/>
+    <logger name="scm" level="TRACE"/>
+    <logger name="pur" level="TRACE"/>
+    <logger name="cmn" level="TRACE"/>
+    <logger name="epro" level="TRACE"/>
+
     <logger name="com.skt.open2u" level="DEBUG"/>
 
+    <!-- mybatis-config 에서 logImpl=NO_LOGGING 사용 시 JDBC 단편 로그는 끈다 -->
+    <logger name="org.apache.ibatis" level="WARN"/>
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.springframework.web" level="INFO"/>
+    <logger name="org.eclipse.jetty" level="INFO"/>
+    <logger name="com.zaxxer.hikari" level="INFO"/>
+
     <root level="INFO">
-        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="JETTY_LOG"/>
     </root>
 </configuration>

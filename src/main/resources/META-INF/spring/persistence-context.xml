@@ -7,7 +7,12 @@
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:META-INF/persistence.mybatis/mybatis-config.xml"/>
-        <property name="mapperLocations" value="classpath*:META-INF/persistence.mybatis/mappers/*.xml"/>
+        <!-- mappers/ 이하 모든 *.xml (하위 폴더 포함). classpath: 단일 루트로 동일 파일 중복 등록 방지 -->
+        <property name="mapperLocations" value="classpath:META-INF/persistence.mybatis/mappers/**/*.xml"/>
+    </bean>
+
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg ref="sqlSessionFactory"/>
     </bean>
 
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">

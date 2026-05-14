@@ -6,5 +6,13 @@
     <settings>
         <setting name="mapUnderscoreToCamelCase" value="true"/>
         <setting name="cacheEnabled" value="true"/>
+        <!-- SLF4J 기본 JDBC 로그(Preparing/Parameters 분리) 대신 com.skt.config.PrettySqlLoggingInterceptor 로 블록 출력 -->
+        <setting name="logImpl" value="NO_LOGGING"/>
     </settings>
+    <plugins>
+        <plugin interceptor="com.skt.config.PrettySqlLoggingInterceptor">
+            <property name="maxParamDisplayLength" value="1200"/>
+            <property name="maxInlineSqlLength" value="6000"/>
+        </plugin>
+    </plugins>
 </configuration>

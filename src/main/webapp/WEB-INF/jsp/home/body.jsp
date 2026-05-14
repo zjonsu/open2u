@@ -35,7 +35,7 @@
                                     <li><a href="javascript:;">10000</a></li>
                                 </ul>
                             </li>
-                            <li>W
+                            <li>
                                 <span class="label_title">계약변경</span>
                                 <ul class="number_list">
                                     <li><a href="javascript:;">3</a></li>
