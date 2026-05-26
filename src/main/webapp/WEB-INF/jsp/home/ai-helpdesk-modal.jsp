@@ -21,23 +21,31 @@
         --ai-muted: #6b6f7e;
         --ai-card: #eef0f8;
         --ai-card-accent: #ebe7fb;
+        /* 상단 프로세스·SCM/PILOT 모듈: 동일 6열 (모듈 7·8은 2행 3·5열) */
+        --ai-hd-phase-cols: 6;
+        --ai-hd-block-pad-l: 36px;
+        --ai-hd-block-pad-r: 10px;
+        --ai-hd-grid-gap: 8px;
+        --ai-hd-grid-inset-l: var(--ai-hd-block-pad-l);
+        --ai-hd-grid-inset-r: var(--ai-hd-block-pad-r);
     }
     /* 상단 프로세스: 좌→우 브랜드 톤 그라데이션 화살표 + 노드 */
     .ai-helpdesk-map .ai-hd-phases {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(var(--ai-hd-phase-cols), minmax(0, 1fr));
+        column-gap: var(--ai-hd-grid-gap);
         align-items: flex-start;
         list-style: none;
         margin: 0 0 22px;
-        padding: 0 20px 18px 12px;
+        padding: 0 var(--ai-hd-grid-inset-r) 18px var(--ai-hd-grid-inset-l);
         position: relative;
         box-sizing: border-box;
     }
     .ai-helpdesk-map .ai-hd-phases::before {
         content: '';
         position: absolute;
-        left: 14px;
-        right: 22px;
+        left: var(--ai-hd-grid-inset-l);
+        right: var(--ai-hd-grid-inset-r);
         top: calc(13px * 2.5 + 10px + 9px);
         height: 5px;
         border-radius: 3px 0 0 3px;
@@ -55,7 +63,7 @@
     .ai-helpdesk-map .ai-hd-phases::after {
         content: '';
         position: absolute;
-        right: 8px;
+        right: var(--ai-hd-grid-inset-r);
         top: calc(13px * 2.5 + 10px + 9px - 6px);
         width: 0;
         height: 0;
@@ -66,7 +74,6 @@
         pointer-events: none;
     }
     .ai-helpdesk-map .ai-hd-phases > li {
-        flex: 1;
         text-align: center;
         position: relative;
         z-index: 2;
@@ -95,7 +102,7 @@
     .ai-helpdesk-map .ai-hd-block {
         border: 2px dashed var(--ai-border);
         border-radius: 8px;
-        padding: 10px 10px 12px 36px;
+        padding: 10px var(--ai-hd-block-pad-r) 12px var(--ai-hd-block-pad-l);
         margin-bottom: 12px;
         position: relative;
         background: var(--ai-surface);
@@ -121,8 +128,18 @@
     }
     .ai-helpdesk-map .ai-hd-cols {
         display: grid;
-        grid-template-columns: repeat(6, minmax(0, 1fr));
-        gap: 8px;
+        grid-template-columns: repeat(var(--ai-hd-phase-cols), minmax(0, 1fr));
+        gap: var(--ai-hd-grid-gap);
+        align-items: start;
+    }
+    /* 8모듈: 3번=입찰(Resource Planning·소싱 아래), 8번=업무(구매관리 아래) */
+    .ai-helpdesk-map .ai-hd-cols > .ai-hd-col:nth-child(3) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+    .ai-helpdesk-map .ai-hd-cols > .ai-hd-col:nth-child(8) {
+        grid-column: 5;
+        grid-row: 2;
     }
     .ai-helpdesk-map .ai-hd-col {
         display: flex;
@@ -161,7 +178,10 @@
     }
     .ai-helpdesk-map .ai-hd-card--gray .ai-hd-card-head:not(:hover) {
         background: #fff;
-        color: #201267;
+        color: #999;
+    }
+    .ai-helpdesk-map .ai-hd-card--gray .ai-hd-card-head:not(:hover) .ai-hd-pilot-title {
+        color: #999;
     }
     .ai-helpdesk-map .ai-hd-card-head:hover {
         background-color: #3617CE;
@@ -209,7 +229,7 @@
         margin: 0;
         padding: 0;
         position: relative;
-        line-height: 1.4;
+        line-height: 1.3;
     }
     .ai-helpdesk-map .ai-hd-card ul li::before {
         content: none;
@@ -221,14 +241,14 @@
         box-sizing: border-box;
         min-height: 0;
         margin: 0;
-        padding: 8px 30px 8px 8px;
+        padding: 5px 30px 5px 8px;
         border: none;
         border-radius: 4px;
         background-color: transparent;
         color: #201267;
         font-size: 13px;
         font-weight: 600;
-        line-height: 1.4;
+        line-height: 1.3;
         text-decoration: none;
         word-break: keep-all;
         transition: background-color 0.15s, color 0.15s;
@@ -339,12 +359,6 @@
         background: var(--ai-brand);
         color: #fff;
     }
-    .ai-helpdesk-map .ai-hd-pilot-cols {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 8px;
-        align-items: start;
-    }
     .ai-helpdesk-map .ai-hd-pilot .ai-hd-card-head {
         display: flex;
         align-items: center;
@@ -358,6 +372,39 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+    }
+    .ai-helpdesk-map .ai-hd-pilot-toggle-pin {
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        border: 1px solid #c4bddc;
+        border-radius: 4px;
+        background: #fff;
+        cursor: pointer;
+        padding: 0;
+        position: relative;
+    }
+    .ai-helpdesk-map .ai-hd-pilot-toggle-pin::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 9px;
+        height: 9px;
+        background: #c4bddc;
+        border-radius: 50% 50% 50% 0;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        transition: background-color 0.15s;
+    }
+    .ai-helpdesk-map .ai-hd-pilot-toggle-pin[aria-pressed='true'] {
+        border-color: var(--ai-brand);
+        background: #f5f3fc;
+    }
+    .ai-helpdesk-map .ai-hd-pilot-toggle-pin[aria-pressed='true']::before {
+        background: var(--ai-brand);
+    }
+    .ai-helpdesk-map .ai-hd-pilot-toggle-pin:hover {
+        border-color: var(--ai-brand);
     }
     .ai-helpdesk-map .ai-hd-pilot-del-module {
         flex: 0 0 auto;
@@ -395,12 +442,21 @@
         display: flex;
         align-items: center;
         gap: 6px;
-        margin: 0 0 4px;
+        margin: 0 0 1px;
         padding: 0;
     }
     .ai-helpdesk-map .ai-hd-pilot-ul li.ai-hd-pilot-li > a {
         flex: 1;
         min-width: 0;
+    }
+    .ai-helpdesk-map .ai-hd-pilot-ul li.ai-hd-pilot-li > a.ai-hd-link--inactive {
+        color: #999;
+        font-weight: 500;
+        cursor: default;
+    }
+    .ai-helpdesk-map .ai-hd-pilot-ul li.ai-hd-pilot-li > a.ai-hd-link--inactive:hover {
+        color: #999;
+        background-color: transparent;
     }
     .ai-helpdesk-map .ai-hd-pilot-ul li > a::after {
         display: none;
@@ -460,7 +516,7 @@
     <div class="lay_pop_bg"></div>
     <div class="lay_pop_area">
         <div class="lay_pop_head">
-            <div class="lay_pop_title"><h2>SCM AI Agent 메뉴</h2></div>
+            <div class="lay_pop_title"><h2>SCM AI Platform</h2></div>
             <button type="button" class="lay_pop_close" title="닫기" aria-label="닫기"></button>
         </div>
         <div class="lay_pop_cont ai-helpdesk-map">
@@ -512,6 +568,7 @@
                         <div class="ai-hd-card-head">
                             <span class="ai-hd-pilot-title">새 PILOT</span>
                             <c:if test="${aiHelpdeskAdmin}">
+                            <button type="button" class="ai-hd-pilot-toggle-pin ai-hd-admin-editable" title="물방울 아이콘 지정" aria-label="물방울 아이콘 지정" aria-pressed="false"></button>
                             <button type="button" class="ai-hd-pilot-rename-module ai-hd-admin-editable" title="모듈명 변경" aria-label="모듈명 변경">&#9998;</button>
                             <button type="button" class="ai-hd-pilot-del-module ai-hd-admin-editable" aria-label="모듈 삭제">&times;</button>
                             </c:if>
@@ -532,6 +589,7 @@
                         <div class="ai-hd-card-head">
                             <span class="ai-hd-pilot-title">새 SCM</span>
                             <c:if test="${aiHelpdeskAdmin}">
+                            <button type="button" class="ai-hd-pilot-toggle-pin ai-hd-admin-editable" title="물방울 아이콘 지정" aria-label="물방울 아이콘 지정" aria-pressed="false"></button>
                             <button type="button" class="ai-hd-pilot-rename-module ai-hd-admin-editable" title="모듈명 변경" aria-label="모듈명 변경">&#9998;</button>
                             <button type="button" class="ai-hd-pilot-del-module ai-hd-admin-editable" aria-label="모듈 삭제">&times;</button>
                             </c:if>
@@ -692,10 +750,11 @@
                     var urlRow = document.getElementById('aiPilotDetailUrlRow');
                     if (h2) h2.textContent = title || detailOpts.fallbackHeading || '메뉴';
                     if (desc) {
-                        desc.textContent =
-                            '선택한 ' +
-                            (detailOpts.menuKindLabel || '메뉴') +
-                            '입니다. 아래 주소가 있으면 새 창 또는 페이지로 이동하고, 없으면 이 안내 창만 표시합니다.';
+                        desc.textContent = urlHint
+                            ? '선택한 ' +
+                              (detailOpts.menuKindLabel || '메뉴') +
+                              '입니다. 아래 주소가 있으면 새 창 또는 페이지로 이동하고, 없으면 이 안내 창만 표시합니다.'
+                            : '현재 구현 중입니다.';
                     }
                     if (urlRow) {
                         if (urlHint) {
@@ -756,6 +815,28 @@
                     var defaultPrefix = opts.defaultModulePrefix || '모듈';
                     var menuKindLabel = opts.menuKindLabel || '메뉴';
 
+                    function isActiveLinkHref(hrefRaw) {
+                        var raw = hrefRaw != null ? String(hrefRaw).trim() : '';
+                        if (!raw) return false;
+                        if (/^javascript:/i.test(raw)) return false;
+                        return true;
+                    }
+
+                    function syncPilotLinkState(a) {
+                        if (!a) return;
+                        if (isActiveLinkHref(a.getAttribute('data-pilot-href'))) {
+                            a.classList.remove('ai-hd-link--inactive');
+                            a.removeAttribute('aria-disabled');
+                        } else {
+                            a.classList.add('ai-hd-link--inactive');
+                            a.setAttribute('aria-disabled', 'true');
+                        }
+                    }
+
+                    function refreshAllLinkStates() {
+                        root.querySelectorAll('.ai-hd-pilot-ul li.ai-hd-pilot-li > a').forEach(syncPilotLinkState);
+                    }
+
                     function openDetailForLink(title, urlHint) {
                         openAgentDetailLayer(title, urlHint, {
                             menuKindLabel: menuKindLabel,
@@ -771,6 +852,10 @@
                         e.preventDefault();
                         var raw = (a.getAttribute('data-pilot-href') || '').trim();
                         var title = (a.textContent || '').trim();
+                        if (!isActiveLinkHref(raw)) {
+                            openDetailForLink(title, '');
+                            return;
+                        }
                         if (raw && (raw.indexOf('http://') === 0 || raw.indexOf('https://') === 0)) {
                             window.open(raw, '_blank', 'noopener,noreferrer');
                             return;
@@ -798,6 +883,7 @@
                         a.textContent = label || '링크';
                         var hrefRaw = hrefOpt != null ? String(hrefOpt).trim() : '';
                         if (hrefRaw) a.setAttribute('data-pilot-href', hrefRaw);
+                        syncPilotLinkState(a);
                         li.appendChild(a);
                         if (window.OPEN2U_AI_HELPDESK_ADMIN) {
                             var ed = document.createElement('button');
@@ -825,6 +911,7 @@
                                 nu = String(nu).trim();
                                 if (nu) a.setAttribute('data-pilot-href', nu);
                                 else a.removeAttribute('data-pilot-href');
+                                syncPilotLinkState(a);
                                 fireChanged();
                             });
                             var rm = document.createElement('button');
@@ -844,12 +931,36 @@
                         if (!silent) fireChanged();
                     }
 
+                    function syncTogglePinBtn(col) {
+                        var togglePin = col.querySelector('.ai-hd-pilot-toggle-pin');
+                        if (!togglePin) return;
+                        var card = col.querySelector('.ai-hd-card');
+                        var on = card && card.classList.contains('ai-hd-card--featured');
+                        togglePin.setAttribute('aria-pressed', on ? 'true' : 'false');
+                        var label = on ? '물방울 아이콘 해제' : '물방울 아이콘 지정';
+                        togglePin.title = label;
+                        togglePin.setAttribute('aria-label', label);
+                    }
+
                     function wireCard(col, cardOpts) {
                         applyCardVariant(col, cardOpts || {});
                         var ul = col.querySelector('.ai-hd-pilot-ul');
                         var delM = col.querySelector('.ai-hd-pilot-del-module');
                         var renM = col.querySelector('.ai-hd-pilot-rename-module');
+                        var togglePin = col.querySelector('.ai-hd-pilot-toggle-pin');
                         var addL = col.querySelector('.ai-hd-pilot-add-link');
+                        syncTogglePinBtn(col);
+                        if (togglePin) {
+                            togglePin.addEventListener('click', function (ev) {
+                                ev.preventDefault();
+                                ev.stopPropagation();
+                                var card = col.querySelector('.ai-hd-card');
+                                var on = card && card.classList.contains('ai-hd-card--featured');
+                                applyCardVariant(col, { featured: !on });
+                                syncTogglePinBtn(col);
+                                fireChanged();
+                            });
+                        }
                         if (renM) {
                             renM.addEventListener('click', function (ev) {
                                 ev.preventDefault();
@@ -968,6 +1079,7 @@
                                 featured: !!(item && item.featured)
                             }, silent, item && item.moduleId);
                         });
+                        refreshAllLinkStates();
                     }
 
                     if (addBtn) {
@@ -1106,19 +1218,19 @@
                             ]
                         },
                         {
-                            title: '업무지원 AI',
-                            featured: true,
-                            links: [
-                                { label: '구매실적 Reporter', href: '' },
-                                { label: '구매 문의 응대', href: '' }
-                            ]
-                        },
-                        {
                             title: '동반성장 AI',
                             featured: false,
                             links: [
                                 { label: '동반성장 PG 실적관리', href: '' },
                                 { label: '증빙자료 검수', href: '' }
+                            ]
+                        },
+                        {
+                            title: '업무지원 AI',
+                            featured: true,
+                            links: [
+                                { label: '구매실적 Reporter', href: '' },
+                                { label: '구매 문의 응대', href: '' }
                             ]
                         }
                     ];

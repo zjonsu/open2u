@@ -1308,8 +1308,9 @@ input+.btnS.download{ margin-left: 5px; }
 .main_link_box_area div a .link_arr { align-self: flex-end; display: inline-block; width: 28px; height: 12px; background-repeat: no-repeat; background-size: 100%; background-position: center; }
 .main_link_box_area .main_helpdesk_area .tit { color: #3617CE; font-size: 18px; font-weight: 700; line-height: 20px; }
 .main_link_box_area .main_helpdesk_area .link_arr { background-image: url(../images/new_common/ico_link_arr.svg); }
-.main_link_box_area .main_biz_area .tit { position: relative; padding: 9px 0 0 72px; color: #444; font-size: 21px; font-weight: 700; height: 100%; background: url(../images/new_common/img_biz_pro.svg) no-repeat center left / 62px auto; }
-.main_link_box_area .main_biz_area .link_arr { background-image: url(../images/new_common/ico_link_arr_ty02.svg); } 
+.main_link_box_area .main_biz_area .tit { color: #3617CE; font-size: 18px; font-weight: 700; line-height: 20px; }
+.main_link_box_area .main_biz_area .ai_platform_icon_wrap { align-self: flex-end; flex-shrink: 0; display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; background-color: #F3F3F5; border-radius: 50%; }
+.main_link_box_area .main_biz_area .ai_platform_icon { display: block; width: 28px; height: 28px; } 
 .main_title_area{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 15px; position: relative; }
 .main_title_area.mt{ margin-top: 20px; }
 .main_title_area~.main_title_area{ margin-top: 40px; }
@@ -2025,6 +2026,31 @@ input+.btnS.download{ margin-left: 5px; }
 
 .tableStyle.ty02 .select_dt { height: 28px; border-bottom: 1px solid #888EC2; border-radius: 0; background: #DCD8F3 url(../images/renewal/ico_select_dt_arr.svg) no-repeat center right / 12px auto; }
 .tableStyle.ty02 .select_dt:focus { box-shadow: none; }
+
+.sch_group_tit > td {
+    height: auto;
+    padding: 0;
+    border-bottom: 2px solid #565EA1;
+}
+.sch_group_tit:not(:first-child) > td {
+    padding-top: 16px;
+}
+.sch_group_tit h3 {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+}
+.sch_group_tit + tr > th,
+.sch_group_tit + tr > td {
+    border-top: none;
+}
+.searchBox.ty02 .tableStyle tbody tr.sch_group_tit > td {
+    border-bottom: 2px solid #565EA1;
+}
 
 /* 2025-08-29 수정 */
 /* .datepicker_area:not(:has(.datepicker_box:nth-child(2))) .datepicker:focus { box-shadow: none; }
