@@ -194,15 +194,17 @@
                 </ul>
                 <div class="main_link_box_area">
                     <div class="main_helpdesk_area">
-                        <a href="javascript:;" id="aiHelpDeskOpen">
+                        <a href="javascript:;" id="aiHelpDeskOpen" aria-label="AI Help Desk 열기">
                             <strong class="tit">AI - <br>Help Desk</strong>
                             <span class="link_arr"></span>
                         </a>
                     </div>
                     <div class="main_biz_area">
-                        <a href="javascript:;">
-                            <strong class="tit">구매</strong>
-                            <span class="link_arr"></span>
+                        <a href="javascript:;" aria-label="SCM AI Platform">
+                            <strong class="tit">SCM AI Platform</strong>
+                            <span class="ai_platform_icon_wrap" aria-hidden="true">
+                                <img class="ai_platform_icon" src="${pageContext.request.contextPath}/resource/images/new_common/ico_scm_ai_platform.svg" alt="" width="28" height="28" decoding="async" />
+                            </span>
                         </a>
                     </div>
                 </div>

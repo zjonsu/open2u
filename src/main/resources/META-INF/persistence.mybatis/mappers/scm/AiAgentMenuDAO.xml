@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="adm.AiAgentMenuEproDAO">
+
+    <select id="selectSnapshotJson" parameterType="string" resultType="string">
+        /* Biz: scm.AiAgentMenuEproDAO.selectSnapshotJson */
+        SELECT MENU_JSON
+        FROM T_AI_AGENT_MENU_SNAPSHOT
+        WHERE SECTION_CD = #{value}
+    </select>
+
+    <insert id="upsertSnapshot" parameterType="map">
+        /* Biz: scm.AiAgentMenuEproDAO.upsertSnapshot */
+        INSERT INTO T_AI_AGENT_MENU_SNAPSHOT (SECTION_CD, MENU_JSON, UPDATED_AT)
+        VALUES (#{sectionCd}, #{menuJson}, NOW(3))
+        ON DUPLICATE KEY UPDATE
+            MENU_JSON = VALUES(MENU_JSON),
+            UPDATED_AT = VALUES(UPDATED_AT)
+    </insert>
+
+    <insert id="insertEvent" parameterType="map">
+        /* Biz: scm.AiAgentMenuEproDAO.insertEvent */
+        INSERT INTO T_AI_AGENT_MENU_EVENT (
+            SECTION_CD, EVENT_TYP, MODULE_ID, LINK_ID, OLD_JSON, NEW_JSON, ACTOR_ID, CREATED_AT
+        ) VALUES (
+            #{sectionCd},
+            #{eventTyp},
+            #{moduleId},
+            #{linkId},
+            #{oldJson},
+            #{newJson},
+            #{actorId},
+            NOW(3)
+        )
+    </insert>
+
+    <select id="selectEventList" parameterType="map" resultType="map">
+        /* Biz: scm.AiAgentMenuEproDAO.selectEventList */
+        SELECT
+            EVENT_SEQ   AS eventSeq,
+            SECTION_CD  AS sectionCd,
+            EVENT_TYP   AS eventTyp,
+            MODULE_ID   AS moduleId,
+            LINK_ID     AS linkId,
+            OLD_JSON    AS oldJson,
+            NEW_JSON    AS newJson,
+            ACTOR_ID    AS actorId,
+            CREATED_AT  AS createdAt
+        FROM T_AI_AGENT_MENU_EVENT
+        WHERE SECTION_CD = #{sectionCd}
+        ORDER BY EVENT_SEQ DESC
+        <if test="limit != null">
+            LIMIT #{limit}
+        </if>
+    </select>
+</mapper>
